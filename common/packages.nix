@@ -4,7 +4,6 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs;[
     (python3.withPackages(ps: with ps; [ pandas matplotlib requests]))
-    texlive.combined.scheme-full 
     playerctl
     swaylock-effects
     adw-gtk3
