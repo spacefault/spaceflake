@@ -46,7 +46,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.devin = import ./common/home.nix;
-          };
+          }
           hyprland.nixosModules.default {
             programs.hyprland.enable = true;
             programs.hyprland.enableNvidiaPatches=false;
