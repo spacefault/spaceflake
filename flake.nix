@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
-    watershot.url = "github:Kirottu/watershot";
     anyrun.url = "github:Kirottu/anyrun";
     anyrun.inputs.nixpkgs.follows = "nixpkgs";
     home-manager = {
@@ -13,7 +12,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, hyprland, watershot, anyrun, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, hyprland, anyrun, home-manager, ... }@inputs: {
     nixosConfigurations = {
       # Run the following command in the flake's directory to
       # deploy this configuration on any NixOS system:
