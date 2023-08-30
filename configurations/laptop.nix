@@ -14,6 +14,11 @@
     firewall.enable = true;
   };
 
+  # crypt settings
+  boot.initrd.secrets = {
+    "/crypto_keyfile.bin" = null;
+  };
+
  # swap
   swapDevices = [ {
     device = "/var/lib/swapfile";

@@ -4,7 +4,6 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs;[
     (python3.withPackages(ps: with ps; [ pandas matplotlib requests]))
-    texlive.combined.scheme-full 
     playerctl
     swaylock-effects
     adw-gtk3
@@ -52,6 +51,7 @@
     obsidian
     gimp-with-plugins
     networkmanagerapplet
+    virt-manager
     anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
   ];
   programs = {
@@ -62,6 +62,9 @@
       enable = true;
     };
     seahorse = {
+      enable = true;
+    };
+    dconf = {
       enable = true;
     };
     gnupg = {
