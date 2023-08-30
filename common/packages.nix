@@ -51,6 +51,7 @@
     obsidian
     gimp-with-plugins
     networkmanagerapplet
+    virt-manager
     anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
   ];
   programs = {
@@ -61,6 +62,9 @@
       enable = true;
     };
     seahorse = {
+      enable = true;
+    };
+    dconf = {
       enable = true;
     };
     gnupg = {
