@@ -24,7 +24,7 @@
   fileSystems."/mnt/systemlink" =
     { device = "/dev/disk/by-uuid/0BDA1ED800A34848";
       fsType = "ntfs-3g"; 
-      options = [ "rw" "uid=1000"];
+      options = [ "rw" "uid=1000" ];
     };
 
   # nvidia drivers
