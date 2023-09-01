@@ -58,6 +58,7 @@
 
     # Gaming
     osu-lazer-bin
+    prismlauncher
 
     # Misc
     git
