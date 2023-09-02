@@ -18,7 +18,7 @@ the `flake.lock` & `flake.nix` files are just your usual flake files.
 installation guide coming soon!
 
 # to-do
-- [ ] add env variables
+- [X] add env variables
 - [ ] solve flake.lock updating bug
 - [ ] add home-manager
 
