@@ -23,6 +23,7 @@
     wlsunset
     wl-clipboard
     xdg-user-dirs
+    eww-wayland
     
     # Internet
     discord
