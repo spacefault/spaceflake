@@ -71,6 +71,9 @@
     piper
     virt-manager
     anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
+
+    # Programming
+    (python3.withPackages(ps: with ps; [ pandas matplotlib requests]))
   ];
 
   programs = {
