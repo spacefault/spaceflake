@@ -32,7 +32,7 @@
     
     # Text Editors
     emacs-gtk
-    gnome.text-editor
+    gnome-text-editor
     obsidian
     vim
     vscode
