@@ -19,6 +19,12 @@
     "/crypto_keyfile.bin" = null;
   };
 
+  # env variables
+  environment.sessionVariables = {
+    XCURSOR_SIZE = "24";
+    SSH_AUTH_SOCK = "/run/user/1001/keyring/ssh";
+  };
+
  # swap
   swapDevices = [ {
     device = "/var/lib/swapfile";
