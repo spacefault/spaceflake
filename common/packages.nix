@@ -74,6 +74,7 @@
 
     # Programming
     (python3.withPackages(ps: with ps; [ pandas matplotlib requests]))
+    newt
   ];
 
   programs = {
