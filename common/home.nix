@@ -4,8 +4,18 @@
   # paths it should manage.
   home.username = "devin";
   home.homeDirectory = "/home/devin";
-
-  
+ 
+  programs.zsh = {
+    enable = true;
+    enableAutosuggestions = true;
+    initExtra = "autoload -Uz vcs_info\nprecmd() { vcs_info }\nzstyle ':vcs_info:git:*' formats '%b '\nsetopt PROMPT_SUBST\nPROMPT='%B%F{green}%n@%m%f%b %B%F{blue}%~%f%b %B%F{red}$vcs_info_msg_0_%f%b> '";
+    shellAliases = {
+      grep = "grep --color";
+      ip = "ip --color";
+      l = "ls -lah";
+      ls = "ls -lah";
+    };
+  }; 
 
   #Gtk 
 #     gtk = {
