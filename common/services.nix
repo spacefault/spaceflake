@@ -2,13 +2,18 @@
 
 {
   services = {
-    printing.enable = true;
     devmon.enable = true;
     gvfs.enable = true;
     dbus.enable = true;
     flatpak.enable = true;
     ratbagd.enable  = true;
     gnome.gnome-keyring.enable = true;
+    printing.enable = true;
+    avahi = {
+      enable = true;
+      nssmdns = true;
+      openFirewall = true;
+    };
     xserver = {
       enable = false;
       layout = "us";
