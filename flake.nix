@@ -51,7 +51,7 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.devin = import ./common/home/home.nix;
+            home-manager.users.devin = import ./common/home.nix;
           }
           hyprland.nixosModules.default {
             programs.hyprland.enable = true;
