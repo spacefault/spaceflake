@@ -1,7 +1,5 @@
 { config, pkgs, self, user, ... }:
 {
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
   home = {
     username = "devin";
     homeDirectory = "/home/devin";
@@ -20,10 +18,10 @@
         path = "/home/devin/histfile";
       };
       shellAliases = {
-        grep = "grep--color";
+        grep = "grep --color";
         ip = "ip --color";
         l = "ls -lah --color";
-        ls = "ls -lsh --color";
+        ls = "ls -lah --color";
       };
     };
   };
