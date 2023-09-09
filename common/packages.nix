@@ -35,7 +35,7 @@
     emacs-gtk
     gnome-text-editor
     obsidian
-    vim
+    neovim
     vscode
     
     # Entertainment
@@ -47,6 +47,8 @@
     # Creative 
     gimp-with-plugins
     obs-studio
+    blender
+    davinci-resolve
 
     # Customization
     adw-gtk3
@@ -73,7 +75,7 @@
     anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
 
     # Programming
-    (python3.withPackages(ps: with ps; [ pandas matplotlib requests]))
+    (python3.withPackages(ps: with ps; [ pandas matplotlib requests rich ]))
     newt
   ];
 
