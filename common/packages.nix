@@ -13,7 +13,6 @@
     polkit_gnome
     slurp
     swaylock-effects
-    swaynotificationcenter
     swww
     udiskie
     udisks
@@ -24,7 +23,8 @@
     wl-clipboard
     xdg-user-dirs
     eww-wayland
-    
+    dunst
+
     # Internet
     discord
     firefox

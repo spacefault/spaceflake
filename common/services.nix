@@ -15,8 +15,9 @@
       openFirewall = true;
     };
     xserver = {
-      enable = false;
-      layout = "us";
+      enable = true;
+      displayManager.gdm.enable = true;
+      layout = "";
       xkbVariant = "";
     };
     pipewire = {
