@@ -16,7 +16,6 @@
     swww
     udiskie
     udisks
-    waybar
     wireplumber
     wlogout
     wlsunset
