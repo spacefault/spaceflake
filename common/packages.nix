@@ -31,7 +31,6 @@
     wget
     
     # Text Editors
-    emacs-gtk
     gnome-text-editor
     obsidian
     neovim
