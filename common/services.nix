@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   services = {
@@ -8,7 +8,14 @@
     flatpak.enable = true;
     ratbagd.enable  = true;
     gnome.gnome-keyring.enable = true;
-    printing.enable = true;
+    printing = {
+      enable = true;
+      logLevel = "debug";
+      drivers = [
+        pkgs.cups-kyodialog
+	pkgs.foomatic-db-ppds-withNonfreeDb
+      ];
+    };
     avahi = {
       enable = true;
       nssmdns = true;

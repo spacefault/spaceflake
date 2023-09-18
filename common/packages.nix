@@ -70,6 +70,7 @@
     gnome.gnome-terminal
     piper
     virt-manager
+    cups-filters
     anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
 
     # Programming
