@@ -67,6 +67,7 @@
     keepassxc
     killall
     networkmanagerapplet
+    gnome.gnome-terminal
     piper
     virt-manager
     anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
