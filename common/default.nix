@@ -12,5 +12,6 @@
     ./i18n.nix
     ./fonts.nix
     ./systemd.nix
+    ./virtualisation.nix
   ];
 }
