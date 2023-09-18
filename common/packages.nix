@@ -33,7 +33,6 @@
     # Text Editors
     gnome-text-editor
     obsidian
-    neovim
     vscode
     
     # Entertainment
