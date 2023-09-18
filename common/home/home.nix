@@ -16,5 +16,6 @@
     ./waybar/waybar.nix
     ./zsh/zsh.nix
     ./emacs/emacs.nix
+    ./neovim/neovim.nix
   ];
 }
