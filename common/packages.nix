@@ -76,6 +76,7 @@
     # Programming
     (python3.withPackages(ps: with ps; [ pandas matplotlib requests rich ]))
     newt
+    gcc
   ];
 
   programs = {
