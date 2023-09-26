@@ -72,6 +72,7 @@
     virt-manager
     cups-filters
     anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
+    gnome.gnome-tweaks
 
     # Programming
     (python3.withPackages(ps: with ps; [ pandas matplotlib requests rich ]))
