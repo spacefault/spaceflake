@@ -13,7 +13,8 @@
       logLevel = "debug";
       drivers = [
         pkgs.cups-kyodialog
-	pkgs.foomatic-db-ppds-withNonfreeDb
+        pkgs.foomatic-db-ppds-withNonfreeDb
+        pkgs.cnijfilter2
       ];
     };
     avahi = {
