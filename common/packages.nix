@@ -74,8 +74,6 @@
     anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
     gnome.gnome-tweaks
     element-desktop
-    libsForQt5.ksshaskpass
-    pinentry
 
     # Programming
     (python3.withPackages(ps: with ps; [ pandas matplotlib requests rich ]))
@@ -91,15 +89,11 @@
       enable = true;
     };
     seahorse = {
-      enable = false;
+      enable = true;
     };
     dconf = {
       enable = true;
     };
-    #ssh = {
-    #  startAgent = true;
-    #  askPassword = pkgs.lib.mkForce "${pkgs.ksshaskpass.out}/bin/ksshaskpass";
-    #};
     gnupg = {
       agent = {
         enable = true;
