@@ -75,6 +75,7 @@
     gnome.gnome-tweaks
     element-desktop
     remmina
+    endeavour
 
     # Programming
     (python3.withPackages(ps: with ps; [ pandas matplotlib requests rich ]))
