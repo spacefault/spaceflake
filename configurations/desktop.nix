@@ -22,7 +22,7 @@
 
   # systemlink
   fileSystems."/mnt/systemlink" =
-    { device = "/dev/disk/by-uuid/0BDA1ED800A34848";
+    { device = "/dev/disk/by-uuid/265780BD76D648DA";
       fsType = "ntfs-3g"; 
       options = [ "rw" "uid=1000" ];
     };
