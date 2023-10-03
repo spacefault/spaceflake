@@ -1,18 +1,20 @@
-{ config, pkgs, ... }: 
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    supportedFilesystems = [ "ntfs" ];
+    supportedFilesystems = ["ntfs"];
     loader = {
       systemd-boot.enable = false;
       efi.canTouchEfiVariables = true;
       grub = {
         enable = true;
-        devices = [ "nodev" ];
+        devices = ["nodev"];
         efiSupport = true;
         useOSProber = true;
       };
-    }; 
+    };
   };
 }

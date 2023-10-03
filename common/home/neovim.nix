@@ -1,6 +1,10 @@
-{ config, pkgs, self, user, ... }:
-
 {
+  config,
+  pkgs,
+  self,
+  user,
+  ...
+}: {
   programs.neovim = {
     enable = true;
     extraConfig = ''
