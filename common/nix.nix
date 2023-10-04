@@ -1,10 +1,8 @@
-{ config, ... }:
-
-{
+{config, ...}: {
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      allowed-users = [ "@wheel" "devin" ];
+      experimental-features = ["nix-command" "flakes"];
+      allowed-users = ["@wheel" "devin"];
       auto-optimise-store = true;
     };
     gc = {

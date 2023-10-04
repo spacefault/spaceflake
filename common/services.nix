@@ -1,12 +1,14 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   services = {
     devmon.enable = true;
     gvfs.enable = true;
     dbus.enable = true;
     flatpak.enable = true;
-    ratbagd.enable  = true;
+    ratbagd.enable = true;
     gnome.gnome-keyring.enable = true;
     printing = {
       enable = true;
