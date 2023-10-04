@@ -1,8 +1,11 @@
-{ config, pkgs, anyrun, ... }:
-
 {
+  config,
+  pkgs,
+  anyrun,
+  ...
+}: {
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs;[
+  environment.systemPackages = with pkgs; [
     # Hyprland Requirements
     grim
     gvfs
@@ -29,19 +32,19 @@
     firefox
     thunderbird
     wget
-    
+
     # Text Editors
     gnome-text-editor
     obsidian
     vscode
-    
+
     # Entertainment
     ffmpeg
     gnome.eog
     mpv
     vlc
-    
-    # Creative 
+
+    # Creative
     gimp-with-plugins
     obs-studio
     blender
@@ -51,7 +54,7 @@
     adw-gtk3
     gnome.adwaita-icon-theme
     gradience
-     
+
     # Disks and Storage
     baobab
     gnome.gnome-disk-utility
@@ -78,7 +81,7 @@
     pinentry
 
     # Programming
-    (python3.withPackages(ps: with ps; [ pandas matplotlib requests rich ]))
+    (python3.withPackages (ps: with ps; [pandas matplotlib requests rich]))
     newt
     gcc
   ];
@@ -107,6 +110,6 @@
         enableExtraSocket = true;
         pinentryFlavor = "gnome3";
       };
-    }; 
+    };
   };
 }
