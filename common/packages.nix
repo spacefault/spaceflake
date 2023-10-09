@@ -13,7 +13,6 @@
     libnotify
     playerctl
     polkit
-    polkit_gnome
     slurp
     swaylock-effects
     swww
@@ -25,7 +24,6 @@
     wl-clipboard
     xdg-user-dirs
     eww-wayland
-    dunst
 
     # Internet
     discord
@@ -34,13 +32,11 @@
     wget
 
     # Text Editors
-    gnome-text-editor
     obsidian
     vscode
 
     # Entertainment
     ffmpeg
-    gnome.eog
     mpv
     vlc
 
@@ -57,7 +53,6 @@
 
     # Disks and Storage
     baobab
-    gnome.gnome-disk-utility
 
     # Gaming
     osu-lazer-bin
@@ -65,17 +60,14 @@
 
     # Misc
     git
-    gnome.nautilus
     htop
     keepassxc
     killall
     networkmanagerapplet
-    gnome.gnome-terminal
     piper
     virt-manager
     cups-filters
     anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
-    gnome.gnome-tweaks
     element-desktop
     libsForQt5.ksshaskpass
     pinentry
