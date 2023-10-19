@@ -76,6 +76,7 @@
     (python3.withPackages (ps: with ps; [pandas matplotlib requests rich]))
     newt
     gcc
+    nixpkgs-review
   ];
 
   programs = {
