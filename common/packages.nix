@@ -57,6 +57,7 @@
     # Gaming
     osu-lazer-bin
     prismlauncher
+    ckan
 
     # Misc
     git
