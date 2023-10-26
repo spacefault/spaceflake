@@ -24,6 +24,7 @@
     wl-clipboard
     xdg-user-dirs
     eww-wayland
+    dunst
 
     # Internet
     discord
@@ -70,8 +71,7 @@
     cups-filters
     anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
     element-desktop
-    libsForQt5.ksshaskpass
-    pinentry
+    gnome.gnome-terminal
 
     # Programming
     (python3.withPackages (ps: with ps; [pandas matplotlib requests rich]))
