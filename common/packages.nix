@@ -88,7 +88,7 @@
       enable = true;
     };
     seahorse = {
-      enable = false;
+      enable = true;
     };
     dconf = {
       enable = true;
