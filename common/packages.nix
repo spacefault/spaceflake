@@ -72,6 +72,7 @@
     anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
     element-desktop
     gnome.gnome-terminal
+    anki-bin
 
     # Programming
     (python3.withPackages (ps: with ps; [pandas matplotlib requests rich]))
