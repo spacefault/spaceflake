@@ -9,6 +9,7 @@
     dbus.enable = true;
     flatpak.enable = true;
     ratbagd.enable = true;
+    usbmuxd.enable = true;
     gnome.gnome-keyring.enable = true;
     printing = {
       enable = true;
