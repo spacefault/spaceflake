@@ -76,10 +76,13 @@
     libimobiledevice
     ifuse
     # Programming
-    (python3.withPackages (ps: with ps; [pandas matplotlib requests rich]))
+    (python3.withPackages (ps: with ps; [pandas matplotlib requests rich pyqt5]))
     newt
     gcc
     nixpkgs-review
+    qjackctl
+    libsForQt5.ksshaskpass
+    pinentry
   ];
 
   programs = {
@@ -90,7 +93,7 @@
       enable = true;
     };
     seahorse = {
-      enable = true;
+      enable = false;
     };
     dconf = {
       enable = true;
