@@ -36,7 +36,7 @@
             };
           };
           "image" = {
-            path = "/home/devin/.config/waybar/images/nixos_dark.svg";
+            path = "/home/devin/Pictures/waybar/nixos_dark.svg";
           };
           "custom/weather" = {
             format = " {}";
