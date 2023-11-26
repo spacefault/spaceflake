@@ -46,7 +46,6 @@
           hyprland.nixosModules.default
           {
             programs.hyprland.enable = true;
-            programs.hyprland.enableNvidiaPatches = true;
             programs.hyprland.xwayland.enable = true;
           }
         ];
@@ -66,7 +65,6 @@
           hyprland.nixosModules.default
           {
             programs.hyprland.enable = true;
-            programs.hyprland.enableNvidiaPatches = false;
             programs.hyprland.xwayland.enable = true;
           }
         ];
