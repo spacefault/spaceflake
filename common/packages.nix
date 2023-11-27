@@ -29,6 +29,7 @@
     # Internet
     discord
     firefox
+    google-chrome
     thunderbird
     wget
 
