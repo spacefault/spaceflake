@@ -60,6 +60,7 @@
     osu-lazer-bin
     prismlauncher
     ckan
+    godot_4
 
     # Misc
     git
