@@ -78,7 +78,7 @@
     libimobiledevice
     ifuse
     # Programming
-    (python3.withPackages (ps: with ps; [pandas matplotlib requests rich pyqt5]))
+    (python3.withPackages (ps: with ps; [pandas matplotlib requests rich pyqt5 pygame]))
     newt
     gcc
     nixpkgs-review
