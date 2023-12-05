@@ -22,6 +22,5 @@
     ./zsh.nix
     ./emacs.nix
     ./neovim.nix
-    ./gtk.nix
   ];
 }
