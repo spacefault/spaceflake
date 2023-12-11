@@ -49,9 +49,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Install GitHub CLI
         run: |
-          wget https://github.com/cli/cli/releases/download/v2.40.0/gh_$(echo $RUNNER_OS | tr '[:upper:]' '[:lower:]')_amd64.deb
-          sudo dpkg -i gh_$(echo $RUNNER_OS | tr '[:upper:]' '[:lower:]')_amd64.deb
-          rm gh_$(echo $RUNNER_OS | tr '[:upper:]' '[:lower:]')_amd64.deb
+          wget https://github.com/cli/cli/releases/download/v2.40.0/gh_2.40.0_linux_amd64.deb
+          sudo dpkg -i gh_2.40.0_linux_amd64.deb
+          rm gh_2.40.0_linux_amd64.deb
       - name: Create Pull Request
         run: |
           gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
