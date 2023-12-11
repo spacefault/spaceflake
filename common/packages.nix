@@ -85,6 +85,7 @@
     qjackctl
     libsForQt5.ksshaskpass
     pinentry
+    gh
   ];
 
   programs = {
