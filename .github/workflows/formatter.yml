@@ -17,4 +17,11 @@ jobs:
             auto-optimise-store = true
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
             experimental-features = nix-command flakes
-      - run: nix run nixpkgs#alejandra -- -c .
+      - run: |
+          nix run nixpkgs#alejandra -- .
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Formatting Update"
+          git push
+      
