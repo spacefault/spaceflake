@@ -1,6 +1,11 @@
 name: Formatting Check
 
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
 
 jobs:
 
@@ -9,19 +14,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: cachix/install-nix-action@v24
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install Nix
+        uses: cachix/install-nix-action@v24
         with:
           install_url: https://nixos.org/nix/install
           extra_nix_config: |
             auto-optimise-store = true
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
             experimental-features = nix-command flakes
-      - run: |
-          nix run nixpkgs#alejandra -- .
+      - name: Run formatting check
+        run: nix run nixpkgs#alejandra -- .
+      - name: Configure Git
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add .
-          git commit -m "Formatting Update"
-          git push
-      
+      - name: Commit changes
+        run: git commit -am "Formatting Update"
+      - name: Push changes
+        run: git push
+
+      - name: Create a new branch
+        run: |
+          git checkout -b formatting-update 
+      - name: Push changes to the new branch
+        run: git push origin formatting-update 
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          branch: formatting-update 
+          commit-message: "Formatting Update"
+          title: "Formatting Update"
+          body: "This PR formats the files in the repository."
+
