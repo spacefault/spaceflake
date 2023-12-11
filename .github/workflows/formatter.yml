@@ -30,11 +30,15 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-      - name: Commit changes
-        run: git commit -am "Formatting Update"
       - name: Create a new branch
         run: |
           git checkout -b formatting-update
+      - name: Fetch changes from the remote branch
+        run: |
+          git fetch origin formatting-update
+          git pull origin formatting-update
+      - name: Commit changes
+        run: git commit -am "Formatting Update"
       - name: Push changes to the new branch
         run: git push origin formatting-update
       - name: Create Pull Request
