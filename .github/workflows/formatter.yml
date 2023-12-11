@@ -32,19 +32,15 @@ jobs:
           git config user.email github-actions@github.com
       - name: Commit changes
         run: git commit -am "Formatting Update"
-      - name: Push changes
-        run: git push
-
       - name: Create a new branch
         run: |
-          git checkout -b formatting-update 
+          git checkout -b formatting-update
       - name: Push changes to the new branch
-        run: git push origin formatting-update 
+        run: git push origin formatting-update
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          branch: formatting-update 
+          branch: formatting-update
           commit-message: "Formatting Update"
           title: "Formatting Update"
           body: "This PR formats the files in the repository."
-
