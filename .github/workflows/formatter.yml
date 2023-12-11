@@ -24,8 +24,8 @@ jobs:
             auto-optimise-store = true
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
             experimental-features = nix-command flakes
-      - name: Run formatting check
-        run: nix run nixpkgs#alejandra -- .
+      - name: Fetch latest changes
+        run: git pull origin main
       - name: Configure Git
         run: |
           git config user.name github-actions
@@ -33,6 +33,8 @@ jobs:
       - name: Create a new branch
         run: |
           git checkout -b formatting-update
+      - name: Run formatting check
+        run: nix run nixpkgs#alejandra -- .
       - name: Commit changes
         run: git commit -am "Formatting Update"
       - name: Push changes to the new branch
@@ -45,10 +47,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Install GitHub CLI
+        run: |
+          sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+          sudo apt-add-repository https://cli.github.com/packages
+          sudo apt-get update
+          sudo apt-get install gh
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          branch: formatting-update
-          commit-message: "Formatting Update"
-          title: "Formatting Update"
-          body: "This PR formats the files in the repository."
+        run: |
+          gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+          gh pr create --base main --head formatting-update --title "Formatting Update" --body "This PR formats the files in the repository."
