@@ -40,7 +40,8 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          branch: formatting-update
+          base: main
+          head: formatting-update
           commit-message: "Formatting Update"
           title: "Formatting Update"
           body: "This PR formats the files in the repository."
