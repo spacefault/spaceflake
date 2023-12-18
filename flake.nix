@@ -9,6 +9,10 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    watershot = {
+      url = "github:Kirottu/watershot";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,6 +28,7 @@
     nixpkgs,
     hyprland,
     anyrun,
+    watershot,
     home-manager,
     ...
   } @ inputs: {

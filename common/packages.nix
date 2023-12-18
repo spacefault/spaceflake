@@ -2,6 +2,8 @@
   config,
   pkgs,
   anyrun,
+  watershot,
+  input,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -72,7 +74,8 @@
     piper
     virt-manager
     cups-filters
-    anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
+    anyrun.packages.${pkgs.system}.anyrun-with-all-plugins 
+    watershot.packages.${pkgs.system}.default
     element-desktop
     gnome.gnome-terminal
     anki-bin
