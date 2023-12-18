@@ -5,7 +5,7 @@
 }: {
   virtualisation = {
     docker = {
-      enable = true;
+      enable = false;
     };
     libvirtd = {
       enable = true;
