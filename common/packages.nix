@@ -25,6 +25,7 @@
     xdg-user-dirs
     eww-wayland
     dunst
+    gnome.nautilus
 
     # Internet
     discord
@@ -34,7 +35,7 @@
     wget
 
     # Text Editors
-    obsidian
+    # obsidian
     vscode
 
     # Entertainment
@@ -77,6 +78,7 @@
     anki-bin
     libimobiledevice
     ifuse
+
     # Programming
     (python3.withPackages (ps: with ps; [pandas matplotlib requests rich pyqt5 pygame]))
     newt

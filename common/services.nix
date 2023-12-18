@@ -36,8 +36,8 @@
         };
       };
       desktopManager = {
-        gnome = {
-          enable = true;
+        plasma5 = {
+          enable = false;
         };
       };
       layout = "";
