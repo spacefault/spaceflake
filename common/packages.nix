@@ -106,6 +106,9 @@
     dconf = {
       enable = true;
     };
+    nix-ld = {
+      enable = true;
+    };
     #ssh = {
     #  startAgent = true;
     #  askPassword = pkgs.lib.mkForce "${pkgs.ksshaskpass.out}/bin/ksshaskpass";
