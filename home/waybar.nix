@@ -38,27 +38,27 @@
           "image" = {
             path = "/home/devin/Extra/nixos_dark.svg";
           };
-          "privacy" =  {
-	        icon-spacing = 4;
-	        icon-size = 18;
-	        transition-duration = 250;
-	        modules = [
-            {
-			  type = "screenshare";
-			  tooltip = true;
-			  tooltip-icon-size = 24;
-		    }
-		    {
-			  type = "audio-out";
-			  tooltip = true;
-			  tooltip-icon-size = 24;
-		    }
-		    {
-			  type = "audio-in";
-			  tooltip = true;
-			  tooltip-icon-size = 24;
-		    }
-	        ];
+          "privacy" = {
+            icon-spacing = 4;
+            icon-size = 18;
+            transition-duration = 250;
+            modules = [
+              {
+                type = "screenshare";
+                tooltip = true;
+                tooltip-icon-size = 24;
+              }
+              {
+                type = "audio-out";
+                tooltip = true;
+                tooltip-icon-size = 24;
+              }
+              {
+                type = "audio-in";
+                tooltip = true;
+                tooltip-icon-size = 24;
+              }
+            ];
           };
           "custom/weather" = {
             format = " {}";
