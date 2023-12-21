@@ -49,20 +49,6 @@
     SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
   };
 
-  # nvidia drivers
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-  services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.production;
-  };
-
   # you probably shouldn't change this, but if you want to please read the documentation first
   system.stateVersion = "23.05";
 }
