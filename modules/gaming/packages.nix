@@ -13,7 +13,7 @@
     piper
     discord
   ];
- 
+
   programs = {
     steam = {
       enable = true;
