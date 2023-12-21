@@ -11,6 +11,7 @@
     ckan
     godot_4
     piper
+    discord
   ];
  
   programs = {
