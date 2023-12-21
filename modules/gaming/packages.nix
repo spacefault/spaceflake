@@ -12,7 +12,7 @@
     godot_4
     piper
   ];
- 
+
   programs = {
     steam = {
       enable = true;
