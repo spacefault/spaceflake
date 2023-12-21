@@ -19,7 +19,7 @@
           margin-top = 5;
           margin-left = 5;
           margin-right = 5;
-          modules-left = ["image" "hyprland/workspaces" "tray"];
+          modules-left = ["image" "hyprland/workspaces" "privacy" "tray"];
           modules-center = ["clock" "custom/weather" "mpris"];
           modules-right = ["hyprland/language" "custom/notification" "wireplumber" "battery" "network" "custom/power"];
           "hyprland/language" = {
@@ -36,13 +36,35 @@
             };
           };
           "image" = {
-            path = "/home/devin/Pictures/waybar/nixos_dark.svg";
+            path = "/home/devin/Extra/nixos_dark.svg";
+          };
+          "privacy" =  {
+	        icon-spacing = 4;
+	        icon-size = 18;
+	        transition-duration = 250;
+	        modules = [
+            {
+			  type = "screenshare";
+			  tooltip = true;
+			  tooltip-icon-size = 24;
+		    }
+		    {
+			  type = "audio-out";
+			  tooltip = true;
+			  tooltip-icon-size = 24;
+		    }
+		    {
+			  type = "audio-in";
+			  tooltip = true;
+			  tooltip-icon-size = 24;
+		    }
+	        ];
           };
           "custom/weather" = {
             format = " {}";
             tooltip = "true";
             interval = 3600;
-            exec = "/home/devin/.config/waybar/scripts/waybar-wttr.py";
+            exec = "/home/devin/Extra/waybar-wttr.py";
             return-type = "json";
           };
           "hyprland/workspaces" = {
@@ -148,7 +170,7 @@
                border: 3px solid @bg1;
              }
 
-             #language, #clock, #battery, #wireplumber, #network, #tray, #custom-weather, #custom-notification, #workspaces, #mpris {
+             #language, #clock, #battery, #wireplumber, #network, #tray, #custom-weather, #custom-notification, #workspaces, #mpris, #privacy, #privacy-item {
                background: @bg1;
                padding: 0px 10px;
                margin: 7px 0px;
@@ -210,7 +232,7 @@
                margin-right: 5px;
              }
 
-             #language, #workspaces, #custom-notification, #wireplumber, #battery, #mpris {
+             #language, #workspaces, #custom-notification, #wireplumber, #battery, #mpris, #privacy, #privacy-item {
                color: @text;
                margin-right: 5px;
              }
