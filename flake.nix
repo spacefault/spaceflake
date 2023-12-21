@@ -40,13 +40,15 @@
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
-          ./configurations/desktop.nix
-          ./common
+          ./modules/core
+          ./modules/gaming
+          ./modules/nvidia
+          ./systems/desktop.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.devin = import ./common/home/home.nix;
+            home-manager.users.devin = import ./home/home.nix;
           }
           hyprland.nixosModules.default
           {
@@ -59,13 +61,13 @@
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
-          ./configurations/laptop.nix
-          ./common
+          ./modules/core
+          ./systems/laptop.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.devin = import ./common/home/home.nix;
+            home-manager.users.devin = import ./home/home.nix;
           }
           hyprland.nixosModules.default
           {

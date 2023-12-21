@@ -30,7 +30,6 @@
     gnome.nautilus
 
     # Internet
-    discord
     firefox
     google-chrome
     thunderbird
@@ -59,19 +58,12 @@
     # Disks and Storage
     baobab
 
-    # Gaming
-    osu-lazer-bin
-    prismlauncher
-    ckan
-    godot_4
-
     # Misc
     git
     htop
     keepassxc
     killall
     networkmanagerapplet
-    piper
     virt-manager
     cups-filters
     anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
@@ -94,9 +86,6 @@
   ];
 
   programs = {
-    steam = {
-      enable = true;
-    };
     zsh = {
       enable = true;
     };
