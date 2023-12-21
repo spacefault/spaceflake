@@ -1,4 +1,4 @@
-<h3 align="center"><img src="/common/spaceflakelogo2.png" alt="logo" height="100px"></h3>
+<h3 align="center"><img src="/.github/spaceflakelogo2.png" alt="logo" height="100px"></h3>
 <p align="center">my personal NixOS flake configuration!</p>
 <hr class="solid">
 
