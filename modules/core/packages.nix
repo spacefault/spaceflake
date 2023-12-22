@@ -43,6 +43,7 @@
     ffmpeg
     mpv
     vlc
+    loupe
 
     # Creative
     gimp-with-plugins
