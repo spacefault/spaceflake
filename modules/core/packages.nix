@@ -38,6 +38,7 @@
     # Text Editors
     # obsidian
     vscode
+    qownnotes
 
     # Entertainment
     ffmpeg
