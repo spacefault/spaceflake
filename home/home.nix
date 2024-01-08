@@ -18,7 +18,7 @@
   };
 
   imports = [
-    ./waybar.nix
+    # ./waybar.nix
     ./zsh.nix
     ./emacs.nix
     ./neovim.nix

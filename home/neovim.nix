@@ -10,10 +10,10 @@
     viAlias = true;
     vimAlias = true;
     plugins = [
-      {
-        plugin = pkgs.vimPlugins.catppuccin-nvim;
-        config = "colorscheme catppuccin";
-      }
+      #{
+      #  plugin = pkgs.vimPlugins.catppuccin-nvim;
+      #  config = "colorscheme catppuccin";
+      #}
     ];
     extraConfig = ''
       set number

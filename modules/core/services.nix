@@ -10,6 +10,7 @@
     flatpak.enable = true;
     ratbagd.enable = true;
     usbmuxd.enable = true;
+    fwupd.enable = true;
     gnome.gnome-keyring.enable = true;
     printing = {
       enable = true;
@@ -36,8 +37,8 @@
         };
       };
       desktopManager = {
-        plasma5 = {
-          enable = false;
+        gnome = {
+          enable = true;
         };
       };
       layout = "";

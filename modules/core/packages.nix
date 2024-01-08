@@ -74,6 +74,7 @@
     anki-bin
     libimobiledevice
     ifuse
+    libreoffice-fresh
 
     # Programming
     (python3.withPackages (ps: with ps; [pandas matplotlib requests rich pyqt5 pygame]))
