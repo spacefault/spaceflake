@@ -50,7 +50,7 @@
     gimp-with-plugins
     obs-studio
     blender
-    davinci-resolve
+    # davinci-resolve
 
     # Customization
     adw-gtk3
