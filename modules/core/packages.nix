@@ -78,7 +78,7 @@
     libreoffice-fresh
 
     # Programming
-    (python3.withPackages (ps: with ps; [pandas matplotlib requests rich pyqt5 pygame]))
+    (python311.withPackages (ps: with ps; [yfinance pandas matplotlib requests rich pyqt5 pygame]))
     newt
     gcc
     nixpkgs-review
@@ -86,6 +86,7 @@
     libsForQt5.ksshaskpass
     pinentry
     gh
+    gnumake
   ];
 
   programs = {
