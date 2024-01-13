@@ -12,6 +12,7 @@
     usbmuxd.enable = true;
     fwupd.enable = true;
     gnome.gnome-keyring.enable = true;
+    tailscale.enable = true;
     printing = {
       enable = true;
       logLevel = "debug";

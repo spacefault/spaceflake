@@ -48,7 +48,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.devin = import ./home/home.nix;
+            home-manager.users.lily = import ./home/home.nix;
           }
           hyprland.nixosModules.default
           {
@@ -68,7 +68,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.devin = import ./home/home.nix;
+            home-manager.users.lily = import ./home/home.nix;
           }
           hyprland.nixosModules.default
           {

@@ -3,11 +3,12 @@
   pkgs,
   self,
   user,
+  lib,
   ...
 }: {
   home = {
-    username = "devin";
-    homeDirectory = "/home/devin";
+    username = "lily";
+    homeDirectory = lib.mkDefault "/home/lily";
     stateVersion = "23.05";
   };
 
