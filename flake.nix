@@ -43,7 +43,7 @@
           ./modules/core
           ./modules/gaming
           ./modules/nvidia
-          ./systems/desktop.nix
+          ./systems/desktop/desktop.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -63,7 +63,7 @@
         modules = [
           ./modules/core
           ./modules/gaming
-          ./systems/laptop.nix
+          ./systems/laptop/laptop.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
