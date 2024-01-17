@@ -36,7 +36,7 @@
             };
           };
           "image" = {
-            path = "/home/devin/Extra/nixos_dark.svg";
+            path = "/home/lily/waybar/nixos_dark.svg";
           };
           "privacy" = {
             icon-spacing = 4;
@@ -64,7 +64,7 @@
             format = " {}";
             tooltip = "true";
             interval = 3600;
-            exec = "/home/devin/Extra/waybar-wttr.py";
+            exec = "/home/lily/Extra/waybar-wttr.py";
             return-type = "json";
           };
           "hyprland/workspaces" = {
