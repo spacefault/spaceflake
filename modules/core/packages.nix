@@ -78,7 +78,6 @@
     libreoffice-fresh
 
     # Programming
-    (python311.withPackages (ps: with ps; [yfinance pandas matplotlib requests rich pyqt5 pygame]))
     newt
     gcc
     nixpkgs-review
