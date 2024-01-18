@@ -25,7 +25,6 @@
     wl-clipboard
     xdg-user-dirs
     eww-wayland
-    dunst
     gnome.nautilus
 
     # Internet
