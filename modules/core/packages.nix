@@ -4,6 +4,7 @@
   anyrun,
   watershot,
   input,
+  shadower,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -67,6 +68,7 @@
     cups-filters
     anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
     watershot.packages.${pkgs.system}.default
+    shadower.packages.${pkgs.system}.shadower
     element-desktop
     gnome.gnome-terminal
     anki-bin
