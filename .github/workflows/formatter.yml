@@ -36,9 +36,9 @@ jobs:
       - name: Run formatting check
         run: nix run nixpkgs#alejandra -- .
       - name: Commit changes
-        run: git commit -am "Formatting Update"
+        run: git diff --exit-code || git commit -am "Formatting Update"
       - name: Push changes to the new branch
-        run: git push origin formatting-update
+        run: git diff --exit-code || git push origin formatting-update
 
   create_pr:
     name: Create Pull Request
