@@ -3,7 +3,7 @@ name: Format Nix Files
 on: [push]
 
 jobs:
- build:
+ format:
    runs-on: ubuntu-latest
 
    steps:
@@ -22,8 +22,8 @@ jobs:
        if git diff --quiet; then
            echo "No changes made."
        else
-           git config --global user.email "your-email@example.com"
-           git config --global user.name "Your Name"
+           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+           git config --global user.name "github-actions[bot]"
            git commit -am "Apply nixpkgs-fmt"
            git push
        fi
