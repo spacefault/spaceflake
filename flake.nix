@@ -24,6 +24,9 @@
     shadower = {
       url = "github:n3oney/shadower";
     };
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+    };
   };
 
   outputs = {
@@ -34,6 +37,7 @@
     watershot,
     home-manager,
     shadower,
+    nix-gaming,
     ...
   } @ inputs: {
     nixosConfigurations = {
