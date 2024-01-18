@@ -1,58 +1,29 @@
-name: Formatting Check and PR
+name: Format Nix Files
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-  workflow_dispatch:
+on: [push]
 
 jobs:
+ build:
+   runs-on: ubuntu-latest
 
-  checks:
-    name: Check expressions
-    runs-on: ubuntu-latest
+   steps:
+   - name: Checkout code
+     uses: actions/checkout@v2
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Install Nix
-        uses: cachix/install-nix-action@v25
-        with:
-          install_url: https://nixos.org/nix/install
-          extra_nix_config: |
-            auto-optimise-store = true
-            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-            experimental-features = nix-command flakes
-      - name: Fetch latest changes
-        run: git pull origin main
-      - name: Configure Git
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email github-actions[bot]@users.noreply.github.com
-      - name: Create a new branch
-        run: |
-          git checkout -b formatting-update
-      - name: Run formatting check
-        run: nix run nixpkgs#alejandra -- .
-      - name: Commit changes
-        run: git diff --exit-code || git commit -am "Formatting Update"
-      - name: Push changes to the new branch
-        run: git diff --exit-code || git push origin formatting-update
+   - name: Setup Nix
+     uses: cachix/install-nix-action@v10
 
-  create_pr:
-    name: Create Pull Request
-    runs-on: ubuntu-latest
-    needs: checks
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Install GitHub CLI
-        run: |
-          wget https://github.com/cli/cli/releases/download/v2.40.0/gh_2.40.0_linux_amd64.deb
-          sudo dpkg -i gh_2.40.0_linux_amd64.deb
-          rm gh_2.40.0_linux_amd64.deb
-      - name: Create Pull Request
-        run: |
-          gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
-          gh pr create --base main --head formatting-update --title "Formatting Update" --body "This PR formats the files in the repository."
+   - name: Install alejandra
+     run: nix-env -iA nixpkgs.alejandra 
+
+   - name: Format Nix Files
+     run: |
+       alejandra -- .
+       if git diff --quiet; then
+           echo "No changes made."
+       else
+           git config --global user.email "your-email@example.com"
+           git config --global user.name "Your Name"
+           git commit -am "Apply nixpkgs-fmt"
+           git push
+       fi
