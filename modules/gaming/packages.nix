@@ -2,6 +2,7 @@
   config,
   pkgs,
   input,
+  nix-gaming,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -12,6 +13,8 @@
     godot_4
     piper
     discord
+    nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable
+    nix-gaming.packages.${pkgs.hostPlatform.system}.wine-discord-ipc-bridge
   ];
 
   programs = {
