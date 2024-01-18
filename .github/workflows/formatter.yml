@@ -3,7 +3,7 @@ name: Formatting Check & PR
 on: [push]
 
 jobs:
- init:
+ format:
    runs-on: ubuntu-latest
 
    steps:
@@ -20,8 +20,20 @@ jobs:
            echo "No changes made."
            exit 0
        else
+           git checkout -b formatting-update
            git config --global user.email "github-actions[bot]@users.noreply.github.com"
            git config --global user.name "github-actions[bot]"
-           git commit -am "Apply nixpkgs-fmt"
+           git commit -am "Formatting Update"
            git push
        fi
+
+   - name: Create Pull Request
+     uses: peter-evans/create-pull-request@v3
+     with:
+       token: ${{ secrets.GITHUB_TOKEN }}
+       branch: "formatting-update"
+       delete-branch: true
+       title: "Formatting Update"
+       body: "This PR formats the files in the repository."
+       labels: "auto-generated"
+     if: steps.fmt.outputs.changed == 'true'
