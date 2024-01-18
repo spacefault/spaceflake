@@ -15,7 +15,6 @@
     playerctl
     polkit
     slurp
-    swaylock-effects
     swww
     udiskie
     udisks
