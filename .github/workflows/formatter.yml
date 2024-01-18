@@ -13,7 +13,6 @@ jobs:
    - name: Setup Nix
      uses: DeterminateSystems/nix-installer-action@v9
 
- format: 
    - name: Format Nix Files
      run: |
        nix run nixpkgs#alejandra -- .
