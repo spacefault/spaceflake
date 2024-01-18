@@ -11,7 +11,6 @@
     # Hyprland Requirements
     grim
     gvfs
-    kitty
     libnotify
     playerctl
     polkit
