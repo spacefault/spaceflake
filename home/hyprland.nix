@@ -107,36 +107,37 @@ in {
         "float,title:^(fcitx5)(.*)$"
       ];
       bindm = [
-        "${mod}, mouse:272, movewindow" 
+        "${mod}, mouse:272, movewindow"
         "${mod}, mouse:273, resizewindow"
       ];
-      bind = [
-        "${mod}, RETURN, exec, alacritty"
-        "${mod}, SPACE, exec, anyrun"
-        "${mod}, E, exec, nautilus"
-        ", PRINT, exec, watershot -c | shadower | wl-copy"
-        "${mod}, L, exec, swaylock"
-        "${mod}, Y, exec, wlogout"
-        "${mod}, Q, killactive"
-        "${mod}, O, togglefloating"
-        "${mod}, P, pseudo"
-        "${mod}, S, togglesplit"
-        "${mod}, F, fullscreen"
-        "${mod}, left, movefocus, 1"
-        "${mod}, right, movefocus, r"
-        "${mod}, up, movefocus, u"
-        "${mod}, down, movefocus, d"
-        "${mod}, grave, togglespecialworkspace"
-        "SUPERSHIFT, grade, movetoworkspace, special"
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ", XF86AudioPlay, exec, playerctl play-pause"
-        ", XF86AudioPause, exec, playerctl play-pause"
-        ", XF86AudioNext, exec, playerctl next"
-        ", XF86AudioPrev, exec, playerctl previous"
-      ]
-      ++ workspaces;
+      bind =
+        [
+          "${mod}, RETURN, exec, alacritty"
+          "${mod}, SPACE, exec, anyrun"
+          "${mod}, E, exec, nautilus"
+          ", PRINT, exec, watershot -c | shadower | wl-copy"
+          "${mod}, L, exec, swaylock"
+          "${mod}, Y, exec, wlogout"
+          "${mod}, Q, killactive"
+          "${mod}, O, togglefloating"
+          "${mod}, P, pseudo"
+          "${mod}, S, togglesplit"
+          "${mod}, F, fullscreen"
+          "${mod}, left, movefocus, 1"
+          "${mod}, right, movefocus, r"
+          "${mod}, up, movefocus, u"
+          "${mod}, down, movefocus, d"
+          "${mod}, grave, togglespecialworkspace"
+          "SUPERSHIFT, grade, movetoworkspace, special"
+          ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+          ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+          ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+          ", XF86AudioPlay, exec, playerctl play-pause"
+          ", XF86AudioPause, exec, playerctl play-pause"
+          ", XF86AudioNext, exec, playerctl next"
+          ", XF86AudioPrev, exec, playerctl previous"
+        ]
+        ++ workspaces;
     };
   };
 }
