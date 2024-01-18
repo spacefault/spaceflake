@@ -24,5 +24,6 @@
     ./emacs.nix
     ./neovim.nix
     ./alacritty.nix
+    ./dunst.nix
   ];
 }
