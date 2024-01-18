@@ -53,9 +53,6 @@ in {
         kb_variant = "qwerty";
         kb_options = "compose:rctrl";
         follow_mouse = 1;
-        touchpad = {
-          natrual_scroll = false;
-        };
         sensitivity = 0;
       };
       decoration = {
@@ -109,6 +106,10 @@ in {
         "size 682,697,title:^(Friends)(.*)$"
         "float,title:^(fcitx5)(.*)$"
       ];
+      bindm = [
+        "${mod}, mouse:272, movewindow" 
+        "${mod}, mouse:273, resizewindow"
+      ];
       bind = [
         "${mod}, RETURN, exec, alacritty"
         "${mod}, SPACE, exec, anyrun"
@@ -121,16 +122,11 @@ in {
         "${mod}, P, pseudo"
         "${mod}, S, togglesplit"
         "${mod}, F, fullscreen"
-        "${mod}, SUPERSHIFT, F, fullscreen, 1"
         "${mod}, left, movefocus, 1"
         "${mod}, right, movefocus, r"
         "${mod}, up, movefocus, u"
         "${mod}, down, movefocus, d"
-        "${mod}, mouse:272, movewindow" 
-        "${mod}, mouse:273, resizewindow"
         "${mod}, grave, togglespecialworkspace"
-        "${mod}, mouse_down, workspace e+1"
-        "${mod}, mouse_up, workspace, e-1"
         "SUPERSHIFT, grade, movetoworkspace, special"
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
