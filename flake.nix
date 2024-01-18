@@ -57,11 +57,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.lily = import ./home/home.nix;
-          }
-          hyprland.nixosModules.default
-          {
-            programs.hyprland.enable = true;
-            programs.hyprland.xwayland.enable = true;
+            home-manager.extraSpecialArgs = {inherit inputs;};
           }
         ];
       };
@@ -77,11 +73,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.lily = import ./home/home.nix;
-          }
-          hyprland.nixosModules.default
-          {
-            programs.hyprland.enable = true;
-            programs.hyprland.xwayland.enable = true;
+            home-manager.extraSpecialArgs = {inherit inputs;};
           }
         ];
       };
