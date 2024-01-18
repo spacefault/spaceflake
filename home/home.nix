@@ -27,5 +27,6 @@
     ./dunst.nix
     ./swaylock.nix
     ./swayidle.nix
+    ./hyprland.nix
   ];
 }

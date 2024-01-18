@@ -34,13 +34,13 @@
         pkgs.xterm
       ];
       displayManager = {
-        gdm = {
-          enable = true;
+        sddm = {
+          enable = false;
         };
       };
       desktopManager = {
         gnome = {
-          enable = true;
+          enable = false;
         };
       };
       layout = "";
