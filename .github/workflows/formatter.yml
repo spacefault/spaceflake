@@ -11,7 +11,7 @@ jobs:
      uses: actions/checkout@v2
 
    - name: Setup Nix
-     uses: cachix/install-nix-action@v10
+     uses: DeterminateSystems/nix-installer-action@v9
 
    - name: Install alejandra
      run: nix-env -iA nixpkgs.alejandra 
@@ -21,6 +21,7 @@ jobs:
        alejandra -- .
        if git diff --quiet; then
            echo "No changes made."
+           exit 0
        else
            git config --global user.email "github-actions[bot]@users.noreply.github.com"
            git config --global user.name "github-actions[bot]"
