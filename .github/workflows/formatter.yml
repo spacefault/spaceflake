@@ -1,9 +1,9 @@
-name: Format Nix Files
+name: Formatting Check & PR
 
 on: [push]
 
 jobs:
- build:
+ format:
    runs-on: ubuntu-latest
 
    steps:
@@ -11,19 +11,29 @@ jobs:
      uses: actions/checkout@v2
 
    - name: Setup Nix
-     uses: cachix/install-nix-action@v10
-
-   - name: Install alejandra
-     run: nix-env -iA nixpkgs.alejandra 
+     uses: DeterminateSystems/nix-installer-action@v9
 
    - name: Format Nix Files
      run: |
-       alejandra -- .
+       nix run nixpkgs#alejandra -- .
        if git diff --quiet; then
            echo "No changes made."
+           exit 0
        else
-           git config --global user.email "your-email@example.com"
-           git config --global user.name "Your Name"
-           git commit -am "Apply nixpkgs-fmt"
+           git checkout -b formatting-update
+           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+           git config --global user.name "github-actions[bot]"
+           git commit -am "Formatting Update"
            git push
        fi
+
+   - name: Create Pull Request
+     uses: peter-evans/create-pull-request@v3
+     with:
+       token: ${{ secrets.GITHUB_TOKEN }}
+       branch: "formatting-update"
+       delete-branch: true
+       title: "Formatting Update"
+       body: "This PR formats the files in the repository."
+       labels: "auto-generated"
+     if: steps.fmt.outputs.changed == 'true'
