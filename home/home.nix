@@ -26,5 +26,6 @@
     ./alacritty.nix
     ./dunst.nix
     ./swaylock.nix
+    ./swayidle.nix
   ];
 }
