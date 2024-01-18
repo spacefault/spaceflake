@@ -1,9 +1,9 @@
-name: Format Nix Files
+name: Formatting Check & PR
 
 on: [push]
 
 jobs:
- format:
+ init:
    runs-on: ubuntu-latest
 
    steps:
@@ -13,12 +13,10 @@ jobs:
    - name: Setup Nix
      uses: DeterminateSystems/nix-installer-action@v9
 
-   - name: Install alejandra
-     run: nix-env -iA nixpkgs.alejandra 
-
+ format: 
    - name: Format Nix Files
      run: |
-       alejandra -- .
+       nix run nixpkgs#alejandra -- .
        if git diff --quiet; then
            echo "No changes made."
            exit 0
