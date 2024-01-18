@@ -23,5 +23,6 @@
     ./zsh.nix
     ./emacs.nix
     ./neovim.nix
+    ./alacritty.nix
   ];
 }
