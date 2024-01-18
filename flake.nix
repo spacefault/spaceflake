@@ -21,6 +21,9 @@
       url = "github:nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    shadower = {
+      url = "github:n3oney/shadower";
+    };
   };
 
   outputs = {
@@ -30,6 +33,7 @@
     anyrun,
     watershot,
     home-manager,
+    shadower,
     ...
   } @ inputs: {
     nixosConfigurations = {
