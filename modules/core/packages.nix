@@ -66,7 +66,6 @@
     networkmanagerapplet
     virt-manager
     cups-filters
-    anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
     watershot.packages.${pkgs.system}.default
     shadower.packages.${pkgs.system}.shadower
     element-desktop
