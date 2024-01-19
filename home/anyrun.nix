@@ -9,6 +9,16 @@
   programs.anyrun = {
     enable = true;
     config = {
+      plugins = with inputs.anyrun.packages.${pkgs.system}; [
+        applications
+        rink
+        shell
+        translate
+        symbols
+        stdin
+        randr
+        dictionary
+      ];
       width = { absolute = 800; };
       x = { fraction = 0.5; };
       y = { fraction = 0.5; };
@@ -17,7 +27,7 @@
       ignoreExclusiveZones = false;
       layer = "overlay";
       hidePluginInfo = true;
-      closeOnClick = false;
+      closeOnClick = true;
       showResultsImmediately = true;
       maxEntries = null;
     };
