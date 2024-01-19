@@ -15,10 +15,14 @@
     discord
     nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable
     nix-gaming.packages.${pkgs.hostPlatform.system}.wine-discord-ipc-bridge
+    nix-gaming.packages.${pkgs.hostPlatform.system}.wine-osu
   ];
 
   programs = {
     steam = {
+      enable = true;
+    };
+    gamemode = {
       enable = true;
     };
   };

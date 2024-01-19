@@ -86,10 +86,10 @@
   ];
 
   programs = {
-    zsh = {
-      enable = true;
-    };
     seahorse = {
+      enable = false;
+    };
+    zsh = {
       enable = true;
     };
     dconf = {

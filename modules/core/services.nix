@@ -35,12 +35,12 @@
       ];
       displayManager = {
         sddm = {
-          enable = false;
+          enable = true;
         };
       };
       desktopManager = {
-        gnome = {
-          enable = false;
+        plasma5 = {
+          enable = true;
         };
       };
       layout = "";
