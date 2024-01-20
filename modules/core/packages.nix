@@ -75,6 +75,7 @@
     libreoffice-fresh
 
     # Programming
+    (python311.withPackages (ps: with ps; [requests]))
     newt
     gcc
     nixpkgs-review
