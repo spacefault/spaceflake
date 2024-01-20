@@ -4,7 +4,18 @@
   self,
   user,
   ...
-}: {
+}: let
+ binaryImage = builtins.path {
+    path = ./extra/nixos_dark.svg;
+    name = "nixos_dark.svg";
+ };
+in 
+let
+ weatherScript = builtins.path {
+   path = ./extra/waybar-wttr.py;
+   name = "waybar_wttr.py";
+ };
+in {
   programs = {
     waybar = {
       enable = true;
@@ -36,7 +47,7 @@
             };
           };
           "image" = {
-            path = "/home/lily/waybar/nixos_dark.svg";
+            path = binaryImage;
           };
           "privacy" = {
             icon-spacing = 4;
@@ -64,7 +75,7 @@
             format = " {}";
             tooltip = "true";
             interval = 3600;
-            exec = "/home/lily/Extra/waybar-wttr.py";
+            exec = weatherScript;
             return-type = "json";
           };
           "hyprland/workspaces" = {
