@@ -32,5 +32,6 @@
     ./hyprland.nix
     ./anyrun.nix
     ./vscode.nix
+    ./gtk.nix
   ];
 }
