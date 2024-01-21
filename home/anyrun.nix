@@ -1,10 +1,11 @@
-{ config
-, pkgs
-, self
-, user
-, inputs
-, anyrun
-, ...
+{
+  config,
+  pkgs,
+  self,
+  user,
+  inputs,
+  anyrun,
+  ...
 }: {
   programs.anyrun = {
     enable = true;
@@ -19,10 +20,10 @@
         randr
         dictionary
       ];
-      width = { absolute = 800; };
-      x = { fraction = 0.5; };
-      y = { fraction = 0.5; };
-      height = { fraction = 0.3; };
+      width = {absolute = 800;};
+      x = {fraction = 0.5;};
+      y = {fraction = 0.5;};
+      height = {fraction = 0.3;};
       hideIcons = false;
       ignoreExclusiveZones = false;
       layer = "overlay";

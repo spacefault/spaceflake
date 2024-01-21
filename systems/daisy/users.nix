@@ -17,6 +17,6 @@
     ];
   };
   users = {
-    motd = "welcome to daisy!"; 
+    motd = "welcome to daisy!";
   };
 }

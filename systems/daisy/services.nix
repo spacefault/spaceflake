@@ -8,7 +8,7 @@
     enable = true;
     flake = "github:spacefault/spaceflake#daisy";
     dates = "minutely";
-    flags = [ "--option" "tarball-ttl" "0" ];
+    flags = ["--option" "tarball-ttl" "0"];
   };
   services = {
     devmon.enable = true;
