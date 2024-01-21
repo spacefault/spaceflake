@@ -37,4 +37,3 @@ jobs:
        title: "Formatting Update"
        body: "This PR formats the files in the repository."
        labels: "auto-generated"
-     if: steps.fmt.outputs.changed == 'true'
