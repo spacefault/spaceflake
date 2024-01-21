@@ -1,5 +1,5 @@
 <h3 align="center"><img src="/.github/spaceflakelogo2.png" alt="logo" height="100px"></h3>
-<p align="center">my personal NixOS flake configuration!</p>
+<p align="center">my personal NixOS flake configuration & homelab!</p>
 <hr class="solid">
 
 # what's this?
