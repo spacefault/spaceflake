@@ -1,6 +1,6 @@
 name: Formatting Check & PR
 
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
  format:
