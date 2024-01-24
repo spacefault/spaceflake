@@ -101,7 +101,7 @@ in {
               "warning" = 20;
               "critical" = 10;
             };
-            format = "{icon} {capacity}%";
+            format = " {icon} {capacity}%";
             format-icons = ["󰁻" "󰁽" "󰁿" "󰂁" "󰁹"];
           };
           "clock" = {
