@@ -18,15 +18,15 @@
   };
   home.pointerCursor = {
     name = "macOS-Monterey";
-    size = 22;
+    size = 24;
     package = pkgs.apple-cursor;
     gtk.enable = true;
   }; 
   gtk = {
     enable = true;
-    font = {
-      name = "Torus";
-    };
+    #font = {
+    #  name = "Torus";
+    #};
     theme = {
       name = "Catppuccin-Mocha-Compact-Pink-Dark";
       package = pkgs.catppuccin-gtk.override {

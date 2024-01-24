@@ -8,7 +8,7 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-gtk;
-    extraPackages = epkgs: [epkgs.magit epkgs.catppuccin-theme];
+    extraPackages = epkgs: [epkgs.magit epkgs.catppuccin-theme epkgs.evil];
     extraConfig = ''
       (tool-bar-mode -1)
       (scroll-bar-mode -1)
