@@ -14,9 +14,15 @@ in let
     path = ./extra/waybar-wttr.py;
     name = "waybar_wttr.py";
   };
+in let
+  cssFile = builtins.path { 
+    path = ./extra/waybarstyle.css;
+    name = "waybarstyle.css";
+  };
 in {
   programs = {
     waybar = {
+    style = cssFile;
       enable = true;
       systemd = {
         enable = true;
@@ -25,15 +31,15 @@ in {
         mainBar = {
           layer = "top";
           position = "top";
-          height = 40;
+          height = 14;
           margin-top = 5;
           margin-left = 5;
           margin-right = 5;
-          modules-left = ["image" "hyprland/workspaces" "privacy" "tray"];
+          modules-left = ["custom/icon" "hyprland/workspaces" "privacy" "tray"];
           modules-center = ["clock" "custom/weather" "mpris"];
-          modules-right = ["hyprland/language" "custom/notification" "wireplumber" "battery" "network" "custom/power"];
+          modules-right = ["hyprland/language" "custom/notification" "wireplumber" "battery" "network" ];
           "hyprland/language" = {
-            format = "{}";
+            format = "󰌌   {}";
           };
           "mpris" = {
             format = "{player_icon} {title} - {artist}";
@@ -45,8 +51,9 @@ in {
               "paused" = "⏸";
             };
           };
-          "image" = {
-            path = binaryImage;
+          "custom/icon" = {
+            exec = "echo '  '";
+            format = "{}";
           };
           "privacy" = {
             icon-spacing = 4;
@@ -123,130 +130,7 @@ in {
             on-click = "wlogout";
           };
         };
-      };
-      style = ''
-             @define-color bg0   #211a17;
-             @define-color bg1   #362f2b;
-             @define-color tip   #221e1b;
-             @define-color accent #e79cbf;
-             @define-color text #ffffff;
-
-             * {
-               border: none;
-               border-radius: 0;
-               font-family: Torus SemiBold;
-               font-weight: bold;
-               font-size: 14px;
-               min-height: 0px;
-             }
-
-             #waybar {
-               padding: 20px;
-               padding-left: 10px;
-               padding-right: 10px;
-               border-radius: 10px;
-               background-color: rgba(30,33,40,0.7);
-             }
-
-             #window {
-               background: transparent;
-               color: #cdd6f4;
-               margin-top: 6px;
-               padding-left: 10px;
-               padding-right: 10px;
-               border-radius: 10px;
-             }
-
-             #workspaces button {
-               padding: 5px;
-               color: #ffffff;
-               margin: 3px;
-               border-radius: 10px;
-             }
-
-             #workspaces button.active {
-               background: @accent;
-               color: @bg0;
-             }
-
-             #workspaces button:hover {
-               background: @bg0;
-               color: @bg1;
-             }
-
-             #tooltip {
-               background: @tip;
-               border-radius: 10px;
-               border: 3px solid @bg1;
-             }
-
-             #language, #clock, #battery, #wireplumber, #network, #tray, #custom-weather, #custom-notification, #workspaces, #mpris, #privacy, #privacy-item {
-               background: @bg1;
-               padding: 0px 10px;
-               margin: 7px 0px;
-               border-radius: 5px;
-             }
-
-             #image, #custom-power {
-               background: @accent;
-               color: @bg1;
-               padding-left: 10px;
-               padding-right: 10px;
-               margin: 7px 0px;
-               border-radius: 5px;
-               font-size: 18px;
-             }
-
-             #tray {
-        margin-left: 5px;
-        padding-left: 10px;
-        padding-right: 10px;
-        transition: none;
-             }
-
-             #workspaces {
-               background: @bg1;
-               padding-right: 5px;
-               padding-left: 5px;
-               margin-left: 5px;
-             }
-
-             #clock {
-               color: @text;
-               border-radius: 5px;
-               margin-left: 5px;
-             }
-
-             #mpris {
-               color: @text;
-               border-radius: 5px;
-               margin-left: 5px;
-             }
-
-             #custom-weather {
-               color: @text;
-               border-radius: 5px;
-               margin-left: 5px;
-             }
-
-             #image {
-               margin-left: 7px;
-             }
-
-             #custom-power {
-               margin-right: 7px;
-             }
-
-             #network {
-               color: @text;
-               margin-right: 5px;
-             }
-
-             #language, #workspaces, #custom-notification, #wireplumber, #battery, #mpris, #privacy, #privacy-item {
-               color: @text;
-               margin-right: 5px;
-             }
-      '';
-    };
   };
+};
+};
 }
