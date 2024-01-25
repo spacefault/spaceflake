@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  serverIP = "192.168.1.175";
+  serverIP = "127.0.0.1";
 in
 {
   virtualisation.oci-containers = {
