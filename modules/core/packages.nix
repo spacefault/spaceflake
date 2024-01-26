@@ -73,6 +73,7 @@
     libimobiledevice
     ifuse
     libreoffice-fresh
+    bootstrap-studio
 
     # Programming
     (python311.withPackages (ps: with ps; [requests]))
