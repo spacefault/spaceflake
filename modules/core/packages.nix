@@ -26,6 +26,7 @@
     xdg-user-dirs
     eww-wayland
     gnome.nautilus
+    swaylock-effects
 
     # Internet
     firefox
