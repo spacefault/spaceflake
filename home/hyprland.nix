@@ -21,6 +21,24 @@
       ]
     )
     10);
+in let
+swaylockScript = pkgs.writeShellScript "swaylockScript" ''
+  ${pkgs.swaylock-effects}/bin/swaylock \
+	--screenshots \
+	--clock \
+	--indicator \
+	--indicator-radius 100 \
+	--indicator-thickness 7 \
+	--effect-blur 7x5 \
+	--effect-vignette 0.5:0.5 \
+	--ring-color bb00cc \
+	--key-hl-color 880033 \
+	--line-color 00000000 \
+	--inside-color 00000088 \
+	--separator-color 00000000 \
+	--grace 2 \
+	--fade-in 0.2
+  '';
 in {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -116,7 +134,7 @@ in {
           "${mod}, SPACE, exec, anyrun"
           "${mod}, E, exec, nautilus"
           ", PRINT, exec, watershot -c | shadower | wl-copy"
-          "${mod}, L, exec, swaylock"
+          "${mod}, L, exec, ${swaylockScript.outPath}"
           "${mod}, Y, exec, wlogout"
           "${mod}, Q, killactive"
           "${mod}, O, togglefloating"
