@@ -21,7 +21,7 @@
 
   imports = [
     inputs.anyrun.homeManagerModules.default
-    ./waybar.nix
+    #./waybar.nix
     ./zsh.nix
     ./emacs.nix
     ./neovim.nix
@@ -29,7 +29,7 @@
     ./dunst.nix
     # ./swaylock.nix
     ./swayidle.nix
-    ./hyprland.nix
+    #./hyprland.nix
     ./anyrun.nix
     ./vscode.nix
     ./gtk.nix

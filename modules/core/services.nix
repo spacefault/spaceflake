@@ -40,7 +40,7 @@
       };
       desktopManager = {
         gnome = {
-          enable = false;
+          enable = true;
         };
       };
       layout = "";

@@ -27,6 +27,7 @@
     eww-wayland
     gnome.nautilus
     swaylock-effects
+    cliphist
 
     # Internet
     firefox
@@ -90,7 +91,7 @@
 
   programs = {
     seahorse = {
-      enable = false;
+      enable = true;
     };
     zsh = {
       enable = true;
