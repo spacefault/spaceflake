@@ -8,7 +8,12 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-gtk;
-    extraPackages = epkgs: [epkgs.magit epkgs.catppuccin-theme epkgs.evil];
+    extraPackages = epkgs: [
+      epkgs.magit
+      epkgs.catppuccin-theme
+      epkgs.evil
+      epkgs.nix-mode
+    ];
     extraConfig = ''
       (tool-bar-mode -1)
       (scroll-bar-mode -1)
@@ -36,6 +41,8 @@
 	    (princ contents))))))
   (with-current-buffer "*On this day*"
     (org-mode)))
+    (require 'nix-mode)
+(add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
     '';
   };
 }
