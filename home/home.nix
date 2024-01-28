@@ -33,5 +33,6 @@
     ./anyrun.nix
     ./vscode.nix
     ./gtk.nix
+    ./tmux.nix
   ];
 }
