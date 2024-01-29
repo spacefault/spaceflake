@@ -66,7 +66,6 @@
         specialArgs = inputs;
         modules = [
           ./modules/core
-          ./modules/gaming
           ./systems/laptop/laptop.nix
           home-manager.nixosModules.home-manager
           {
