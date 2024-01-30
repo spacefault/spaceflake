@@ -17,6 +17,9 @@
     extraConfig = ''
       (tool-bar-mode -1)
       (scroll-bar-mode -1)
+      (column-number-mode)
+      (display-time-mode)
+      (display-battery-mode)
       (setq catppuccin-flavor 'mocha)
       (load-theme 'catppuccin :no-confirm)
 (setq org-capture-templates
