@@ -16,7 +16,6 @@
     openssh = {
       enable = true;
       settings.PasswordAuthentication = false;
-      settings.KbdInteractiveAuthentication = true;
       ports = [22];
     };
     fail2ban = {
