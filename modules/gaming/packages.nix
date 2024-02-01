@@ -13,9 +13,9 @@
     godot_4
     piper
     discord
-    nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable
-    nix-gaming.packages.${pkgs.hostPlatform.system}.wine-discord-ipc-bridge
-    nix-gaming.packages.${pkgs.hostPlatform.system}.wine-osu
+#    nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable
+#    nix-gaming.packages.${pkgs.hostPlatform.system}.wine-discord-ipc-bridge
+#    nix-gaming.packages.${pkgs.hostPlatform.system}.wine-osu
   ];
 
   programs = {
