@@ -27,6 +27,9 @@
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
     };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote";
+    };
   };
 
   outputs = {
@@ -38,6 +41,7 @@
     home-manager,
     shadower,
     nix-gaming,
+    lanzaboote,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -75,6 +79,7 @@
             home-manager.users.lily = import ./home/home.nix;
             home-manager.extraSpecialArgs = {inherit inputs;};
           }
+          lanzaboote.nixosModules.lanzaboote
         ];
       };
       ## servers:
