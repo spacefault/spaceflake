@@ -11,6 +11,7 @@
     prismlauncher
     ckan
     godot_4
+    unityhub
     piper
     discord
 #    nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable
