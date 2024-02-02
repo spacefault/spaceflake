@@ -63,6 +63,7 @@
             home-manager.users.lily = import ./home/home.nix;
             home-manager.extraSpecialArgs = {inherit inputs;};
           }
+          lanzaboote.nixosModules.lanzaboote
         ];
       };
       "cherry" = nixpkgs.lib.nixosSystem {
