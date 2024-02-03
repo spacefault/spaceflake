@@ -1,11 +1,10 @@
-{
-  config,
-  pkgs,
-  self,
-  user,
-  lib,
-  inputs,
-  ...
+{ config
+, pkgs
+, self
+, user
+, lib
+, inputs
+, ...
 }: {
   home = {
     username = "lily";
@@ -30,6 +29,7 @@
     # ./swaylock.nix
     ./swayidle.nix
     #./hyprland.nix
+    ./spicetify.nix
     ./anyrun.nix
     ./vscode.nix
     ./gtk.nix
