@@ -30,6 +30,9 @@
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
     };
+    spicetify-nix = {
+      url = "github:the-argus/spicetify-nix";
+    };
   };
 
   outputs = {
