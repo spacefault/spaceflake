@@ -48,7 +48,9 @@
     # Creative
     gimp-with-plugins
     obs-studio
-    blender
+    (blender.override {
+      cudaSupport = true;
+    })
     # davinci-resolve
 
     # Customization
@@ -87,6 +89,7 @@
     pinentry
     gh
     gnumake
+    jetbrains.idea-community-bin
   ];
 
   programs = {
