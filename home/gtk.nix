@@ -1,4 +1,3 @@
-
 {pkgs, ...}: {
   home.packages = with pkgs; [
     dconf
@@ -21,7 +20,7 @@
     size = 24;
     package = pkgs.apple-cursor;
     gtk.enable = true;
-  }; 
+  };
   gtk = {
     enable = true;
     #font = {

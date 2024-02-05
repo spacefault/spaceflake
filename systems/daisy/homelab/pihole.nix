@@ -1,9 +1,11 @@
-{ config, pkgs, lib, ... }:
-
-let
-  serverIP = "127.0.0.1";
-in
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
+  serverIP = "127.0.0.1";
+in {
   virtualisation.oci-containers = {
     backend = "docker";
     containers.pihole = {

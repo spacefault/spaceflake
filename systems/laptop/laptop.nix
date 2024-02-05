@@ -17,14 +17,14 @@
   };
 
   boot.initrd.luks.devices = {
-      root = {
-        # Use https://nixos.wiki/wiki/Full_Disk_Encryption
-        device = "/dev/disk/by-uuid/3e0d75e7-5c4b-44be-96e2-2532b00682b3";
-        preLVM = true;
-      };
+    root = {
+      # Use https://nixos.wiki/wiki/Full_Disk_Encryption
+      device = "/dev/disk/by-uuid/3e0d75e7-5c4b-44be-96e2-2532b00682b3";
+      preLVM = true;
+    };
   };
 
-  boot.supportedFilesystems = [ "btrfs" ];
+  boot.supportedFilesystems = ["btrfs"];
   hardware.enableAllFirmware = true;
 
   # env variables
