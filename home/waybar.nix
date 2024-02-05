@@ -15,14 +15,14 @@ in let
     name = "waybar_wttr.py";
   };
 in let
-  cssFile = builtins.path { 
+  cssFile = builtins.path {
     path = ./extra/waybarstyle.css;
     name = "waybarstyle.css";
   };
 in {
   programs = {
     waybar = {
-    style = cssFile;
+      style = cssFile;
       enable = true;
       systemd = {
         enable = true;
@@ -37,7 +37,7 @@ in {
           margin-right = 5;
           modules-left = ["custom/icon" "hyprland/workspaces" "privacy" "tray"];
           modules-center = ["clock" "custom/weather" "mpris"];
-          modules-right = ["hyprland/language" "custom/notification" "wireplumber" "battery" "network" ];
+          modules-right = ["hyprland/language" "custom/notification" "wireplumber" "battery" "network"];
           "hyprland/language" = {
             format = "󰌌   {}";
           };
@@ -130,7 +130,7 @@ in {
             on-click = "wlogout";
           };
         };
+      };
+    };
   };
-};
-};
 }

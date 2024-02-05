@@ -1,10 +1,11 @@
-{ config
-, pkgs
-, self
-, user
-, lib
-, inputs
-, ...
+{
+  config,
+  pkgs,
+  self,
+  user,
+  lib,
+  inputs,
+  ...
 }: {
   home = {
     username = "lily";
