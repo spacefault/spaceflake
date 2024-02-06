@@ -43,8 +43,8 @@
           enable = true;
         };
       };
-      layout = "";
-      xkbVariant = "";
+      xkb.layout = "";
+      xkb.variant = "";
     };
     pipewire = {
       enable = true;
