@@ -14,6 +14,7 @@
     unityhub
     piper
     discord
+    celeste64
     #    nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable
     #    nix-gaming.packages.${pkgs.hostPlatform.system}.wine-discord-ipc-bridge
     #    nix-gaming.packages.${pkgs.hostPlatform.system}.wine-osu
