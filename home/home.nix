@@ -28,12 +28,12 @@
     ./alacritty.nix
     ./dunst.nix
     # ./swaylock.nix
-    ./swayidle.nix
+#    ./swayidle.nix
     #./hyprland.nix
     ./spicetify.nix
     ./anyrun.nix
     ./vscode.nix
-    ./gtk.nix
+#    ./gtk.nix
     ./tmux.nix
   ];
 }
