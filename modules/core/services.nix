@@ -34,12 +34,12 @@
         pkgs.xterm
       ];
       displayManager = {
-        gdm = {
+        sddm = {
           enable = true;
         };
       };
       desktopManager = {
-        gnome = {
+        plasma5 = {
           enable = true;
         };
       };
@@ -55,4 +55,8 @@
       wireplumber.enable = true;
     };
   };
+  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+    plasma-browser-integration
+    konsole
+  ];
 }
