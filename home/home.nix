@@ -21,15 +21,15 @@
 
   imports = [
     inputs.anyrun.homeManagerModules.default
-    ./waybar.nix
+    #./waybar.nix
     ./zsh.nix
     ./emacs.nix
     ./neovim.nix
     ./alacritty.nix
-    ./dunst.nix
-    ./swaylock.nix
-    ./swayidle.nix
-    ./hyprland.nix
+    #./dunst.nix
+    #./swaylock.nix
+    #./swayidle.nix
+    #./hyprland.nix
     ./spicetify.nix
     ./anyrun.nix
     ./vscode.nix

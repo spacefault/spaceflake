@@ -3,7 +3,7 @@
   pkgs,
   anyrun,
   watershot,
-  input,
+  inputs,
   shadower,
   ...
 }: {
@@ -69,8 +69,8 @@
     networkmanagerapplet
     virt-manager
     cups-filters
-    watershot.packages.${pkgs.system}.default
-    shadower.packages.${pkgs.system}.shadower
+    inputs.watershot.packages.${pkgs.system}.default
+    inputs.shadower.packages.${pkgs.system}.shadower
     element-desktop
     gnome.gnome-terminal
     anki-bin

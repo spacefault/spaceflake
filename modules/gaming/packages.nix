@@ -1,7 +1,7 @@
 {
   config,
   pkgs,
-  input,
+  inputs,
   nix-gaming,
   ...
 }: {
@@ -15,9 +15,9 @@
     piper
     discord
     celeste64
-    #    nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable
-    #    nix-gaming.packages.${pkgs.hostPlatform.system}.wine-discord-ipc-bridge
-    #    nix-gaming.packages.${pkgs.hostPlatform.system}.wine-osu
+    inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable
+    inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.wine-discord-ipc-bridge
+    inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.wine-osu
   ];
 
   programs = {

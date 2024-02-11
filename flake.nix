@@ -54,7 +54,7 @@
       #   sudo nixos-rebuild switch --flake .#nixos-test
       "blueberry" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = inputs;
+        specialArgs = {inherit inputs;};
         modules = [
           ./modules/core
           ./modules/gaming
@@ -72,7 +72,7 @@
       };
       "cherry" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = inputs;
+        specialArgs = {inherit inputs;};
         modules = [
           ./modules/core
           ./modules/gaming
@@ -90,7 +90,7 @@
       ## servers:
       "daisy" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = inputs;
+        specialArgs = {inherit inputs;};
         modules = [
           ./systems/daisy
           home-manager.nixosModules.home-manager
