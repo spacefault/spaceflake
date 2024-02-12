@@ -33,7 +33,7 @@
     ./spicetify.nix
     ./anyrun.nix
     ./vscode.nix
-    ./gtk.nix
+    # ./gtk.nix
     ./tmux.nix
   ];
 }
