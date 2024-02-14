@@ -133,7 +133,7 @@ in {
           "${mod}, RETURN, exec, alacritty"
           "${mod}, SPACE, exec, anyrun"
           "${mod}, E, exec, nautilus"
-          ", PRINT, exec, watershot -c | shadower | wl-copy"
+          ", PRINT, exec, watershot -s | shadower -o - | wl-copy"
           "${mod}, L, exec, ${swaylockScript.outPath}"
           "${mod}, Y, exec, wlogout"
           "${mod}, Q, killactive"
