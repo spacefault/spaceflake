@@ -8,7 +8,7 @@
     enable = true;
     settings = {
       window = {
-        opacity = 0.9;
+        opacity = 0.8;
       };
       shell = {
         program = "/run/current-system/sw/bin/zsh";
