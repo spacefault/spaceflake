@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   powerManagement = {
     cpuFreqGovernor = "performance";
   };

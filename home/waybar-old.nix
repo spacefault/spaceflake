@@ -1,6 +1,4 @@
-{
-  ...
-}: let
+{...}: let
   binaryImage = builtins.path {
     path = ./extra/nixos_dark.svg;
     name = "nixos_dark.svg";

@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}: {
+{config, ...}: {
   # nvidia drivers
   hardware.opengl = {
     enable = true;

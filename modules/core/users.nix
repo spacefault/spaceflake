@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   users.users.lily = {
     isNormalUser = true;
     description = "lily";

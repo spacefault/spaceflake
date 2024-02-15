@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   users.users.daisyadmin = {
     isNormalUser = true;
     description = "sysadmin";

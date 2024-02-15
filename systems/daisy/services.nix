@@ -1,6 +1,4 @@
-{
-  ...
-}: {
+{...}: {
   system.autoUpgrade = {
     enable = true;
     flake = "github:spacefault/spaceflake#daisy";

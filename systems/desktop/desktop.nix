@@ -1,7 +1,5 @@
 # desktop specific nixos options
-{
-  ...
-}: {
+{...}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
