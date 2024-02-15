@@ -1,11 +1,6 @@
 {
-  config,
   pkgs,
-  self,
-  user,
   inputs,
-  lib,
-  wayland,
   ...
 }: let
   mod = "SUPER";

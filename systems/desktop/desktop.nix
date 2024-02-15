@@ -1,7 +1,5 @@
 # desktop specific nixos options
 {
-  config,
-  pkgs,
   ...
 }: {
   imports = [

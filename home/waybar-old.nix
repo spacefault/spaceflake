@@ -1,8 +1,4 @@
 {
-  config,
-  pkgs,
-  self,
-  user,
   ...
 }: let
   binaryImage = builtins.path {

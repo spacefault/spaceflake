@@ -1,4 +1,4 @@
-{config, ...}: {
+{...}: {
   imports = [
     ./homepage.nix
     ./pihole.nix

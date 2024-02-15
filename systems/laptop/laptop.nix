@@ -1,7 +1,5 @@
 # laptop specific nixos options
 {
-  config,
-  pkgs,
   ...
 }: {
   imports = [

@@ -1,10 +1,6 @@
 {
-  config,
   pkgs,
-  anyrun,
-  watershot,
   inputs,
-  shadower,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;

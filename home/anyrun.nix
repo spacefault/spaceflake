@@ -1,10 +1,6 @@
 {
-  config,
   pkgs,
-  self,
-  user,
   inputs,
-  anyrun,
   ...
 }: {
   programs.anyrun = {
