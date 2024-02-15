@@ -35,11 +35,29 @@ in {
           margin-top = 5;
           margin-left = 5;
           margin-right = 5;
-          modules-left = ["custom/icon" "hyprland/workspaces" "privacy" "tray"];
-          modules-center = ["clock" "custom/weather" "mpris"];
-          modules-right = ["hyprland/language" "custom/notification" "wireplumber" "battery" "network"];
+          modules-left = ["custom/icon" "hyprland/workspaces" "hyprland/window" "privacy"];
+          modules-center = [];
+          modules-right = ["tray" "custom/weather" "custom/kernel" "cpu" "memory" "custom/notification" "wireplumber" "battery" "network" "hyprland/language" "clock" ];
+          "memory" = {
+            interval = 10;
+            format = "  {}%";
+            max-length = 10;
+          };
+          "cpu" = {
+            interval = 10;
+            format = "  {}%";
+            max-length = 10;
+          };
+          "custom/kernel" = {
+            format = "󰣐  {}";
+            exec = "uname -r";
+          };
           "hyprland/language" = {
             format = "󰌌   {}";
+            format-en = "en, US";
+          };
+          "hyprland/window" = {
+            format = "{}";
           };
           "mpris" = {
             format = "{player_icon} {title} - {artist}";
@@ -105,7 +123,8 @@ in {
             format-icons = ["󰁻" "󰁽" "󰁿" "󰂁" "󰁹"];
           };
           "clock" = {
-            format = "{:   %I:%M %p     %Y-%m-%d}";
+            format = "{:   %I:%M %p}";
+            format-alt = "{:   %Y-%m-%d}";
             tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           };
           "network" = {
