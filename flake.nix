@@ -21,9 +21,6 @@
       url = "github:nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    shadower = {
-      url = "github:n3oney/shadower";
-    };
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
     };
@@ -42,7 +39,6 @@
     anyrun,
     watershot,
     home-manager,
-    shadower,
     nix-gaming,
     lanzaboote,
     ...

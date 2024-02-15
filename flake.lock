@@ -139,7 +139,7 @@
     },
     "fenix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_6",
+        "nixpkgs": "nixpkgs_5",
         "rust-analyzer-src": "rust-analyzer-src"
       },
       "locked": {
@@ -500,27 +500,6 @@
         "type": "github"
       }
     },
-    "naersk": {
-      "inputs": {
-        "nixpkgs": [
-          "shadower",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1679567394,
-        "narHash": "sha256-ZvLuzPeARDLiQUt6zSZFGOs+HZmE+3g4QURc8mkBsfM=",
-        "owner": "nmattia",
-        "repo": "naersk",
-        "rev": "88cd22380154a2c36799fe8098888f0f59861a15",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nmattia",
-        "repo": "naersk",
-        "type": "github"
-      }
-    },
     "nix-gaming": {
       "inputs": {
         "flake-parts": "flake-parts_3",
@@ -656,22 +635,6 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1682809678,
-        "narHash": "sha256-jqR8t82mWotOSgnWZvr6xXCO/tc3fCPTLMPvI7Jo5rA=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "3dcff817eebb7e4afc4e9eae0ce6f722f4d9e399",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_5": {
-      "locked": {
         "lastModified": 1686020360,
         "narHash": "sha256-Wee7lIlZ6DIZHHLiNxU5KdYZQl0iprENXa/czzI6Cj4=",
         "owner": "NixOS",
@@ -686,7 +649,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_6": {
+    "nixpkgs_5": {
       "locked": {
         "lastModified": 1677063315,
         "narHash": "sha256-qiB4ajTeAOVnVSAwCNEEkoybrAlA+cpeiBxLobHndE8=",
@@ -863,7 +826,6 @@
         "lanzaboote": "lanzaboote",
         "nix-gaming": "nix-gaming",
         "nixpkgs": "nixpkgs_3",
-        "shadower": "shadower",
         "spicetify-nix": "spicetify-nix",
         "watershot": "watershot"
       }
@@ -941,29 +903,10 @@
         "type": "github"
       }
     },
-    "shadower": {
-      "inputs": {
-        "naersk": "naersk",
-        "nixpkgs": "nixpkgs_4"
-      },
-      "locked": {
-        "lastModified": 1707695303,
-        "narHash": "sha256-Afd0kQ2meBZZc+2HfvnUTQlO4UqnA0dzF/g5L9pttc0=",
-        "owner": "n3oney",
-        "repo": "shadower",
-        "rev": "2bbd183476524f0bc760d8119edd7aaab312f60d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "n3oney",
-        "repo": "shadower",
-        "type": "github"
-      }
-    },
     "spicetify-nix": {
       "inputs": {
         "flake-utils": "flake-utils_2",
-        "nixpkgs": "nixpkgs_5"
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1704167711,
