@@ -1,8 +1,5 @@
 {
-  config,
   pkgs,
-  self,
-  user,
   ...
 }: {
   programs.emacs = {

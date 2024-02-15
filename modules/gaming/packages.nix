@@ -1,8 +1,6 @@
 {
-  config,
   pkgs,
   inputs,
-  nix-gaming,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;

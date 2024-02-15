@@ -1,15 +1,6 @@
 {
-  config,
-  pkgs,
-  self,
-  user,
   ...
-}: let
-  binaryImage = builtins.path {
-    path = ./extra/nixos_dark.svg;
-    name = "nixos_dark.svg";
-  };
-in let
+}:  let
   weatherScript = builtins.path {
     path = ./extra/waybar-wttr.py;
     name = "waybar_wttr.py";
