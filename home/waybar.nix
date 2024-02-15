@@ -37,7 +37,7 @@ in {
           margin-right = 5;
           modules-left = ["custom/icon" "hyprland/workspaces" "hyprland/window" "privacy"];
           modules-center = [];
-          modules-right = ["tray" "custom/weather" "custom/kernel" "cpu" "memory" "custom/notification" "wireplumber" "battery" "network" "hyprland/language" "clock" ];
+          modules-right = ["tray" "custom/weather" "custom/kernel" "cpu" "memory" "custom/notification" "wireplumber" "battery" "network" "hyprland/language" "clock"];
           "memory" = {
             interval = 10;
             format = "  {}%";
