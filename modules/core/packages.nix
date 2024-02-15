@@ -70,7 +70,6 @@
     virt-manager
     cups-filters
     inputs.watershot.packages.${pkgs.system}.default
-    inputs.shadower.packages.${pkgs.system}.shadower
     element-desktop
     gnome.gnome-terminal
     anki-bin
