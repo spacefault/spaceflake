@@ -1,6 +1,4 @@
-{
-  ...
-}: let
+{...}: let
   serverIP = "127.0.0.1";
 in {
   virtualisation.oci-containers = {

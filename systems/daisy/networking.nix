@@ -1,6 +1,4 @@
-{
-  ...
-}: {
+{...}: {
   networking = {
     hostName = "daisy";
     networkmanager.enable = true;

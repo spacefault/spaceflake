@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   swaylockScript = pkgs.writeShellScript "swaylockScript" ''
      ${pkgs.swaylock-effects}/bin/swaylock -fF \
     --screenshots \

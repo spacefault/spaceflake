@@ -1,6 +1,4 @@
-{
-  ...
-}: {
+{...}: {
   virtualisation = {
     docker = {
       enable = false;

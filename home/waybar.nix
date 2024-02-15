@@ -1,6 +1,4 @@
-{
-  ...
-}:  let
+{...}: let
   weatherScript = builtins.path {
     path = ./extra/waybar-wttr.py;
     name = "waybar_wttr.py";
