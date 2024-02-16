@@ -24,7 +24,8 @@
     gnome.nautilus
     swaylock-effects
     cliphist
-
+    swaynotificationcenter
+    
     # Internet
     firefox
     google-chrome

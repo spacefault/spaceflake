@@ -50,6 +50,7 @@ in {
         "wlsunset -S 06:30 -s 20:00"
         "hyprctl setcursor Adwaita 24"
         "swww init"
+        "swaync"
       ];
       general = {
         gaps_in = 5;
