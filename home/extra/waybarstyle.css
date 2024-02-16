@@ -83,6 +83,7 @@
     #memory,
     #custom-weather,
     #language,
+    #custom-notification
     #tray {
         color: @theme_text_color;
         background: shade(alpha(@theme_text_colors, 0.9), 1.25);
@@ -102,6 +103,10 @@
     #custom-kernel {
         color: #f17bbd
     }
+
+    #custom-notification {
+        font-family: "NotoSansMono Nerd Font";
+    }  
 
     #network { 
         color: #84f7a6
