@@ -21,10 +21,9 @@
     wl-clipboard
     xdg-user-dirs
     eww-wayland
-    gnome.nautilus
     swaylock-effects
     cliphist
-    swaynotificationcenter
+    #swaynotificationcenter
     
     # Internet
     firefox
@@ -41,6 +40,7 @@
     mpv
     vlc
     loupe
+    spotify
 
     # Creative
     gimp-with-plugins
@@ -68,7 +68,6 @@
     cups-filters
     inputs.watershot.packages.${pkgs.system}.default
     element-desktop
-    gnome.gnome-terminal
     anki-bin
     libimobiledevice
     ifuse
@@ -90,7 +89,7 @@
 
   programs = {
     seahorse = {
-      enable = true;
+      enable = false;
     };
     zsh = {
       enable = true;
