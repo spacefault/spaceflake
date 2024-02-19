@@ -51,6 +51,7 @@ in {
         "hyprctl setcursor Adwaita 24"
         "swww init"
         "swaync"
+        "sleep 5 && pkill waybar && waybar & disown"
       ];
       general = {
         gaps_in = 5;
