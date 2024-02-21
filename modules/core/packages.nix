@@ -5,12 +5,13 @@
   ...
 }: let
   systemLabel = config.system.nixos.label;
-  blender = if systemLabel == "blueberry" then
-    pkgs.blender.override {
-      cudaSupport = true;
-    }
-  else
-    pkgs.blender;
+  blender =
+    if systemLabel == "blueberry"
+    then
+      pkgs.blender.override {
+        cudaSupport = true;
+      }
+    else pkgs.blender;
 in {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
