@@ -1,8 +1,8 @@
-{ ... }: {
+{...}: {
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      allowed-users = [ "@wheel" "lily" ];
+      experimental-features = ["nix-command" "flakes"];
+      allowed-users = ["@wheel" "lily"];
       auto-optimise-store = true;
       substituters = [
         "https://cache.nixos.org?priority=10"
