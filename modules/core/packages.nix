@@ -1,8 +1,17 @@
 {
   pkgs,
   inputs,
+  config,
   ...
-}: {
+}: let
+  systemLabel = config.system.nixos.label;
+  blender = if systemLabel == "blueberry" then
+    pkgs.blender.override {
+      cudaSupport = true;
+    }
+  else
+    pkgs.blender;
+in {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # Hyprland Requirements
@@ -45,9 +54,7 @@
     # Creative
     gimp-with-plugins
     obs-studio
-    (blender.override {
-      cudaSupport = true;
-    })
+    blender
     # davinci-resolve
 
     # Customization
