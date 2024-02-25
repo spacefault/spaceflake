@@ -107,19 +107,6 @@
     # Protect against SMURF attacks and clock fingerprinting via ICMP timestamping.
     "net.ipv4.icmp_echo_ignore_all" = "1";
 
-    # Ignore incoming ICMP redirects (note: default is needed to ensure that the
-    # setting is applied to interfaces added after the sysctls are set)
-    "net.ipv4.conf.all.accept_redirects" = false;
-    "net.ipv4.conf.all.secure_redirects" = false;
-    "net.ipv4.conf.default.accept_redirects" = false;
-    "net.ipv4.conf.default.secure_redirects" = false;
-    "net.ipv6.conf.all.accept_redirects" = false;
-    "net.ipv6.conf.default.accept_redirects" = false;
-
-    # Ignore outgoing ICMP redirects (this is ipv4 only)
-    "net.ipv4.conf.all.send_redirects" = false;
-    "net.ipv4.conf.default.send_redirects" = false;
-
     # Restrict abritrary use of ptrace to the CAP_SYS_PTRACE capability.
     "kernel.yama.ptrace_scope" = 2;
     "net.core.bpf_jit_enable" = false;
