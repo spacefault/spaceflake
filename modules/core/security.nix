@@ -28,10 +28,10 @@
 
   # tmpfs = /tmp is mounted in ram. Doing so makes temp file management speedy
   # on ssd systems, and volatile! Because it's wiped on reboot.
-  boot.tmpOnTmpfs = lib.mkDefault true;
+  boot.tmp.useTmpfs = lib.mkDefault true;
   # If not using tmpfs, which is naturally purged on reboot, we must clean it
   # /tmp ourselves. /tmp should be volatile storage!
-  boot.cleanTmpDir = lib.mkDefault (!config.boot.tmpOnTmpfs);
+  boot.tmp.cleanOnBoot = lib.mkDefault (!config.boot.tmp.useTmpfs);
 
   # Fix a security hole in place for backwards compatibility. See desc in
   # nixpkgs/nixos/modules/system/boot/loader/systemd-boot/systemd-boot.nix
@@ -78,11 +78,6 @@
     "net.core.default_qdisc" = "cake";
   };
   boot.kernelModules = [ "tcp_bbr" ];
-  apparmor = {
-      enable = true;
-      killUnconfinedConfinables = true;
-      packages = [pkgs.apparmor-profiles];
-     };
     boot.kernel.sysctl = {
     # Hide kernel pointers from processes without the CAP_SYSLOG capability.
     "kernel.kptr_restrict" = 1;
@@ -90,19 +85,14 @@
     # Restrict loading TTY line disciplines to the CAP_SYS_MODULE capability.
     "dev.tty.ldisc_autoload" = 0;
     # Make it so a user can only use the secure attention key which is required to access root securely.
-    "kernel.sysrq" = 4;
     # Protect against SYN flooding.
-    "net.ipv4.tcp_syncookies" = 1;
     # Protect against time-wait assasination.
-    "net.ipv4.tcp_rfc1337" = 1;
 
     # Enable strict reverse path filtering (that is, do not attempt to route
     # packets that "obviously" do not belong to the iface's network; dropped
     # packets are logged as martians).
     "net.ipv4.conf.all.log_martians" = true;
-    "net.ipv4.conf.all.rp_filter" = "1";
     "net.ipv4.conf.default.log_martians" = true;
-    "net.ipv4.conf.default.rp_filter" = "1";
 
     # Protect against SMURF attacks and clock fingerprinting via ICMP timestamping.
     "net.ipv4.icmp_echo_ignore_all" = "1";
@@ -152,6 +142,6 @@
     "qnx4"
     "qnx6"
     "sysv"
-  ];  
-  
+  ];
+
   }
