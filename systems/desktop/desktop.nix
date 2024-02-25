@@ -43,7 +43,7 @@
     #__GLX_VENDOR_LIBRARY_NAME = "nvidia";
     #WLR_NO_HARDWARE_CURSORS = "1";
     #__GL_THREADED_OPTIMIZATIONS = "0";
-    SSH_AUTH_SOCK = "/run/user/1001/keyring/ssh";
+    SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
   };
 
   # you probably shouldn't change this, but if you want to please read the documentation first
