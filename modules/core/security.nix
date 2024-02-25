@@ -1,4 +1,9 @@
-{config, lib, pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   security = {
     rtkit.enable = true;
     polkit.enable = true;
@@ -13,11 +18,11 @@
     };
   };
 
-# the following is merged from
-# https://github.com/hlissner/dotfiles/blob/master/modules/security.nix
-# https://github.com/sioodmy/dotfiles/blob/main/system/core/schizo.nix
+  # the following is merged from
+  # https://github.com/hlissner/dotfiles/blob/master/modules/security.nix
+  # https://github.com/sioodmy/dotfiles/blob/main/system/core/schizo.nix
 
-### security modifications
+  ### security modifications
 
   ## System security tweaks
   # sets hidepid=2 on /proc (make process info visible only to owning user)
@@ -77,8 +82,8 @@
     "net.ipv4.tcp_congestion_control" = "bbr";
     "net.core.default_qdisc" = "cake";
   };
-  boot.kernelModules = [ "tcp_bbr" ];
-    boot.kernel.sysctl = {
+  boot.kernelModules = ["tcp_bbr"];
+  boot.kernel.sysctl = {
     # Hide kernel pointers from processes without the CAP_SYSLOG capability.
     "kernel.kptr_restrict" = 1;
     "kernel.printk" = "3 3 3 3";
@@ -143,5 +148,4 @@
     "qnx6"
     "sysv"
   ];
-
-  }
+}
