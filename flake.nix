@@ -2,45 +2,26 @@
   description = "spaceflake";
 
   inputs = {
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
-    };
-    anyrun = {
-      url = "github:Kirottu/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    watershot = {
-      url = "github:Kirottu/watershot";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    anyrun.url = "github:Kirottu/anyrun";
+    hyprland.url = "github:hyprwm/Hyprland";
+    nix-gaming.url = "github:fufexan/nix-gaming";
+    lanzaboote.url = "github:nix-community/lanzaboote";
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
     home-manager = {
       url = "github:nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-gaming = {
-      url = "github:fufexan/nix-gaming";
-    };
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote";
-    };
-    spicetify-nix = {
-      url = "github:the-argus/spicetify-nix";
+    watershot = {
+      url = "github:kirottu/watershot";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs = {
     self,
     nixpkgs,
-    hyprland,
-    anyrun,
-    watershot,
     home-manager,
-    nix-gaming,
-    lanzaboote,
     ...
   } @ inputs: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
@@ -63,7 +44,7 @@
             home-manager.users.lily = import ./home/home.nix;
             home-manager.extraSpecialArgs = {inherit inputs;};
           }
-          lanzaboote.nixosModules.lanzaboote
+          inputs.lanzaboote.nixosModules.lanzaboote
         ];
       };
       "cherry" = nixpkgs.lib.nixosSystem {
@@ -80,7 +61,7 @@
             home-manager.users.lily = import ./home/home.nix;
             home-manager.extraSpecialArgs = {inherit inputs;};
           }
-          lanzaboote.nixosModules.lanzaboote
+          inputs.lanzaboote.nixosModules.lanzaboote
         ];
       };
       ## servers:
