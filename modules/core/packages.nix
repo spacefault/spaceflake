@@ -55,7 +55,7 @@ in {
     # Creative
     gimp-with-plugins
     obs-studio
-    blender
+    # blender
     # davinci-resolve
 
     # Customization
@@ -97,7 +97,7 @@ in {
 
   programs = {
     seahorse = {
-      enable = false;
+      enable = true;
     };
     zsh = {
       enable = true;
