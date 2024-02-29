@@ -32,6 +32,8 @@ in {
     xdg-user-dirs
     swaylock-effects
     cliphist
+    gnome.nautilus
+    gnome.adwaita-icon-theme
     #swaynotificationcenter
 
     # Internet
