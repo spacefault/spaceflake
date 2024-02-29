@@ -32,12 +32,12 @@
       ];
       displayManager = {
         sddm = {
-          enable = false;
+          enable = true;
         };
       };
       desktopManager = {
-        plasma5 = {
-          enable = false;
+        plasma6 = {
+          enable = true;
         };
       };
       xkb.layout = "";
