@@ -4,6 +4,7 @@
       experimental-features = ["nix-command" "flakes"];
       allowed-users = ["@wheel" "lily"];
       auto-optimise-store = true;
+      builders-use-substitutes = true;
       substituters = [
         "https://cache.nixos.org?priority=10"
         "https://nix-community.cachix.org"
