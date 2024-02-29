@@ -4,13 +4,13 @@
   config,
   ...
 }: let
-  systemLabel = config.system.nixos.label;
-  blender =
-    if systemLabel == "blueberry"
+ hostName = config.networking.hostName;
+ blender =
+    if hostName == "blueberry"
     then
-      pkgs.blender.override {
+      pkgs.blender.overrideAttrs (oldAttrs: {
         cudaSupport = true;
-      }
+      })
     else pkgs.blender;
 in {
   nixpkgs.config.allowUnfree = true;
@@ -54,7 +54,7 @@ in {
     # Creative
     gimp-with-plugins
     obs-studio
-    # blender
+    blender
     # davinci-resolve
 
     # Customization
