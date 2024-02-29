@@ -30,7 +30,6 @@ in {
     wlsunset
     wl-clipboard
     xdg-user-dirs
-    eww-wayland
     swaylock-effects
     cliphist
     #swaynotificationcenter
