@@ -10,7 +10,6 @@
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
     tailscale.enable = true;
-    blueman.enable = true;
     printing = {
       enable = true;
       logLevel = "debug";
