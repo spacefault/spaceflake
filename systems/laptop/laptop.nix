@@ -22,6 +22,8 @@
 
   boot.supportedFilesystems = ["btrfs"];
   hardware.enableAllFirmware = true;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
   # env variables
   environment.sessionVariables = {
