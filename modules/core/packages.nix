@@ -3,16 +3,7 @@
   inputs,
   config,
   ...
-}: let
- hostName = config.networking.hostName;
- blender =
-    if hostName == "blueberry"
-    then
-      pkgs.blender.overrideAttrs (oldAttrs: {
-        cudaSupport = true;
-      })
-    else pkgs.blender;
-in {
+}: {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # Hyprland Requirements
@@ -56,7 +47,7 @@ in {
     # Creative
     gimp-with-plugins
     obs-studio
-    blender
+    blender_4_0
     # davinci-resolve
 
     # Customization

@@ -8,6 +8,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     lanzaboote.url = "github:nix-community/lanzaboote";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
+    blender-bin.url = "github:edolstra/nix-warez?dir=blender";
     home-manager = {
       url = "github:nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,6 +22,7 @@
   outputs = {
     self,
     nixpkgs,
+    blender-bin,
     home-manager,
     ...
   } @ inputs: {
@@ -33,6 +35,10 @@
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
+          ({config, pkgs, ...}: {
+            nixpkgs.overlays = [ blender-bin.overlays.default ];
+            environment.systemPackages = with pkgs; [ blender_4_0 ];
+          })
           ./modules/core
           ./modules/gaming
           ./modules/nvidia
