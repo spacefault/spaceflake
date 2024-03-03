@@ -47,7 +47,6 @@
     # Creative
     gimp-with-plugins
     obs-studio
-    blender_4_0
     # davinci-resolve
 
     # Customization

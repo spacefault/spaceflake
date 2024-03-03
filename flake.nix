@@ -61,6 +61,14 @@
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
+          ({
+            config,
+            pkgs,
+            ...
+          }: {
+            nixpkgs.overlays = [blender-bin.overlays.default];
+            environment.systemPackages = with pkgs; [blender_4_0];
+          })
           ./modules/core
           ./modules/gaming
           ./systems/laptop/laptop.nix
