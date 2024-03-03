@@ -120,7 +120,7 @@ in {
               "warning" = 20;
               "critical" = 10;
             };
-            format = " {icon} ";
+            format = "{icon}";
             format-icons = ["󰁻" "󰁽" "󰁿" "󰂁" "󰁹"];
             tooltip-format = "{capacity}%";
           };
