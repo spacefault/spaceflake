@@ -11,5 +11,6 @@
     ./fonts.nix
     ./systemd.nix
     ./virtualisation.nix
+    ./video.nix
   ];
 }
