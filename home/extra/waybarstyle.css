@@ -120,6 +120,10 @@
         color: #75ecbe
     }
 
+    #custom-seperator {
+        color: #4b4e61
+    }
+
     #language {
         color: #c9bbf4
     }
@@ -131,6 +135,10 @@
 
     #custom-battery {
         color: @green_1
+    }
+
+    #custom-power {
+        color: #b46b84
     }
 
     /* resource monitor block */

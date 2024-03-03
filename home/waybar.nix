@@ -24,15 +24,9 @@ in {
           margin-top = 5;
           margin-left = 5;
           margin-right = 5;
-          modules-left = ["custom/icon" "hyprland/workspaces" "hyprland/window" "privacy"];
-          modules-center = [];
-          modules-right = ["tray" "custom/notification" "custom/weather" "custom/kernel" "cpu" "memory" "wireplumber" "battery" "network" "hyprland/language" "clock"];
-          "memory" = {
-            interval = 10;
-            format = "  {}%";
-            max-length = 10;
-          };
-
+          modules-left = ["custom/icon" "custom/seperator" "hyprland/workspaces" "custom/seperator" "hyprland/window" "privacy"];
+          modules-center = ["clock" "custom/weather" ];
+          modules-right = ["tray" "custom/notification" "custom/seperator" "wireplumber" "battery" "network" "hyprland/language" "custom/seperator" "custom/power"];
           "custom/notification" = {
             tooltip = false;
             format = "{icon}";
@@ -53,18 +47,15 @@ in {
             on-click-right = "swaync-client -d -sw";
             escape = true;
           };
-          "cpu" = {
-            interval = 10;
-            format = "  {}%";
-            max-length = 10;
-          };
-          "custom/kernel" = {
-            format = "󰣐  {}";
-            exec = "uname -r";
+          "custom/seperator" = {
+            exec = "echo '󰇙'"; 
+            format = "{}";
           };
           "hyprland/language" = {
-            format = "󰌌   {}";
+            format = "󰌌";
+            format-alt = "󰌌   {}";
             format-en = "en, US";
+            tooltip = true;
           };
           "hyprland/window" = {
             format = "{}";
@@ -80,7 +71,7 @@ in {
             };
           };
           "custom/icon" = {
-            exec = "echo '  '";
+            exec = "echo '   '";
             format = "{}";
           };
           "privacy" = {
@@ -129,8 +120,9 @@ in {
               "warning" = 20;
               "critical" = 10;
             };
-            format = " {icon} {capacity}%";
+            format = " {icon} ";
             format-icons = ["󰁻" "󰁽" "󰁿" "󰂁" "󰁹"];
+            tooltip-format = "{capacity}%";
           };
           "clock" = {
             format = "{:   %I:%M %p}";
@@ -138,24 +130,24 @@ in {
             tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           };
           "network" = {
-            format-wifi = "󰤨  {essid} ({signalStrength}%)";
-            tooltip-format-wifi = "{ifname} via {gwaddr}";
-            format-ethernet = "󰈀   Connected";
+            format-wifi = "󰤨";
+            format-ethernet = "󰈀";
             tooltip-format = "{ifname} via {gwaddr}";
             format-linked = "{ifname} (No IP)";
             format-disconnected = "⚠  Disconnected";
             format-alt = "{ifname}: {ipaddr}/{cidr}";
+            tooltip-format-wifi = "{essid} ({signalStrength}%)";
           };
           "wireplumber" = {
-            format = "{icon}  {volume}%";
+            format = "{icon}";
             tooltip = "true";
             tooltip-format = "{volume}";
-            format-muted = "  Muted";
+            format-muted = "󰝟";
             on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
             format-icons = ["" "" ""];
           };
           "custom/power" = {
-            format = "󰩈";
+            format = "⏻ ";
             on-click = "wlogout";
           };
         };
