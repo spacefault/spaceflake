@@ -64,9 +64,9 @@ in {
         workspace_swipe = true;
       };
       input = {
-        kb_layout = "us,ca";
-        kb_variant = "qwerty";
-        kb_options = "compose:rctrl";
+        #kb_layout = "us";
+        #kb_variant = "qwerty";
+        #kb_options = "compose:rctrl";
         follow_mouse = 1;
         sensitivity = 0;
       };
