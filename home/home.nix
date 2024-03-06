@@ -31,5 +31,6 @@
     ./vscode.nix
     ./gtk.nix
     ./tmux.nix
+    ./swayosd.nix
   ];
 }
