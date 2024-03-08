@@ -30,13 +30,13 @@
         pkgs.xterm
       ];
       displayManager = {
-        sddm = {
-          enable = false;
+        gdm = {
+          enable = true;
         };
       };
       desktopManager = {
-        plasma6 = {
-          enable = false;
+        gnome = {
+          enable = true;
         };
       };
       xkb.layout = "";

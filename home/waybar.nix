@@ -25,8 +25,8 @@ in {
           margin-left = 5;
           margin-right = 5;
           modules-left = ["custom/icon" "custom/seperator" "hyprland/workspaces" "custom/seperator" "hyprland/window" "privacy"];
-          modules-center = ["clock" "custom/weather" ];
-          modules-right = ["tray" "custom/notification" "custom/seperator" "wireplumber" "battery" "network" "hyprland/language" "custom/seperator" "custom/power"];
+          modules-center = [ ];
+          modules-right = ["tray" "custom/notification" "custom/seperator" "wireplumber" "battery" "network" "hyprland/language" "custom/seperator" "clock" "custom/weather" "custom/seperator" "custom/power"];
           "custom/notification" = {
             tooltip = false;
             format = "{icon}";

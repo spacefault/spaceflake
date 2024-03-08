@@ -25,6 +25,8 @@
     cliphist
     gnome.nautilus
     gnome.adwaita-icon-theme
+    kitty
+    gnome.gnome-terminal
     #swaynotificationcenter
 
     # Internet
