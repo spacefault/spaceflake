@@ -8,6 +8,11 @@
         set -ga terminal-overrides ",*256col*:Tc"
         set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
         set-environment -g COLORTERM "truecolor"
+bind | split-window -h
+bind - split-window -v
+unbind '"'
+unbind %
+set -g mouse on
       '';
     };
   };
