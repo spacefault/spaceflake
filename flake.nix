@@ -8,7 +8,6 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     lanzaboote.url = "github:nix-community/lanzaboote";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
-    impermanence.url = "github:nix-community/impermanence";
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
     home-manager = {
       url = "github:nix-community/home-manager/";
@@ -25,7 +24,6 @@
     nixpkgs,
     blender-bin,
     home-manager,
-    impermanence,
     ...
   } @ inputs: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
@@ -57,7 +55,6 @@
             home-manager.extraSpecialArgs = {inherit inputs;};
           }
           inputs.lanzaboote.nixosModules.lanzaboote
-          impermanence.nixosModules.impermanence
         ];
       };
       "cherry" = nixpkgs.lib.nixosSystem {
