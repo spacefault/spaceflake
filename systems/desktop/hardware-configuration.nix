@@ -16,27 +16,36 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
+  boot.supportedFilesystems = ["btrfs"];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/ad6ba2e3-e979-44f8-8ed1-12bb9d4a42c4";
+    device = "/dev/disk/by-uuid/73e61411-ae7d-472d-accc-a7064be2b411";
     fsType = "btrfs";
-    options = ["subvol=root" "compress=zstd" "noatime" "ssd"];
+    options = ["subvol=root"];
   };
 
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/689f6f16-4e50-4acd-b233-e89eb7fda12c";
+
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/ad6ba2e3-e979-44f8-8ed1-12bb9d4a42c4";
+    device = "/dev/disk/by-uuid/73e61411-ae7d-472d-accc-a7064be2b411";
     fsType = "btrfs";
-    options = ["subvol=home" "compress=zstd" "noatime" "ssd"];
+    options = ["subvol=home"];
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/ad6ba2e3-e979-44f8-8ed1-12bb9d4a42c4";
+    device = "/dev/disk/by-uuid/73e61411-ae7d-472d-accc-a7064be2b411";
     fsType = "btrfs";
-    options = ["subvol=nix" "compress=zstd" "noatime" "ssd"];
+    options = ["subvol=nix"];
+  };
+
+  fileSystems."/var/log" = {
+    device = "/dev/disk/by-uuid/73e61411-ae7d-472d-accc-a7064be2b411";
+    fsType = "btrfs";
+    options = ["subvol=log"];
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/034D-E5EC";
+    device = "/dev/disk/by-uuid/C495-1F4E";
     fsType = "vfat";
   };
 

@@ -23,7 +23,7 @@
     ./neovim.nix
     ./alacritty.nix
     #./dunst.nix
-    ./swaylock.nix
+    #./swaylock.nix
     #./swayidle.nix
     #./hyprland.nix
     ./spicetify.nix

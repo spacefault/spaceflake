@@ -7,7 +7,7 @@
 
   # networking, firewall, and hostname
   networking = {
-    hostName = "blueberry";
+    hostName = "thevalley";
     networkmanager.enable = true;
     firewall.enable = true;
     enableIPv6 = false;
