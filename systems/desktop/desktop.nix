@@ -13,14 +13,6 @@
     enableIPv6 = false;
   };
 
-  # swap
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 8 * 1024;
-    }
-  ];
-
   # systemlink
   fileSystems."/mnt/systemlink" = {
     device = "/dev/disk/by-uuid/265780BD76D648DA";
