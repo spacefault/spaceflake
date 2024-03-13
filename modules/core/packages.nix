@@ -49,7 +49,7 @@
     # Creative
     # gimp-with-plugins
     obs-studio
-    # davinci-resolve
+    davinci-resolve
 
     # Customization
     adw-gtk3
