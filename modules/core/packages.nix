@@ -90,7 +90,7 @@
 
   programs = {
     seahorse = {
-      enable = false;
+      enable = true;
     };
     zsh = {
       enable = true;
