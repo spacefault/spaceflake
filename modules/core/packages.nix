@@ -47,7 +47,7 @@
     spotify
 
     # Creative
-    gimp-with-plugins
+    # gimp-with-plugins
     obs-studio
     # davinci-resolve
 
