@@ -570,6 +570,26 @@
         "type": "github"
       }
     },
+    "nh": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1710573382,
+        "narHash": "sha256-oGPasBk516A6pNE7iBEOmtrNsbqd+frR7O+z9lr1cLw=",
+        "owner": "viperML",
+        "repo": "nh",
+        "rev": "60c019a930e1718f1c5b6638f16dc221bf667d61",
+        "type": "github"
+      },
+      "original": {
+        "owner": "viperML",
+        "repo": "nh",
+        "type": "github"
+      }
+    },
     "nix-gaming": {
       "inputs": {
         "flake-parts": "flake-parts_3",
@@ -942,6 +962,7 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "lanzaboote": "lanzaboote",
+        "nh": "nh",
         "nix-gaming": "nix-gaming",
         "nixpkgs": "nixpkgs_6",
         "spicetify-nix": "spicetify-nix",
