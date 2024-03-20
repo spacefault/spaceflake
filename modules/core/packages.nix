@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   config,
+  lib,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -25,9 +26,7 @@
     cliphist
     gnome.nautilus
     gnome.adwaita-icon-theme
-    kitty
-    gnome.gnome-terminal
-    #swaynotificationcenter
+    swaynotificationcenter
 
     # Internet
     firefox
@@ -49,7 +48,7 @@
     # Creative
     # gimp-with-plugins
     obs-studio
-    davinci-resolve
+#    davinci-resolve
 
     # Customization
     adw-gtk3
@@ -110,7 +109,7 @@
         enable = true;
         enableSSHSupport = true;
         enableExtraSocket = true;
-        pinentryFlavor = "gnome3";
+        pinentryPackage = lib.mkForce pkgs.pinentry-gnome3;
       };
     };
   };

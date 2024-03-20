@@ -24,9 +24,9 @@ in {
           margin-top = 5;
           margin-left = 5;
           margin-right = 5;
-          modules-left = ["custom/icon" "custom/seperator" "hyprland/workspaces" "custom/seperator" "hyprland/window" "privacy"];
-          modules-center = [];
-          modules-right = ["tray" "custom/notification" "custom/seperator" "wireplumber" "battery" "network" "hyprland/language" "custom/seperator" "clock" "custom/weather" "custom/seperator" "custom/power"];
+          modules-left = ["custom/icon" "custom/seperator" "hyprland/workspaces" "mpris" ];
+          modules-center = ["clock" "custom/weather"];
+          modules-right = ["tray" "custom/notification" "custom/seperator" "wireplumber" "battery" "network" "hyprland/language" "custom/seperator" "custom/power"];
           "custom/notification" = {
             tooltip = false;
             format = "{icon}";
@@ -85,11 +85,6 @@ in {
                 tooltip-icon-size = 24;
               }
               {
-                type = "audio-out";
-                tooltip = true;
-                tooltip-icon-size = 24;
-              }
-              {
                 type = "audio-in";
                 tooltip = true;
                 tooltip-icon-size = 24;
@@ -125,7 +120,7 @@ in {
             tooltip-format = "{capacity}%";
           };
           "clock" = {
-            format = "{:   %I:%M %p}";
+            format = "{:%I:%M %p  %A %b %d}";
             format-alt = "{:   %Y-%m-%d}";
             tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           };
