@@ -22,7 +22,7 @@
     ./emacs.nix
     ./neovim.nix
     ./alacritty.nix
-    ./dunst.nix
+    #./dunst.nix
     ./swaylock.nix
     #./swayidle.nix
     ./hyprland.nix

@@ -53,11 +53,6 @@ in {
                 tooltip-icon-size = 24;
               }
               {
-                type = "audio-out";
-                tooltip = true;
-                tooltip-icon-size = 24;
-              }
-              {
                 type = "audio-in";
                 tooltip = true;
                 tooltip-icon-size = 24;
@@ -92,7 +87,7 @@ in {
             format-icons = ["󰁻" "󰁽" "󰁿" "󰂁" "󰁹"];
           };
           "clock" = {
-            format = "{:   %I:%M %p     %Y-%m-%d}";
+            format = "{:   %I:%M %p }";
             tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           };
           "network" = {
@@ -174,7 +169,7 @@ in {
                border: 3px solid @bg1;
              }
 
-             #language, #clock, #battery, #wireplumber, #network, #tray, #custom-weather, #custom-notification, #workspaces, #mpris, #privacy, #privacy-item {
+             #language, #privacy, #privacy-item, #clock, #battery, #wireplumber, #network, #tray, #custom-weather, #custom-notification, #workspaces, #mpris, #image, #custom-power {
                background: @bg1;
                padding: 0px 10px;
                margin: 7px 0px;

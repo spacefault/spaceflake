@@ -64,8 +64,16 @@
 
 
     #mpris {
-    margin-left: 23px
+    margin-left: 23px;
+    color: #8fc0cb;
     }
+
+    #mpris.paused {
+        color: #414457;
+        font-style: italic;
+    }
+
+    
     #cpu,
     #memory,
     #custom-power,
@@ -83,8 +91,16 @@
     #memory,
     #custom-weather,
     #language,
-    #custom-notification
+    #custom-notification,
     #tray {
+        color: @theme_text_color;
+        background: shade(alpha(@theme_text_colors, 0.9), 1.25);
+        opacity: 1;
+        padding: 0px;
+        margin: 3px 6px 3px 6px;
+    }
+
+   #privacy {
         color: @theme_text_color;
         background: shade(alpha(@theme_text_colors, 0.9), 1.25);
         opacity: 1;
@@ -94,6 +110,20 @@
 
     #wireplumber {
         color: #a2b8fd
+    }
+
+    #privacy-item {
+        box-shadow: none;
+    	text-shadow: none;
+        padding: 3px;
+        border-radius: 7px;
+        padding-right: 0px;
+        padding-left: 4px;
+        margin-right: 1px;
+        margin-left: 1px;
+        color: #FFFFFF;
+        animation: gradient_f 2s ease-in infinite;
+        transition: all 0.2s cubic-bezier(.55,-0.68,.48,1.682);
     }
 
     #window { 

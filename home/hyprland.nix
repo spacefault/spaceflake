@@ -112,8 +112,8 @@ in {
         "HDMI-A-1,1920x1080@75, 0x0, 1"
       ];
       layerrule = [
-        "blur, waybar"
-        "ignorezero, waybar"
+        #"blur, waybar"
+        #"ignorezero, waybar"
       ];
       windowrule = [
         "float,title:^(Calculator)(.*)$"
