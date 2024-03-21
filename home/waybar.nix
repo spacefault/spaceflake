@@ -1,4 +1,7 @@
-{...}: let
+{ pkgs,
+  inputs,
+  ...
+}: let
   weatherScript = builtins.path {
     path = ./extra/waybar-wttr.py;
     name = "waybar_wttr.py";
@@ -13,6 +16,7 @@ in {
     waybar = {
       style = cssFile;
       enable = true;
+      package = inputs.waybar.packages.${pkgs.system}.default;
       systemd = {
         enable = true;
       };
