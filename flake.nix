@@ -9,6 +9,7 @@
     lanzaboote.url = "github:nix-community/lanzaboote";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
+    waybar.url = "github:Alexays/Waybar";
     home-manager = {
       url = "github:nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";

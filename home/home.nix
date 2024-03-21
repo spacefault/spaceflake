@@ -17,7 +17,7 @@
 
   imports = [
     inputs.anyrun.homeManagerModules.default
-    #./waybar.nix
+    ./waybar.nix
     ./zsh.nix
     ./emacs.nix
     ./neovim.nix
