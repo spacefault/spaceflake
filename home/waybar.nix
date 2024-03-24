@@ -16,7 +16,6 @@ in {
     waybar = {
       style = cssFile;
       enable = true;
-      package = inputs.waybar.packages.${pkgs.system}.default;
       systemd = {
         enable = true;
       };
