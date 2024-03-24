@@ -73,6 +73,7 @@
     ifuse
     libreoffice-fresh
     bootstrap-studio
+    veracrypt
 
     # Programming
     (python311.withPackages (ps: with ps; [requests]))
