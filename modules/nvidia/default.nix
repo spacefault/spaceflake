@@ -1,5 +1,5 @@
 {...}: {
   imports = [
-    ./nvidia.nix
+    ./nvidia-535.nix
   ];
 }
