@@ -23,9 +23,9 @@ in {
           margin-top = 5;
           margin-left = 5;
           margin-right = 5;
-          modules-left = ["image" "hyprland/workspaces" "privacy" "tray"];
+          modules-left = [ "hyprland/workspaces" "privacy" "tray"];
           modules-center = ["clock" "custom/weather" "mpris"];
-          modules-right = ["hyprland/language" "custom/notification" "wireplumber" "battery" "network" "custom/power"];
+          modules-right = ["hyprland/language" "custom/notification" "wireplumber" "battery" "network" ];
           "hyprland/language" = {
             format = "{}";
           };
@@ -87,7 +87,7 @@ in {
             format-icons = ["󰁻" "󰁽" "󰁿" "󰂁" "󰁹"];
           };
           "clock" = {
-            format = "{:   %I:%M %p }";
+            format = "{:%I:%M %p  %A %b %d}";
             tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           };
           "network" = {
