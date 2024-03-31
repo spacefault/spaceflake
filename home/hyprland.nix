@@ -60,6 +60,10 @@ in {
         "col.active_border" = "rgb(ab76b0)";
         "col.inactive_border" = "rgb(762e75)";
       };
+      debug = {
+        disable_logs = false;
+        enable_stdout_logs = true;
+      };
       gestures = {
         workspace_swipe = true;
       };
