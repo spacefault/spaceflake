@@ -17,20 +17,20 @@
 
   imports = [
     inputs.anyrun.homeManagerModules.default
-    ./waybar-old.nix
+    #./waybar-old.nix
     ./zsh.nix
     ./emacs.nix
     ./neovim.nix
     ./alacritty.nix
     #./dunst.nix
-    ./swaylock.nix
+    #./swaylock.nix
     #./swayidle.nix
-    ./hyprland.nix
+    #./hyprland.nix
     ./spicetify.nix
     ./anyrun.nix
     ./vscode.nix
     ./gtk.nix
     ./tmux.nix
-    ./swayosd.nix
+    #./swayosd.nix
   ];
 }
