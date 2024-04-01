@@ -108,9 +108,9 @@
     gnupg = {
       agent = {
         enable = true;
-        enableSSHSupport = true;
-        enableExtraSocket = true;
-        pinentryPackage = lib.mkForce pkgs.pinentry-gnome3;
+        #enableSSHSupport = true;
+        #enableExtraSocket = true;
+        #pinentryPackage = lib.mkForce pkgs.pinentry-gnome;
       };
     };
   };

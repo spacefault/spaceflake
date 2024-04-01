@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-staging-next.url = "github:NixOS/nixpkgs/staging-next";
+    # nixpkgs-pinned.url = "github:NixOS/nixpkgs/8db50d6f207f6e6bea072986fe5abfc955f04bfc";
     anyrun.url = "github:Kirottu/anyrun";
     hyprland.url = "github:hyprwm/Hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
@@ -51,6 +53,7 @@
           ./modules/gaming
           ./modules/nvidia
           ./systems/desktop/desktop.nix
+          ./patches
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
