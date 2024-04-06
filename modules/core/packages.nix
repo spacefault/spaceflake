@@ -48,7 +48,7 @@
     # Creative
     # gimp-with-plugins
     obs-studio
-    #    davinci-resolve
+    davinci-resolve
 
     # Customization
     adw-gtk3
@@ -74,6 +74,7 @@
     libreoffice-fresh
     bootstrap-studio
     veracrypt
+    ocl-icd
 
     # Programming
     (python311.withPackages (ps: with ps; [requests]))
