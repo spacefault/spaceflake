@@ -28,8 +28,8 @@
     #./hyprland.nix
     ./spicetify.nix
     ./anyrun.nix
-    ./vscode.nix
-    ./gtk.nix
+    # ./vscode.nix
+    # ./gtk.nix
     ./tmux.nix
     #./swayosd.nix
   ];
