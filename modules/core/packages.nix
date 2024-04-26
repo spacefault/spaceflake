@@ -87,6 +87,7 @@
     gh
     gnumake
     jetbrains.idea-community-bin
+    vscode
   ];
 
   programs = {
