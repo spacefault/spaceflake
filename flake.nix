@@ -80,14 +80,6 @@
             home-manager.users.lily = import ./home/home.nix;
             home-manager.extraSpecialArgs = {inherit inputs;};
           }
-          inputs.nh.nixosModules.default
-          {
-            nh = {
-              enable = true;
-              clean.enable = true;
-              clean.extraArgs = "--keep-since 4d --keep 3";
-            };
-          }
           inputs.lanzaboote.nixosModules.lanzaboote
         ];
       };

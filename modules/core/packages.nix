@@ -48,7 +48,7 @@
     # Creative
     # gimp-with-plugins
     obs-studio
-    davinci-resolve
+    # davinci-resolve
 
     # Customization
     adw-gtk3
@@ -102,6 +102,11 @@
     };
     nix-ld = {
       enable = true;
+    };
+    nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 4d --keep 3";
     };
     #ssh = {
     #  startAgent = true;
