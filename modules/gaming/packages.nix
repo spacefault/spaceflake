@@ -11,7 +11,6 @@
     godot_4
     unityhub
     piper
-    discord
     celeste64
     inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable
     inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.wine-discord-ipc-bridge
