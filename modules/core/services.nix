@@ -9,7 +9,6 @@
     fwupd.enable = true;
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
-    tailscale.enable = true;
     printing = {
       enable = true;
       logLevel = "debug";
@@ -30,12 +29,12 @@
         pkgs.xterm
       ];
       displayManager = {
-        gdm = {
+        sddm = {
           enable = true;
         };
       };
       desktopManager = {
-        gnome = {
+        plasma6 = {
           enable = true;
         };
       };
