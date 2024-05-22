@@ -23,9 +23,9 @@ in {
           margin-top = 5;
           margin-left = 5;
           margin-right = 5;
-          modules-left = [ "hyprland/workspaces" "privacy" "tray"];
+          modules-left = ["hyprland/workspaces" "privacy" "tray"];
           modules-center = ["clock" "custom/weather" "mpris"];
-          modules-right = ["hyprland/language" "custom/notification" "wireplumber" "battery" "network" ];
+          modules-right = ["hyprland/language" "custom/notification" "wireplumber" "battery" "network"];
           "hyprland/language" = {
             format = "{}";
           };

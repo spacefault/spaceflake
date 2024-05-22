@@ -31,12 +31,7 @@
     # Internet
     firefox
     google-chrome
-    thunderbird
     wget
-
-    # Text Editors
-    # obsidian
-    qownnotes
 
     # Entertainment
     ffmpeg
@@ -46,9 +41,7 @@
     spotify
 
     # Creative
-    # gimp-with-plugins
     obs-studio
-    # davinci-resolve
 
     # Customization
     adw-gtk3
@@ -67,32 +60,26 @@
     virt-manager
     cups-filters
     inputs.watershot.packages.${pkgs.system}.default
-    element-desktop
     anki-bin
     libimobiledevice
     ifuse
     libreoffice-fresh
-    bootstrap-studio
     veracrypt
-    ocl-icd
 
     # Programming
     (python311.withPackages (ps: with ps; [requests]))
-    newt
     gcc
     nixpkgs-review
-    qjackctl
     libsForQt5.ksshaskpass
     pinentry
     gh
     gnumake
-    jetbrains.idea-community-bin
     vscode
   ];
 
   programs = {
     seahorse = {
-      enable = true;
+      enable = false;
     };
     zsh = {
       enable = true;
