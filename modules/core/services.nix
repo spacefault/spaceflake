@@ -29,12 +29,12 @@
         pkgs.xterm
       ];
       displayManager = {
-        sddm = {
+        gdm = {
           enable = true;
         };
       };
       desktopManager = {
-        plasma6 = {
+        gnome = {
           enable = true;
         };
       };

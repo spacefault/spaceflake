@@ -65,6 +65,7 @@
     ifuse
     libreoffice-fresh
     veracrypt
+    mdbook
 
     # Programming
     (python311.withPackages (ps: with ps; [requests]))
@@ -79,7 +80,7 @@
 
   programs = {
     seahorse = {
-      enable = false;
+      enable = true;
     };
     zsh = {
       enable = true;
