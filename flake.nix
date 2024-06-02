@@ -83,6 +83,21 @@
           inputs.lanzaboote.nixosModules.lanzaboote
         ];
       };
+      ## servers:
+      "daisy" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./systems/daisy
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.daisyadmin = import ./home/daisy/home.nix;
+            home-manager.extraSpecialArgs = {inherit inputs;};
+          }
+        ];
+      };
     };
   };
 }
