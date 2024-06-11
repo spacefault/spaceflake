@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
     anyrun.url = "github:Kirottu/anyrun";
     hyprland.url = "github:hyprwm/Hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
@@ -22,6 +23,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-stable,
     blender-bin,
     home-manager,
     ...
@@ -84,7 +86,7 @@
         ];
       };
       ## servers:
-      "daisy" = nixpkgs.lib.nixosSystem {
+      "daisy" = nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
