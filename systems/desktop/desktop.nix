@@ -13,13 +13,6 @@
     enableIPv6 = false;
   };
 
-  # systemlink
-  fileSystems."/mnt/systemlink" = {
-    device = "/dev/disk/by-uuid/265780BD76D648DA";
-    fsType = "ntfs-3g";
-    options = ["rw" "uid=1001"];
-  };
-
   fileSystems."/mnt/games" = {
     device = "/dev/disk/by-uuid/a2062323-8617-4508-8bf8-6e2bc1d0fcd7";
     fsType = "ext4";

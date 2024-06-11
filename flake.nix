@@ -43,7 +43,7 @@
             nixpkgs.overlays = [blender-bin.overlays.default];
             environment.systemPackages = with pkgs; [blender_4_0];
           })
-          ./modules/core
+          ./modules/desktop
           ./modules/gaming
           ./modules/nvidia
           ./systems/desktop/desktop.nix
@@ -70,7 +70,7 @@
             nixpkgs.overlays = [blender-bin.overlays.default];
             environment.systemPackages = with pkgs; [blender_4_0];
           })
-          ./modules/core
+          ./modules/desktop
           ./modules/gaming
           ./systems/laptop/laptop.nix
           home-manager.nixosModules.home-manager
@@ -88,7 +88,8 @@
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
-          ./systems/daisy
+          ./systems/daisy/hardware-configuration.nix
+          ./modules/homelab
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

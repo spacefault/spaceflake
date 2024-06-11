@@ -59,7 +59,7 @@
     networkmanagerapplet
     virt-manager
     cups-filters
-    inputs.watershot.packages.${pkgs.system}.default
+    # inputs.watershot.packages.${pkgs.system}.default
     anki-bin
     libimobiledevice
     ifuse
