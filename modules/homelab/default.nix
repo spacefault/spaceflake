@@ -7,7 +7,7 @@
     ./security.nix
     ./nix.nix
     ./i18n.nix
-    ./homelab
+    ./services
   ];
   system.stateVersion = "24.05";
 }
