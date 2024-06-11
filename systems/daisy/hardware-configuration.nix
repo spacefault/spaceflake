@@ -12,23 +12,68 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["uhci_hcd" "ehci_pci" "ata_piix" "ahci" "firewire_ohci" "usb_storage" "sd_mod" "sr_mod"];
+  boot.initrd.availableKernelModules = ["uhci_hcd" "ehci_pci" "ata_piix" "ahci" "firewire_ohci" "usb_storage" "usbhid" "sd_mod" "sr_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel" "wl"];
   boot.extraModulePackages = [config.boot.kernelPackages.broadcom_sta];
+  boot.supportedFilesystems = ["btrfs"];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/e794d2b9-f447-4794-b481-126fb6ddd140";
-    fsType = "ext4";
+    device = "/dev/disk/by-uuid/0e098232-0c35-4f21-91e3-35d2e01554d0";
+    fsType = "btrfs";
+    options = ["subvol=root" "compress=zstd" "noatime"];
+  };
+
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/15646c77-270c-4910-b009-1ca90e194b1e";
+
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/0e098232-0c35-4f21-91e3-35d2e01554d0";
+    fsType = "btrfs";
+    options = ["subvol=home" "compress=zstd" "noatime"];
+  };
+
+  fileSystems."/nix" = {
+    device = "/dev/disk/by-uuid/0e098232-0c35-4f21-91e3-35d2e01554d0";
+    fsType = "btrfs";
+    options = ["subvol=nix" "compress=zstd" "noatime"];
+  };
+
+  fileSystems."/srv" = {
+    device = "/dev/disk/by-uuid/0e098232-0c35-4f21-91e3-35d2e01554d0";
+    fsType = "btrfs";
+    options = ["subvol=srv" "compress=zstd" "noatime"];
+  };
+
+  fileSystems."/tmp" = {
+    device = "/dev/disk/by-uuid/0e098232-0c35-4f21-91e3-35d2e01554d0";
+    fsType = "btrfs";
+    options = ["subvol=tmp" "compress=zstd" "noatime"];
+  };
+
+  fileSystems."/var" = {
+    device = "/dev/disk/by-uuid/0e098232-0c35-4f21-91e3-35d2e01554d0";
+    fsType = "btrfs";
+    options = ["subvol=var" "compress=zstd" "noatime"];
+  };
+
+  fileSystems."/var/log" = {
+    device = "/dev/disk/by-uuid/0e098232-0c35-4f21-91e3-35d2e01554d0";
+    fsType = "btrfs";
+    options = ["subvol=log" "compress=zstd" "noatime"];
+    neededForBoot = true;
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/EF39-88E7";
+    device = "/dev/disk/by-uuid/4F33-1358";
     fsType = "vfat";
+    options = ["fmask=0022" "dmask=0022"];
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/513d36f8-de08-4157-9996-4041d29f149b";}
+    {
+      device = "/dev/disk/by-partuuid/b6735313-88d6-49a8-809c-5f824d2701e0";
+      randomEncryption.enable = true;
+    }
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
