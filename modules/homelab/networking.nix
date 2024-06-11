@@ -8,13 +8,13 @@
       allowedTCPPorts = [
         22
         8082
-        3000
+        3001
         80
       ];
       allowedUDPports = [
         22
         8082
-        3000
+        3001
         80
       ];
     };
