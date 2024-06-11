@@ -3,7 +3,7 @@
     enable = true;
     useWizard = false;
     settings = {
-      server.HTTP_PORT = 80;
+      server.HTTP_PORT = 3001;
       server.DOMAIN = "localhost";
     };
   };
