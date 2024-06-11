@@ -7,7 +7,6 @@
     ./security.nix
     ./nix.nix
     ./i18n.nix
-    ./hardware-configuration.nix
     ./homelab
   ];
   system.stateVersion = "24.05";

@@ -19,44 +19,37 @@
   boot.supportedFilesystems = ["btrfs"];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/1c5f10a0-b17f-4cc8-89d9-2401ff60dfe4";
+    device = "/dev/disk/by-uuid/73e61411-ae7d-472d-accc-a7064be2b411";
     fsType = "btrfs";
-    options = ["subvol=root" "compress=zstd" "noatime"];
+    options = ["subvol=root"];
   };
 
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/3f7c743d-d0c3-44d1-bd35-1eff4d1d0015";
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/689f6f16-4e50-4acd-b233-e89eb7fda12c";
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/1c5f10a0-b17f-4cc8-89d9-2401ff60dfe4";
+    device = "/dev/disk/by-uuid/73e61411-ae7d-472d-accc-a7064be2b411";
     fsType = "btrfs";
-    options = ["subvol=home" "compress=zstd" "noatime"];
+    options = ["subvol=home"];
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/1c5f10a0-b17f-4cc8-89d9-2401ff60dfe4";
+    device = "/dev/disk/by-uuid/73e61411-ae7d-472d-accc-a7064be2b411";
     fsType = "btrfs";
-    options = ["subvol=nix" "compress=zstd" "noatime"];
+    options = ["subvol=nix"];
   };
 
   fileSystems."/var/log" = {
-    device = "/dev/disk/by-uuid/1c5f10a0-b17f-4cc8-89d9-2401ff60dfe4";
+    device = "/dev/disk/by-uuid/73e61411-ae7d-472d-accc-a7064be2b411";
     fsType = "btrfs";
-    options = ["subvol=log" "compress=zstd" "noatime"];
-    neededForBoot = true;
+    options = ["subvol=log"];
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/E1F4-323A";
+    device = "/dev/disk/by-uuid/C495-1F4E";
     fsType = "vfat";
-    options = ["fmask=0022" "dmask=0022"];
   };
 
-  swapDevices = [
-    {
-      device = "/dev/disk/by-partuuid/4adfb920-2a2f-480b-a687-ae721f132067";
-      randomEncryption.enable = true;
-    }
-  ];
+  swapDevices = [{device = "/dev/disk/by-uuid/bec66b3f-f7d5-49c9-8968-016a225c331d";}];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
