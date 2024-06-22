@@ -20,7 +20,6 @@
     wireplumber
     wlogout
     wlsunset
-    wl-clipboard
     xdg-user-dirs
     swaylock-effects
     cliphist
