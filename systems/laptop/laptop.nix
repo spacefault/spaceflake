@@ -33,6 +33,11 @@
 
   # swap
 
+  swapDevices = [ {
+    device = "/var/lib/swapfile";
+    size = 16*1024;
+  } ];
+
   # you probably shouldn't change this, but if you want to please read the documentation first
   system.stateVersion = "23.05";
 }
