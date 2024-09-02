@@ -17,4 +17,4 @@ jobs:
             auto-optimise-store = true
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
             experimental-features = nix-command flakes
-      - run: nix flake check --verbose
+      - run: nix flake check
