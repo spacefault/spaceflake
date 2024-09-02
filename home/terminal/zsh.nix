@@ -2,9 +2,9 @@
   programs = {
     zsh = {
       enable = true;
-      initExtra = "autoload -Uz vcs_info\nprecmd() { vcs_info }\nzstyle ':vcs_info:git:*' formats '%b '\nsetopt PROMPT_SUBST\nPROMPT='%B%F{green}%n@%m%f%b %B%F{blue}%~%f%b %B%F{red}$vcs_info_msg_0_%f%b> '";
+      initExtra = "DISABLE_AUTO_TITLE=false\nautoload -Uz vcs_info\nsetopt PROMPT_SUBST\nPROMPT='%B%F{243}%n on %m%f%b %B%F{197}%~%f%b > '"; 
       history = {
-        path = "/home/daisyadmin/.config/zsh/histfile";
+        path = "/home/lily/.config/zsh/histfile";
       };
       shellAliases = {
         grep = "grep --color";

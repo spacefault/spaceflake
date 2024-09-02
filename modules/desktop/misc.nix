@@ -3,10 +3,6 @@
     cpuFreqGovernor = "performance";
   };
 
-  sound = {
-    enable = true;
-  };
-
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
