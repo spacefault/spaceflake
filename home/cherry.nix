@@ -8,7 +8,7 @@
   home = {
     username = "lily";
     homeDirectory = lib.mkDefault "/home/lily";
-    stateVersion = "23.05";
+    stateVersion = "24.05";
     sessionVariables = {EDITOR = "nvim";};
   };
 
