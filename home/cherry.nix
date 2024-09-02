@@ -17,7 +17,6 @@
     ./terminal/neovim.nix
     ./terminal/alacritty.nix
     ./terminal/tmux.nix
-    ./programs/spicetify.nix
     ./programs/vscode.nix
   ];
 
