@@ -7,74 +7,20 @@
 }: {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    # Hyprland Requirements
-    grim
-    gvfs
-    libnotify
-    playerctl
-    polkit
-    slurp
-    swww
-    udiskie
-    udisks
-    wireplumber
-    wlogout
-    wlsunset
-    xdg-user-dirs
-    swaylock-effects
-    cliphist
-    gnome.nautilus
-    gnome.adwaita-icon-theme
-    swaynotificationcenter
-
-    # Internet
-    firefox
-    google-chrome
-    wget
-
-    # Entertainment
     ffmpeg
-    mpv
-    vlc
-    loupe
-    spotify
-
-    # Creative
-    obs-studio
-
-    # Customization
-    adw-gtk3
     gnome.adwaita-icon-theme
-    gradience
-
-    # Disks and Storage
-    baobab
-
-    # Misc
-    git
     htop
-    keepassxc
     killall
     networkmanagerapplet
-    virt-manager
     cups-filters
-    # inputs.watershot.packages.${pkgs.system}.default
-    anki-bin
     libimobiledevice
     ifuse
     libreoffice-fresh
-    veracrypt
-    mdbook
-
-    # Programming
-    (python311.withPackages (ps: with ps; [requests]))
     gcc
-    nixpkgs-review
     libsForQt5.ksshaskpass
     pinentry
     gh
     gnumake
-    vscode
   ];
 
   programs = {

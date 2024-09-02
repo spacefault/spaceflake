@@ -27,80 +27,28 @@
     blender-bin,
     home-manager,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    inherit (self) outputs;
+    pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+  in {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     nixosConfigurations = {
-      # Run the following command in the flake's directory to
-      # deploy this configuration on any NixOS system:
-      #   sudo nixos-rebuild switch --flake .#nixos-test
-      "thevalley" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ({
-            config,
-            pkgs,
-            ...
-          }: {
-            nixpkgs.overlays = [blender-bin.overlays.default];
-            environment.systemPackages = with pkgs; [blender_4_0];
-          })
-          ./modules/desktop
-          ./modules/gaming
-          ./modules/nvidia
-          ./systems/desktop/desktop.nix
-          #./patches
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.lily = import ./home/home.nix;
-            home-manager.extraSpecialArgs = {inherit inputs;};
-          }
-          inputs.lanzaboote.nixosModules.lanzaboote
-        ];
-      };
       "cherry" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs outputs;};
         modules = [
-          ({
-            config,
-            pkgs,
-            ...
-          }: {
-            nixpkgs.overlays = [blender-bin.overlays.default];
-            environment.systemPackages = with pkgs; [blender_4_0];
-          })
-          ./modules/desktop
-          ./modules/gaming
           ./systems/laptop/laptop.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.lily = import ./home/home.nix;
-            home-manager.extraSpecialArgs = {inherit inputs;};
-          }
           inputs.lanzaboote.nixosModules.lanzaboote
-        ];
-      };
-      ## servers:
-      "daisy" = nixpkgs-stable.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./systems/daisy/hardware-configuration.nix
-          ./modules/homelab
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.daisyadmin = import ./home/daisy/home.nix;
-            home-manager.extraSpecialArgs = {inherit inputs;};
-          }
         ];
       };
     };
+
+  homeConfigurations = {
+    "lily@cherry" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      extraSpecialArgs = {inherit inputs outputs;};
+      modules = [ ./home/cherry.nix ];
+    };
   };
+};
 }
