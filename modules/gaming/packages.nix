@@ -12,9 +12,9 @@
     unityhub
     piper
     celeste64
-    inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable
-    inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.wine-discord-ipc-bridge
-    inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.wine-osu
+    #inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable
+    #inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.wine-discord-ipc-bridge
+    #inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.wine-osu
   ];
 
   programs = {
