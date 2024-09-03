@@ -14,7 +14,6 @@
     firewall.enable = true;
   };
 
-  boot.supportedFilesystems = ["btrfs"];
   hardware.enableAllFirmware = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
@@ -24,15 +23,6 @@
     XCURSOR_SIZE = "24";
     SSH_AUTH_SOCK = "/run/user/1001/keyring/ssh";
   };
-
-  # swap
-
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 16 * 1024;
-    }
-  ];
 
   # you probably shouldn't change this, but if you want to please read the documentation first
   system.stateVersion = "23.05";

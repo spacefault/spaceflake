@@ -17,6 +17,7 @@
       pkgs.vlc
       pkgs.mpv
       pkgs.spotify
+      pkgs.git
       pkgs.baobab
       pkgs.obs-studio
       pkgs.keepassxc
