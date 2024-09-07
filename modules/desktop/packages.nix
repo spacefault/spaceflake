@@ -21,6 +21,7 @@
     pinentry
     gh
     gnumake
+    smartmontools
   ];
 
   programs = {
