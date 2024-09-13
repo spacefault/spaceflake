@@ -31,7 +31,7 @@
 
   imports = [
     ./terminal/zsh.nix
-    ./terminal/neovim.nix
+    ./terminal/neovim
     ./terminal/alacritty.nix
     ./terminal/tmux.nix
     ./programs/vscode.nix
