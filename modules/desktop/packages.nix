@@ -1,14 +1,11 @@
 {
   pkgs,
-  inputs,
-  config,
-  lib,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     ffmpeg
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
     htop
     killall
     networkmanagerapplet
