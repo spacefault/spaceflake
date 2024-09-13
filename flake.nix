@@ -10,6 +10,7 @@
     lanzaboote.url = "github:nix-community/lanzaboote";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
+    nixvim.url = "github:nix-community/nixvim";
     home-manager = {
       url = "github:nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +27,7 @@
     nixpkgs-stable,
     blender-bin,
     home-manager,
+    nixvim,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -47,7 +49,10 @@
     "lily@cherry" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       extraSpecialArgs = {inherit inputs outputs;};
-      modules = [ ./home/cherry.nix ];
+      modules = [ 
+        ./home/cherry.nix 
+        nixvim.homeManagerModules.nixvim
+      ];
     };
   };
 };
