@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   plugins = {
     trouble.enable = true;
     lspkind.enable = true;

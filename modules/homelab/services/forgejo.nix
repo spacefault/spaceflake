@@ -1,4 +1,8 @@
-{config, pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   services.forgejo = {
     enable = true;
     useWizard = false;
@@ -7,5 +11,3 @@
     };
   };
 }
-
-    

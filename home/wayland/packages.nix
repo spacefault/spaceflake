@@ -1,11 +1,5 @@
-{
-  pkgs,
-  inputs,
-  config,
-  lib,
-  ...
-}: {
-  home.packages [
+{pkgs, ...}: {
+  home.packages = [
     pkgs.grim
     pkgs.gvfs
     pkgs.libnotify
@@ -24,6 +18,5 @@
     pkgs.nautilus
     pkgs.adwaita-icon-theme
     pkgs.swaynotificationcenter
-  ]
+  ];
 }
-
