@@ -9,7 +9,6 @@
     ./nix.nix
     ./i18n.nix
     ./fonts.nix
-    ./systemd.nix
     ./virtualisation.nix
     ./video.nix
   ];
