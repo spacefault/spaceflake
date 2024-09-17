@@ -1,7 +1,5 @@
 {
   lib,
-  inputs,
-  config,
   pkgs,
   ...
 }: {
@@ -26,8 +24,35 @@
       pkgs.adw-gtk3
       pkgs.libreoffice-fresh
       pkgs.nixpkgs-review
+      ### gnome extensions ###
+      pkgs.gnomeExtensions.blur-my-shell
+      pkgs.gnomeExtensions.dash-to-dock
+      pkgs.gnomeExtensions.caffeine
+      pkgs.gnomeExtensions.appindicator
     ];
   };
+
+  dconf.settings = {
+    "org/gnome/shell" = {
+      disable-user-extensions = false;
+      favorite-apps = [
+        "firefox.desktop"
+        "org.gnome.Geary.desktop"
+        "org.gnome.Nautilus.desktop"
+        "Alacritty.desktop"
+        "org.keepassxc.KeePassXC.desktop"
+        "org.gnome.Music.desktop"
+        "google-chrome.desktop"
+      ];
+      enabled-extensions = [
+        "blur-my-shell@aunetx"
+        "dash-to-dock@micxgx.gmail.com"
+        "caffeine@patapon.info"
+        "appindicatorsupport@rgcjonas.gmail.com"
+      ];
+    };
+  };
+
 
   imports = [
     ./terminal/zsh.nix
