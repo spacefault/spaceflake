@@ -19,7 +19,12 @@
     gh
     gnumake
     smartmontools
+    nautilus-python
   ];
+
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-console
+  ]);
 
   programs = {
     seahorse = {
@@ -33,6 +38,10 @@
     };
     nix-ld = {
       enable = true;
+    };
+    kdeconnect = {
+      enable = true;
+      package = pkgs.gnomeExtensions.gsconnect;
     };
     nh = {
       enable = true;
