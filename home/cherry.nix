@@ -11,6 +11,7 @@
     packages = [
       pkgs.firefox
       pkgs.google-chrome
+      pkgs.webcord
       pkgs.loupe
       pkgs.vlc
       pkgs.mpv
@@ -24,6 +25,7 @@
       pkgs.adw-gtk3
       pkgs.libreoffice-fresh
       pkgs.nixpkgs-review
+      pkgs.ncmpcpp
       ### gnome extensions ###
       pkgs.gnomeExtensions.blur-my-shell
       pkgs.gnomeExtensions.dash-to-dock
@@ -32,12 +34,26 @@
     ];
   };
 
+  services = {
+    mpd = {
+      enable = true;
+      musicDirectory = "/home/lily/Music";
+    };
+  };
+
+  programs = {
+    ncmpcpp = {
+      enable = true;
+    };
+  };
+
+
   dconf.settings = {
     "org/gnome/shell" = {
       disable-user-extensions = false;
       favorite-apps = [
         "firefox.desktop"
-        "org.gnome.Geary.desktop"
+        "thunderbird.desktop"
         "org.gnome.Nautilus.desktop"
         "Alacritty.desktop"
         "org.keepassxc.KeePassXC.desktop"
@@ -49,6 +65,7 @@
         "dash-to-dock@micxgx.gmail.com"
         "caffeine@patapon.info"
         "appindicatorsupport@rgcjonas.gmail.com"
+        "gsconnect@andyholmes.github.io"
       ];
     };
   };

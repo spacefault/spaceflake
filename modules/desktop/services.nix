@@ -7,6 +7,7 @@
     ratbagd.enable = true;
     usbmuxd.enable = true;
     fwupd.enable = true;
+    fstrim.enable = true;
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
     printing = {
@@ -16,6 +17,7 @@
         pkgs.cups-kyodialog
         pkgs.foomatic-db-ppds-withNonfreeDb
         pkgs.cnijfilter2
+        pkgs.gutenprint
       ];
     };
     avahi = {
