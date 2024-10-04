@@ -11,6 +11,7 @@
     plugins = {
       nix.enable = true;
       oil.enable = true;
+      web-devicons.enable = true;
       gitblame.enable = true;
       nvim-colorizer.enable = true;
       treesitter.enable = true;

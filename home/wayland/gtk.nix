@@ -19,7 +19,7 @@
   gtk = {
     enable = true;
     iconTheme = {
-      package = pkgs.gnome.adwaita-icon-theme;
+      package = pkgs.adwaita-icon-theme;
       name = "Adwaita";
     };
     font = {
@@ -50,21 +50,5 @@
   home.sessionVariables = {
     GTK_THEME = "Catppuccin-Mocha-Compact-Pink-Dark";
     QT_QPA_PLATFORMTHEME = "qt5ct";
-  };
-  xdg.configFile = {
-    "Kvantum/catppuccin/catppuccin.kvconfig".source = builtins.fetchurl {
-      url = "https://raw.githubusercontent.com/catppuccin/Kvantum/main/src/Catppuccin-Mocha-Pink/Catppuccin-Mocha-Pink.kvconfig";
-      sha256 = "13ci6bzi41pazvpbylwqxhwjv4w8af50g26qqfh3xbaxjwfgdk1d";
-    };
-    "Kvantum/catppuccin/catppuccin.svg".source = builtins.fetchurl {
-      url = "https://raw.githubusercontent.com/catppuccin/Kvantum/main/src/Catppuccin-Mocha-Pink/Catppuccin-Mocha-Pink.svg";
-      sha256 = "1rlxd9w2ifddc62rdyddzdbglc64wf7k6w7hlxfy85hwmn35m683";
-    };
-    "Kvantum/kvantum.kvconfig".text = ''
-      [General]
-      theme=catppuccin
-      [Applications]
-      catppuccin=qt5ct, org.qbittorrent.qBittorrent, hyprland-share-picker
-    '';
   };
 }

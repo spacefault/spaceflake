@@ -4,13 +4,20 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
-    anyrun.url = "github:Kirottu/anyrun";
+    anyrun.url = "github:anyrun-org/anyrun";
     hyprland.url = "github:hyprwm/Hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
     lanzaboote.url = "github:nix-community/lanzaboote";
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
     nixvim.url = "github:nix-community/nixvim";
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,6 +35,10 @@
     blender-bin,
     home-manager,
     nixvim,
+    spicetify-nix,
+    anyrun,
+    watershot,
+    hyprland-contrib,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -52,6 +63,8 @@
         modules = [
           ./home/cherry.nix
           nixvim.homeManagerModules.nixvim
+          spicetify-nix.homeManagerModules.default
+          anyrun.homeManagerModules.default
         ];
       };
     };

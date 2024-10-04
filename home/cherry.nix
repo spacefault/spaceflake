@@ -10,12 +10,12 @@
     sessionVariables = {EDITOR = "nvim";};
     packages = [
       pkgs.firefox
+      pkgs.obsidian
       pkgs.google-chrome
       pkgs.webcord
       pkgs.loupe
       pkgs.vlc
       pkgs.mpv
-      pkgs.spotify
       pkgs.git
       pkgs.baobab
       pkgs.obs-studio
@@ -26,6 +26,7 @@
       pkgs.libreoffice-fresh
       pkgs.nixpkgs-review
       pkgs.ncmpcpp
+      pkgs.networkmanagerapplet
       ### gnome extensions ###
       pkgs.gnomeExtensions.blur-my-shell
       pkgs.gnomeExtensions.dash-to-dock
@@ -53,12 +54,12 @@
       disable-user-extensions = false;
       favorite-apps = [
         "firefox.desktop"
-        "thunderbird.desktop"
         "org.gnome.Nautilus.desktop"
         "Alacritty.desktop"
         "org.keepassxc.KeePassXC.desktop"
-        "org.gnome.Music.desktop"
+        "spotify.desktop"
         "google-chrome.desktop"
+        "anki.desktop"
       ];
       enabled-extensions = [
         "blur-my-shell@aunetx"
@@ -77,6 +78,8 @@
     ./terminal/alacritty.nix
     ./terminal/tmux.nix
     ./programs/vscode.nix
+    ./programs/spicetify.nix
+    ./wayland
   ];
 
   nixpkgs = {

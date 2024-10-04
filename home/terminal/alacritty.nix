@@ -3,11 +3,11 @@
     enable = true;
     settings = {
       window = {
-        opacity = 1;
+        opacity = 0.7;
         dynamic_title = true;
       };
       shell = {
-        program = "${pkgs.tmux}/bin/tmux";
+        program = "/run/current-system/sw/bin/zsh";
       };
       colors = {
         primary = {

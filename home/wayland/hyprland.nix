@@ -52,6 +52,7 @@ in {
         "swww init"
         "swaync"
         "sleep 5 && pkill waybar && waybar & disown"
+        "sleep 5 && nm-applet"
       ];
       general = {
         gaps_in = 5;
@@ -113,7 +114,7 @@ in {
         disable_hyprland_logo = true;
       };
       monitor = [
-        "HDMI-A-1,1920x1080@75, 0x0, 1"
+        "eDP-1,1920x1080@75, 0x0, 1.2"
       ];
       layerrule = [
         #"blur, waybar"
@@ -134,8 +135,8 @@ in {
           "${mod}, RETURN, exec, alacritty"
           "${mod}, SPACE, exec, anyrun"
           "${mod}, E, exec, nautilus"
-          ", PRINT, exec, watershot -s | wl-copy"
-          "${mod}, L, exec, ${swaylockScript.outPath}"
+          ", PRINT, exec, grimblast --freeze copy area"
+          "${mod}, L, exec, swaylock --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5"
           "${mod}, Y, exec, wlogout"
           "${mod}, Q, killactive"
           "${mod}, O, togglefloating"
