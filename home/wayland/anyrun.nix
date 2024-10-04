@@ -13,7 +13,6 @@
         translate
         symbols
         stdin
-        randr
         dictionary
       ];
       width = {absolute = 800;};

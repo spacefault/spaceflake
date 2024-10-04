@@ -16,11 +16,11 @@
                padding-left: 10px;
                padding-right: 10px;
                border-radius: 10px;
-               /* background-color: rgba(30,33,40,0.7); */
+               background-color: rgba(30,33,40,1); 
              }
 
              #window {
-               /* color: #cdd6f4; */
+               color: #1e1e2e; 
                margin-top: 6px;
                padding-left: 10px;
                padding-right: 10px;
@@ -73,12 +73,14 @@
         font-style: italic;
     }
 
-    
+    #custom-icon {
+	    color: white;
+    }
+
     #cpu,
     #memory,
     #custom-power,
     #clock,
-    #workspaces,
     #window,
     #custom-updates,
     #network,
@@ -179,7 +181,7 @@
     /* workspace window block */
     #workspaces {
         border-radius: 9px 9px 9px 9px;
-        background: mix(@theme_unfocused_base_color,white,0.1);
+        color: #2a3332;
     }
 
     #window {

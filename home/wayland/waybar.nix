@@ -4,12 +4,12 @@
   ...
 }: let
   weatherScript = builtins.path {
-    path = ./extra/waybar-wttr.py;
+    path = ../extra/waybar-wttr.py;
     name = "waybar_wttr.py";
   };
 in let
   cssFile = builtins.path {
-    path = ./extra/waybarstyle.css;
+    path = ../extra/waybarstyle.css;
     name = "waybarstyle.css";
   };
 in {
@@ -28,21 +28,21 @@ in {
           margin-top = 5;
           margin-left = 5;
           margin-right = 5;
-          modules-left = ["custom/icon" "custom/seperator" "hyprland/workspaces" "mpris"];
-          modules-center = ["clock" "custom/weather"];
-          modules-right = ["tray" "custom/notification" "custom/seperator" "wireplumber" "battery" "network" "hyprland/language" "custom/seperator" "custom/power"];
+          modules-left = ["custom/icon" "custom/seperator" "hyprland/window" "custom/seperator" "hyprland/workspaces"];
+          modules-center = [];
+          modules-right = ["custom/seperator" "mpris" "tray" "custom/notification" "wireplumber" "battery" "hyprland/language" "clock"];
           "custom/notification" = {
             tooltip = false;
             format = "{icon}";
             format-icons = {
-              notification = "   ! ";
-              none = "  ";
-              dnd-notification = "    ! ";
-              dnd-none = "  ";
-              inhibited-notification = "   ! ";
-              inhibited-none = "  ";
-              dnd-inhibited-notification = "   ! ";
-              dnd-inhibited-none = "  ";
+              notification = " !";
+              none = "";
+              dnd-notification = " !";
+              dnd-none = " ";
+              inhibited-notification = " !";
+              inhibited-none = "";
+              dnd-inhibited-notification = " !";
+              dnd-inhibited-none = " ";
             };
             return-type = "json";
             exec-if = "which swaync-client";
@@ -62,11 +62,15 @@ in {
             tooltip = true;
           };
           "hyprland/window" = {
-            format = "{}";
+            format = "{title}";
+            rewrite = {
+              "(.*) — Mozilla Firefox" = "Firefox";
+              "(.*) - Google Chrome" = "Chrome";
+            };
           };
           "mpris" = {
-            format = "{player_icon} {title} - {artist}";
-            format-paused = "{status_icon} {title} - {artist}";
+            format = "{player_icon}";
+            format-paused = "{status_icon}";
             player-icons = {
               "default" = " ";
             };
@@ -124,7 +128,7 @@ in {
             tooltip-format = "{capacity}%";
           };
           "clock" = {
-            format = "{:%I:%M %p  %A %b %d}";
+            format = "{:%a %b %e %I:%M %p}";
             format-alt = "{:   %Y-%m-%d}";
             tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           };
@@ -141,9 +145,9 @@ in {
             format = "{icon}";
             tooltip = "true";
             tooltip-format = "{volume}";
-            format-muted = "󰝟";
+            format-muted = "X";
             on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-            format-icons = ["" "" ""];
+            format-icons = ["L" "M" "H"];
           };
           "custom/power" = {
             format = "⏻ ";

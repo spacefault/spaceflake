@@ -1,7 +1,11 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: {
   home.packages = [
+    inputs.watershot.packages.${pkgs.system}.default
+    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     pkgs.grim
+    pkgs.wl-clipboard
     pkgs.gvfs
+    pkgs.swaylock-effects
     pkgs.libnotify
     pkgs.playerctl
     pkgs.polkit
@@ -13,7 +17,6 @@
     pkgs.wlogout
     pkgs.wlsunset
     pkgs.xdg-user-dirs
-    pkgs.swaylock-effects
     pkgs.cliphist
     pkgs.nautilus
     pkgs.adwaita-icon-theme
