@@ -9,7 +9,6 @@
     prismlauncher
     ckan
     godot_4
-    unityhub
     piper
     celeste64
     #inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable

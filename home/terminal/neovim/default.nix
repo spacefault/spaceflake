@@ -140,15 +140,12 @@
           pyright = {
             enable = true;
           };
-          rust-analyzer = {
+          rust_analyzer = {
             enable = true;
             installRustc = true;
             installCargo = true;
           };
-          rnix-lsp = {
-            enable = true;
-          };
-          nil-ls = {
+          nil_ls = {
             enable = true;
           };
         };

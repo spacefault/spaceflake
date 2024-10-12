@@ -79,7 +79,6 @@
     ./terminal/tmux.nix
     ./programs/vscode.nix
     ./programs/spicetify.nix
-    ./wayland
   ];
 
   nixpkgs = {
