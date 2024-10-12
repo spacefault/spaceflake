@@ -28,7 +28,7 @@
 
   programs = {
     seahorse = {
-      enable = true;
+      enable = false;
     };
     zsh = {
       enable = true;
@@ -38,10 +38,6 @@
     };
     nix-ld = {
       enable = true;
-    };
-    kdeconnect = {
-      enable = true;
-      package = pkgs.gnomeExtensions.gsconnect;
     };
     nh = {
       enable = true;

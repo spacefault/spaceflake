@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       window = {
-        opacity = 0.7;
+        opacity = 1;
         dynamic_title = true;
       };
       shell = {
