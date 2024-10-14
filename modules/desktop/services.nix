@@ -16,7 +16,7 @@
       drivers = [
         #pkgs.cups-kyodialog
         #pkgs.foomatic-db-ppds-withNonfreeDb
-        #pkgs.cnijfilter2
+        pkgs.cnijfilter2
         #pkgs.gutenprint
       ];
     };
