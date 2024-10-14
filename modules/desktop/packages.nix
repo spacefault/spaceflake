@@ -7,6 +7,7 @@
     ffmpeg
     adwaita-icon-theme
     htop
+    sbctl
     killall
     networkmanagerapplet
     cups-filters
