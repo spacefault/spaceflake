@@ -74,6 +74,7 @@ in {
         #kb_options = "compose:rctrl";
         follow_mouse = 1;
         sensitivity = 0;
+        touchpad.natural_scroll = true;
       };
       decoration = {
         rounding = 10;

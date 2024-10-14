@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   powerManagement = {
     cpuFreqGovernor = "performance";
   };
@@ -11,4 +11,6 @@
   environment.sessionVariables.QT_QPA_PLATFORMTHEME = "qt5ct";
   hardware.pulseaudio.enable = false;
   hardware.sane.enable = true;
+  hardware.sane.extraBackends = [ pkgs.sane-airscan ];
+  hardware.sane.disabledDefaultBackends = [ "escl" ];
 }
