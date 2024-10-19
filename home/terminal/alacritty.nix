@@ -7,7 +7,7 @@
         dynamic_title = true;
       };
       shell = {
-        program = "/run/current-system/sw/bin/zsh";
+        program = "${pkgs.tmux}/bin/tmux";
       };
       colors = {
         primary = {

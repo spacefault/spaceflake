@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
     anyrun.url = "github:anyrun-org/anyrun";
     hyprland.url = "github:hyprwm/Hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
@@ -31,7 +30,6 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-stable,
     blender-bin,
     home-manager,
     nixvim,
