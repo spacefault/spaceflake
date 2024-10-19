@@ -8,7 +8,6 @@
     osu-lazer-bin
     prismlauncher
     ckan
-    godot_4
     piper
     celeste64
     #inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable

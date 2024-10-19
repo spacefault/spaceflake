@@ -77,8 +77,8 @@
     ./terminal/neovim
     ./terminal/alacritty.nix
     ./terminal/tmux.nix
-    ./programs/vscode.nix
-    ./programs/spicetify.nix
+    ./linuxPrograms/vscode.nix
+    ./linuxPrograms/spicetify.nix
   ];
 
   nixpkgs = {
