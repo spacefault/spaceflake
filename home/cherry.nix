@@ -79,6 +79,7 @@
     ./terminal/tmux.nix
     ./linuxPrograms/vscode.nix
     ./linuxPrograms/spicetify.nix
+    ./linuxGaming
   ];
 
   nixpkgs = {
