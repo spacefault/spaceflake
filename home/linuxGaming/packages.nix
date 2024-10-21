@@ -4,7 +4,7 @@
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [
+  packages = with pkgs; [
     osu-lazer-bin
     prismlauncher
     ckan
