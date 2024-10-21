@@ -4,7 +4,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/desktop
-    ../../modules/gaming
   ];
 
   # networking, firewall, and hostname

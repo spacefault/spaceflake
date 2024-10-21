@@ -12,7 +12,6 @@
       pkgs.firefox
       pkgs.obsidian
       pkgs.google-chrome
-      pkgs.webcord
       pkgs.loupe
       pkgs.vlc
       pkgs.mpv
@@ -26,6 +25,7 @@
       pkgs.libreoffice-fresh
       pkgs.nixpkgs-review
       pkgs.ncmpcpp
+      pkgs.discord
       pkgs.networkmanagerapplet
       ### gnome extensions ###
       pkgs.gnomeExtensions.blur-my-shell
