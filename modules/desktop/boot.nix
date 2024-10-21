@@ -8,7 +8,7 @@
   boot = {
     bootspec.enable = true;
     lanzaboote = {
-      enable = true;
+      enable = false;
       pkiBundle = "/etc/secureboot";
     };
     kernelPackages = pkgs.linuxPackages_latest;
@@ -20,7 +20,7 @@
     '';
     supportedFilesystems = ["ntfs" "btrfs"];
     loader = {
-      systemd-boot.enable = lib.mkForce false;
+      systemd-boot.enable = lib.mkForce true;
       efi.canTouchEfiVariables = true;
     };
   };
