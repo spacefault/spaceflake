@@ -1,0 +1,533 @@
+diff --git a/flake.lock b/flake.lock
+index caedaba..69b099d 100644
+--- a/flake.lock
++++ b/flake.lock
+@@ -1,25 +1,5 @@
+ {
+   "nodes": {
+-    "anyrun": {
+-      "inputs": {
+-        "flake-parts": "flake-parts",
+-        "nixpkgs": "nixpkgs",
+-        "systems": "systems"
+-      },
+-      "locked": {
+-        "lastModified": 1728852607,
+-        "narHash": "sha256-PhJdr8b4nZVHts5KMEsf7vCDXVpFIFCa7VlCt+oYpL4=",
+-        "owner": "anyrun-org",
+-        "repo": "anyrun",
+-        "rev": "6e0385f6945d701545edc5bccfc5f544e1e12663",
+-        "type": "github"
+-      },
+-      "original": {
+-        "owner": "anyrun-org",
+-        "repo": "anyrun",
+-        "type": "github"
+-      }
+-    },
+     "aquamarine": {
+       "inputs": {
+         "hyprutils": [
+@@ -68,26 +48,6 @@
+         "type": "github"
+       }
+     },
+-    "blender-bin": {
+-      "inputs": {
+-        "nixpkgs": "nixpkgs_2"
+-      },
+-      "locked": {
+-        "dir": "blender",
+-        "lastModified": 1727864973,
+-        "narHash": "sha256-Z9ekAxNnoOKnkFm7DPZibIay9nEiWTC0inSYzJAaQmg=",
+-        "owner": "edolstra",
+-        "repo": "nix-warez",
+-        "rev": "b00dabc0345500ca50db06334dd0488f0b94ece3",
+-        "type": "github"
+-      },
+-      "original": {
+-        "dir": "blender",
+-        "owner": "edolstra",
+-        "repo": "nix-warez",
+-        "type": "github"
+-      }
+-    },
+     "crane": {
+       "locked": {
+         "lastModified": 1728776144,
+@@ -177,6 +137,27 @@
+         "type": "github"
+       }
+     },
++    "disko": {
++      "inputs": {
++        "nixpkgs": [
++          "nixpkgs"
++        ]
++      },
++      "locked": {
++        "lastModified": 1728673344,
++        "narHash": "sha256-O0QVhsj9I/hmcIqJ4qCqFyzvjYL+dtzJP0C5MFd8O/Y=",
++        "owner": "nix-community",
++        "repo": "disko",
++        "rev": "ff0a471763faaaca1859fd6de80f44fa0fce91a6",
++        "type": "github"
++      },
++      "original": {
++        "owner": "nix-community",
++        "ref": "latest",
++        "repo": "disko",
++        "type": "github"
++      }
++    },
+     "dmerge": {
+       "inputs": {
+         "nixlib": [
+@@ -206,7 +187,7 @@
+     },
+     "fenix": {
+       "inputs": {
+-        "nixpkgs": "nixpkgs_8",
++        "nixpkgs": "nixpkgs_6",
+         "rust-analyzer-src": "rust-analyzer-src"
+       },
+       "locked": {
+@@ -302,27 +283,6 @@
+       }
+     },
+     "flake-parts": {
+-      "inputs": {
+-        "nixpkgs-lib": [
+-          "anyrun",
+-          "nixpkgs"
+-        ]
+-      },
+-      "locked": {
+-        "lastModified": 1727826117,
+-        "narHash": "sha256-K5ZLCyfO/Zj9mPFldf3iwS6oZStJcU4tSpiXTMYaaL0=",
+-        "owner": "hercules-ci",
+-        "repo": "flake-parts",
+-        "rev": "3d04084d54bedc3d6b8b736c70ef449225c361b1",
+-        "type": "github"
+-      },
+-      "original": {
+-        "owner": "hercules-ci",
+-        "repo": "flake-parts",
+-        "type": "github"
+-      }
+-    },
+-    "flake-parts_2": {
+       "inputs": {
+         "nixpkgs-lib": [
+           "lanzaboote",
+@@ -343,7 +303,7 @@
+         "type": "github"
+       }
+     },
+-    "flake-parts_3": {
++    "flake-parts_2": {
+       "inputs": {
+         "nixpkgs-lib": "nixpkgs-lib"
+       },
+@@ -361,7 +321,7 @@
+         "type": "github"
+       }
+     },
+-    "flake-parts_4": {
++    "flake-parts_3": {
+       "inputs": {
+         "nixpkgs-lib": [
+           "nixvim",
+@@ -384,7 +344,7 @@
+     },
+     "flake-utils": {
+       "inputs": {
+-        "systems": "systems_3"
++        "systems": "systems_2"
+       },
+       "locked": {
+         "lastModified": 1726560853,
+@@ -533,11 +493,11 @@
+         ]
+       },
+       "locked": {
+-        "lastModified": 1729414726,
+-        "narHash": "sha256-Dtmm1OU8Ymiy9hVWn/a2B8DhRYo9Eoyx9veERdOBR4o=",
++        "lastModified": 1729459288,
++        "narHash": "sha256-gBOVJv+q6Mx8jGvwX7cE6J8+sZmi1uxpRVsO7WxvVuQ=",
+         "owner": "nix-community",
+         "repo": "home-manager",
+-        "rev": "fe56302339bb28e3471632379d733547caec8103",
++        "rev": "1e27f213d77fc842603628bcf2df6681d7d08f7e",
+         "type": "github"
+       },
+       "original": {
+@@ -604,9 +564,9 @@
+         "hyprlang": "hyprlang",
+         "hyprutils": "hyprutils",
+         "hyprwayland-scanner": "hyprwayland-scanner",
+-        "nixpkgs": "nixpkgs_3",
++        "nixpkgs": "nixpkgs",
+         "pre-commit-hooks": "pre-commit-hooks",
+-        "systems": "systems_2",
++        "systems": "systems",
+         "xdph": "xdph"
+       },
+       "locked": {
+@@ -773,8 +733,8 @@
+       "inputs": {
+         "crane": "crane",
+         "flake-compat": "flake-compat_2",
+-        "flake-parts": "flake-parts_2",
+-        "nixpkgs": "nixpkgs_4",
++        "flake-parts": "flake-parts",
++        "nixpkgs": "nixpkgs_2",
+         "pre-commit-hooks-nix": "pre-commit-hooks-nix",
+         "rust-overlay": "rust-overlay"
+       },
+@@ -842,8 +802,8 @@
+     },
+     "nix-gaming": {
+       "inputs": {
+-        "flake-parts": "flake-parts_3",
+-        "nixpkgs": "nixpkgs_5",
++        "flake-parts": "flake-parts_2",
++        "nixpkgs": "nixpkgs_3",
+         "umu": "umu"
+       },
+       "locked": {
+@@ -894,11 +854,11 @@
+     },
+     "nixpkgs": {
+       "locked": {
+-        "lastModified": 1728492678,
+-        "narHash": "sha256-9UTxR8eukdg+XZeHgxW5hQA9fIKHsKCdOIUycTryeVw=",
++        "lastModified": 1728888510,
++        "narHash": "sha256-nsNdSldaAyu6PE3YUA+YQLqUDJh+gRbBooMMekZJwvI=",
+         "owner": "NixOS",
+         "repo": "nixpkgs",
+-        "rev": "5633bcff0c6162b9e4b5f1264264611e950c8ec7",
++        "rev": "a3c0b3b21515f74fd2665903d4ce6bc4dc81c77c",
+         "type": "github"
+       },
+       "original": {
+@@ -953,36 +913,6 @@
+       }
+     },
+     "nixpkgs_2": {
+-      "locked": {
+-        "lastModified": 1722221733,
+-        "owner": "NixOS",
+-        "repo": "nixpkgs",
+-        "rev": "12bf09802d77264e441f48e25459c10c93eada2e",
+-        "type": "github"
+-      },
+-      "original": {
+-        "id": "nixpkgs",
+-        "ref": "nixos-24.05",
+-        "type": "indirect"
+-      }
+-    },
+-    "nixpkgs_3": {
+-      "locked": {
+-        "lastModified": 1728888510,
+-        "narHash": "sha256-nsNdSldaAyu6PE3YUA+YQLqUDJh+gRbBooMMekZJwvI=",
+-        "owner": "NixOS",
+-        "repo": "nixpkgs",
+-        "rev": "a3c0b3b21515f74fd2665903d4ce6bc4dc81c77c",
+-        "type": "github"
+-      },
+-      "original": {
+-        "owner": "NixOS",
+-        "ref": "nixos-unstable",
+-        "repo": "nixpkgs",
+-        "type": "github"
+-      }
+-    },
+-    "nixpkgs_4": {
+       "locked": {
+         "lastModified": 1728897630,
+         "narHash": "sha256-0utJPs4o2Mody8GDwo4hnGuxc8dJqju4u9lLJY4d/Lw=",
+@@ -998,7 +928,7 @@
+         "type": "github"
+       }
+     },
+-    "nixpkgs_5": {
++    "nixpkgs_3": {
+       "locked": {
+         "lastModified": 1728538411,
+         "narHash": "sha256-f0SBJz1eZ2yOuKUr5CA9BHULGXVSn6miBuUWdTyhUhU=",
+@@ -1014,7 +944,7 @@
+         "type": "github"
+       }
+     },
+-    "nixpkgs_6": {
++    "nixpkgs_4": {
+       "locked": {
+         "lastModified": 1729256560,
+         "narHash": "sha256-/uilDXvCIEs3C9l73JTACm4quuHUsIHcns1c+cHUJwA=",
+@@ -1030,7 +960,7 @@
+         "type": "github"
+       }
+     },
+-    "nixpkgs_7": {
++    "nixpkgs_5": {
+       "locked": {
+         "lastModified": 1729070438,
+         "narHash": "sha256-KOTTUfPkugH52avUvXGxvWy8ibKKj4genodIYUED+Kc=",
+@@ -1046,7 +976,7 @@
+         "type": "github"
+       }
+     },
+-    "nixpkgs_8": {
++    "nixpkgs_6": {
+       "locked": {
+         "lastModified": 1677063315,
+         "narHash": "sha256-qiB4ajTeAOVnVSAwCNEEkoybrAlA+cpeiBxLobHndE8=",
+@@ -1066,20 +996,20 @@
+       "inputs": {
+         "devshell": "devshell",
+         "flake-compat": "flake-compat_3",
+-        "flake-parts": "flake-parts_4",
++        "flake-parts": "flake-parts_3",
+         "git-hooks": "git-hooks",
+         "home-manager": "home-manager_2",
+         "nix-darwin": "nix-darwin",
+-        "nixpkgs": "nixpkgs_7",
++        "nixpkgs": "nixpkgs_5",
+         "nuschtosSearch": "nuschtosSearch",
+         "treefmt-nix": "treefmt-nix"
+       },
+       "locked": {
+-        "lastModified": 1729368702,
+-        "narHash": "sha256-KW+NFU0woUYpiVsdbXO5YAKCnKZ743BJlnG4ZEflvfs=",
++        "lastModified": 1729438888,
++        "narHash": "sha256-TGTDOX2/5OIoSzlcRReVn4BbbfL6Ami/eassiPPGqNA=",
+         "owner": "nix-community",
+         "repo": "nixvim",
+-        "rev": "c4ad4d0b2e7de04fa9ae0652b006807f42062080",
++        "rev": "47b563d4e1410bff6a9481b3dd8b01b1e5ed70d2",
+         "type": "github"
+       },
+       "original": {
+@@ -1285,14 +1215,13 @@
+     },
+     "root": {
+       "inputs": {
+-        "anyrun": "anyrun",
+-        "blender-bin": "blender-bin",
++        "disko": "disko",
+         "home-manager": "home-manager",
+         "hyprland": "hyprland",
+         "hyprland-contrib": "hyprland-contrib",
+         "lanzaboote": "lanzaboote",
+         "nix-gaming": "nix-gaming",
+-        "nixpkgs": "nixpkgs_6",
++        "nixpkgs": "nixpkgs_4",
+         "nixvim": "nixvim",
+         "spicetify-nix": "spicetify-nix",
+         "watershot": "watershot"
+@@ -1375,11 +1304,11 @@
+         ]
+       },
+       "locked": {
+-        "lastModified": 1729397826,
+-        "narHash": "sha256-PKiCeeV0D8qBRVzlGlx3DE+/0WU8U8maMjB2rRJMBBA=",
++        "lastModified": 1729484282,
++        "narHash": "sha256-VnLaP3OH9rP/+5ZuEsETSyyKtBif5l3mNL3YOxPhBVo=",
+         "owner": "Gerg-L",
+         "repo": "spicetify-nix",
+-        "rev": "1a8fa34b656d67c1d7d4c2b76cba03bf4d65dee4",
++        "rev": "7dcfbba64faedd15574e6df5d89b2bcf5bb20128",
+         "type": "github"
+       },
+       "original": {
+@@ -1451,21 +1380,6 @@
+       }
+     },
+     "systems_2": {
+-      "locked": {
+-        "lastModified": 1689347949,
+-        "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
+-        "owner": "nix-systems",
+-        "repo": "default-linux",
+-        "rev": "31732fcf5e8fea42e59c2488ad31a0e651500f68",
+-        "type": "github"
+-      },
+-      "original": {
+-        "owner": "nix-systems",
+-        "repo": "default-linux",
+-        "type": "github"
+-      }
+-    },
+-    "systems_3": {
+       "locked": {
+         "lastModified": 1681028828,
+         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+diff --git a/flake.nix b/flake.nix
+index 6cc9a5a..e312168 100644
+--- a/flake.nix
++++ b/flake.nix
+@@ -3,11 +3,11 @@
+ 
+   inputs = {
+     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+-    anyrun.url = "github:anyrun-org/anyrun";
++    # anyrun.url = "github:anyrun-org/anyrun";
+     hyprland.url = "github:hyprwm/Hyprland";
+     nix-gaming.url = "github:fufexan/nix-gaming";
+     lanzaboote.url = "github:nix-community/lanzaboote";
+-    blender-bin.url = "github:edolstra/nix-warez?dir=blender";
++    #blender-bin.url = "github:edolstra/nix-warez?dir=blender";
+     nixvim.url = "github:nix-community/nixvim";
+     hyprland-contrib = {
+       url = "github:hyprwm/contrib";
+@@ -25,18 +25,23 @@
+       url = "github:kirottu/watershot";
+       inputs.nixpkgs.follows = "nixpkgs";
+     };
++    disko = {
++      url = "github:nix-community/disko/latest";
++      inputs.nixpkgs.follows = "nixpkgs";
++    };
+   };
+ 
+   outputs = {
+     self,
+     nixpkgs,
+-    blender-bin,
++    #blender-bin,
+     home-manager,
+     nixvim,
+     spicetify-nix,
+-    anyrun,
++    #anyrun,
+     watershot,
+     hyprland-contrib,
++    disko,
+     ...
+   } @ inputs: let
+     inherit (self) outputs;
+@@ -50,6 +55,7 @@
+         modules = [
+           ./systems/laptop/laptop.nix
+           inputs.lanzaboote.nixosModules.lanzaboote
++          disko.nixosModules.disko
+         ];
+       };
+     };
+@@ -62,7 +68,7 @@
+           ./home/cherry.nix
+           nixvim.homeManagerModules.nixvim
+           spicetify-nix.homeManagerModules.default
+-          anyrun.homeManagerModules.default
++          # anyrun.homeManagerModules.default
+         ];
+       };
+     };
+diff --git a/modules/desktop/boot.nix b/modules/desktop/boot.nix
+index 6bf5f46..684a2fc 100644
+--- a/modules/desktop/boot.nix
++++ b/modules/desktop/boot.nix
+@@ -8,7 +8,7 @@
+   boot = {
+     bootspec.enable = true;
+     lanzaboote = {
+-      enable = true;
++      enable = false;
+       pkiBundle = "/etc/secureboot";
+     };
+     kernelPackages = pkgs.linuxPackages_latest;
+@@ -20,7 +20,7 @@
+     '';
+     supportedFilesystems = ["ntfs" "btrfs"];
+     loader = {
+-      systemd-boot.enable = lib.mkForce false;
++      systemd-boot.enable = lib.mkForce true;
+       efi.canTouchEfiVariables = true;
+     };
+   };
+diff --git a/systems/laptop/disko-config.nix b/systems/laptop/disko-config.nix
+new file mode 100644
+index 0000000..80d89d4
+--- /dev/null
++++ b/systems/laptop/disko-config.nix
+@@ -0,0 +1,61 @@
++{
++  disko.devices = {
++    disk = {
++      main = {
++        type = "disk";
++        device = "/dev/nvme0n1";
++        content = {
++          type = "gpt";
++          partitions = {
++            ESP = {
++              size = "512M";
++              type = "EF00";
++              content = {
++                type = "filesystem";
++                format = "vfat";
++                mountpoint = "/boot";
++                mountOptions = [ "umask=0077" ];
++              };
++            };
++            luks = {
++              size = "50%";
++              content = {
++                type = "luks";
++                name = "crypted";
++                # disable settings.keyFile if you want to use interactive password entry
++                #passwordFile = "/tmp/secret.key"; # Interactive
++                settings = {
++                  allowDiscards = true;
++                  keyFile = "/tmp/secret.key";
++                };
++                additionalKeyFiles = [ "/tmp/additionalSecret.key" ];
++                content = {
++                  type = "btrfs";
++                  extraArgs = [ "-f" ];
++                  subvolumes = {
++                    "/root" = {
++                      mountpoint = "/";
++                      mountOptions = [ "compress=zstd" "noatime" ];
++                    };
++                    "/home" = {
++                      mountpoint = "/home";
++                      mountOptions = [ "compress=zstd" "noatime" ];
++                    };
++                    "/nix" = {
++                      mountpoint = "/nix";
++                      mountOptions = [ "compress=zstd" "noatime" ];
++                    };
++                    "/swap" = {
++                      mountpoint = "/.swapvol";
++                      swap.swapfile.size = "16G";
++                    };
++                  };
++                };
++              };
++            };
++          };
++        };
++      };
++    };
++  };
++}
+diff --git a/systems/laptop/hardware-configuration.nix b/systems/laptop/hardware-configuration-latest.nix.old
+similarity index 100%
+rename from systems/laptop/hardware-configuration.nix
+rename to systems/laptop/hardware-configuration-latest.nix.old
+diff --git a/systems/laptop/laptop.nix b/systems/laptop/laptop.nix
+index 05aa173..69f369f 100644
+--- a/systems/laptop/laptop.nix
++++ b/systems/laptop/laptop.nix
+@@ -2,7 +2,7 @@
+ {...}: {
+   imports = [
+     # Include the results of the hardware scan.
+-    ./hardware-configuration.nix
++    ./disko-config.nix
+     ../../modules/desktop
+   ];
+ 

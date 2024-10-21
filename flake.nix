@@ -3,11 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    anyrun.url = "github:anyrun-org/anyrun";
+    # anyrun.url = "github:anyrun-org/anyrun";
     hyprland.url = "github:hyprwm/Hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
     lanzaboote.url = "github:nix-community/lanzaboote";
-    blender-bin.url = "github:edolstra/nix-warez?dir=blender";
+    #blender-bin.url = "github:edolstra/nix-warez?dir=blender";
     nixvim.url = "github:nix-community/nixvim";
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
@@ -25,18 +25,23 @@
       url = "github:kirottu/watershot";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
-    blender-bin,
+    #blender-bin,
     home-manager,
     nixvim,
     spicetify-nix,
-    anyrun,
+    #anyrun,
     watershot,
     hyprland-contrib,
+    disko,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -50,6 +55,7 @@
         modules = [
           ./systems/laptop/laptop.nix
           inputs.lanzaboote.nixosModules.lanzaboote
+          disko.nixosModules.disko
         ];
       };
     };
@@ -62,7 +68,7 @@
           ./home/cherry.nix
           nixvim.homeManagerModules.nixvim
           spicetify-nix.homeManagerModules.default
-          anyrun.homeManagerModules.default
+          # anyrun.homeManagerModules.default
         ];
       };
     };
