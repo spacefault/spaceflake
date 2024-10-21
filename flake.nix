@@ -3,11 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # anyrun.url = "github:anyrun-org/anyrun";
+    anyrun.url = "github:anyrun-org/anyrun";
     hyprland.url = "github:hyprwm/Hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
     lanzaboote.url = "github:nix-community/lanzaboote";
-    #blender-bin.url = "github:edolstra/nix-warez?dir=blender";
+    blender-bin.url = "github:edolstra/nix-warez?dir=blender";
     nixvim.url = "github:nix-community/nixvim";
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
@@ -34,11 +34,11 @@
   outputs = {
     self,
     nixpkgs,
-    #blender-bin,
+    blender-bin,
     home-manager,
     nixvim,
     spicetify-nix,
-    #anyrun,
+    anyrun,
     watershot,
     hyprland-contrib,
     disko,
@@ -53,7 +53,7 @@
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./systems/laptop/laptop.nix
+          ./profiles/cherry.nix
           inputs.lanzaboote.nixosModules.lanzaboote
           disko.nixosModules.disko
         ];
