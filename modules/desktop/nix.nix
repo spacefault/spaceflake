@@ -2,7 +2,6 @@
   nix = {
     settings = {
       experimental-features = ["nix-command" "flakes"];
-      allowed-users = ["@wheel" "lily"];
       auto-optimise-store = true;
       builders-use-substitutes = true;
       substituters = [

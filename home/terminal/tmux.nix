@@ -19,7 +19,7 @@
         set -g mouse on
         set -g status-position bottom
         set -g status-justify left
-        set -g status-style 'fg=lightred'
+        set -g status-style 'fg=red'
       '';
     };
   };
