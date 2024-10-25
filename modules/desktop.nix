@@ -135,7 +135,7 @@
   fonts = {
     packages = with pkgs; [
       noto-fonts
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       noto-fonts-emoji
       font-awesome
       source-han-sans
@@ -183,18 +183,15 @@
 
   # virtualization settings
   virtualisation = {
-    docker = {
-      enable = false;
-    };
-    libvirtd = {
-      enable = true;
-    };
+    docker.enable = false;
+    libvirtd.enable = true;
   };
 
   # env
-  environment = {
-    sessionVariables.NIXOS_OZONE_WL = "1";
-    sessionVariables.QT_QPA_PLATFORMTHEME = "qt5ct";
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    QT_QPA_PLATFORMTHEME = "qt5ct";
+    XCURSOR_SIZE = "24";
   };
 
   # hardware

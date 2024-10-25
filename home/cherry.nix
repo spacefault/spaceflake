@@ -8,6 +8,12 @@
     homeDirectory = lib.mkDefault "/home/lily";
     stateVersion = "24.05";
     sessionVariables = {EDITOR = "nvim";};
+    pointerCursor = {
+      name = "macOS-Monterey";
+      size = 22;
+      package = pkgs.apple-cursor;
+      gtk.enable = true;
+    };
     packages = [
       pkgs.firefox
       pkgs.obsidian
@@ -54,6 +60,7 @@
       disable-user-extensions = false;
       favorite-apps = [
         "firefox.desktop"
+        "org.gnome.Geary.desktop"
         "org.gnome.Nautilus.desktop"
         "Alacritty.desktop"
         "org.keepassxc.KeePassXC.desktop"
@@ -70,6 +77,20 @@
       ];
     };
   };
+
+  gtk = {
+    enable = false;
+    cursorTheme = {
+      name = "macos-Monterey";
+      package = pkgs.apple-cursor;
+      size = 22;
+    };
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+  };
+
 
 
   imports = [

@@ -11,10 +11,19 @@
     piper
     celeste64
     discord
+    lutris
     #inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable
     #inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.wine-discord-ipc-bridge
     #inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.wine-osu
   ];
+
+  systemd.extraConfig = ''
+    DefaultLimitNOFILE=1048576
+  '';
+
+  systemd.user.extraConfig = ''
+    DefaultLimitNOFILE=1048576
+  '';
 
   programs = {
     steam = {
