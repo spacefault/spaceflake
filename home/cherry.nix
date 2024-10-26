@@ -61,10 +61,11 @@
       favorite-apps = [
         "firefox.desktop"
         "org.gnome.Geary.desktop"
+        "org.gnome.Calendar.desktop"
         "org.gnome.Nautilus.desktop"
-        "Alacritty.desktop"
-        "org.keepassxc.KeePassXC.desktop"
         "spotify.desktop"
+        "org.keepassxc.KeePassXC.desktop"
+        "Alacritty.desktop"
         "google-chrome.desktop"
         "anki.desktop"
       ];
