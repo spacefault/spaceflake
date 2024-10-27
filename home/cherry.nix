@@ -66,7 +66,6 @@
         "spotify.desktop"
         "org.keepassxc.KeePassXC.desktop"
         "Alacritty.desktop"
-        "google-chrome.desktop"
         "anki.desktop"
       ];
       enabled-extensions = [
