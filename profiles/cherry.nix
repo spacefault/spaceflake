@@ -1,5 +1,5 @@
 # laptop.nix: cherry
-{...}: {
+{lib, ...}: {
   # networking, firewall, and hostname
   networking = {
     hostName = "cherry";
@@ -26,7 +26,7 @@
               };
             };
             luks = {
-              size = "50%";
+              size = lib.mkForce "50%";
               content = {
                 type = "luks";
                 name = "crypted";
