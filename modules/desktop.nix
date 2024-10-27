@@ -6,6 +6,7 @@
     extraGroups = ["networkmanager" "wheel" "audio" "video" "input" "libvirtd" "docker" "scanner" "lp"];
     packages = [];
     shell = pkgs.zsh;
+    uid = 1000;
   };
 
   # i18n
