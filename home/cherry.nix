@@ -41,20 +41,6 @@
     ];
   };
 
-  services = {
-    mpd = {
-      enable = true;
-      musicDirectory = "/home/lily/Music";
-    };
-  };
-
-  programs = {
-    ncmpcpp = {
-      enable = true;
-    };
-  };
-
-
   dconf.settings = {
     "org/gnome/shell" = {
       disable-user-extensions = false;
@@ -67,6 +53,7 @@
         "org.keepassxc.KeePassXC.desktop"
         "Alacritty.desktop"
         "anki.desktop"
+        "obsidian.desktop"
       ];
       enabled-extensions = [
         "blur-my-shell@aunetx"
@@ -88,6 +75,20 @@
     iconTheme = {
       name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
+    };
+  };
+
+  xdg = {
+    enable = true;
+    portal = {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-gnome pkgs.xdg-desktop-portal-gtk ];
+      config.common.default = "*";
+    };
+    userDirs = {
+      publicShare = null;
+      templates = null;
+      desktop = null;
     };
   };
 
