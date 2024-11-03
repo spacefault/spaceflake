@@ -46,7 +46,7 @@ in {
         "udiskie --appindicator --automount"
         "systemctl --user start polkit-gnome-authentication-agent-1.service"
         "/run/wrappers/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
-        "/home/lily/.config/hypr/scripts/initbackground.sh"
+        "/home/devin/.config/hypr/scripts/initbackground.sh"
         "wlsunset -S 06:30 -s 20:00"
         "hyprctl setcursor Adwaita 24"
         "swww init"

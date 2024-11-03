@@ -6,6 +6,5 @@
     ./hyprland.nix
     ./packages.nix
     ./swayosd.nix
-    ./waybar.nix
   ];
 }

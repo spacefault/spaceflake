@@ -10,20 +10,15 @@
   };
 in {
   home = {
-    username = "lily";
-    homeDirectory = lib.mkDefault "/home/lily";
+    username = "devin";
+    homeDirectory = lib.mkDefault "/home/devin";
     stateVersion = "24.05";
     sessionVariables = {EDITOR = "nvim";};
-    pointerCursor = {
-      name = "macOS-Monterey";
-      size = 22;
-      package = pkgs.apple-cursor;
-      gtk.enable = true;
-    };
     packages = [
       pkgs.firefox
       pkgs.obsidian
       pkgs.google-chrome
+      pkgs.webcord
       pkgs.loupe
       pkgs.vlc
       pkgs.mpv
@@ -88,14 +83,6 @@ in {
     };
   };
 
-  gtk = {
-    enable = true;
-    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-    iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
-    };
-  };
 
   xdg = {
     enable = true;
@@ -124,6 +111,7 @@ in {
     ./linuxPrograms/vscode.nix
     ./linuxPrograms/spicetify.nix
     ./terminal/emacs.nix
+    ./wayland
   ];
 
   nixpkgs = {
