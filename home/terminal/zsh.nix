@@ -8,8 +8,8 @@
       shellAliases = {
         grep = "grep --color";
         ip = "ip --color";
-        l = "ls -lah --color";
-        ls = "ls -lah --color";
+        l = "ls -lAh --color";
+        ls = "ls -lAh --color";
         vim = "nvim";
       };
     };

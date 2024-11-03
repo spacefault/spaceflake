@@ -1,4 +1,8 @@
-{pkgs, inputs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   home.packages = [
     inputs.watershot.packages.${pkgs.system}.default
     inputs.hyprland-contrib.packages.${pkgs.system}.grimblast

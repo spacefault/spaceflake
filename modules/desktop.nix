@@ -1,4 +1,10 @@
-{pkgs, lib, inputs, config, ...}: {
+{
+  pkgs,
+  lib,
+  inputs,
+  config,
+  ...
+}: {
   # users
   users.users.lily = {
     isNormalUser = true;
@@ -41,23 +47,16 @@
     gst_all_1.gst-vaapi
   ];
 
-  environment.gnome.excludePackages = (with pkgs; [
+  environment.gnome.excludePackages = with pkgs; [
     gnome-console
-  ]);
+  ];
 
   programs = {
-    seahorse = {
-      enable = false;
-    };
-    zsh = {
-      enable = true;
-    };
-    dconf = {
-      enable = true;
-    };
-    nix-ld = {
-      enable = true;
-    };
+    seahorse.enable = true;
+    zsh.enable = true;
+    dconf.enable = true;
+    nix-ld.enable = true;
+    virt-manager.enable = true;
     nh = {
       enable = true;
       clean.enable = true;
@@ -93,10 +92,10 @@
       enable = true;
       logLevel = "debug";
       drivers = [
-        #pkgs.cups-kyodialog
-        #pkgs.foomatic-db-ppds-withNonfreeDb
+        pkgs.cups-kyodialog
+        pkgs.foomatic-db-ppds-withNonfreeDb
         pkgs.cnijfilter2
-        #pkgs.gutenprint
+        pkgs.gutenprint
       ];
     };
     avahi = {
@@ -161,18 +160,15 @@
       experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
       builders-use-substitutes = true;
+      use-xdg-base-directories = true;
       substituters = [
         "https://cache.nixos.org?priority=10"
         "https://nix-community.cachix.org"
         "https://nix-gaming.cachix.org"
-        "https://hyprland.cachix.org"
-        "https://anyrun.cachix.org"
       ];
       trusted-public-keys = [
         "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-        "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
       ];
     };
     gc = {
@@ -193,6 +189,10 @@
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORMTHEME = "qt5ct";
     XCURSOR_SIZE = "24";
+    GNUPGHOME = "$XDG_DATA_HOME/gnupg";
+    XCURSORPATH = "$XDG_DATA_HOME/icons";
+    XCOMPOSECACHE = "$XDG_CACHE_HOME/X11/xcompose";
+    ZDOTDIR = "$HOME/.config/zsh";
   };
 
   # hardware
@@ -209,8 +209,8 @@
     };
     sane = {
       enable = true;
-      extraBackends = [ pkgs.sane-airscan ];
-      disabledDefaultBackends = [ "escl" ];
+      extraBackends = [pkgs.sane-airscan];
+      disabledDefaultBackends = ["escl"];
     };
   };
 
@@ -227,7 +227,7 @@
       };
     };
   };
-  
+
   # boot settings
   boot = {
     bootspec.enable = true;
@@ -236,7 +236,7 @@
       pkiBundle = "/etc/secureboot";
     };
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = ["kvm-intel" "v4l2loopback" "vfio-pci" "tcp_bbr" ];
+    kernelModules = ["kvm-intel" "v4l2loopback" "vfio-pci" "tcp_bbr"];
     kernelParams = ["intel_iommu=on"];
     extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
     extraModprobeConfig = ''
@@ -283,11 +283,41 @@
       "kernel.ftrace_enabled" = false;
     };
     blacklistedKernelModules = [
-      "ax25" "netrom" "rose" "adfs" "affs" "bfs" "befs" "cramfs" "efs"
-      "erofs" "exofs" "freevxfs" "f2fs" "vivid" "gfs2" "ksmbd" "nfsv4"
-      "nfsv3" "cifs" "nfs" "cramfs" "freevxfs" "jffs2" "hfs" "hfsplus"
-      "squashfs" "udf" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" 
-      "qnx6" "sysv"
+      "ax25"
+      "netrom"
+      "rose"
+      "adfs"
+      "affs"
+      "bfs"
+      "befs"
+      "cramfs"
+      "efs"
+      "erofs"
+      "exofs"
+      "freevxfs"
+      "f2fs"
+      "vivid"
+      "gfs2"
+      "ksmbd"
+      "nfsv4"
+      "nfsv3"
+      "cifs"
+      "nfs"
+      "cramfs"
+      "freevxfs"
+      "jffs2"
+      "hfs"
+      "hfsplus"
+      "squashfs"
+      "udf"
+      "hpfs"
+      "jfs"
+      "minix"
+      "nilfs2"
+      "omfs"
+      "qnx4"
+      "qnx6"
+      "sysv"
     ];
   };
 }

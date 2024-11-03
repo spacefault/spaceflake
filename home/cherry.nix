@@ -1,8 +1,14 @@
 {
   lib,
   pkgs,
+  config,
   ...
-}: {
+}: let
+  wallpaper = builtins.path {
+    path = ./wallpaper.png;
+    name = "wallpaper.png";
+  };
+in {
   home = {
     username = "lily";
     homeDirectory = lib.mkDefault "/home/lily";
@@ -42,6 +48,23 @@
   };
 
   dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      enable-hot-corners = true;
+      clock-format = "12h";
+    };
+    "org/gnome/desktop/background" = {
+      picture-uri = wallpaper;
+    };
+    "org/gnome/mutter" = {
+      edge-tiling = true;
+      dynamic-workspaces = true;
+    };
+    "org/gnome/desktop/peripherals/mouse" = {
+      natural-scroll = true;
+    };
+    "org/gtk/settings/file-chooser" = {
+      clock-format = "12h";
+    };
     "org/gnome/shell" = {
       disable-user-extensions = false;
       favorite-apps = [
@@ -66,12 +89,8 @@
   };
 
   gtk = {
-    enable = false;
-    cursorTheme = {
-      name = "macos-Monterey";
-      package = pkgs.apple-cursor;
-      size = 22;
-    };
+    enable = true;
+    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
     iconTheme = {
       name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
@@ -80,9 +99,13 @@
 
   xdg = {
     enable = true;
+    cacheHome = config.home.homeDirectory + "/.cache";
+    configHome = config.home.homeDirectory + "/.config";
+    stateHome = config.home.homeDirectory + "/.local/state";
+    dataHome = config.home.homeDirectory + "/.local/share";
     portal = {
       enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-gnome pkgs.xdg-desktop-portal-gtk ];
+      extraPortals = [pkgs.xdg-desktop-portal-gnome pkgs.xdg-desktop-portal-gtk];
       config.common.default = "*";
     };
     userDirs = {
@@ -92,22 +115,23 @@
     };
   };
 
-
-
   imports = [
     ./terminal/zsh.nix
-    ./terminal/neovim
+    ./terminal/neovim.nix
     ./terminal/alacritty.nix
     ./terminal/tmux.nix
+    ./terminal/git.nix
     ./linuxPrograms/vscode.nix
     ./linuxPrograms/spicetify.nix
+    ./terminal/emacs.nix
   ];
 
   nixpkgs = {
-    config.allowUnfree = true;
-    config.allowUnfreePredicate = true;
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = true;
+    };
   };
 
   programs.home-manager.enable = true;
 }
-
