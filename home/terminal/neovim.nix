@@ -145,7 +145,7 @@
             installRustc = true;
             installCargo = true;
           };
-          nil_ls = {
+          nixd = {
             enable = true;
           };
         };

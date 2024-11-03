@@ -6,7 +6,7 @@
         opacity = 1;
         dynamic_title = true;
       };
-      shell = {
+      terminal.shell = {
         program = "${pkgs.tmux}/bin/tmux";
       };
       colors = {
