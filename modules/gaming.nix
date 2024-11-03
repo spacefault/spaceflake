@@ -10,7 +10,6 @@
     ckan
     piper
     celeste64
-    discord
     lutris
     #inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable
     #inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.wine-discord-ipc-bridge
