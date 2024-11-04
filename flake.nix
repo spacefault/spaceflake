@@ -49,7 +49,6 @@
         modules = [
           ./profiles/blueberry.nix
           inputs.lanzaboote.nixosModules.lanzaboote
-          disko.nixosModules.disko
         ];
       };
     };
@@ -68,9 +67,9 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home/blueberry.nix
-          nixvim.homeManagerModules.nixvim
-          spicetify-nix.homeManagerModules.default
-          anyrun.homeManagerModules.default
+          inputs.nixvim.homeManagerModules.nixvim
+          inputs.spicetify-nix.homeManagerModules.default
+          inputs.anyrun.homeManagerModules.default
         ];
       };
     };
