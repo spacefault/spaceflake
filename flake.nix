@@ -42,6 +42,18 @@
         ];
       };
     };
+    nixosConfigurations = {
+      "blueberry" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./profiles/blueberry.nix
+          inputs.lanzaboote.nixosModules.lanzaboote
+          disko.nixosModules.disko
+        ];
+      };
+    };
+
 
     homeConfigurations = {
       "devin@cherry" = home-manager.lib.homeManagerConfiguration {
@@ -49,6 +61,16 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home/cherry.nix
+        ];
+      };
+      "devin@blueberry" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home/blueberry.nix
+          nixvim.homeManagerModules.nixvim
+          spicetify-nix.homeManagerModules.default
+          anyrun.homeManagerModules.default
         ];
       };
     };
