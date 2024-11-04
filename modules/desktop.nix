@@ -1,10 +1,13 @@
 {
   pkgs,
   lib,
-  inputs,
   config,
+  inputs,
   ...
 }: {
+  imports = [
+    inputs.lanzaboote.nixosModules.lanzaboote
+  ];
   # users
   users.users.devin = {
     isNormalUser = true;
@@ -21,36 +24,38 @@
 
   # system packages
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [
-    ffmpeg
-    adwaita-icon-theme
-    htop
-    sbctl
-    killall
-    networkmanagerapplet
-    cups-filters
-    libimobiledevice
-    ifuse
-    gcc
-    libsForQt5.ksshaskpass
-    pinentry
-    gh
-    gnumake
-    smartmontools
-    nautilus-python
-    gst_all_1.gstreamer
-    gst_all_1.gst-plugins-base
-    gst_all_1.gst-plugins-good
-    gst_all_1.gst-plugins-bad
-    gst_all_1.gst-plugins-ugly
-    gst_all_1.gst-libav
-    gst_all_1.gst-vaapi
-    waybar
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      ffmpeg
+      adwaita-icon-theme
+      htop
+      sbctl
+      killall
+      networkmanagerapplet
+      cups-filters
+      libimobiledevice
+      ifuse
+      gcc
+      libsForQt5.ksshaskpass
+      pinentry
+      gh
+      gnumake
+      smartmontools
+      nautilus-python
+      gst_all_1.gstreamer
+      gst_all_1.gst-plugins-base
+      gst_all_1.gst-plugins-good
+      gst_all_1.gst-plugins-bad
+      gst_all_1.gst-plugins-ugly
+      gst_all_1.gst-libav
+      gst_all_1.gst-vaapi
+      waybar
+    ];
 
-  environment.gnome.excludePackages = with pkgs; [
-    gnome-console
-  ];
+    gnome.excludePackages = with pkgs; [
+      gnome-console
+    ];
+  };
 
   programs = {
     seahorse.enable = true;

@@ -21,26 +21,15 @@
       url = "github:kirottu/watershot";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland-contrib = {
-      url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
     self,
     nixpkgs,
-    blender-bin,
     home-manager,
-    nixvim,
-    spicetify-nix,
-    disko,
-    anyrun,
-    watershot,
     ...
   } @ inputs: let
     inherit (self) outputs;
-    pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
   in {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     nixosConfigurations = {
@@ -49,8 +38,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./profiles/cherry.nix
-          inputs.lanzaboote.nixosModules.lanzaboote
-          disko.nixosModules.disko
+          # inputs.disko.nixosModules.disko
         ];
       };
     };
@@ -61,9 +49,6 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home/cherry.nix
-          nixvim.homeManagerModules.nixvim
-          spicetify-nix.homeManagerModules.default
-          anyrun.homeManagerModules.default
         ];
       };
     };
