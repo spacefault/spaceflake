@@ -8,7 +8,7 @@
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
     nixvim.url = "github:nix-community/nixvim";
     anyrun.url = "github:anyrun-org/anyrun";
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {url = "git+https://github.com/hyprwm/hyprland?submodules=1";}; # broken normally
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,26 +21,15 @@
       url = "github:kirottu/watershot";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland-contrib = {
-      url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
     self,
     nixpkgs,
-    blender-bin,
     home-manager,
-    nixvim,
-    spicetify-nix,
-    disko,
-    anyrun,
-    watershot,
     ...
   } @ inputs: let
     inherit (self) outputs;
-    pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
   in {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     nixosConfigurations = {
@@ -49,8 +38,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./profiles/cherry.nix
-          inputs.lanzaboote.nixosModules.lanzaboote
-          disko.nixosModules.disko
+          # inputs.disko.nixosModules.disko
         ];
       };
     };
@@ -73,9 +61,6 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home/cherry.nix
-          nixvim.homeManagerModules.nixvim
-          spicetify-nix.homeManagerModules.default
-          anyrun.homeManagerModules.default
         ];
       };
       "devin@blueberry" = home-manager.lib.homeManagerConfiguration {
