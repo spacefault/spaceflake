@@ -92,7 +92,7 @@ in {
     dataHome = config.home.homeDirectory + "/.local/share";
     portal = {
       enable = true;
-      extraPortals = [pkgs.xdg-desktop-portal-gnome pkgs.xdg-desktop-portal-gtk];
+      extraPortals = [pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gnome pkgs.xdg-desktop-portal-gtk];
       config.common.default = "*";
     };
     userDirs = {
