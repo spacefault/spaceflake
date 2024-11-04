@@ -7,6 +7,7 @@
 }: {
   imports = [
     inputs.lanzaboote.nixosModules.lanzaboote
+    inputs.hyprland.nixosModules.default
   ];
   # users
   users.users.devin = {
@@ -57,7 +58,24 @@
     ];
   };
 
+  # moved xdg thing and make sure to use hyprland portal
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    config = {
+      common.default = ["gtk"];
+      hyprland.default = ["hyprland" "gtk"];
+    };
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  };
+
   programs = {
+    # portal polkit and system things
+    hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+    };
     seahorse.enable = true;
     zsh.enable = true;
     dconf.enable = true;
@@ -137,10 +155,7 @@
     };
   };
 
-  #random xdg thing
-  xdg.portal.enable = true;
-
-  # fonts
+  #fonts
   fonts = {
     packages = with pkgs; [
       noto-fonts
