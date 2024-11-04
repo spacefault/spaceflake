@@ -111,7 +111,7 @@
       ];
       displayManager = {
         gdm = {
-          enable = true;
+          enable = false;
         };
       };
       desktopManager = {
@@ -197,10 +197,10 @@
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORMTHEME = "qt5ct";
     XCURSOR_SIZE = "24";
-    GNUPGHOME = "$XDG_DATA_HOME/gnupg";
-    XCURSORPATH = "$XDG_DATA_HOME/icons";
-    XCOMPOSECACHE = "$XDG_CACHE_HOME/X11/xcompose";
-    ZDOTDIR = "$HOME/.config/zsh";
+    #GNUPGHOME = "$XDG_DATA_HOME/gnupg";
+    #XCURSORPATH = "$XDG_DATA_HOME/icons";
+    #XCOMPOSECACHE = "$XDG_CACHE_HOME/X11/xcompose";
+    #ZDOTDIR = "$HOME/.config/zsh";
   };
 
   # hardware
@@ -228,6 +228,10 @@
     polkit.enable = true;
     protectKernelImage = true;
     pam = {
+      services.swaylock = {};
+      services.swaylock.text = ''
+        auth include login
+      '';
       services.gnome-keyring = {
         gnupg.enable = true;
         sshAgentAuth = true;
