@@ -89,6 +89,9 @@ in {
         shadow_render_power = 3;
         "col.shadow" = "rgba(2d1e16ee)";
       };
+      render = {
+        explicit_sync = 1;
+      };
       dwindle = {
         pseudotile = true;
         preserve_split = "yes";
