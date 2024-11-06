@@ -39,37 +39,25 @@
         modules = [
           ./profiles/cherry.nix
           # inputs.disko.nixosModules.disko
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.devin = import ./home/cherry.nix;
+          }
         ];
       };
-    };
-    nixosConfigurations = {
       "blueberry" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./profiles/blueberry.nix
           inputs.lanzaboote.nixosModules.lanzaboote
-        ];
-      };
-    };
-
-
-    homeConfigurations = {
-      "devin@cherry" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home/cherry.nix
-        ];
-      };
-      "devin@blueberry" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home/blueberry.nix
-          inputs.nixvim.homeManagerModules.nixvim
-          inputs.spicetify-nix.homeManagerModules.default
-          inputs.anyrun.homeManagerModules.default
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.devin = import ./home/blueberry.nix;
+            home-manager.extraSpecialArgs = {inherit inputs;};
+          }
         ];
       };
     };
