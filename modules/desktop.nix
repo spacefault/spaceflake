@@ -180,8 +180,11 @@
 
   # nix settings
   nix = {
+    package = pkgs.lix;
     settings = {
       experimental-features = ["nix-command" "flakes"];
+      trusted-users = ["@wheel"];
+      accept-flake-config = true;
       auto-optimise-store = true;
       builders-use-substitutes = true;
       use-xdg-base-directories = true;

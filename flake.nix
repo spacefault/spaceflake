@@ -43,6 +43,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.devin = import ./home/cherry.nix;
+            home-manager.extraSpecialArgs = {inherit inputs;};
           }
         ];
       };
