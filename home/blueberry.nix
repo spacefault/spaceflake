@@ -83,7 +83,6 @@ in {
     };
   };
 
-
   xdg = {
     enable = true;
     cacheHome = config.home.homeDirectory + "/.cache";

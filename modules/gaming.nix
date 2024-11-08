@@ -7,6 +7,7 @@
     piper
     celeste64
     lutris
+    chatterino2
     #inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable
     #inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.wine-discord-ipc-bridge
     #inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.wine-osu

@@ -39,7 +39,8 @@
         modules = [
           ./profiles/cherry.nix
           # inputs.disko.nixosModules.disko
-          home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager
+          {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.devin = import ./home/cherry.nix;
@@ -53,7 +54,8 @@
         modules = [
           ./profiles/blueberry.nix
           inputs.lanzaboote.nixosModules.lanzaboote
-          home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager
+          {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.devin = import ./home/blueberry.nix;

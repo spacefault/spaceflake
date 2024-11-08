@@ -1,11 +1,5 @@
 # laptop.nix: blueberry
-{
-  config,
-  lib,
-  pkgs,
-  modulesPath,
-  ...
-}: {
+{...}: {
   # networking, firewall, and hostname
   networking = {
     hostName = "blueberry";
@@ -24,18 +18,6 @@
     fsType = "ext4";
     options = ["defaults" "noatime"];
   };
-
-  environment.sessionVariables = {
-    XCURSOR_SIZE = "24";
-    LIBVA_DRIVER_NAME = "nvidia";
-    XDG_SESSION_TYPE = "wayland";
-    GBM_BACKEND = "nvidia-drm";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    WLR_NO_HARDWARE_CURSORS = "1";
-    __GL_THREADED_OPTIMIZATIONS = "0";
-    SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
-  };
-
 
   imports = [
     ../modules/desktop.nix

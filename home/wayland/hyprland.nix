@@ -16,25 +16,13 @@
       ]
     )
     10);
-in let
-  swaylockScript = pkgs.writeShellScript "swaylockScript" ''
-     ${pkgs.swaylock-effects}/bin/swaylock \
-    --screenshots \
-    --clock \
-    --indicator \
-    --indicator-radius 100 \
-    --indicator-thickness 7 \
-    --effect-blur 7x5 \
-    --effect-vignette 0.5:0.5 \
-    --ring-color bb00cc \
-    --key-hl-color 880033 \
-    --line-color 00000000 \
-    --inside-color 00000088 \
-    --separator-color 00000000 \
-    --grace 2 \
-    --fade-in 0.2
-  '';
 in {
+  home.sessionVariables = {
+    QT_QPA_PLATFORM = "wayland";
+    SDL_VIDEODRIVER = "wayland";
+    XDG_SESSION_TYPE = "wayland";
+    HYPRCURSOR_THEME = "macOS";
+  };
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -84,10 +72,12 @@ in {
           passes = 1;
           new_optimizations = 1;
         };
-        drop_shadow = "no";
-        shadow_range = 4;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(2d1e16ee)";
+        shadow = {
+          enabled = true;
+          range = 4;
+          render_power = 3;
+          color = "rgba(2d1e16ee)";
+        };
       };
       render = {
         explicit_sync = 1;
