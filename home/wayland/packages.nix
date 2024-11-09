@@ -4,26 +4,15 @@
   ...
 }: {
   home.packages = with pkgs; [
-    inputs.watershot.packages.${pkgs.system}.default
-    grimblast
-    grim
-    wl-clipboard
-    gvfs
-    swaylock-effects
-    libnotify
-    playerctl
-    polkit
-    slurp
-    swww
-    udiskie
-    udisks
-    wireplumber
-    wlogout
-    wlsunset
-    xdg-user-dirs
-    cliphist
-    nautilus
-    adwaita-icon-theme
-    swaynotificationcenter
+    firefox
+    obsidian
+    loupe
+    vlc
+    mpv
+    git
+    keepassxc
+    anki-bin
+    libreoffice-fresh
+    eza
   ];
 }

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, config, ...}: {
   home.packages = with pkgs; [
     dconf
     qt5.qttools
@@ -18,6 +18,7 @@
   };
   gtk = {
     enable = true;
+    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
     iconTheme = {
       package = pkgs.adwaita-icon-theme;
       name = "Adwaita";

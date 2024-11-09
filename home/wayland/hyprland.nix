@@ -39,7 +39,7 @@ in {
         "hyprctl setcursor Adwaita 24"
         "swww init"
         "swaync"
-        "sleep 5 && pkill waybar && waybar & disown"
+        "${pkgs.waybar}/bin/waybar"
         "sleep 5 && nm-applet"
       ];
       general = {
@@ -108,7 +108,7 @@ in {
         disable_hyprland_logo = true;
       };
       monitor = [
-        "eDP-1,1920x1080@75, 0x0, 1.2"
+        "HDMI-A-1,1920x1080@75, 0x0, 1"
       ];
       layerrule = [
         #"blur, waybar"
@@ -137,7 +137,7 @@ in {
           "${mod}, P, pseudo"
           "${mod}, S, togglesplit"
           "${mod}, F, fullscreen"
-          "${mod}, left, movefocus, 1"
+          "${mod}, left, movefocus, l"
           "${mod}, right, movefocus, r"
           "${mod}, up, movefocus, u"
           "${mod}, down, movefocus, d"

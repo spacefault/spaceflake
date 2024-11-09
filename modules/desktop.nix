@@ -28,6 +28,7 @@
   environment = {
     systemPackages = with pkgs; [
       ffmpeg
+      pavucontrol
       adwaita-icon-theme
       htop
       sbctl
@@ -129,21 +130,11 @@
     };
     xserver = {
       enable = true;
+      xkb.layout = "";
+      xkb.variant = "";
       excludePackages = [
         pkgs.xterm
       ];
-      displayManager = {
-        gdm = {
-          enable = false;
-        };
-      };
-      desktopManager = {
-        gnome = {
-          enable = false;
-        };
-      };
-      xkb.layout = "";
-      xkb.variant = "";
     };
     pipewire = {
       enable = true;
@@ -221,10 +212,11 @@
     QT_QPA_PLATFORMTHEME = "qt5ct";
     XCURSOR_SIZE = "24";
     SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
-    #GNUPGHOME = "$XDG_DATA_HOME/gnupg";
-    #XCURSORPATH = "$XDG_DATA_HOME/icons";
-    #XCOMPOSECACHE = "$XDG_CACHE_HOME/X11/xcompose";
-    #ZDOTDIR = "$HOME/.config/zsh";
+    XCURSORPATH = "$XDG_DATA_HOME/icons";
+    XCOMPOSECACHE = "$XDG_CACHE_HOME/X11/xcompose";
+    ZDOTDIR = "$HOME/.config/zsh";
+    CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv";
+    HISTFILE = "$XDG_STATE_HOME/bash/history";
   };
 
   # hardware
@@ -275,9 +267,7 @@
     kernelModules = ["kvm-intel" "v4l2loopback" "vfio-pci" "tcp_bbr"];
     kernelParams = ["intel_iommu=on"];
     extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
-    extraModprobeConfig = ''
-      options iwlwifi 11n_disable=8
-    '';
+    extraModprobeConfig = ''options iwlwifi 11n_disable=8'';
     supportedFilesystems = ["ntfs" "btrfs"];
     loader = {
       systemd-boot.enable = lib.mkForce true;

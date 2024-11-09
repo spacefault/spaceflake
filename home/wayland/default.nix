@@ -4,7 +4,9 @@
     ./dunst.nix
     ./gtk.nix
     ./hyprland.nix
-    ./packages.nix
+    ./dependencies.nix
     ./swayosd.nix
+    ./packages.nix
+    ./xdg.nix
   ];
 }
