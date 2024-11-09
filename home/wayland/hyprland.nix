@@ -46,8 +46,8 @@ in {
         gaps_in = 5;
         gaps_out = 5;
         border_size = 3;
-        "col.active_border" = "rgb(ab76b0)";
-        "col.inactive_border" = "rgb(762e75)";
+        "col.active_border" = "rgb(f49d61)";
+        "col.inactive_border" = "rgb(eb7637)";
       };
       debug = {
         disable_logs = false;

@@ -8,5 +8,6 @@
     ./swayosd.nix
     ./packages.nix
     ./xdg.nix
+    ./waybar.nix
   ];
 }
