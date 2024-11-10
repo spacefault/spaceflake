@@ -1,6 +1,4 @@
-<h1 align="center">spaceflake</h1>
-<p align="center">my personal NixOS flake configuration</p>
-<hr class="solid">
+<h1 align="center">spaceflake - personal NixOS flake</h1>
 
 # Synopsis
 This is my personal NixOS flake, it is intended for personal use so please be careful as there might be some issues.
@@ -27,4 +25,5 @@ This is my personal NixOS flake, it is intended for personal use so please be ca
 ```
 
 # Issue Tracking
-Please use the issues tab to make relevant issues
+Please use the issues tab to make relevant issues. Thank you!
+
