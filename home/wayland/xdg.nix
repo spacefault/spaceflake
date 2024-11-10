@@ -1,7 +1,9 @@
-{pkgs, config, ...}:
-
 {
-    xdg = {
+  pkgs,
+  config,
+  ...
+}: {
+  xdg = {
     enable = true;
     cacheHome = config.home.homeDirectory + "/.cache";
     configHome = config.home.homeDirectory + "/.config";

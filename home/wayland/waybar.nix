@@ -1,6 +1,4 @@
-{...}: 
-
-{
+{...}: {
   programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -42,11 +40,11 @@
           notification = "<span foreground='red'><sup></sup></span>";
           none = "";
           dnd-notification = "<span foreground='red'><sup></sup></span>";
-          dnd-none= "";
+          dnd-none = "";
           inhibited-notification = "<span foreground='red'><sup></sup></span>";
           inhibited-none = "";
           dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
-          dnd-inhibited-none= "";
+          dnd-inhibited-none = "";
         };
         return-type = "json";
         exec-if = "which swaync-client";
@@ -56,109 +54,107 @@
         escape = true;
       };
     };
-  style = ''
-* {
-    border: none;
-    border-radius: 0;
-    font-family: Torus;
-    font-weight: bold;
-    font-size: 14px;
-    min-height: 0;
-}
+    style = ''
+      * {
+          border: none;
+          border-radius: 0;
+          font-family: Torus;
+          font-weight: bold;
+          font-size: 14px;
+          min-height: 0;
+      }
 
-#waybar {
-    background-color: rgba(30,33,40,0.7);
-    color: #D8DEE9;
-    transition-property: background-color;
-    transition-duration: .5s;
-    font-size: 11px;
-    font-weight: bold;
-}
+      #waybar {
+          background-color: rgba(30,33,40,0.7);
+          color: #D8DEE9;
+          transition-property: background-color;
+          transition-duration: .5s;
+          font-size: 11px;
+          font-weight: bold;
+      }
 
-#window {
-    font-weight: bold;
-    font-family: Torus;
-}
+      #window {
+          font-weight: bold;
+          font-family: Torus;
+      }
 
-workspaces {
-    padding: 0 5px;
-}
+      workspaces {
+          padding: 0 5px;
+      }
 
 
-#workspaces button {
-    padding: 0 5px;
-    color: #808080;
-}
+      #workspaces button {
+          padding: 0 5px;
+          color: #808080;
+      }
 
-#workspaces button.active {
-    color: #FFFFFF;
-}
+      #workspaces button.active {
+          color: #FFFFFF;
+      }
 
-#mode {
-    background: #64727D;
-    border-bottom: 3px solid white;
-}
+      #mode {
+          background: #64727D;
+          border-bottom: 3px solid white;
+      }
 
-#clock, #battery, #cpu, #memory, #network, #wireplumber, #tray, #custom-weather {
-    padding: 0 5px;
-    margin: 0 2px;
-}
+      #clock, #battery, #cpu, #memory, #network, #wireplumber, #tray, #custom-weather {
+          padding: 0 5px;
+          margin: 0 2px;
+      }
 
-#clock {
-    font-weight: bold;
-}
+      #clock {
+          font-weight: bold;
+      }
 
-#battery {
-}
+      #battery {
+      }
 
-#battery icon {
-    color: red;
-}
+      #battery icon {
+          color: red;
+      }
 
-#battery.charging {
-}
+      #battery.charging {
+      }
 
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
-}
+      @keyframes blink {
+          to {
+              background-color: #ffffff;
+              color: black;
+          }
+      }
 
-#battery.warning:not(.charging) {
-    color: white;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
+      #battery.warning:not(.charging) {
+          color: white;
+          animation-name: blink;
+          animation-duration: 0.5s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
+      }
 
-#cpu {
-}
+      #cpu {
+      }
 
-#memory {
-}
+      #memory {
+      }
 
-#network {
-}
+      #network {
+      }
 
-#network.disconnected {
-    background: #f53c3c;
-}
+      #network.disconnected {
+          background: #f53c3c;
+      }
 
-# wireplumber {
-}
+      # wireplumber {
+      }
 
-#custom-spotify {
-    color: rgb(102, 220, 105);
-}
+      #custom-spotify {
+          color: rgb(102, 220, 105);
+      }
 
-#tray {
-}
+      #tray {
+      }
 
-'';
+    '';
   };
 }
-
-

@@ -215,7 +215,7 @@
     XCURSORPATH = "$XDG_DATA_HOME/icons";
     XCOMPOSECACHE = "$XDG_CACHE_HOME/X11/xcompose";
     ZDOTDIR = "$HOME/.config/zsh";
-    CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv";
+    CUDA_CACHE_PATH = "$XDG_CACHE_HOME/nv";
     HISTFILE = "$XDG_STATE_HOME/bash/history";
   };
 
