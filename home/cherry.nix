@@ -1,7 +1,4 @@
-{
-  lib,
-  ...
-}:  {
+{lib, ...}: {
   home = {
     username = "devin";
     homeDirectory = lib.mkDefault "/home/devin";
@@ -9,7 +6,7 @@
     sessionVariables = {EDITOR = "nvim";};
   };
 
-  monitors = { 
+  monitors = {
     "eDP-1" = {
       width = 1920;
       height = 1080;
