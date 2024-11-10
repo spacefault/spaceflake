@@ -9,5 +9,6 @@
     ./packages.nix
     ./xdg.nix
     ./waybar.nix
+    ./polkit.nix
   ];
 }
