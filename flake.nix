@@ -43,7 +43,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.devin = import ./home/home.nix;
+            home-manager.users.devin = import ./home/cherry.nix;
             home-manager.extraSpecialArgs = {inherit inputs;};
           }
         ];
@@ -58,7 +58,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.devin = import ./home/home.nix;
+            home-manager.users.devin = import ./home/blueberry.nix;
             home-manager.extraSpecialArgs = {inherit inputs;};
           }
         ];

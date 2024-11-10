@@ -1,6 +1,8 @@
 {
   pkgs,
   inputs,
+  config,
+  lib,
   ...
 }: let
   mod = "SUPER";
@@ -49,6 +51,19 @@ in {
         "col.active_border" = "rgb(f49d61)";
         "col.inactive_border" = "rgb(eb7637)";
       };
+      # stolen from https://github.com/parliamentbomber/parlbomb/blob/master/home/programs/hyprland/settings.nix
+      monitor =
+        lib.mapAttrsToList (name: m: let
+          resolution = "${toString m.width}x${toString m.height}@${
+            toString m.refreshRate
+          }";
+          position = "${toString m.x}x${toString m.y}";
+        in "${name},${
+          if m.enabled
+          then "${resolution},${position},1"
+          else "disable"
+        }")
+        config.monitors;
       debug = {
         disable_logs = false;
         enable_stdout_logs = true;
@@ -107,9 +122,6 @@ in {
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
       };
-      monitor = [
-        "HDMI-A-1,1920x1080@75, 0x0, 1"
-      ];
       layerrule = [
         #"blur, waybar"
         #"ignorezero, waybar"
@@ -119,6 +131,8 @@ in {
         "float,title:^(Friends)(.*)$"
         "size 682,697,title:^(Friends)(.*)$"
         "float,title:^(fcitx5)(.*)$"
+        "float,title:^(File Operation Progress)(.*)$"
+        "size 593,95,title:^(File Operation Progress)(.*)$"
       ];
       bindm = [
         "${mod}, mouse:272, movewindow"
