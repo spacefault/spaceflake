@@ -4,7 +4,7 @@
     ./dunst.nix
     ./gtk.nix
     ./hyprland.nix
-    ./hyprMonitorLogic.nix
+    ./monitorLogic.nix
     ./dependencies.nix
     ./swayosd.nix
     ./packages.nix
