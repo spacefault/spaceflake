@@ -45,9 +45,9 @@ in {
         "sleep 5 && nm-applet"
       ];
       general = {
-        gaps_in = 5;
+        gaps_in = 3;
         gaps_out = 5;
-        border_size = 3;
+        border_size = 1;
         "col.active_border" = "rgb(f49d61)";
         "col.inactive_border" = "rgb(eb7637)";
       };
@@ -80,7 +80,7 @@ in {
         touchpad.natural_scroll = true;
       };
       decoration = {
-        rounding = 10;
+        rounding = 0;
         blur = {
           enabled = true;
           size = 3;
@@ -123,8 +123,8 @@ in {
         disable_hyprland_logo = true;
       };
       layerrule = [
-        #"blur, waybar"
-        #"ignorezero, waybar"
+        "blur, waybar"
+        "ignorezero, waybar"
       ];
       windowrule = [
         "float,title:^(Calculator)(.*)$"
@@ -142,7 +142,8 @@ in {
         [
           "${mod}, RETURN, exec, alacritty"
           "${mod}, SPACE, exec, anyrun"
-          "${mod}, E, exec, nautilus"
+          "${mod}, E, exec, thunar"
+          "${mod}, W, exec, firefox -p"
           ", PRINT, exec, grimblast --freeze copy area"
           "${mod}, L, exec, swaylock --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5"
           "${mod}, Y, exec, wlogout"
