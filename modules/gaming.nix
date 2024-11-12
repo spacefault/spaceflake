@@ -14,9 +14,11 @@
     chatterino2
     discord
     mangohud
-    inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.osu-stable
-    inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.wine-discord-ipc-bridge
-    inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.wine-osu
+    obs-studio
+    #inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
+    inputs.nix-gaming.packages.${pkgs.system}.osu-stable
+    inputs.nix-gaming.packages.${pkgs.system}.wine-discord-ipc-bridge
+    inputs.nix-gaming.packages.${pkgs.system}.wine-osu
   ];
 
   systemd = {

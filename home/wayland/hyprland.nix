@@ -28,6 +28,7 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    systemd.enable = true;
     settings = {
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
@@ -67,6 +68,7 @@ in {
       debug = {
         disable_logs = false;
         enable_stdout_logs = true;
+        damage_tracking = 0;
       };
       gestures = {
         workspace_swipe = true;
@@ -121,6 +123,7 @@ in {
         disable_splash_rendering = true;
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
+        vrr = 1;
       };
       layerrule = [
         "blur, waybar"
