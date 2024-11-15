@@ -6,9 +6,9 @@
       layer = "top";
       position = "top";
       height = 24;
-      modules-left = ["hyprland/workspaces" "hyprland/window"];
-      modules-center = [];
-      modules-right = ["tray" "custom/notification" "wireplumber" "battery" "clock"];
+      modules-left = ["hyprland/workspaces"];
+      modules-center = ["clock" "mpris"];
+      modules-right = ["tray" "custom/notification" "wireplumber" "battery"];
       "hyprland/window" = {
         format = "{title}";
       };
@@ -33,6 +33,16 @@
         format-muted = "X: {volume}%";
         on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
       };
+          "mpris" = {
+            format = "{player_icon} {title} - {artist}";
+            format-paused = "{status_icon} {title} - {artist}";
+            player-icons = {
+              "default" = " ";
+            };
+            status-icons = {
+              "paused" = "⏸";
+            };
+          };
       "custom/notification" = {
         tooltip = false;
         format = "{icon} ";
