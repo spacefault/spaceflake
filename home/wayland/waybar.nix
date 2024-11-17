@@ -23,38 +23,38 @@
           "warning" = 20;
           "critical" = 10;
         };
-        format = "{icon} {capacity}%";
+        format = "bat0: {capacity}% ";
         format-icons = ["󰁻" "󰁽" "󰁿" "󰂁" "󰁹"];
       };
       "wireplumber" = {
-        format = "V: {volume}%";
+        format = "v: {volume}%";
         tooltip = "true";
         tooltip-format = "{volume}%";
         format-muted = "X: {volume}%";
         on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
       };
-          "mpris" = {
-            format = "{player_icon} {title} - {artist}";
-            format-paused = "{status_icon} {title} - {artist}";
-            player-icons = {
-              "default" = " ";
-            };
-            status-icons = {
-              "paused" = "⏸";
-            };
-          };
+      "mpris" = {
+        format = "{player_icon} {title} - {artist}";
+        format-paused = "{status_icon} {title} - {artist}";
+        player-icons = {
+          "default" = " ";
+        };
+        status-icons = {
+          "paused" = "⏸";
+        };
+      };
       "custom/notification" = {
         tooltip = false;
-        format = "{icon} ";
+        format = "{icon}";
         format-icons = {
-          notification = " !";
-          none = "";
-          dnd-notification = " !";
-          dnd-none = "";
-          inhibited-notification = " !";
-          inhibited-none = "";
-          dnd-inhibited-notification = " !";
-          dnd-inhibited-none = "";
+          notification = "new messages!";
+          none = "no messages";
+          dnd-notification = "(dnd) new messages!";
+          dnd-none = "(dnd) no messages";
+          inhibited-notification = "new messages!";
+          inhibited-none = "no messages";
+          dnd-inhibited-notification = "(dnd) new messages!";
+          dnd-inhibited-none = "(dnd) no messages";
         };
         return-type = "json";
         exec-if = "which swaync-client";

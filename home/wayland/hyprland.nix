@@ -37,13 +37,12 @@ in {
         "udiskie --appindicator --automount"
         "systemctl --user start polkit-gnome-authentication-agent-1.service"
         "/run/wrappers/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
-        "/home/devin/.config/hypr/scripts/initbackground.sh"
         "wlsunset -S 06:30 -s 20:00"
         "hyprctl setcursor Adwaita 24"
         "swww init"
         "swaync"
         "${pkgs.waybar}/bin/waybar"
-        "sleep 5 && nm-applet"
+        "sleep 5 && nm-applet && blueman-applet"
       ];
       general = {
         gaps_in = 3;
