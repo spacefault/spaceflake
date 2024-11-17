@@ -103,6 +103,7 @@
     dbus.enable = true;
     flatpak.enable = true;
     ratbagd.enable = true;
+    blueman.enable = true;
     usbmuxd.enable = true;
     fwupd.enable = true;
     fstrim.enable = true;

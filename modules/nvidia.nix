@@ -1,4 +1,8 @@
-{config, pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   # nvidia drivers
   services.xserver.videoDrivers = ["nvidia"];
   environment.sessionVariables = {
