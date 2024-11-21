@@ -13,7 +13,7 @@
     git
     keepassxc
     anki-bin
-    libreoffice-fresh-bin
+    libreoffice
     eza
   ];
 }
