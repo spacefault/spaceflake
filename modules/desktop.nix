@@ -126,6 +126,7 @@
     };
     xserver = {
       enable = true;
+      displayManager.lightdm.enable = false;
       xkb.layout = "";
       xkb.variant = "";
       excludePackages = [
@@ -152,13 +153,14 @@
       source-han-sans
       source-han-sans-japanese
       source-han-serif-japanese
+      monaspace
       corefonts
       (nerdfonts.override {fonts = ["Meslo"];})
     ];
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = ["Meslo LG M Regular Nerd Font Complete Mono"];
+        monospace = ["Monaspace Radon"];
         serif = ["Noto Serif" "Source Han Serif"];
         sansSerif = ["Noto Sans" "Source Han Sans"];
       };
