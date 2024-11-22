@@ -259,7 +259,7 @@
   boot = {
     bootspec.enable = true;
     lanzaboote = {
-      enable = true;
+      enable = false;
       pkiBundle = "/etc/secureboot";
     };
     kernelPackages = pkgs.linuxPackages_latest;
@@ -269,7 +269,7 @@
     extraModprobeConfig = ''options iwlwifi 11n_disable=8'';
     supportedFilesystems = ["ntfs" "btrfs"];
     loader = {
-      systemd-boot.enable = lib.mkForce false;
+      systemd-boot.enable = lib.mkForce true;
       systemd-boot.editor = false;
       efi.canTouchEfiVariables = true;
     };
