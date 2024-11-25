@@ -48,8 +48,8 @@ in {
         gaps_in = 3;
         gaps_out = 5;
         border_size = 1;
-        "col.active_border" = "rgb(f49d61)";
-        "col.inactive_border" = "rgb(eb7637)";
+        "col.active_border" = "rgb(d2a1d2)";
+        "col.inactive_border" = "rgb(95537b)";
       };
       # stolen from https://github.com/parliamentbomber/parlbomb/blob/master/home/programs/hyprland/settings.nix
       monitor =
