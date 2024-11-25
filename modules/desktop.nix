@@ -13,7 +13,7 @@
   users.users.devin = {
     isNormalUser = true;
     description = "devin";
-    extraGroups = ["networkmanager" "wheel" "audio" "video" "input" "libvirtd" "docker" "scanner" "lp"];
+    extraGroups = ["networkmanager" "wheel" "audio" "video" "input" "libvirtd" "docker" "scanner" "lp" "seat"];
     packages = [];
     shell = pkgs.zsh;
     uid = 1000;
@@ -99,6 +99,8 @@
   # services
   services = {
     devmon.enable = true;
+    seatd.enable = true;
+    displayManager.ly.enable = true;
     gvfs.enable = true;
     dbus.enable = true;
     flatpak.enable = true;
@@ -126,7 +128,6 @@
     };
     xserver = {
       enable = true;
-      displayManager.lightdm.enable = false;
       xkb.layout = "";
       xkb.variant = "";
       excludePackages = [
@@ -258,18 +259,19 @@
   # boot settings
   boot = {
     bootspec.enable = true;
+    plymouth.enable = true;
     lanzaboote = {
-      enable = true;
+      enable = false;
       pkiBundle = "/etc/secureboot";
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxKernel.packages.linux_6_11;
     kernelModules = ["kvm-intel" "v4l2loopback" "vfio-pci" "tcp_bbr"];
     kernelParams = ["intel_iommu=on"];
     extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
     extraModprobeConfig = ''options iwlwifi 11n_disable=8'';
     supportedFilesystems = ["ntfs" "btrfs"];
     loader = {
-      systemd-boot.enable = lib.mkForce false;
+      systemd-boot.enable = lib.mkForce true;
       systemd-boot.editor = false;
       efi.canTouchEfiVariables = true;
     };

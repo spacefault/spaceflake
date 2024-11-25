@@ -8,7 +8,9 @@
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
     nixvim.url = "github:nix-community/nixvim";
     anyrun.url = "github:anyrun-org/anyrun";
-    hyprland = {url = "git+https://github.com/hyprwm/hyprland?submodules=1";}; # broken normally
+    hyprland = { 
+      url = "github:hyprwm/hyprland/f5fa84554ffe55e29a397014964238be89ffa54d";
+    }; 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -53,7 +55,6 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./profiles/blueberry.nix
-          inputs.lanzaboote.nixosModules.lanzaboote
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
