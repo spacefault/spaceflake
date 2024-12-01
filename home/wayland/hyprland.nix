@@ -145,7 +145,7 @@ in {
           "${mod}, RETURN, exec, alacritty"
           "${mod}, SPACE, exec, anyrun"
           "${mod}, E, exec, thunar"
-          "${mod}, W, exec, firefox -p"
+          "${mod}, W, exec, firefox"
           ", PRINT, exec, grimblast --freeze copy area"
           "${mod}, L, exec, swaylock --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5"
           "${mod}, Y, exec, wlogout"
