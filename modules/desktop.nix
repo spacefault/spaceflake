@@ -100,7 +100,6 @@
   services = {
     devmon.enable = true;
     seatd.enable = true;
-    displayManager.ly.enable = true;
     gvfs.enable = true;
     dbus.enable = true;
     flatpak.enable = true;
@@ -111,6 +110,15 @@
     fstrim.enable = true;
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+          user = "greeter";
+        };
+      };
+    };
     printing = {
       enable = true;
       logLevel = "debug";
