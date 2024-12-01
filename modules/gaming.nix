@@ -1,15 +1,10 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     osu-lazer-bin
     prismlauncher
     ckan
     piper
-    celeste64
     lutris
     chatterino2
     discord

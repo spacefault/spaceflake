@@ -38,9 +38,6 @@
       libimobiledevice
       ifuse
       gcc
-      libsForQt5.ksshaskpass
-      pinentry
-      gh
       gnumake
       smartmontools
       nautilus-python
@@ -52,10 +49,6 @@
       gst_all_1.gst-libav
       gst_all_1.gst-vaapi
       waybar
-    ];
-
-    gnome.excludePackages = with pkgs; [
-      gnome-console
     ];
   };
 
@@ -82,18 +75,7 @@
     dconf.enable = true;
     nix-ld.enable = true;
     virt-manager.enable = true;
-    #ssh = {
-    #  startAgent = true;
-    #  askPassword = pkgs.lib.mkForce "${pkgs.ksshaskpass.out}/bin/ksshaskpass";
-    #};
-    gnupg = {
-      agent = {
-        enable = true;
-        #enableSSHSupport = true;
-        #enableExtraSocket = true;
-        #pinentryPackage = lib.mkForce pkgs.pinentry-gnome;
-      };
-    };
+    gnupg.agent.enable = true;
   };
 
   # services
@@ -114,7 +96,7 @@
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
           user = "greeter";
         };
       };
