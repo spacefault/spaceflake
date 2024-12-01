@@ -1,9 +1,5 @@
 # laptop.nix: cherry
-{
-  config,
-  lib,
-  ...
-}: {
+{...}: {
   # networking, firewall, and hostname
   networking = {
     hostName = "cherry";

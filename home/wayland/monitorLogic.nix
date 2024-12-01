@@ -1,10 +1,4 @@
-{
-  pkgs,
-  inputs,
-  config,
-  lib,
-  ...
-}: let
+{lib, ...}: let
   inherit (lib) mkOption types;
 in {
   # stolen from https://github.com/parliamentbomber/parlbomb/blob/master/home/programs/hyprland/monitors.nix
