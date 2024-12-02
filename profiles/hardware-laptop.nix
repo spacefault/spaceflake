@@ -4,6 +4,7 @@
 {
   config,
   lib,
+  pkgs,
   modulesPath,
   ...
 }: {
@@ -17,14 +18,14 @@
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/4536910b-a163-4c61-8082-b82f55a7fed8";
+    device = "/dev/disk/by-uuid/2266937a-109e-4ca1-b14b-df7055f91dae";
     fsType = "ext4";
   };
 
-  boot.initrd.luks.devices."luks-02dffe57-3289-4908-9138-a7cb7052da1b".device = "/dev/disk/by-uuid/02dffe57-3289-4908-9138-a7cb7052da1b";
+  boot.initrd.luks.devices."luks-ac6c0fee-8e6c-4d72-8eda-c2ea1e2423d4".device = "/dev/disk/by-uuid/ac6c0fee-8e6c-4d72-8eda-c2ea1e2423d4";
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/8987-024C";
+    device = "/dev/disk/by-uuid/DAC7-FFE5";
     fsType = "vfat";
     options = ["fmask=0077" "dmask=0077"];
   };
