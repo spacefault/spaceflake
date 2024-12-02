@@ -146,7 +146,7 @@
       source-han-serif-japanese
       monaspace
       corefonts
-      (nerdfonts.override {fonts = ["Meslo"];})
+      nerd-fonts.monaspace
     ];
     fontconfig = {
       enable = true;
