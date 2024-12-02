@@ -2,15 +2,13 @@
   description = "spaceflake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/4aa36568d413aca0ea84a1684d2d46f55dbabad7";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix-gaming.url = "github:fufexan/nix-gaming";
     lanzaboote.url = "github:nix-community/lanzaboote";
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
     nixvim.url = "github:nix-community/nixvim";
     anyrun.url = "github:anyrun-org/anyrun";
-    hyprland = {
-      url = "github:hyprwm/hyprland/f5fa84554ffe55e29a397014964238be89ffa54d";
-    };
+    hyprland.url = "github:hyprwm/hyprland/12f9a0d0b93f691d4d9923716557154d74777b0a";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
