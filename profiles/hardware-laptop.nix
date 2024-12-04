@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }: {
@@ -18,21 +17,21 @@
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/2266937a-109e-4ca1-b14b-df7055f91dae";
+    device = "/dev/disk/by-uuid/6a3eb920-4882-4837-856d-3a5ef5bab1e6";
     fsType = "ext4";
   };
 
-  boot.initrd.luks.devices."luks-ac6c0fee-8e6c-4d72-8eda-c2ea1e2423d4".device = "/dev/disk/by-uuid/ac6c0fee-8e6c-4d72-8eda-c2ea1e2423d4";
+  boot.initrd.luks.devices."luks-5ae58749-35a4-405a-be18-99da2253e773".device = "/dev/disk/by-uuid/5ae58749-35a4-405a-be18-99da2253e773";
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/DAC7-FFE5";
+    device = "/dev/disk/by-uuid/83C8-D0D9";
     fsType = "vfat";
     options = ["fmask=0077" "dmask=0077"];
   };
 
   swapDevices = [
-    { 
-      device = "/dev/disk/by-partuuid/7f1cf807-c96c-439b-a28f-2fe7151c5677";
+    {
+      device = "/dev/disk/by-partuuid/3cb14700-a1d9-491c-aaec-b0ffecc7e03f";
       randomEncryption.enable = true;
     }
   ];
