@@ -17,21 +17,21 @@
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/d5dcdf4e-adc5-4f05-8c8d-c360b1099df1";
+    device = "/dev/disk/by-uuid/b22c9c73-2aec-4145-a6fb-3cbdc4b30c59";
     fsType = "ext4";
   };
 
-  boot.initrd.luks.devices."luks-62802c93-46d7-4f50-ab0f-ee0cec5cc845".device = "/dev/disk/by-uuid/62802c93-46d7-4f50-ab0f-ee0cec5cc845";
+  boot.initrd.luks.devices."luks-3836a103-8254-4a52-9bfb-084fe629e1f8".device = "/dev/disk/by-uuid/3836a103-8254-4a52-9bfb-084fe629e1f8";
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/C4E0-3969";
+    device = "/dev/disk/by-uuid/BEAA-1266";
     fsType = "vfat";
     options = ["fmask=0077" "dmask=0077"];
   };
 
   swapDevices = [
     {
-      device = "/dev/disk/by-partuuid/a8cd074a-7530-4b28-9cbd-c16a9fa86b98";
+      device = "/dev/disk/by-partuuid/aac664c1-e31c-410f-84c6-ae5c6eba9108";
       randomEncryption.enable = true;
     }
   ];
