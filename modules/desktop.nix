@@ -3,6 +3,7 @@
   lib,
   config,
   inputs,
+  fenix,
   ...
 }: {
   imports = [
@@ -49,6 +50,13 @@
       gst_all_1.gst-libav
       gst_all_1.gst-vaapi
       waybar
+(fenix.complete.withComponents [
+              "cargo"
+              "clippy"
+              "rust-src"
+              "rustc"
+              "rustfmt"
+            ])
     ];
   };
 
