@@ -16,7 +16,7 @@
       oil.enable = true;
       web-devicons.enable = true;
       gitblame.enable = true;
-      nvim-colorizer.enable = true;
+      colorizer.enable = true;
       treesitter.enable = true;
       ############## LSP ###############
       trouble.enable = true;

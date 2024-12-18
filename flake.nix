@@ -21,17 +21,12 @@
       url = "github:kirottu/watershot";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    fenix = {
-      url = "github:nix-community/fenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
-    fenix,
     ...
   } @ inputs: let
     inherit (self) outputs;

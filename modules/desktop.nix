@@ -3,7 +3,6 @@
   lib,
   config,
   inputs,
-  fenix,
   ...
 }: {
   imports = [
@@ -50,13 +49,6 @@
       gst_all_1.gst-libav
       gst_all_1.gst-vaapi
       waybar
-(fenix.complete.withComponents [
-              "cargo"
-              "clippy"
-              "rust-src"
-              "rustc"
-              "rustfmt"
-            ])
     ];
   };
 
@@ -260,7 +252,7 @@
     plymouth.enable = true;
     lanzaboote = {
       enable = true;
-      pkiBundle = "/etc/secureboot";
+      pkiBundle = "/var/lib/sbctl";
     };
     kernelPackages = pkgs.linuxKernel.packages.linux_6_11;
     kernelModules = ["kvm-intel" "v4l2loopback" "vfio-pci" "tcp_bbr"];
