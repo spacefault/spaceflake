@@ -2,7 +2,7 @@
   programs.vscode = {
     enable = true;
     userSettings = {
-      "window.titleBarStyle" = "custom"; 
+      "window.titleBarStyle" = "custom";
       "workbench.sideBar.location" = "right";
     };
   };

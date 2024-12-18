@@ -34,7 +34,6 @@ in {
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "${pkgs.waybar}/bin/waybar"
         "${pkgs.networkmanagerapplet}/bin/nm-applet"
         "${pkgs.blueman}/bin/blueman-applet"
         "${pkgs.udiskie}/bin/udiskie --appindicator --automount"
