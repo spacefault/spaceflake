@@ -12,5 +12,7 @@
     libreoffice
     thunderbird
     eza
+    gnome-text-editor
+    helvum
   ];
 }
