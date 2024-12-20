@@ -10,6 +10,7 @@
     keepassxc
     anki-bin
     libreoffice
+    thunderbird
     eza
   ];
 }
