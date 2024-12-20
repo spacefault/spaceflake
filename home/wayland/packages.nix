@@ -14,5 +14,9 @@
     eza
     gnome-text-editor
     helvum
+    pkgs.gnomeExtensions.blur-my-shell
+    pkgs.gnomeExtensions.dash-to-dock
+    pkgs.gnomeExtensions.caffeine
+    pkgs.gnomeExtensions.appindicator
   ];
 }
