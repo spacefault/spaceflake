@@ -93,7 +93,7 @@
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
     greetd = {
-      enable = false;
+      enable = true;
       settings = {
         default_session = {
           command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
@@ -118,8 +118,6 @@
     };
     xserver = {
       enable = true;
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
       xkb.layout = "";
       xkb.variant = "";
       excludePackages = [
@@ -254,7 +252,7 @@
     plymouth.enable = true;
     lanzaboote = {
       enable = true;
-      pkiBundle = "/etc/secureboot";
+      pkiBundle = "/var/lib/sbctl";
     };
     kernelPackages = pkgs.linuxKernel.packages.linux_6_11;
     kernelModules = ["kvm-intel" "v4l2loopback" "vfio-pci" "tcp_bbr"];
