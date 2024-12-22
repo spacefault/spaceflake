@@ -56,21 +56,17 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    config = {
-      common.default = ["gtk"];
-      hyprland.default = ["hyprland" "gtk"];
-    };
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   programs = {
     # portal polkit and system things
     hyprland = {
-      enable = true;
+      enable = false;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
     };
-    seahorse.enable = true;
+    seahorse.enable = false;
     zsh.enable = true;
     dconf.enable = true;
     nix-ld.enable = true;
@@ -92,6 +88,8 @@
     fstrim.enable = true;
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
     greetd = {
       enable = true;
       settings = {
@@ -251,17 +249,17 @@
     bootspec.enable = true;
     plymouth.enable = true;
     lanzaboote = {
-      enable = true;
+      enable = false;
       pkiBundle = "/var/lib/sbctl";
     };
-    kernelPackages = pkgs.linuxKernel.packages.linux_6_11;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = ["kvm-intel" "v4l2loopback" "vfio-pci" "tcp_bbr"];
     kernelParams = ["intel_iommu=on"];
     extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
     extraModprobeConfig = ''options iwlwifi 11n_disable=8'';
     supportedFilesystems = ["ntfs" "btrfs"];
     loader = {
-      systemd-boot.enable = lib.mkForce false;
+      systemd-boot.enable = lib.mkForce true;
       systemd-boot.editor = false;
       efi.canTouchEfiVariables = true;
     };
