@@ -56,6 +56,10 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
+    config = {
+      common.default = ["gtk"];
+      hyprland.default = ["hyprland" "gtk"];
+    };
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
@@ -88,8 +92,6 @@
     fstrim.enable = true;
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
-    displayManager.sddm.enable = true;
-    desktopManager.plasma6.enable = true;
     greetd = {
       enable = true;
       settings = {
@@ -105,7 +107,7 @@
       drivers = [
         pkgs.cups-kyodialog
         pkgs.foomatic-db-ppds-withNonfreeDb
-        pkgs.cnijfilter2
+        # pkgs.cnijfilter2
         pkgs.gutenprint
       ];
     };
