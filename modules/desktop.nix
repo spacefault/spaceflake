@@ -212,6 +212,10 @@
   # hardware
   hardware = {
     pulseaudio.enable = false;
+    opentabletdriver = {
+      enable = true;
+      daemon.enable = true;
+    };
     graphics = {
       enable = true;
       enable32Bit = true;
