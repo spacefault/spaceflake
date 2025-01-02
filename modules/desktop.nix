@@ -10,9 +10,9 @@
     inputs.hyprland.nixosModules.default
   ];
   # users
-  users.users.devin = {
+  users.users.lily = {
     isNormalUser = true;
-    description = "devin";
+    description = "lily";
     extraGroups = ["networkmanager" "wheel" "audio" "video" "input" "libvirtd" "docker" "scanner" "lp" "seat"];
     packages = [];
     shell = pkgs.zsh;
