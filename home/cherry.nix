@@ -1,7 +1,7 @@
 {lib, ...}: {
   home = {
-    username = "devin";
-    homeDirectory = lib.mkDefault "/home/devin";
+    username = "lily";
+    homeDirectory = lib.mkDefault "/home/lily";
     stateVersion = "24.05";
     sessionVariables = {EDITOR = "nvim";};
   };
