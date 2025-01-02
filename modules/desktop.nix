@@ -93,7 +93,7 @@
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
     greetd = {
-      enable = true;
+      enable = false;
       settings = {
         default_session = {
           command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
@@ -118,6 +118,8 @@
     };
     xserver = {
       enable = true;
+      desktopManager.gnome.enable = true;
+      displayManager.gdm.enable = true;
       xkb.layout = "";
       xkb.variant = "";
       excludePackages = [
@@ -255,7 +257,7 @@
     bootspec.enable = true;
     plymouth.enable = true;
     lanzaboote = {
-      enable = false;
+      enable = true;
       pkiBundle = "/var/lib/sbctl";
     };
     kernelPackages = pkgs.linuxPackages_latest;
@@ -265,7 +267,7 @@
     extraModprobeConfig = ''options iwlwifi 11n_disable=8'';
     supportedFilesystems = ["ntfs" "btrfs"];
     loader = {
-      systemd-boot.enable = lib.mkForce true;
+      systemd-boot.enable = lib.mkForce false;
       systemd-boot.editor = false;
       efi.canTouchEfiVariables = true;
     };
