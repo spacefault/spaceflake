@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     firefox
     google-chrome
@@ -14,6 +10,9 @@
     keepassxc
     anki-bin
     libreoffice
+    thunderbird
     eza
+    gnome-text-editor
+    helvum
   ];
 }

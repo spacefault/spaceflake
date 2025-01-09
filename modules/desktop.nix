@@ -38,9 +38,6 @@
       libimobiledevice
       ifuse
       gcc
-      libsForQt5.ksshaskpass
-      pinentry
-      gh
       gnumake
       smartmontools
       nautilus-python
@@ -53,7 +50,6 @@
       gst_all_1.gst-vaapi
       waybar
     ];
-
     gnome.excludePackages = with pkgs; [
       gnome-console
     ];
@@ -73,34 +69,21 @@
   programs = {
     # portal polkit and system things
     hyprland = {
-      enable = true;
+      enable = false;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
     };
-    seahorse.enable = true;
+    seahorse.enable = false;
     zsh.enable = true;
     dconf.enable = true;
     nix-ld.enable = true;
     virt-manager.enable = true;
-    #ssh = {
-    #  startAgent = true;
-    #  askPassword = pkgs.lib.mkForce "${pkgs.ksshaskpass.out}/bin/ksshaskpass";
-    #};
-    gnupg = {
-      agent = {
-        enable = true;
-        #enableSSHSupport = true;
-        #enableExtraSocket = true;
-        #pinentryPackage = lib.mkForce pkgs.pinentry-gnome;
-      };
-    };
   };
 
   # services
   services = {
     devmon.enable = true;
     seatd.enable = true;
-    displayManager.ly.enable = true;
     gvfs.enable = true;
     dbus.enable = true;
     flatpak.enable = true;
@@ -111,13 +94,22 @@
     fstrim.enable = true;
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
+    greetd = {
+      enable = false;
+      settings = {
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+          user = "greeter";
+        };
+      };
+    };
     printing = {
       enable = true;
       logLevel = "debug";
       drivers = [
         pkgs.cups-kyodialog
         pkgs.foomatic-db-ppds-withNonfreeDb
-        pkgs.cnijfilter2
+        # pkgs.cnijfilter2
         pkgs.gutenprint
       ];
     };
@@ -128,6 +120,8 @@
     };
     xserver = {
       enable = true;
+      desktopManager.gnome.enable = true;
+      displayManager.gdm.enable = true;
       xkb.layout = "";
       xkb.variant = "";
       excludePackages = [
@@ -156,7 +150,7 @@
       source-han-serif-japanese
       monaspace
       corefonts
-      (nerdfonts.override {fonts = ["Meslo"];})
+      nerd-fonts.monaspace
     ];
     fontconfig = {
       enable = true;
@@ -222,6 +216,10 @@
   # hardware
   hardware = {
     pulseaudio.enable = false;
+    opentabletdriver = {
+      enable = true;
+      daemon.enable = true;
+    };
     graphics = {
       enable = true;
       enable32Bit = true;
@@ -262,9 +260,9 @@
     plymouth.enable = true;
     lanzaboote = {
       enable = true;
-      pkiBundle = "/etc/secureboot";
+      pkiBundle = "/var/lib/sbctl";
     };
-    kernelPackages = pkgs.linuxKernel.packages.linux_6_11;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = ["kvm-intel" "v4l2loopback" "vfio-pci" "tcp_bbr"];
     kernelParams = ["intel_iommu=on"];
     extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
