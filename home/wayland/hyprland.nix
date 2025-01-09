@@ -34,15 +34,15 @@ in {
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "udiskie --appindicator --automount"
+        "${pkgs.networkmanagerapplet}/bin/nm-applet"
+        "${pkgs.blueman}/bin/blueman-applet"
+        "${pkgs.udiskie}/bin/udiskie --appindicator --automount"
         "systemctl --user start polkit-gnome-authentication-agent-1.service"
-        "/run/wrappers/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
+        "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
         "wlsunset -S 06:30 -s 20:00"
         "hyprctl setcursor Adwaita 24"
         "swww init"
         "swaync"
-        "${pkgs.waybar}/bin/waybar"
-        "sleep 5 && nm-applet && blueman-applet"
       ];
       general = {
         gaps_in = 3;
@@ -122,6 +122,7 @@ in {
         disable_splash_rendering = true;
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
+        middle_click_paste = false;
         vrr = 1;
       };
       layerrule = [
@@ -145,7 +146,7 @@ in {
           "${mod}, RETURN, exec, alacritty"
           "${mod}, SPACE, exec, anyrun"
           "${mod}, E, exec, thunar"
-          "${mod}, W, exec, firefox -p"
+          "${mod}, W, exec, firefox"
           ", PRINT, exec, grimblast --freeze copy area"
           "${mod}, L, exec, swaylock --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5"
           "${mod}, Y, exec, wlogout"
