@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    firefox
+    firefox-esr
     google-chrome
     obsidian
     loupe
