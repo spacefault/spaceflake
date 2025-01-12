@@ -73,11 +73,12 @@
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
     };
-    seahorse.enable = false;
+    seahorse.enable = true;
     zsh.enable = true;
     dconf.enable = true;
     nix-ld.enable = true;
     virt-manager.enable = true;
+    gnupg.agent.enable = true;
   };
 
   # services
