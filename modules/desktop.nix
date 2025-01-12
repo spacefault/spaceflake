@@ -97,7 +97,7 @@
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
     greetd = {
-      enable = false;
+      enable = true;
       settings = {
         default_session = {
           command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
@@ -122,8 +122,8 @@
     };
     xserver = {
       enable = true;
-      desktopManager.gnome.enable = true;
-      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = false;
+      displayManager.gdm.enable = false;
       xkb.layout = "";
       xkb.variant = "";
       excludePackages = [
