@@ -30,6 +30,7 @@
       ffmpeg
       pavucontrol
       adwaita-icon-theme
+      apple-cursor
       htop
       sbctl
       killall
