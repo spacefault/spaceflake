@@ -28,7 +28,7 @@
       open = true;
       nvidiaSettings = true;
       powerManagement.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.beta; # beta is gronkling
+      package = config.boot.kernelPackages.nvidiaPackages.stable; # beta is gronkling
     };
   };
 }
