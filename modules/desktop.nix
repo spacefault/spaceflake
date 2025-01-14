@@ -74,7 +74,7 @@
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
     };
-    seahorse.enable = true;
+    seahorse.enable = false;
     zsh.enable = true;
     dconf.enable = true;
     nix-ld.enable = true;
@@ -84,6 +84,8 @@
 
   # services
   services = {
+    displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
     devmon.enable = true;
     seatd.enable = true;
     gvfs.enable = true;
@@ -122,8 +124,6 @@
     };
     xserver = {
       enable = true;
-      desktopManager.gnome.enable = true;
-      displayManager.gdm.enable = true;
       xkb.layout = "";
       xkb.variant = "";
       excludePackages = [
