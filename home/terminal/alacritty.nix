@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       window = {
-        opacity = 0.8;
+        opacity = 1;
         dynamic_title = true;
       };
       terminal.shell = {
