@@ -34,7 +34,7 @@
     "org/gnome/shell" = {
       disable-user-extensions = false;
       favorite-apps = [
-        "firefox-esr.desktop"
+        "firefox.desktop"
         "org.gnome.Geary.desktop"
         "org.gnome.Calendar.desktop"
         "org.gnome.Nautilus.desktop"
