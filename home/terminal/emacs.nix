@@ -7,6 +7,8 @@
       epkgs.catppuccin-theme
       epkgs.evil
       epkgs.nix-mode
+      epkgs.org-roam
+      epkgs.org-roam-ui
     ];
     extraConfig = ''
             (tool-bar-mode -1)
