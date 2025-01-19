@@ -19,32 +19,15 @@
             (display-battery-mode)
             (setq catppuccin-flavor 'mocha)
             (load-theme 'catppuccin :no-confirm)
-      (setq org-capture-templates
-            '(("j" "Journal entry" plain
-               (file+olp+datetree "~/journal.org")
-               "**** %i%?\n"
-               :time-prompt t
-               :unnarrowed t)))
-            (defun org-journal-on-this-day ()
-        "Show entries for this day on all previous years."
-        (interactive)
-        (with-temp-buffer-window "*On this day*" nil nil
-          (with-temp-buffer
-            (insert-file-contents "~/journal.org")
-            (goto-char (point-min))
-            (let ((regex (format-time-string "^\\*\\*\\* [0-9]\\{4\\}-%m-%d")))
-      	(while (re-search-forward regex nil t)
-      	  (let* ((elt (org-element-at-point))
-      		 (begin (org-element-property :begin elt))
-      		 (end (org-element-property :contents-end elt))
-      		 (contents (buffer-substring begin end)))
-      	    (princ contents))))))
-        (with-current-buffer "*On this day*"
-          (org-mode)))
           (require 'nix-mode)
       (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
-      (setq org-agenda-files '("~/TODO.org"
-                               "~/work/clones/schoolnotes/grade9/school.org"))
+      (require 'org-roam)
+      (org-roam-db-autosync-mode)
+      (setq org-agenda-files '("~/dev/local/orgroam/2024-2025.org"))
+      (setq org-roam-directory (expand-file-name "/home/devin/docs/schoolnotes2/notebin"))
+      (define-key global-map (kbd "C-c n l") 'org-roam-buffer-toggle)
+      (define-key global-map (kbd "C-c n f") 'org-roam-node-find)
+      (define-key global-map (kbd "C-c n i") 'org-roam-node-insert)
     '';
   };
 }
