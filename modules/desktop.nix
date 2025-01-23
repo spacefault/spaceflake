@@ -264,10 +264,10 @@
       enable = false;
       pkiBundle = "/var/lib/sbctl";
     };
-    kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = ["kvm-intel" "v4l2loopback" "vfio-pci" "tcp_bbr"];
+    kernelPackages = pkgs.linuxPackages_6_12;
+    kernelModules = ["kvm-intel" "vfio-pci" "tcp_bbr"];
     kernelParams = ["intel_iommu=on"];
-    extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
+    extraModulePackages = with config.boot.kernelPackages; [];
     extraModprobeConfig = ''options iwlwifi 11n_disable=8'';
     supportedFilesystems = ["ntfs" "btrfs"];
     loader = {
