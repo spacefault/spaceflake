@@ -74,7 +74,7 @@
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
     };
-    seahorse.enable = true;
+    seahorse.enable = false;
     zsh.enable = true;
     dconf.enable = true;
     nix-ld.enable = true;
@@ -90,7 +90,7 @@
     dbus.enable = true;
     flatpak.enable = true;
     ratbagd.enable = true;
-    blueman.enable = true;
+    blueman.enable = false;
     usbmuxd.enable = true;
     fwupd.enable = true;
     fstrim.enable = true;
@@ -122,8 +122,8 @@
     };
     xserver = {
       enable = true;
-      desktopManager.gnome.enable = true;
-      displayManager.gdm.enable = true;
+      desktopManager.plasma6.enable = true;
+      displayManager.sddm.enable = true;
       xkb.layout = "";
       xkb.variant = "";
       excludePackages = [
@@ -261,7 +261,7 @@
     bootspec.enable = true;
     plymouth.enable = true;
     lanzaboote = {
-      enable = false;
+      enable = true;
       pkiBundle = "/var/lib/sbctl";
     };
     kernelPackages = pkgs.linuxPackages_6_12;
@@ -271,7 +271,7 @@
     extraModprobeConfig = ''options iwlwifi 11n_disable=8'';
     supportedFilesystems = ["ntfs" "btrfs"];
     loader = {
-      systemd-boot.enable = lib.mkForce true;
+      systemd-boot.enable = lib.mkForce false;
       systemd-boot.editor = false;
       efi.canTouchEfiVariables = true;
     };
