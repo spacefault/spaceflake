@@ -85,6 +85,9 @@
   # services
   services = {
     devmon.enable = true;
+    pulseaudio.enable = false;
+    desktopManager.plasma6.enable = true;
+    displayManager.sddm.enable = true;
     seatd.enable = true;
     gvfs.enable = true;
     dbus.enable = true;
@@ -122,8 +125,6 @@
     };
     xserver = {
       enable = true;
-      desktopManager.plasma6.enable = true;
-      displayManager.sddm.enable = true;
       xkb.layout = "";
       xkb.variant = "";
       excludePackages = [
@@ -217,7 +218,6 @@
 
   # hardware
   hardware = {
-    pulseaudio.enable = false;
     opentabletdriver = {
       enable = true;
       daemon.enable = true;
