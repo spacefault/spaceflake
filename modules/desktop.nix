@@ -51,9 +51,6 @@
       gst_all_1.gst-vaapi
       waybar
     ];
-    gnome.excludePackages = with pkgs; [
-      gnome-console
-    ];
   };
 
   # moved xdg thing and make sure to use hyprland portal
@@ -84,10 +81,10 @@
 
   # services
   services = {
-    devmon.enable = true;
-    pulseaudio.enable = false;
     desktopManager.plasma6.enable = true;
     displayManager.sddm.enable = true;
+    devmon.enable = true;
+    pulseaudio.enable = false;
     seatd.enable = true;
     gvfs.enable = true;
     dbus.enable = true;
@@ -310,6 +307,7 @@
       "kernel.ftrace_enabled" = false;
     };
     blacklistedKernelModules = [
+      "wacom"
       "ax25"
       "netrom"
       "rose"
