@@ -50,6 +50,7 @@
       gst_all_1.gst-libav
       gst_all_1.gst-vaapi
       waybar
+      pinentry-gnome3
     ];
   };
 
@@ -67,30 +68,32 @@
   programs = {
     # portal polkit and system things
     hyprland = {
-      enable = false;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-      portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+      enable = true;
+      #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      #portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+    };
+    gnupg.agent = {
+      enable = true;
+      pinentryPackage = pkgs.pinentry-gnome3;
     };
     seahorse.enable = false;
     zsh.enable = true;
     dconf.enable = true;
     nix-ld.enable = true;
     virt-manager.enable = true;
-    gnupg.agent.enable = true;
   };
 
   # services
   services = {
-    desktopManager.plasma6.enable = true;
     displayManager.sddm.enable = true;
     devmon.enable = true;
+    blueman.enable = true;
     pulseaudio.enable = false;
     seatd.enable = true;
     gvfs.enable = true;
     dbus.enable = true;
     flatpak.enable = true;
     ratbagd.enable = true;
-    blueman.enable = false;
     usbmuxd.enable = true;
     fwupd.enable = true;
     fstrim.enable = true;
