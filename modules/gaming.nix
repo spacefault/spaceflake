@@ -7,7 +7,7 @@
     piper
     celeste64
     lutris
-    # chatterino2
+    chatterino2
     discord
     mangohud
     obs-studio

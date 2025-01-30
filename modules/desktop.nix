@@ -41,7 +41,6 @@
       gcc
       gnumake
       smartmontools
-      nautilus-python
       gst_all_1.gstreamer
       gst_all_1.gst-plugins-base
       gst_all_1.gst-plugins-good
@@ -76,7 +75,7 @@
       enable = true;
       pinentryPackage = pkgs.pinentry-gnome3;
     };
-    seahorse.enable = false;
+    seahorse.enable = true;
     zsh.enable = true;
     dconf.enable = true;
     nix-ld.enable = true;
@@ -99,15 +98,6 @@
     fstrim.enable = true;
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
-    greetd = {
-      enable = false;
-      settings = {
-        default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
-          user = "greeter";
-        };
-      };
-    };
     printing = {
       enable = true;
       logLevel = "debug";
@@ -265,9 +255,8 @@
       pkiBundle = "/var/lib/sbctl";
     };
     kernelPackages = pkgs.linuxPackages_6_12;
-    kernelModules = ["kvm-intel" "vfio-pci" "tcp_bbr"];
+    kernelModules = ["vfio-pci" "tcp_bbr"];
     kernelParams = ["intel_iommu=on"];
-    extraModulePackages = with config.boot.kernelPackages; [];
     extraModprobeConfig = ''options iwlwifi 11n_disable=8'';
     supportedFilesystems = ["ntfs" "btrfs"];
     loader = {
