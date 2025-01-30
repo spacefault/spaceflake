@@ -29,7 +29,7 @@
     ./terminal/alacritty.nix
     ./terminal/tmux.nix
     ./programs/vscode.nix
-    # ./programs/spicetify.nix
+    ./programs/spicetify.nix
     ./terminal/emacs.nix
     ./wayland
   ];
