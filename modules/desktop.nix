@@ -75,6 +75,11 @@
       enable = true;
       pinentryPackage = pkgs.pinentry-gnome3;
     };
+    nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 4d --keep 3";
+    };
     seahorse.enable = true;
     zsh.enable = true;
     dconf.enable = true;
@@ -181,7 +186,7 @@
       ];
     };
     gc = {
-      automatic = true;
+      automatic = false;
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
