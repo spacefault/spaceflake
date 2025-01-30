@@ -8,7 +8,7 @@
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
     nixvim.url = "github:nix-community/nixvim";
     anyrun.url = "github:anyrun-org/anyrun";
-    hyprland.url = "github:hyprwm/hyprland/12f9a0d0b93f691d4d9923716557154d74777b0a";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
