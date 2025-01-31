@@ -1,4 +1,4 @@
-# laptop.nix: blueberry
+# cherry: laptop config
 {
   config,
   lib,
@@ -21,7 +21,7 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/8ea910cc-3dce-47f0-8eb1-6fb688657f7";
+      device = "/dev/disk/by-uuid/8ea910cc-3dce-47f0-8eb1-6fb688657f7f";
       fsType = "ext4";
     };
 

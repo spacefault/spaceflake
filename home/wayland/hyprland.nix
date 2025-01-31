@@ -39,7 +39,6 @@ in {
         "systemctl --user start polkit-gnome-authentication-agent-1.service"
         "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
         "wlsunset -S 06:30 -s 20:00"
-        "hyprctl setcursor Adwaita 24"
         "swww init"
         "swaync"
       ];
