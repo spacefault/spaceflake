@@ -226,6 +226,7 @@
         vaapiVdpau
         libvdpau-va-gl
         vulkan-validation-layers
+        intel-media-driver
       ];
     };
     sane = {
