@@ -9,6 +9,7 @@
     nixvim.url = "github:nix-community/nixvim";
     anyrun.url = "github:anyrun-org/anyrun";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprlock.url = "github:hyprwm/hyprlock";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
