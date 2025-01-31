@@ -241,10 +241,7 @@
     polkit.enable = true;
     protectKernelImage = true;
     pam = {
-      services.swaylock = {};
-      services.swaylock.text = ''
-        auth include login
-      '';
+      services.hyprlock = {};
       services.gnome-keyring = {
         gnupg.enable = true;
         sshAgentAuth = true;
