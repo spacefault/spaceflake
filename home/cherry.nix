@@ -1,4 +1,4 @@
-{lib, ...}: {
+{pkgs, lib, ...}: {
   home = {
     username = "devin";
     homeDirectory = lib.mkDefault "/home/devin";

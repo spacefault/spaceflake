@@ -15,10 +15,11 @@
     enable = true;
   };
   home.pointerCursor = {
-    name = "macOS-Monterey";
+    name = "macOS";
     size = 24;
     package = pkgs.apple-cursor;
     gtk.enable = true;
+    x11.enable = true;
   };
   gtk = {
     enable = true;
