@@ -3,7 +3,14 @@
   inputs,
   pkgs,
   ...
-}: {
+}: 
+let
+  wallpaper = builtins.path {
+    path = ./wallpaper.jpg;
+    name = "wallpaper";
+  };
+in
+{
   programs.hyprlock = {
     enable = true;
 
@@ -20,7 +27,7 @@
       background = [
         {
           monitor = "";
-          path = "screenshot";
+          path = wallpaper;
           blur_passes = 2;
         }
       ];
@@ -67,7 +74,7 @@
           halign = "center";
 
           shadow_color = "rgba(0, 0, 0, 0.1)";
-          shadow_size = 20;
+          shadow_size = 1;
           shadow_passes = 2;
           shadow_boost = 0.3;
         }
@@ -83,7 +90,7 @@
           halign = "center";
 
           shadow_color = "rgba(0, 0, 0, 0.1)";
-          shadow_size = 20;
+          shadow_size = 1;
           shadow_passes = 2;
           shadow_boost = 0.3;
         }
