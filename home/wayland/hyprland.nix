@@ -143,7 +143,7 @@ in {
         [
           "${mod}, RETURN, exec, alacritty"
           "${mod}, SPACE, exec, anyrun"
-          "${mod}, E, exec, thunar"
+          "${mod}, E, exec, thunderbird"
           "${mod}, W, exec, firefox"
           ", PRINT, exec, grimblast --freeze copy area"
           "${mod}, L, exec, hyprlock"
