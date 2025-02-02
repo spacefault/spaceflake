@@ -10,7 +10,8 @@ This is my personal NixOS flake, it is intended for personal use so please be ca
 ├── flake.lock
 ├── flake.nix
 ├── home
-│   ├── home.nix # main root file for home
+│   ├── blueberry.nix # home file for desktop
+│   ├── cherry.nix # home file for laptop
 │   ├── programs # programs not needed for wayland session but nice to have
 │   ├── terminal # terminal related dotfiles (neovim, tmux, etc)
 │   └── wayland # files needed for wayland session
