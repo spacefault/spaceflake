@@ -25,33 +25,38 @@
 
   # system packages
   nixpkgs.config.allowUnfree = true;
-  environment = {
-    systemPackages = with pkgs; [
-      ffmpeg
-      pavucontrol
-      adwaita-icon-theme
-      apple-cursor
-      htop
-      sbctl
-      killall
-      networkmanagerapplet
-      cups-filters
-      libimobiledevice
-      ifuse
-      gcc
-      gnumake
-      smartmontools
-      gst_all_1.gstreamer
-      gst_all_1.gst-plugins-base
-      gst_all_1.gst-plugins-good
-      gst_all_1.gst-plugins-bad
-      gst_all_1.gst-plugins-ugly
-      gst_all_1.gst-libav
-      gst_all_1.gst-vaapi
-      waybar
-      pinentry-gnome3
-    ];
-  };
+  environment.systemPackages = with pkgs; [(
+    catppuccin-sddm.override {
+      flavor = "mocha";
+      font = "Noto Sans";
+      fontSize = "9";
+      #background = "${../home/wayland/wallpaper.jpg}";
+      #loginBackground = true;
+    })
+    ffmpeg
+    pavucontrol
+    adwaita-icon-theme
+    apple-cursor
+    htop
+    sbctl
+    killall
+    networkmanagerapplet
+    cups-filters
+    libimobiledevice
+    ifuse
+    gcc
+    gnumake
+    smartmontools
+    gst_all_1.gstreamer
+    gst_all_1.gst-plugins-base
+    gst_all_1.gst-plugins-good
+    gst_all_1.gst-plugins-bad
+    gst_all_1.gst-plugins-ugly
+    gst_all_1.gst-libav
+    gst_all_1.gst-vaapi
+    waybar
+    pinentry-gnome3
+  ];
 
   # moved xdg thing and make sure to use hyprland portal
   xdg.portal = {
@@ -89,7 +94,6 @@
 
   # services
   services = {
-    displayManager.sddm.enable = true;
     devmon.enable = true;
     blueman.enable = true;
     pulseaudio.enable = false;
@@ -103,6 +107,11 @@
     fstrim.enable = true;
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
+    displayManager.sddm = {
+      enable = true;
+      theme = "catppuccin-mocha";
+      package = pkgs.kdePackages.sddm;
+    };
     printing = {
       enable = true;
       logLevel = "debug";
