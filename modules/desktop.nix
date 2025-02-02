@@ -253,6 +253,7 @@
 
   # boot settings
   boot = {
+    initrd.systemd.enable = true;
     bootspec.enable = true;
     plymouth.enable = true;
     lanzaboote = {
