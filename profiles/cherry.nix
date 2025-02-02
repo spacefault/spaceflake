@@ -21,12 +21,12 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/0358a839-c849-4e6e-b261-7b64426d22a1";
+      device = "/dev/disk/by-uuid/7f942299-4650-40ee-bb36-2565b2be06ca";
       fsType = "ext4";
     };
 
     "/boot" = {
-      device = "/dev/disk/by-uuid/1AC2-0D3D";
+      device = "/dev/disk/by-uuid/0287-067B";
       fsType = "vfat";
       options = ["fmask=0077" "dmask=0077"];
     };
@@ -34,13 +34,13 @@
 
   swapDevices = [
     {
-      device = "/dev/disk/by-partuuid/88400e35-7f50-4747-b8b1-fb693daa264b";
+      device = "/dev/disk/by-partuuid/c7343511-2fcf-4fe9-a4ce-ab8a17429237";
       randomEncryption.enable = true;
     }
   ];
 
   boot = {
-    initrd.luks.devices."luks-d2a449c1-da9f-4eb9-89f5-41e4072631a9".device = "/dev/disk/by-uuid/d2a449c1-da9f-4eb9-89f5-41e4072631a9";
+    initrd.luks.devices."luks-a89e642e-5138-4956-a8fd-14d346896c7a".device = "/dev/disk/by-uuid/a89e642e-5138-4956-a8fd-14d346896c7a";
     initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod"];
     kernelModules = ["kvm-intel"];
   };
