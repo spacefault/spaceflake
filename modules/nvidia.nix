@@ -11,6 +11,7 @@
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     WLR_NO_HARDWARE_CURSORS = "1";
     __GL_THREADED_OPTIMIZATIONS = "0";
+    NVD_BACKEND = "direct";
   };
   boot.kernelParams = ["nvidia-drm.fbdev=1" "nvidia.NVreg_PreserveVideoMemoryAllocations=1"];
   hardware = {
