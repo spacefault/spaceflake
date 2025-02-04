@@ -31,17 +31,17 @@
       options = ["fmask=0077" "dmask=0077"];
     };
 
-    "/mnt/data" = {
-      device = "/dev/disk/by-uuid/569DBC67112060ED";
-      fsType = "ntfs3";
-      options = ["windows_names"];
-    };
-
-    "/mnt/games" = {
-      device = "/dev/disk/by-uuid/38D0D91E037C5F55";
-      fsType = "ntfs3";
-      options = ["windows_names"];
-    };
+#    "/mnt/data" = {
+#      device = "/dev/disk/by-uuid/569DBC67112060ED";
+#      fsType = "ntfs3";
+#      options = ["windows_names"];
+#    };
+#
+#    "/mnt/games" = {
+#      device = "/dev/disk/by-uuid/38D0D91E037C5F55";
+#      fsType = "ntfs3";
+#      options = ["windows_names"];
+#    };
   };
 
   swapDevices = [];
