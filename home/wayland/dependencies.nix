@@ -1,9 +1,9 @@
 {
   pkgs,
+  inputs,
   ...
 }: {
   home.packages = with pkgs; [
-    # inputs.watershot.packages.${pkgs.system}.default
     grimblast
     grim
     wl-clipboard

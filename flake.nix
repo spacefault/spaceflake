@@ -18,10 +18,6 @@
       url = "github:nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    watershot = {
-      url = "github:kirottu/watershot";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
