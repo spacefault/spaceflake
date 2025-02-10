@@ -7,13 +7,13 @@
       position = "top";
       height = 24;
       modules-left = ["hyprland/workspaces"];
-      modules-center = ["clock" "mpris"];
-      modules-right = ["tray" "custom/notification" "wireplumber" "battery"];
+      modules-center = [];
+      modules-right = ["tray" "custom/notification" "wireplumber" "battery" "clock"];
       "hyprland/window" = {
         format = "{title}";
       };
       "clock" = {
-        format = "{:%m/%d/%Y @ %I:%M %p}";
+        format = "{:%B %d, %Y - %I:%M %p}";
         tooltip-format = "<tt><big>{calendar}</big></tt>";
       };
       "battery" = {
@@ -23,14 +23,14 @@
           "warning" = 20;
           "critical" = 10;
         };
-        format = "bat0: {capacity}% ";
+        format = "{icon} {capacity}%";
         format-icons = ["󰁻" "󰁽" "󰁿" "󰂁" "󰁹"];
       };
       "wireplumber" = {
-        format = "v: {volume}%";
+        format = "   {volume}%";
         tooltip = "true";
         tooltip-format = "{volume}%";
-        format-muted = "X: {volume}%";
+        format-muted = "   {volume}%";
         on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
       };
       "mpris" = {
@@ -45,16 +45,16 @@
       };
       "custom/notification" = {
         tooltip = false;
-        format = "{icon}";
+        format = "{icon} {}";
         format-icons = {
-          notification = "new messages!";
-          none = "no messages";
-          dnd-notification = "(dnd) new messages!";
-          dnd-none = "(dnd) no messages";
-          inhibited-notification = "new messages!";
-          inhibited-none = "no messages";
-          dnd-inhibited-notification = "(dnd) new messages!";
-          dnd-inhibited-none = "(dnd) no messages";
+          notification = "󱥁 ";
+          none = "󰍡 ";
+          dnd-notification = "󱙍 ";
+          dnd-none = "󱙍 ";
+          inhibited-notification = "󱥁 ";
+          inhibited-none = "󰍡 ";
+          dnd-inhibited-notification = "󱙍 ";
+          dnd-inhibited-none = "󱙍 ";
         };
         return-type = "json";
         exec-if = "which swaync-client";
@@ -68,7 +68,7 @@
       * {
           border: none;
           border-radius: 0;
-          font-family: Torus;
+          font-family: Font Awesome, Noto Sans;
           font-weight: bold;
           font-size: 14px;
           min-height: 0;
@@ -85,7 +85,7 @@
 
       #window {
           font-weight: bold;
-          font-family: Torus;
+          font-family: Noto Sans;
       }
 
       workspaces {
@@ -107,7 +107,7 @@
           border-bottom: 3px solid white;
       }
 
-      #clock, #battery, #cpu, #memory, #network, #wireplumber, #tray, #custom-weather {
+      #clock, #battery, #cpu, #memory, #network, #wireplumber, #tray, #custom-weather, #custom-notification {
           padding: 0 5px;
           margin: 0 2px;
       }
@@ -142,28 +142,6 @@
           animation-direction: alternate;
       }
 
-      #cpu {
-      }
-
-      #memory {
-      }
-
-      #network {
-      }
-
-      #network.disconnected {
-          background: #f53c3c;
-      }
-
-      # wireplumber {
-      }
-
-      #custom-spotify {
-          color: rgb(102, 220, 105);
-      }
-
-      #tray {
-      }
 
     '';
   };
