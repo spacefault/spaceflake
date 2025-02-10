@@ -38,9 +38,10 @@ in {
         "${pkgs.udiskie}/bin/udiskie --appindicator --automount"
         "systemctl --user start polkit-gnome-authentication-agent-1.service"
         "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
-        "wlsunset -S 06:30 -s 20:00"
-        "swww init"
-        "swaync"
+        "${pkgs.wlsunset}/bin/wlsunset -S 06:30 -s 20:00"
+        "${pkgs.swww}/bin/swww img ${./wallpaper.jpg}"
+        "${pkgs.swww}/bin/swww init"
+        "${pkgs.swaynotificationcenter}/bin/swaync"
       ];
       general = {
         gaps_in = 3;
