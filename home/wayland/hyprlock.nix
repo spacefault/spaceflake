@@ -2,14 +2,12 @@
   inputs,
   pkgs,
   ...
-}: 
-let
+}: let
   wallpaper = builtins.path {
     path = ./wallpaper.jpg;
     name = "wallpaper";
   };
-in
-{
+in {
   programs.hyprlock = {
     enable = true;
 
