@@ -58,6 +58,7 @@
     gst_all_1.gst-vaapi
     waybar
     pinentry-gnome3
+    lollypop
   ];
 
   # moved xdg thing and make sure to use hyprland portal
