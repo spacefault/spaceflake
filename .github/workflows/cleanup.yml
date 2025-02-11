@@ -8,19 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-          uses: actions/checkout@v4
-
+        uses: actions/checkout@v4
       - name: Install Nix
-          uses: cachix/install-nix-action@v30
-  
+        uses: cachix/install-nix-action@v30
       - name: Remove Dead Code
-          run: 'nix run nixpkgs#deadnix --extra-experimental-features "nix-command flakes" -- -edit'
-          shell: bash
-
+        run: 'nix run nixpkgs#deadnix --extra-experimental-features "nix-command flakes" -- -edit'
+        shell: bash
       - name: Format Code
-          run: 'nix run nixpkgs#alejandra --extra-experimental-features "nix-command flakes" -- .'
-          shell: bash
-
+        run: 'nix run nixpkgs#alejandra --extra-experimental-features "nix-command flakes" -- .'
+        shell: bash
       - name: Make PR
         uses: peter-evans/create-pull-request@v7
           with:
