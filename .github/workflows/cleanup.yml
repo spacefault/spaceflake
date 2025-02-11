@@ -19,11 +19,11 @@ jobs:
         shell: bash
       - name: Make PR
         uses: peter-evans/create-pull-request@v7
-          with:
-            branch: cleanup
-            base: ${{ github.head_ref }}
-            delete-branch: true
-            title: 'Automated Code Cleanup'
-            commit-message: 'Cleanup Code'
-            body: |
-              Code Cleanup (deadnix + alejandra)
+        with:
+          branch: cleanup
+          base: ${{ github.head_ref }}
+          delete-branch: true
+          title: 'Automated Code Cleanup'
+          commit-message: 'Cleanup Code'
+          body: |
+            Code Cleanup (deadnix + alejandra)
