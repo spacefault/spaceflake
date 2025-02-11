@@ -12,10 +12,10 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@v30
       - name: Remove Dead Code
-        run: 'nix run nixpkgs#deadnix --extra-experimental-features "nix-command flakes" -- -edit'
+        run: 'nix run nixpkgs#deadnix -- -e'
         shell: bash
       - name: Format Code
-        run: 'nix run nixpkgs#alejandra --extra-experimental-features "nix-command flakes" -- .'
+        run: 'nix run nixpkgs#alejandra -- .'
         shell: bash
       - name: Make PR
         uses: peter-evans/create-pull-request@v7
