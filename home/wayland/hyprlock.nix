@@ -33,7 +33,7 @@ in
 
       input-field = [
         {
-          monitor = "DP-1";
+          monitor = "";
 
           size = "300, 50";
           valign = "bottom";
