@@ -1,0 +1,33 @@
+on: [push, pull_request, workflow_dispatch]
+
+name: Code Cleanup
+
+jobs:
+  cleanCode:
+    name: Clean Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+          uses: actions/checkout@v4
+
+      - name: Install Nix
+          uses: cachix/install-nix-action@v30
+  
+      - name: Remove Dead Code
+          run: 'nix run nixpkgs#deadnix --extra-experimental-features "nix-command flakes" -- -edit'
+          shell: bash
+
+      - name: Format Code
+          run: 'nix run nixpkgs#alejandra --extra-experimental-features "nix-command flakes" -- .'
+          shell: bash
+
+      - name: Make PR
+        uses: peter-evans/create-pull-request@v7
+          with:
+            branch: cleanup
+            base: ${{ github.head_ref }}
+            delete-branch: true
+            title: 'Automated Code Cleanup'
+            commit-message: 'Cleanup Code'
+            body: |
+              Code Cleanup (deadnix + alejandra)
