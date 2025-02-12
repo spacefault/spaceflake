@@ -45,7 +45,7 @@
   };
 
   swapDevices = [
-    { 
+    {
       device = "/dev/disk/by-partuuid/75f9364b-04cc-4708-b795-2e0e83c8943a";
       randomEncryption.enable = true;
     }
