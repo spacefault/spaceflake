@@ -1,10 +1,5 @@
 # laptop.nix: blueberry
-{
-  config,
-  lib,
-  modulesPath,
-  ...
-}: {
+{...}: {
   # networking, firewall, and hostname
   networking = {
     hostName = "blueberry";
