@@ -18,7 +18,7 @@
       enable = true;
       publicShare = null;
       templates = null;
-      desktop = null;
+      desktop = "${config.home.homeDirectory}/.local/share/Desktop";
       download = "${config.home.homeDirectory}/internet/downloads";
       documents = "${config.home.homeDirectory}/documents";
       music = "${config.home.homeDirectory}/music";

@@ -26,15 +26,6 @@
   # system packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    (
-      catppuccin-sddm.override {
-        flavor = "mocha";
-        font = "Noto Sans";
-        fontSize = "9";
-        #background = "${../home/wayland/wallpaper.jpg}";
-        #loginBackground = true;
-      }
-    )
     ffmpeg
     pavucontrol
     adwaita-icon-theme
@@ -110,11 +101,7 @@
     fstrim.enable = true;
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
-    displayManager.sddm = {
-      enable = true;
-      theme = "catppuccin-mocha";
-      package = pkgs.kdePackages.sddm;
-    };
+    displayManager.sddm.enable = true;
     printing = {
       enable = true;
       logLevel = "debug";

@@ -8,42 +8,38 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "uas" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
   boot.supportedFilesystems = ["btrfs"];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/1a93a7ed-15be-4d7a-a1c2-098123eef27c";
+    { device = "/dev/disk/by-uuid/040a2faf-02a9-40f3-9d30-3abc621dcb02";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/de9f9ea5-c3c7-472c-9cf8-f6270cfe8f34";
-
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/c5f8bccc-8909-4c8c-b794-d93d80444eeb";
-      fsType = "btrfs";
-      options = [ "subvol=@home" "compress=zstd" "noatime" ];
-    };
-
-  boot.initrd.luks.devices."data".device = "/dev/disk/by-uuid/c94209ae-8acd-4a8f-b12e-eb5c0a4c1cd4";
-
-  fileSystems."/mnt/games" =
-    { device = "/dev/disk/by-uuid/c5f8bccc-8909-4c8c-b794-d93d80444eeb";
-      fsType = "btrfs";
-      options = [ "subvol=@games" "compress=zstd" "noatime" ];
-    };
-
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/B5E5-CC61";
+    { device = "/dev/disk/by-uuid/1ADE-1341";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+  fileSystems."/home/devin/data" =
+    { device = "/dev/disk/by-uuid/FEBC0114BC00C8DB";
+      fsType = "ntfs3";
+      options = [ "windows_names" "uid=1000" "gid=1000" "umask=0222" ];
+    };
+
+  fileSystems."/home/devin/games" =
+    { device = "/dev/disk/by-uuid/5432153532151D94";
+      fsType = "ntfs3";
+      options = [ "windows_names" "uid=1000" "gid=1000" "umask=0222" ];
+    };
+
   swapDevices = [ 
-    { 
-      device = "/dev/disk/by-partuuid/3dc19267-1965-4970-ae4b-020c3a2ce834";
+    {
+      device = "/dev/disk/by-partuuid/c7bc6fc1-b4fb-46cb-b9e8-d10464a774ec";
       randomEncryption.enable = true;
     }
   ];
