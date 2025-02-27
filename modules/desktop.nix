@@ -66,7 +66,7 @@
   programs = {
     # portal polkit and system things
     hyprland = {
-      enable = false;
+      enable = true;
       #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       #portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
     };
@@ -88,6 +88,7 @@
 
   # services
   services = {
+    displayManager.sddm.enable = true;
     devmon.enable = true;
     blueman.enable = true;
     pulseaudio.enable = false;
@@ -101,8 +102,6 @@
     fstrim.enable = true;
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
-    displayManager.sddm.enable = true;
-    desktopManager.plasma6.enable = true;
     printing = {
       enable = true;
       logLevel = "debug";
