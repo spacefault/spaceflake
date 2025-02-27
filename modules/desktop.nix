@@ -66,7 +66,7 @@
   programs = {
     # portal polkit and system things
     hyprland = {
-      enable = true;
+      enable = false;
       #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       #portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
     };
@@ -79,7 +79,7 @@
       clean.enable = true;
       clean.extraArgs = "--keep-since 4d --keep 3";
     };
-    seahorse.enable = true;
+    seahorse.enable = false;
     zsh.enable = true;
     dconf.enable = true;
     nix-ld.enable = true;
@@ -102,6 +102,7 @@
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
     displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
     printing = {
       enable = true;
       logLevel = "debug";
