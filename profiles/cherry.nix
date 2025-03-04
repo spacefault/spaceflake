@@ -1,10 +1,5 @@
 # cherry: laptop config
-{
-  config,
-  lib,
-  modulesPath,
-  ...
-}: {
+{...}: {
   # networking, firewall, and hostname
   networking = {
     hostName = "cherry";
