@@ -6,7 +6,6 @@
     loupe
     vlc
     mpv
-    git
     keepassxc
     anki-bin
     libreoffice

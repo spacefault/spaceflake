@@ -28,6 +28,7 @@
     ./terminal/neovim.nix
     ./terminal/alacritty.nix
     ./terminal/tmux.nix
+    ./terminal/git.nix
     ./programs/vscode.nix
     ./programs/spicetify.nix
     ./terminal/emacs.nix
