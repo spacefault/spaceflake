@@ -4,7 +4,7 @@
     userName = "spacefault";
     userEmail = "74156492+spacefault@users.noreply.github.com";
     signing = {
-      key = "4A6CCCAE07AD8356";
+      key = "68B88586B574840C";
       signByDefault = true;
     };
   };
