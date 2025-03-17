@@ -146,7 +146,7 @@ in {
           "${mod}, RETURN, exec, alacritty"
           "${mod}, SPACE, exec, anyrun"
           "${mod}, E, exec, thunderbird"
-          "${mod}, W, exec, firefox"
+          "${mod}, W, exec, firefox -p"
           ", PRINT, exec, grimblast --notify --freeze --cursor copysave area"
           "${mod}, L, exec, hyprlock"
           "${mod}, Y, exec, wlogout"
