@@ -1,7 +1,7 @@
 {...}: {
   programs.vscode = {
     enable = true;
-    userSettings = {
+    profiles.default.userSettings = {
       "window.titleBarStyle" = "custom";
       "workbench.sideBar.location" = "right";
     };
