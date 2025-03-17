@@ -13,6 +13,8 @@
       refreshRate = 60;
       x = 0;
       y = 0;
+      scale = "1.25";
+     
     };
     "DP-1" = {
       width = 1920;
@@ -20,6 +22,7 @@
       refreshRate = 100;
       x = 1920;
       y = 0;
+      scale = "1";
     };
   };
 
