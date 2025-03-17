@@ -37,12 +37,6 @@
     ./wayland
   ];
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = true;
-    };
-  };
 
   programs.home-manager.enable = true;
 }
