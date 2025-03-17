@@ -29,6 +29,10 @@ in {
           type = types.int;
           default = 0;
         };
+        scale = mkOption {
+          type = types.str;
+          default = 1;
+        };
         enabled = mkOption {
           type = types.bool;
           default = true;
