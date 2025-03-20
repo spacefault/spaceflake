@@ -15,41 +15,40 @@
   boot.supportedFilesystems = [ "btrfs" ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/54b573f4-7277-4e8f-b8ae-7fdc12a9f497";
+    { device = "/dev/disk/by-uuid/3d090c8e-4d1a-4067-8382-c8d59d60490c";
       fsType = "btrfs";
-      options = [ "subvol=root" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
+      options = [ "subvol=root" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2" ];
     };
 
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/f9837f45-d543-4f69-8921-c16ab130af6e";
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/6d5aabb1-b3b1-4530-b26e-69ed3e826fde";
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/54b573f4-7277-4e8f-b8ae-7fdc12a9f497";
+    { device = "/dev/disk/by-uuid/3d090c8e-4d1a-4067-8382-c8d59d60490c";
       fsType = "btrfs";
-      options = [ "subvol=home" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
+      options = [ "subvol=home" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/54b573f4-7277-4e8f-b8ae-7fdc12a9f497";
+    { device = "/dev/disk/by-uuid/3d090c8e-4d1a-4067-8382-c8d59d60490c";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2" ];
     };
 
   fileSystems."/var/log" =
-    { device = "/dev/disk/by-uuid/54b573f4-7277-4e8f-b8ae-7fdc12a9f497";
+    { device = "/dev/disk/by-uuid/3d090c8e-4d1a-4067-8382-c8d59d60490c";
       fsType = "btrfs";
-      options = [ "subvol=log" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
+      options = [ "subvol=log" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2" ];
       neededForBoot = true;
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/2479-480C";
+    { device = "/dev/disk/by-uuid/48B0-2923";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices = [ 
-  {
-    device = "/dev/disk/by-partuuid/6b359f23-382d-49ed-8c64-d59e03088b21";
+  { device = "/dev/disk/by-partuuid/4ab8aefe-de22-4bf2-b3b1-4596d167345c";
     randomEncryption.enable = true;
   }
   ];
@@ -60,6 +59,7 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp6s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp0s20f0u1.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

@@ -145,9 +145,10 @@ in {
         [
           "${mod}, RETURN, exec, alacritty"
           "${mod}, SPACE, exec, anyrun"
-          "${mod}, E, exec, thunderbird"
-          "${mod}, W, exec, firefox -p"
-          ", PRINT, exec, grimblast --notify --freeze --cursor copysave area"
+          "${mod}, E, exec, firefox -p School"
+          "${mod}, W, exec, firefox -p Default"
+          "${mod}, R, exec, thunderbird"
+          ", PRINT, exec, grimblast --notify --freeze copysave area"
           "${mod}, L, exec, hyprlock"
           "${mod}, Y, exec, wlogout"
           "${mod}, Q, killactive"
