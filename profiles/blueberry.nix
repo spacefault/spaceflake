@@ -13,6 +13,9 @@
     bluetooth.powerOnBoot = true;
   };
 
+  environment.sessionVariables.SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
+
+
   imports = [
     ../modules/desktop.nix
     ../modules/gaming.nix

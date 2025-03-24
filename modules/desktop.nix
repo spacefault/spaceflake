@@ -204,7 +204,6 @@
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORMTHEME = "qt5ct";
     XCURSOR_SIZE = "24";
-    SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
     XCURSORPATH = "$XDG_DATA_HOME/icons";
     XCOMPOSECACHE = "$XDG_CACHE_HOME/X11/xcompose";
     ZDOTDIR = "$HOME/.config/zsh";
