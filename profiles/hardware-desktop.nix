@@ -29,13 +29,13 @@
   };
 
   fileSystems."/home/devin/data" = {
-    device = "/dev/disk/by-uuid/FEBC0114BC00C8DB";
+    device = "/dev/disk/by-uuid/1BD1DE604A980C74";
     fsType = "ntfs3";
     options = ["windows_names" "uid=1000" "gid=1000" "umask=0222"];
   };
 
   fileSystems."/home/devin/games" = {
-    device = "/dev/disk/by-uuid/5432153532151D94";
+    device = "/dev/disk/by-uuid/19B017882E64B392";
     fsType = "ntfs3";
     options = ["windows_names" "uid=1000" "gid=1000" "umask=0222"];
   };

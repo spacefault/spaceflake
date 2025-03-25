@@ -21,6 +21,7 @@
     ./terminal/zsh.nix
     ./terminal/neovim.nix
     ./terminal/alacritty.nix
+    ./terminal/git.nix
     ./terminal/tmux.nix
     ./programs/vscode.nix
     ./programs/spicetify.nix
