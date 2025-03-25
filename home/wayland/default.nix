@@ -7,7 +7,6 @@
     ./monitorLogic.nix
     ./dependencies.nix
     ./swayosd.nix
-    ./packages.nix
     ./xdg.nix
     ./waybar.nix
     ./polkit.nix

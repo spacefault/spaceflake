@@ -18,15 +18,9 @@
   };
 
   imports = [
-    ./terminal/zsh.nix
-    ./terminal/neovim.nix
-    ./terminal/alacritty.nix
-    ./terminal/git.nix
-    ./terminal/tmux.nix
-    ./programs/vscode.nix
-    ./programs/spicetify.nix
-    ./terminal/emacs.nix
+    ./programs
     ./wayland
+    ./terminal
   ];
 
   programs.home-manager.enable = true;
