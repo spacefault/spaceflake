@@ -79,7 +79,7 @@
       clean.enable = true;
       clean.extraArgs = "--keep-since 4d --keep 3";
     };
-    seahorse.enable = false;
+    seahorse.enable = true;
     zsh.enable = true;
     dconf.enable = true;
     nix-ld.enable = true;
