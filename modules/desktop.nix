@@ -254,7 +254,7 @@
   boot = {
     initrd.systemd.enable = true;
     bootspec.enable = true;
-    plymouth.enable = true;
+    plymouth.enable = false;
     lanzaboote = {
       enable = true;
       pkiBundle = "/var/lib/sbctl";
