@@ -32,7 +32,11 @@
       extraCompatPackages = [pkgs.proton-ge-bin];
       package = pkgs.steam.override {
         extraPkgs = pkgs:
-          with pkgs; [
+        with pkgs; [
+            pango
+            gamemode
+            libthai
+            harfbuzz
             keyutils
             libkrb5
             libpng
