@@ -11,48 +11,48 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod"];
+  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
   boot.supportedFilesystems = ["btrfs"];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/0eba377c-774f-4b62-a372-2e47ff544c73";
+    device = "/dev/disk/by-uuid/013d293f-2be1-4408-8a1d-2cb26a4cf16b";
     fsType = "btrfs";
     options = ["subvol=root" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/0a83175f-eb52-4fed-9294-19491b4dd8e6";
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/45d3b0e9-72d2-4e9e-bb0f-7d1f5bae3770";
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/0eba377c-774f-4b62-a372-2e47ff544c73";
+    device = "/dev/disk/by-uuid/013d293f-2be1-4408-8a1d-2cb26a4cf16b";
     fsType = "btrfs";
     options = ["subvol=home" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/0eba377c-774f-4b62-a372-2e47ff544c73";
+    device = "/dev/disk/by-uuid/013d293f-2be1-4408-8a1d-2cb26a4cf16b";
     fsType = "btrfs";
     options = ["subvol=nix" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
   fileSystems."/var/log" = {
-    device = "/dev/disk/by-uuid/0eba377c-774f-4b62-a372-2e47ff544c73";
+    device = "/dev/disk/by-uuid/013d293f-2be1-4408-8a1d-2cb26a4cf16b";
     fsType = "btrfs";
     options = ["subvol=log" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
     neededForBoot = true;
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/54B3-CFD1";
+    device = "/dev/disk/by-uuid/B8C5-0E5D";
     fsType = "vfat";
     options = ["fmask=0022" "dmask=0022"];
   };
 
   swapDevices = [
     {
-      device = "/dev/disk/by-partuuid/ec68368d-135e-4671-94c1-68ed3a10c73c";
+      device = "/dev/disk/by-partuuid/c2fe19a6-0602-4cdc-b8e2-35e7d6eaab84";
       randomEncryption.enable = true;
     }
   ];
