@@ -79,10 +79,13 @@
       clean.enable = true;
       clean.extraArgs = "--keep-since 4d --keep 3";
     };
+  nix-ld = {
+    enable = true;
+    libraries = pkgs.steam-run.args.multiPkgs pkgs;
+  };
     seahorse.enable = true;
     zsh.enable = true;
     dconf.enable = true;
-    nix-ld.enable = true;
     virt-manager.enable = true;
   };
 
