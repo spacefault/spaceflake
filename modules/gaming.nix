@@ -31,6 +31,13 @@
       gamescopeSession.enable = true;
       extraCompatPackages = [pkgs.proton-ge-bin];
       package = pkgs.steam.override {
+        extraBwrapArgs = [
+          "--bind $HOME/tmp/steamhome $HOME"
+          "--unsetenv XDG_CACHE_HOME"
+          "--unsetenv XDG_CONFIG_HOME"
+          "--unsetenv XDG_DATA_HOME"
+          "--unsetenv XDG_STATE_HOME"
+        ];
         extraPkgs = pkgs:
           with pkgs; [
             pango
