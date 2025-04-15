@@ -19,14 +19,14 @@
       publicShare = null;
       templates = null;
       desktop = "${config.home.homeDirectory}/.local/share/Desktop";
-      download = "${config.home.homeDirectory}/internet/downloads";
-      documents = "${config.home.homeDirectory}/documents";
+      download = "${config.home.homeDirectory}/net/downloads";
+      documents = "${config.home.homeDirectory}/doc";
       music = "${config.home.homeDirectory}/media/music";
-      pictures = "${config.home.homeDirectory}/media/pictures";
+      pictures = "${config.home.homeDirectory}/media/images";
       videos = "${config.home.homeDirectory}/media/videos";
       extraConfig = {
-        XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/media/pictures/images/screenshots";
-        XDG_DEVEL_DIR = "${config.home.homeDirectory}/devel";
+        XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/media/images/screenshots";
+        XDG_DEVEL_DIR = "${config.home.homeDirectory}/dev";
       };
     };
   };
