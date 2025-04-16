@@ -79,10 +79,39 @@
       clean.enable = true;
       clean.extraArgs = "--keep-since 4d --keep 3";
     };
-  nix-ld = {
-    enable = true;
-    libraries = pkgs.steam-run.args.multiPkgs pkgs;
-  };
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        zlib
+        zstd
+        stdenv.cc.cc
+        curl
+        openssl
+        attr
+        libssh
+        bzip2
+        libxml2
+        acl
+        libsodium
+        util-linux
+        xz
+        systemd
+        glibc
+        libxcrypt
+        libGL
+        libdrm
+        libgbm
+        udev
+        libudev0-shim
+        libva
+        vulkan-loader
+        networkmanager
+        # not documented, used for network status things in Big Picture
+        # FIXME: figure out how to only build libnm?
+        libcap # not documented, required by srt-bwrap
+        gperftools
+      ];
+    };
     seahorse.enable = true;
     zsh.enable = true;
     dconf.enable = true;
