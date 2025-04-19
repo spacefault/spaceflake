@@ -18,41 +18,41 @@
   boot.supportedFilesystems = ["btrfs"];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/6a25add6-7e34-4bf6-b553-ffe3e4e5063c";
+    device = "/dev/disk/by-uuid/25d710ca-7ff5-4c44-b255-a73e5035f2c5";
     fsType = "btrfs";
     options = ["subvol=root" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/06381276-8518-484d-9ded-0bce3b8b5182";
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/3b614c8a-bd3c-40a8-aee1-7fd977d843ef";
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/6a25add6-7e34-4bf6-b553-ffe3e4e5063c";
+    device = "/dev/disk/by-uuid/25d710ca-7ff5-4c44-b255-a73e5035f2c5";
     fsType = "btrfs";
     options = ["subvol=home" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/6a25add6-7e34-4bf6-b553-ffe3e4e5063c";
+    device = "/dev/disk/by-uuid/25d710ca-7ff5-4c44-b255-a73e5035f2c5";
     fsType = "btrfs";
     options = ["subvol=nix" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
   fileSystems."/var/log" = {
-    device = "/dev/disk/by-uuid/6a25add6-7e34-4bf6-b553-ffe3e4e5063c";
+    device = "/dev/disk/by-uuid/25d710ca-7ff5-4c44-b255-a73e5035f2c5";
     fsType = "btrfs";
     options = ["subvol=log" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
     neededForBoot = true;
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/EC92-D8D9";
+    device = "/dev/disk/by-uuid/EEB6-92B2";
     fsType = "vfat";
     options = ["fmask=0022" "dmask=0022"];
   };
 
   swapDevices = [
     {
-      device = "/dev/disk/by-partuuid/9727e4c1-a1a7-4ef6-a9fa-38d592656f47";
+      device = "/dev/disk/by-partuuid/66f7b9ed-c26f-4ac4-9765-8efd606547cb";
       randomEncryption.enable = true;
     }
   ];
