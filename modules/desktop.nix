@@ -4,7 +4,9 @@
   config,
   inputs,
   ...
-}: {
+}: let
+find-ld = import ../pkgs/find-ld.nix { inherit pkgs; };
+in{
   imports = [
     inputs.lanzaboote.nixosModules.lanzaboote
     inputs.hyprland.nixosModules.default
@@ -50,6 +52,7 @@
     waybar
     pinentry-gnome3
     lollypop
+    find-ld
   ];
 
   # moved xdg thing and make sure to use hyprland portal
@@ -110,6 +113,7 @@
         # FIXME: figure out how to only build libnm?
         libcap # not documented, required by srt-bwrap
         gperftools
+        mimalloc
       ];
     };
     seahorse.enable = true;
