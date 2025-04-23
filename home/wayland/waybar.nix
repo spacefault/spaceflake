@@ -24,6 +24,7 @@
           "critical" = 10;
         };
         format = "{icon} {capacity}%";
+        #format-charging = "{icon} {capacity}% (charging)";
         format-icons = ["󰁻" "󰁽" "󰁿" "󰂁" "󰁹"];
       };
       "wireplumber" = {
@@ -134,7 +135,7 @@
       }
 
       #battery.warning:not(.charging) {
-          color: white;
+          color: red;
           animation-name: blink;
           animation-duration: 0.5s;
           animation-timing-function: linear;
