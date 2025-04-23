@@ -5,8 +5,8 @@
   inputs,
   ...
 }: let
-find-ld = import ../pkgs/find-ld.nix { inherit pkgs; };
-in{
+  find-ld = import ../pkgs/find-ld.nix {inherit pkgs;};
+in {
   imports = [
     inputs.lanzaboote.nixosModules.lanzaboote
     inputs.hyprland.nixosModules.default
