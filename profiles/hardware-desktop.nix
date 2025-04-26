@@ -50,6 +50,18 @@
     options = ["fmask=0022" "dmask=0022"];
   };
 
+  fileSystems."/mnt/data" = {
+    device = "/dev/disk/by-uuid/F0D847FAD847BE1A";
+    fsType = "ntfs-3g";
+    options = [ "windows_names" "rw" "uid=1000" "gid=100" "dmask=027" "fmask=137" ];
+  };
+
+  fileSystems."/mnt/games" = {
+    device = "/dev/disk/by-uuid/7E08A40B08A3C10F";
+    fsType = "ntfs-3g";
+    options = [ "windows_names" "rw" "uid=1000" "gid=100" "dmask=027" "fmask=137" ];
+  };
+
   swapDevices = [
     {
       device = "/dev/disk/by-partuuid/8520eba4-b8a5-4528-aced-72e779ace1f5";
