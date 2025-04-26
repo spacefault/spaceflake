@@ -11,38 +11,48 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usbhid" "usb_storage" "uas" "sd_mod"];
+  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
   boot.supportedFilesystems = ["btrfs"];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/040a2faf-02a9-40f3-9d30-3abc621dcb02";
-    fsType = "ext4";
+    device = "/dev/disk/by-uuid/1712124d-49fe-4b98-bcf2-289c067dd85b";
+    fsType = "btrfs";
+    options = ["subvol=root" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
+  };
+
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/690ed6db-c471-4eef-9855-af14882ad7d3";
+
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/1712124d-49fe-4b98-bcf2-289c067dd85b";
+    fsType = "btrfs";
+    options = ["subvol=home" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
+  };
+
+  fileSystems."/nix" = {
+    device = "/dev/disk/by-uuid/1712124d-49fe-4b98-bcf2-289c067dd85b";
+    fsType = "btrfs";
+    options = ["subvol=nix" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
+  };
+
+  fileSystems."/var/log" = {
+    device = "/dev/disk/by-uuid/1712124d-49fe-4b98-bcf2-289c067dd85b";
+    fsType = "btrfs";
+    options = ["subvol=log" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
+    neededForBoot = true;
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/1ADE-1341";
+    device = "/dev/disk/by-uuid/0A15-27CB";
     fsType = "vfat";
     options = ["fmask=0022" "dmask=0022"];
   };
 
-  fileSystems."/home/devin/data" = {
-    device = "/dev/disk/by-uuid/1BD1DE604A980C74";
-    fsType = "ntfs3";
-    options = ["windows_names" "uid=1000" "gid=1000" "umask=0222"];
-  };
-
-  fileSystems."/home/devin/games" = {
-    device = "/dev/disk/by-uuid/19B017882E64B392";
-    fsType = "ntfs3";
-    options = ["windows_names" "uid=1000" "gid=1000" "umask=0222"];
-  };
-
   swapDevices = [
     {
-      device = "/dev/disk/by-partuuid/c7bc6fc1-b4fb-46cb-b9e8-d10464a774ec";
+      device = "/dev/disk/by-partuuid/8520eba4-b8a5-4528-aced-72e779ace1f5";
       randomEncryption.enable = true;
     }
   ];
