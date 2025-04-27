@@ -53,13 +53,13 @@
   fileSystems."/mnt/data" = {
     device = "/dev/disk/by-uuid/F0D847FAD847BE1A";
     fsType = "ntfs-3g";
-    options = [ "windows_names" "rw" "uid=1000" "gid=100" "dmask=027" "fmask=137" ];
+    options = ["windows_names" "rw" "uid=1000" "gid=100" "dmask=027" "fmask=137"];
   };
 
   fileSystems."/mnt/games" = {
     device = "/dev/disk/by-uuid/7E08A40B08A3C10F";
     fsType = "ntfs-3g";
-    options = [ "windows_names" "rw" "uid=1000" "gid=100" "dmask=027" "fmask=137" ];
+    options = ["windows_names" "rw" "uid=1000" "gid=100" "dmask=027" "fmask=137"];
   };
 
   swapDevices = [
