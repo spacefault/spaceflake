@@ -53,13 +53,13 @@
   fileSystems."/mnt/data" = {
     device = "/dev/disk/by-uuid/41f88589-ebdc-43cc-842f-7ee1a27fdfdf";
     fsType = "btrfs";
-    options = [ "subvol=data" "compress=zstd" "noatime" "discard=async" "space_cache=v2" "nofail" ];
+    options = ["subvol=data" "compress=zstd" "noatime" "discard=async" "space_cache=v2" "nofail"];
   };
 
   fileSystems."/mnt/games" = {
     device = "/dev/disk/by-uuid/41f88589-ebdc-43cc-842f-7ee1a27fdfdf";
     fsType = "btrfs";
-    options = [ "subvol=games" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2" "nofail" ];
+    options = ["subvol=games" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2" "nofail"];
   };
 
   swapDevices = [
