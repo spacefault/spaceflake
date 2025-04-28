@@ -9,11 +9,11 @@
     configHome = config.home.homeDirectory + "/.config";
     stateHome = config.home.homeDirectory + "/.local/state";
     dataHome = config.home.homeDirectory + "/.local/share";
-    portal = {
-      enable = true;
-      extraPortals = [pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk];
-      config.common.default = "*";
-    };
+   # portal = {
+   #   enable = true;
+   #   extraPortals = [pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk];
+   #   config.common.default = "*";
+   # };
     userDirs = {
       enable = true;
       publicShare = null;
