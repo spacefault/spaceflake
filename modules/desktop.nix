@@ -9,7 +9,7 @@
 in {
   imports = [
     inputs.lanzaboote.nixosModules.lanzaboote
-    inputs.hyprland.nixosModules.default
+    #inputs.hyprland.nixosModules.default
   ];
   # users
   users.users.devin = {
@@ -70,8 +70,8 @@ in {
     # portal polkit and system things
     hyprland = {
       enable = true;
-      #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-      #portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+      package = pkgs.hyprland;
+      portalPackage = pkgs.xdg-desktop-portal-hyprland;
     };
     gnupg.agent = {
       enable = true;
