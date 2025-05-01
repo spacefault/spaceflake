@@ -1,8 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   wallpaper = builtins.path {
     path = ./wallpaper.jpg;
     name = "wallpaper";
