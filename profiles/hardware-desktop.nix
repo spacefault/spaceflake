@@ -51,15 +51,15 @@
   };
 
   fileSystems."/mnt/data" = {
-    device = "/dev/disk/by-uuid/41f88589-ebdc-43cc-842f-7ee1a27fdfdf";
-    fsType = "btrfs";
-    options = ["subvol=data" "compress=zstd" "noatime" "discard=async" "space_cache=v2" "nofail"];
+    device = "/dev/disk/by-uuid/24CE9690CE9659BE";
+    fsType = "ntfs-3g";
+    options = ["windows_names" "rw" "uid=1000" "gid=100" "dmask=027" "fmask=137"];
   };
 
   fileSystems."/mnt/games" = {
-    device = "/dev/disk/by-uuid/41f88589-ebdc-43cc-842f-7ee1a27fdfdf";
-    fsType = "btrfs";
-    options = ["subvol=games" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2" "nofail"];
+    device = "/dev/disk/by-uuid/D032AE2C32AE178C";
+    fsType = "ntfs-3g";
+    options = ["windows_names" "rw" "uid=1000" "gid=100" "dmask=027" "fmask=137"];
   };
 
   swapDevices = [
