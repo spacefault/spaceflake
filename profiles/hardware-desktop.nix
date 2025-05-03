@@ -59,7 +59,7 @@
   fileSystems."/mnt/games" = {
     device = "/dev/disk/by-uuid/D032AE2C32AE178C";
     fsType = "ntfs-3g";
-    options = ["windows_names" "rw" "uid=1000" "gid=100" "dmask=027" "fmask=137"];
+    options = ["windows_names" "uid=1000" "gid=100" "rw" "user" "exec" "umask=000"];
   };
 
   swapDevices = [
