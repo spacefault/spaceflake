@@ -11,6 +11,7 @@
     ./waybar.nix
     ./polkit.nix
     ./hyprlock.nix
+    ./hypridle.nix
     #./keyring.nix
   ];
 }
