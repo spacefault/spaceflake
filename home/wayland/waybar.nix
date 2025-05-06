@@ -129,13 +129,13 @@
 
       @keyframes blink {
           to {
-              background-color: #ffffff;
+             /* background-color: red; */
               color: black;
           }
       }
 
-      #battery.warning:not(.charging) {
-          color: red;
+      #battery.critical:not(.charging) {
+          background-color: red;
           animation-name: blink;
           animation-duration: 0.5s;
           animation-timing-function: linear;
@@ -143,7 +143,14 @@
           animation-direction: alternate;
       }
 
-
+      #battery.warning:not(.charging) {
+          background-color: yellow;
+          animation-name: blink;
+          animation-duration: 0.5s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
+      }
     '';
   };
 }
