@@ -24,7 +24,7 @@
           "critical" = 10;
         };
         format = "{icon} {capacity}%";
-        #format-charging = "{icon} {capacity}% (charging)";
+        format-charging = "{icon} {capacity}% (Charging)";
         format-icons = ["󰁻" "󰁽" "󰁿" "󰂁" "󰁹"];
       };
       "wireplumber" = {
