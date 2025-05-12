@@ -14,6 +14,7 @@
     gnome-text-editor
     helvum
     gnucash
+    calibre
     pkgs.gnomeExtensions.blur-my-shell
     pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.caffeine
