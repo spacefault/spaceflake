@@ -33,31 +33,24 @@
       "cherry" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./profiles/cherry.nix
-          # inputs.disko.nixosModules.disko
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.devin = import ./home/cherry.nix;
-            home-manager.extraSpecialArgs = {inherit inputs;};
-          }
-        ];
+        modules = [ ./profiles/cherry.nix ];
       };
       "blueberry" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./profiles/blueberry.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.devin = import ./home/blueberry.nix;
-            home-manager.extraSpecialArgs = {inherit inputs;};
-          }
-        ];
+        modules = [ ./profiles/blueberry.nix];
+      };
+    };
+    homeConfigurations = {
+      "devin@cherry" = home-manager.lib.homeManagerConfiguration { 
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home/cherry.nix];
+      };
+      "devin@blueberry" = home-manager.lib.homeManagerConfiguration { 
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home/blueberry.nix];
       };
     };
   };

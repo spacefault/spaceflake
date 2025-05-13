@@ -6,6 +6,11 @@
     sessionVariables = {EDITOR = "nvim";};
   };
 
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = _: true;
+    };
+
   monitors = {
     "HDMI-A-1" = {
       width = 1920;
