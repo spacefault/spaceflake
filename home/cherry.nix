@@ -6,7 +6,7 @@
     sessionVariables = {EDITOR = "nvim";};
   };
 
-  config = {
+  nixpkgs.config = {
     allowUnfree = true;
     allowUnfreePredicate = _: true;
   };
