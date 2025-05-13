@@ -6,10 +6,10 @@
     sessionVariables = {EDITOR = "nvim";};
   };
 
-    nixpkgs.config = {
-      allowUnfree = true;
-      allowUnfreePredicate = _: true;
-    };
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnfreePredicate = _: true;
+  };
 
   monitors = {
     "HDMI-A-1" = {

@@ -33,21 +33,21 @@
       "cherry" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
-        modules = [ ./profiles/cherry.nix ];
+        modules = [./profiles/cherry.nix];
       };
       "blueberry" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
-        modules = [ ./profiles/blueberry.nix];
+        modules = [./profiles/blueberry.nix];
       };
     };
     homeConfigurations = {
-      "devin@cherry" = home-manager.lib.homeManagerConfiguration { 
+      "devin@cherry" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home/cherry.nix];
       };
-      "devin@blueberry" = home-manager.lib.homeManagerConfiguration { 
+      "devin@blueberry" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home/blueberry.nix];
