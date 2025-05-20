@@ -8,9 +8,16 @@
       height = 24;
       modules-left = ["hyprland/workspaces"];
       modules-center = [];
-      modules-right = ["tray" "custom/notification" "wireplumber" "battery" "clock"];
+      modules-right = ["tray" "idle_inhibitor" "custom/notification" "wireplumber" "battery" "clock"];
       "hyprland/window" = {
         format = "{title}";
+      };
+      "idle_inhibitor" = {
+        format = "{icon}";
+        format-icons = {
+          activated = "󰒳  ";
+          deactivated = "󰒲  ";
+        };
       };
       "clock" = {
         format = "{:%B %d, %Y - %I:%M %p}";
@@ -108,7 +115,7 @@
           border-bottom: 3px solid white;
       }
 
-      #clock, #battery, #cpu, #memory, #network, #wireplumber, #tray, #custom-weather, #custom-notification {
+      #clock, #battery, #cpu, #memory, #network, #wireplumber, #tray, #custom-weather, #custom-notification #idle_inhibitor {
           padding: 0 5px;
           margin: 0 2px;
       }
