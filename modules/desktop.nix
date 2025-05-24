@@ -117,7 +117,11 @@ in {
       ];
     };
     seahorse.enable = true;
-    zsh.enable = true;
+    zsh = {
+      enable = true;
+      histFile = "$HOME/.config/zsh/.zsh_history";
+      histSize = 1000000;
+    };
     dconf.enable = true;
     virt-manager.enable = true;
   };
@@ -204,7 +208,7 @@ in {
       accept-flake-config = true;
       auto-optimise-store = true;
       builders-use-substitutes = true;
-      use-xdg-base-directories = true;
+      # use-xdg-base-directories = true;
       substituters = [
         "https://cache.nixos.org?priority=10"
 
