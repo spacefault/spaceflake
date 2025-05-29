@@ -130,6 +130,7 @@ in {
   services = {
     displayManager.sddm.enable = true;
     devmon.enable = true;
+    libinput.enable = true;
     blueman.enable = true;
     pulseaudio.enable = false;
     seatd.enable = true;
