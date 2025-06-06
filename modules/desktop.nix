@@ -204,7 +204,7 @@ in {
   nix = {
     package = pkgs.lix;
     settings = {
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = ["nix-command" "flakes" "repl-flake"];
       trusted-users = ["@wheel"];
       accept-flake-config = true;
       auto-optimise-store = true;
