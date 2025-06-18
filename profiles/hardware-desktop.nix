@@ -11,47 +11,41 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
+  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "sr_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
-  boot.supportedFilesystems = ["btrfs"];
+  boot.supportedFilesystems = ["btrfs" "ntfs"];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/1712124d-49fe-4b98-bcf2-289c067dd85b";
+    device = "/dev/disk/by-uuid/310b6633-e5ce-4fad-a053-4233b8572107";
     fsType = "btrfs";
     options = ["subvol=root" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/690ed6db-c471-4eef-9855-af14882ad7d3";
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/3e148f72-0b3f-4319-a4e7-15ba37355ff6";
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/1712124d-49fe-4b98-bcf2-289c067dd85b";
+    device = "/dev/disk/by-uuid/310b6633-e5ce-4fad-a053-4233b8572107";
     fsType = "btrfs";
     options = ["subvol=home" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/1712124d-49fe-4b98-bcf2-289c067dd85b";
+    device = "/dev/disk/by-uuid/310b6633-e5ce-4fad-a053-4233b8572107";
     fsType = "btrfs";
     options = ["subvol=nix" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
   fileSystems."/var/log" = {
-    device = "/dev/disk/by-uuid/1712124d-49fe-4b98-bcf2-289c067dd85b";
+    device = "/dev/disk/by-uuid/310b6633-e5ce-4fad-a053-4233b8572107";
     fsType = "btrfs";
     options = ["subvol=log" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
     neededForBoot = true;
   };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/0A15-27CB";
-    fsType = "vfat";
-    options = ["fmask=0022" "dmask=0022"];
-  };
-
   fileSystems."/mnt/data" = {
-    device = "/dev/disk/by-uuid/24CE9690CE9659BE";
+    device = "/dev/disk/by-uuid/223AED853AED5677";
     fsType = "ntfs-3g";
     options = ["windows_names" "rw" "uid=1000" "gid=100" "dmask=027" "fmask=137"];
   };
@@ -59,12 +53,18 @@
   fileSystems."/mnt/games" = {
     device = "/dev/disk/by-uuid/D032AE2C32AE178C";
     fsType = "ntfs-3g";
-    options = ["windows_names" "uid=1000" "gid=100" "rw" "user" "exec" "umask=000"];
+    options = ["windows_names" "rw" "uid=1000" "gid=100" "dmask=027" "fmask=137"];
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/BAF0-7DDE";
+    fsType = "vfat";
+    options = ["fmask=0022" "dmask=0022"];
   };
 
   swapDevices = [
     {
-      device = "/dev/disk/by-partuuid/8520eba4-b8a5-4528-aced-72e779ace1f5";
+      device = "/dev/disk/by-partuuid/4ca4aedb-da20-46af-bfec-f3def96adfe7";
       randomEncryption.enable = true;
     }
   ];

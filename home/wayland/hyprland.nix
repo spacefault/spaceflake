@@ -40,8 +40,8 @@ in {
         "systemctl --user start polkit-gnome-authentication-agent-1.service"
         "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
         "${pkgs.wlsunset}/bin/wlsunset -S 05:00 -s 19:00"
+        "${pkgs.swww}/bin/swww-daemon"
         "${pkgs.swww}/bin/swww img ${./wallpaper.jpg}"
-        "${pkgs.swww}/bin/swww init"
         "${pkgs.swaynotificationcenter}/bin/swaync"
       ];
       general = {
