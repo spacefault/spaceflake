@@ -11,60 +11,72 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "sr_mod"];
+  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "sr_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
   boot.supportedFilesystems = ["btrfs" "ntfs"];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/310b6633-e5ce-4fad-a053-4233b8572107";
+    device = "/dev/disk/by-uuid/bace76c9-c45b-4187-af82-532680ed200e";
     fsType = "btrfs";
     options = ["subvol=root" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/3e148f72-0b3f-4319-a4e7-15ba37355ff6";
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/b7b32e53-a527-421d-bc96-c952017d6610";
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/310b6633-e5ce-4fad-a053-4233b8572107";
+    device = "/dev/disk/by-uuid/bace76c9-c45b-4187-af82-532680ed200e";
     fsType = "btrfs";
     options = ["subvol=home" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/310b6633-e5ce-4fad-a053-4233b8572107";
+    device = "/dev/disk/by-uuid/bace76c9-c45b-4187-af82-532680ed200e";
     fsType = "btrfs";
     options = ["subvol=nix" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
   fileSystems."/var/log" = {
-    device = "/dev/disk/by-uuid/310b6633-e5ce-4fad-a053-4233b8572107";
+    device = "/dev/disk/by-uuid/bace76c9-c45b-4187-af82-532680ed200e";
     fsType = "btrfs";
     options = ["subvol=log" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
     neededForBoot = true;
   };
 
-  fileSystems."/mnt/data" = {
+  fileSystems."/home/devin/archive" = {
     device = "/dev/disk/by-uuid/223AED853AED5677";
     fsType = "ntfs-3g";
     options = ["windows_names" "rw" "uid=1000" "gid=100" "dmask=027" "fmask=137"];
   };
 
-  fileSystems."/mnt/games" = {
-    device = "/dev/disk/by-uuid/D032AE2C32AE178C";
+  fileSystems."/home/devin/media" = {
+    device = "/dev/disk/by-uuid/8ADA9539DA95228D";
+    fsType = "ntfs-3g";
+    options = ["windows_names" "rw" "uid=1000" "gid=100" "dmask=027" "fmask=137"];
+  };
+
+  fileSystems."/home/devin/games" = {
+    device = "/dev/disk/by-uuid/9A56153F56151D97";
+    fsType = "ntfs-3g";
+    options = ["windows_names" "rw" "uid=1000" "gid=100" "dmask=027" "fmask=137"];
+  };
+
+  fileSystems."/home/devin/production" = {
+    device = "/dev/disk/by-uuid/402E21C32E21B2B8";
     fsType = "ntfs-3g";
     options = ["windows_names" "rw" "uid=1000" "gid=100" "dmask=027" "fmask=137"];
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/BAF0-7DDE";
+    device = "/dev/disk/by-uuid/166A-3D72";
     fsType = "vfat";
     options = ["fmask=0022" "dmask=0022"];
   };
 
   swapDevices = [
     {
-      device = "/dev/disk/by-partuuid/4ca4aedb-da20-46af-bfec-f3def96adfe7";
+      device = "/dev/disk/by-partuuid/8cf5e5de-ca66-4bfd-9f94-a08c38361843";
       randomEncryption.enable = true;
     }
   ];
