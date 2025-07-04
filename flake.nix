@@ -52,6 +52,11 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home/blueberry.nix];
       };
+      "devin@pop2" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home/pop2.nix];
+      };
     };
   };
 }
