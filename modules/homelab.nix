@@ -124,10 +124,10 @@
       settings = {
         "timeMachine" = {
           "path" = "/mnt/encdata/timeMachine";
-          "valid users" = "timeMachine";
+          "valid users" = "devin";
           "public" = "no";
           "writeable" = "yes";
-          "force user" = "timeMachine";
+          "force user" = "devin";
           "fruit:aapl" = "yes";
           "fruit:time machine" = "yes";
           "vfs objects" = "catia fruit streams_xattr";
