@@ -5,7 +5,7 @@
     hostName = "homelab";
     networkmanager.enable = true;
     firewall.enable = true;
-    allowedTCPPorts = [ 445 139 ];
+    firewall.allowedTCPPorts = [ 445 139 ];
   };
 
   hardware = {
