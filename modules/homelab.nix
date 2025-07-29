@@ -33,7 +33,7 @@
     ];
     packages = [];
     shell = pkgs.zsh;
-    uid = 1000;
+    uid = 1001;
   };
 
   # i18n
@@ -53,6 +53,7 @@
 
   # moved xdg thing and make sure to use hyprland portal
   programs = {
+    zsh.enable = true;
   };
 
   system.autoUpgrade = {
@@ -72,7 +73,7 @@
       enable = true;
       settings.PasswordAuthentication = false;
       settings.KbdInteractiveAuthentication = false;
-      settings.permitRootLogin = "no";
+      settings.PermitRootLogin = "no";
     };
     devmon.enable = true;
     libinput.enable = true;
@@ -84,7 +85,7 @@
       nssmdns4 = true;
       openFirewall = true;
     };
-    services.samba = {
+    samba = {
       settings = {
         "tm_share" = {
           "path" = "/mnt/encdata/timeMachine";
@@ -174,7 +175,7 @@
       "btrfs"
     ];
     loader = {
-      systemd-boot.enable = lib.mkForce false;
+      systemd-boot.enable = lib.mkForce true;
       systemd-boot.editor = false;
       efi.canTouchEfiVariables = true;
     };
