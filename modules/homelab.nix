@@ -161,7 +161,7 @@
     bootspec.enable = true;
     plymouth.enable = false;
     lanzaboote = {
-      enable = true;
+      enable = false;
       pkiBundle = "/var/lib/sbctl";
     };
     kernelPackages = pkgs.linuxPackages_latest;
