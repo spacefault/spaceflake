@@ -65,6 +65,7 @@
       "--option"
       "tarball-ttl"
       "0"
+      "--extra-experimental-features nix-command flakes"
     ];
   };
 
