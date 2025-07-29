@@ -87,6 +87,7 @@
       openFirewall = true;
     };
     samba = {
+      openFirewall = true;
       settings = {
         "tm_share" = {
           "path" = "/mnt/encdata/timeMachine";
