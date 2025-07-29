@@ -49,7 +49,7 @@
     cups-filters
     libimobiledevice
     ifuse
-    samba4full
+    samba4Full
   ];
 
   # moved xdg thing and make sure to use hyprland portal
