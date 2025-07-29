@@ -35,10 +35,10 @@
         specialArgs = {inherit inputs outputs;};
         modules = [./profiles/cherry.nix];
       };
-      "blueberry" = nixpkgs.lib.nixosSystem {
+      "homelab" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
-        modules = [./profiles/blueberry.nix];
+        modules = [./profiles/homelab.nix];
       };
     };
     homeConfigurations = {
@@ -47,10 +47,10 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home/cherry.nix];
       };
-      "devin@blueberry" = home-manager.lib.homeManagerConfiguration {
+      "devin@homelab" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home/blueberry.nix];
+        modules = [./home/homelab.nix];
       };
       "devin@pop2" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
