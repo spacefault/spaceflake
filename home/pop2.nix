@@ -13,6 +13,7 @@
 
   imports = [
     ./terminal
+    ./programs/nh.nix
   ];
 
   programs.home-manager.enable = true;

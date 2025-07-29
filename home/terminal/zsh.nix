@@ -15,13 +15,6 @@
         setopt PROMPT_SUBST
         PROMPT='%B%F{243}%n %bon %B%m%f%b %B%F{197}%2~%f%b %B%F{39}$vcs_info_msg_0_%f%b> '
       '';
-      history = {
-        append = true;
-        share = true;
-        size = 1000000;
-        save = 1000000;
-        path = "${config.programs.zsh.dotDir}/zsh_history";
-      };
       shellAliases = {
         grep = "grep --color";
         ip = "ip --color";
