@@ -121,11 +121,6 @@
     samba = {
       openFirewall = true;
       package = pkgs.samba4Full;
-  extraConfig = ''
-          server smb encrypt = required
-          server min protocol = SMB3_00
-        '';
-
       settings = {
         "timeMachine" = {
           "path" = "/mnt/encdata/timeMachine";
