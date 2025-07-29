@@ -8,13 +8,16 @@
   };
 
   hardware = {
-    enableAllFirmware = true;
+    #enableAllFirmware = true;
     bluetooth.enable = false;
     bluetooth.powerOnBoot = false;
   };
 
+  nixpkgs.config.enableUnfree = true;
+
   imports = [
     ./hardware-homelab.nix
+    ../modules/homelab.nix
   ];
 
   system.stateVersion = "23.05";
