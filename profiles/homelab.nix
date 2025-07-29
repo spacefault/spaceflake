@@ -1,23 +1,20 @@
-# laptop.nix: blueberry
+# homelab.nix
 {...}: {
   # networking, firewall, and hostname
   networking = {
-    hostName = "blueberry";
+    hostName = "homelab";
     networkmanager.enable = true;
     firewall.enable = true;
   };
 
   hardware = {
     enableAllFirmware = true;
-    bluetooth.enable = true;
-    bluetooth.powerOnBoot = true;
+    bluetooth.enable = false;
+    bluetooth.powerOnBoot = false;
   };
 
   imports = [
-    ../modules/desktop.nix
-    ../modules/gaming.nix
-    ../modules/nvidia.nix
-    ./hardware-desktop.nix
+    ./hardware-homelab.nix
   ];
 
   system.stateVersion = "23.05";
