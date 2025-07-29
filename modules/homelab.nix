@@ -85,11 +85,49 @@
       enable = true;
       nssmdns4 = true;
       openFirewall = true;
-    };
+      publish = {
+        enable = true;
+        addresses = true;
+        domain = true;
+        hinfo = true;
+        userServices = true;
+        workstation = true;
+      };
+    extraServiceFiles = {
+      smb = ''
+<?xml version="1.0" standalone='no'?><!--*-nxml-*-->
+<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+<service-group>
+  <name replace-wildcards="yes">%h</name>
+  <service>
+    <type>_smb._tcp</type>
+    <port>445</port>
+  </service>
+  <service>
+    <type>_device-info._tcp</type>
+    <port>9</port>
+    <txt-record>model=Xserve1,1</txt-record>
+  </service>
+  <service>
+    <type>_adisk._tcp</type>
+    <port>9</port>
+    <txt-record>dk0=adVN=backups,adVF=0x82</txt-record>
+    <txt-record>sys=adVF=0x100</txt-record>
+  </service>
+</service-group>
+    ''; 
+  };
+};
     samba = {
       openFirewall = true;
+      package = pkgs.samba4Full;
+  extraConfig = ''
+          server smb encrypt = required
+          server min protocol = SMB3_00
+        '';
+
       settings = {
-        "tm_share" = {
+        "timeMachine" = {
           "path" = "/mnt/encdata/timeMachine";
           "valid users" = "timeMachine";
           "public" = "no";

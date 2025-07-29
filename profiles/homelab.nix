@@ -6,6 +6,7 @@
     networkmanager.enable = true;
     firewall.enable = true;
     firewall.allowedTCPPorts = [ 445 139 ];
+    firewall.allowedUDPPorts = [ 137 138 ];
   };
 
   hardware = {
