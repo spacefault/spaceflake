@@ -15,6 +15,7 @@
     ./terminal
     ./programs/nh.nix
     ./programs/spicetify.nix
+    ./programs/vscode.nix
   ];
 
   programs.home-manager.enable = true;
