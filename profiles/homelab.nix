@@ -5,8 +5,8 @@
     hostName = "homelab";
     networkmanager.enable = true;
     firewall.enable = false;
-    firewall.allowedTCPPorts = [ 445 139 ];
-    firewall.allowedUDPPorts = [ 137 138 ];
+    firewall.allowedTCPPorts = [445 139];
+    firewall.allowedUDPPorts = [137 138];
   };
 
   hardware = {
