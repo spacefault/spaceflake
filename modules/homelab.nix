@@ -15,6 +15,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "avahi"
     ];
     packages = [];
     shell = pkgs.zsh;
@@ -30,6 +31,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "avahi"
     ];
     packages = [];
     shell = pkgs.zsh;
