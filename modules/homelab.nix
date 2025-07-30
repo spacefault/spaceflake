@@ -113,7 +113,7 @@
   <service>
     <type>_adisk._tcp</type>
     <port>9</port>
-    <txt-record>dk0=adVN=backups,adVF=0x82</txt-record>
+    <txt-record>dk0=adVN=Time Machine Backups,adVF=0x82</txt-record>
     <txt-record>sys=adVF=0x100</txt-record>
   </service>
 </service-group>
