@@ -124,7 +124,7 @@
       openFirewall = true;
       package = pkgs.samba4Full;
       settings = {
-        "timeMachine" = {
+        "Time Machine Backups" = {
           "path" = "/mnt/encdata/timeMachine";
           "valid users" = "devin";
           "public" = "no";
