@@ -8,6 +8,7 @@
       enable = true;
       dotDir = config.home.homeDirectory;
       initContent = lib.mkOrder 1000 ''
+        [[ ! $(command -v nix) && -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]] && source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
         DISABLE_AUTO_TITLE=false
         autoload -Uz vcs_info
         precmd() { vcs_info }
