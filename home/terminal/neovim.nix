@@ -6,7 +6,7 @@
     enable = true;
     defaultEditor = true;
     enableMan = true;
-    extraConfigVim = "set number";
+    extraConfigVim = "set number\nset shiftwidth=4\nset smarttab";
     colorschemes.catppuccin = {
       enable = true;
       settings.flavour = "mocha";
