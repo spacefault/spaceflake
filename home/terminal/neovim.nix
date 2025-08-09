@@ -20,7 +20,7 @@
       treesitter.enable = true;
       ############## LSP ###############
       trouble.enable = true;
-      lspkind.enable = true;
+      lspkind.enable = false;
       lsp-lines.enable = true;
       lsp-format.enable = true;
       lualine = {
