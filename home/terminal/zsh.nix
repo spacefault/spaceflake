@@ -26,8 +26,8 @@
       shellAliases = {
         grep = "grep --color";
         ip = "ip --color";
-        l = "exa -T -L 2";
-        li = "exa -l";
+        ls = "ls --color";
+        la = "ls -lah --color";
         vim = "nvim";
         nixrbs = "nixos-rebuild switch --flake .# --use-remote-sudo --verbose";
         nixrbb = "nixos-rebuild boot --flake .# --use-remote-sudo --verbose";
