@@ -7,9 +7,9 @@
     defaultEditor = true;
     enableMan = true;
     extraConfigVim = "set number\nset shiftwidth=4\nset smarttab";
-    colorschemes.catppuccin = {
+    colorschemes.vscode = {
       enable = true;
-      settings.flavour = "mocha";
+      settings.transparent = true;
     };
     plugins = {
       nix.enable = true;
@@ -79,7 +79,7 @@
                   '';
                 };
                 color = {
-                  fg = "#ffffff";
+                  #fg = "#ffffff";
                 };
                 icon = " ";
               }
