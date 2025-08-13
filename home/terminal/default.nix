@@ -4,5 +4,6 @@
     ./tmux.nix
     ./zsh.nix
     ./htop.nix
+    ./ghostty.nix
   ];
 }
