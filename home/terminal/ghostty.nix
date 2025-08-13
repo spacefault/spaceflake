@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   programs.ghostty = {
-    package = pkgs.emptyDirectory;
+    package = null;
     enable = true;
     settings = {
       macos-titlebar-style = "native";
