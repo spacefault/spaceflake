@@ -12,10 +12,9 @@
   };
 
   imports = [
-    ./terminal/htop.nix
-    ./terminal/neovim.nix
-    ./terminal/zsh.nix
-    ./terminal/tmux.nix
+    ./terminal
+    ./wayland
+    ./programs
   ];
 
   programs.home-manager.enable = true;
