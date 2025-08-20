@@ -1,8 +1,8 @@
-# homelab.nix
+# hifn.nix
 {...}: {
   # networking, firewall, and hostname
   networking = {
-    hostName = "homelab";
+    hostName = "hifn";
     networkmanager.enable = true;
     firewall.enable = false;
     firewall.allowedTCPPorts = [445 139];
@@ -18,8 +18,9 @@
   nixpkgs.config.enableUnfree = true;
 
   imports = [
-    ./hardware-homelab.nix
-    ../modules/homelab.nix
+    ./hardware-hifn.nix
+    ../modules/desktop.nix
+    ../modules/nvidia.nix
   ];
 
   system.stateVersion = "23.05";

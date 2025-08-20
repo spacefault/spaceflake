@@ -97,9 +97,9 @@ in {
           color = "rgba(2d1e16ee)";
         };
       };
-      render = {
-        explicit_sync = 1;
-      };
+      #render = {
+      #  explicit_sync = 1;
+      #};
       dwindle = {
         pseudotile = true;
         preserve_split = "yes";

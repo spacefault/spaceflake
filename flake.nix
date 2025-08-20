@@ -35,10 +35,10 @@
         specialArgs = {inherit inputs outputs;};
         modules = [./profiles/cherry.nix];
       };
-      "homelab" = nixpkgs.lib.nixosSystem {
+      "hifn" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
-        modules = [./profiles/homelab.nix];
+        modules = [./profiles/hifn.nix];
       };
     };
     homeConfigurations = {
@@ -47,10 +47,10 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home/cherry.nix];
       };
-      "devin@homelab" = home-manager.lib.homeManagerConfiguration {
+      "devin@hifn" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home/homelab.nix];
+        modules = [./home/hifn.nix];
       };
       "devin@pop2" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
