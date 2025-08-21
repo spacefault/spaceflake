@@ -143,6 +143,19 @@ in {
     fstrim.enable = true;
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
+    syncthing = {
+      enable = true;
+      user = "devin";
+      configDir = "/home/devin/.config/syncthing";
+      openDefaultPorts = true;
+      overrideFolders = false;
+      settings.options.relaysEnabled = true;
+      folders = {
+        "Default Folder" = {
+          path = "/home/devin/Sync";
+        };
+      };
+    };
     printing = {
       enable = true;
       logLevel = "debug";

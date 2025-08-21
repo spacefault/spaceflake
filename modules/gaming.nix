@@ -20,10 +20,10 @@
     #inputs.nix-gaming.packages.${pkgs.system}.wine-osu
   ];
 
-  systemd = {
-    extraConfig = ''DefaultLimitNOFILE=1048576'';
-    user.extraConfig = ''DefaultLimitNOFILE=1048576'';
-  };
+  #systemd = {
+  #  extraConfig = ''DefaultLimitNOFILE=1048576'';
+  #  user.extraConfig = ''DefaultLimitNOFILE=1048576'';
+  #};
 
   programs = {
     steam = {
