@@ -122,8 +122,10 @@
 
       lspsaga = {
         enable = true;
-        lightbulb.virtualText = false;
-        lightbulb.sign = false;
+        settings = {
+          lightbulb.virtualText = false;
+          lightbulb.sign = false;
+        };
       };
       lsp = {
         keymaps = {
