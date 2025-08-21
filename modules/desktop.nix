@@ -149,10 +149,12 @@ in {
       configDir = "/home/devin/.config/syncthing";
       openDefaultPorts = true;
       overrideFolders = false;
-      settings.options.relaysEnabled = true;
-      folders = {
-        "Default Folder" = {
-          path = "/home/devin/Sync";
+      settings = {
+        options.relaysEnabled = true;
+        folders = {
+          "Default Folder" = {
+            path = "/home/devin/Sync";
+          };
         };
       };
     };
