@@ -6,7 +6,7 @@
   programs = {
     zsh = {
       enable = true;
-      dotDir = config.home.homeDirectory;
+      dotDir = "${config.xdg.configHome}/zsh";
       initContent = lib.mkOrder 1000 ''
         [[ ! $(command -v nix) && -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]] && source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
         DISABLE_AUTO_TITLE=false
