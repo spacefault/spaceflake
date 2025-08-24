@@ -312,7 +312,7 @@ in {
     bootspec.enable = true;
     plymouth.enable = false;
     lanzaboote = {
-      enable = false;
+      enable = true;
       pkiBundle = "/var/lib/sbctl";
     };
     kernelPackages = pkgs.linuxPackages_6_12;
@@ -321,7 +321,7 @@ in {
     extraModprobeConfig = ''options iwlwifi 11n_disable=8'';
     supportedFilesystems = ["ntfs" "btrfs"];
     loader = {
-      systemd-boot.enable = lib.mkForce true;
+      systemd-boot.enable = lib.mkForce false;
       systemd-boot.editor = false;
       efi.canTouchEfiVariables = true;
     };

@@ -121,7 +121,7 @@
       };
 
       lspsaga = {
-        enable = true;
+        enable = false;
         settings = {
           lightbulb.virtualText = false;
           lightbulb.sign = false;
