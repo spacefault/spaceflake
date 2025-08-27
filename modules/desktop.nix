@@ -53,6 +53,7 @@ in {
     pinentry-gnome3
     lollypop
     find-ld
+    gnome-calendar
   ];
 
   # moved xdg thing and make sure to use hyprland portal
@@ -143,6 +144,7 @@ in {
     fstrim.enable = true;
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
+    gnome.evolution-data-server.enable = true;
     syncthing = {
       enable = true;
       user = "devin";
