@@ -84,6 +84,7 @@
     # portal polkit and system things
     hyprland = {
       enable = true;
+      withUWSM = true;
       package = pkgs.hyprland;
       portalPackage = pkgs.xdg-desktop-portal-hyprland;
     };
@@ -161,6 +162,7 @@
     gnome.gnome-keyring.enable = true;
     gnome.gnome-online-accounts.enable = true;
     gnome.evolution-data-server.enable = true;
+    gnome.gcr-ssh-agent.enable = true;
     syncthing = {
       enable = true;
       user = "devin";
@@ -284,7 +286,6 @@
 
   # env
   environment.sessionVariables = {
-    SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORMTHEME = "qt5ct";
     XCURSOR_SIZE = "24";
@@ -325,6 +326,7 @@
     protectKernelImage = true;
     pam = {
       services.hyprlock = {};
+      services.hyprland.enableGnomeKeyring = true;
       services.gnome-keyring = {
         gnupg.enable = true;
         sshAgentAuth = true;
