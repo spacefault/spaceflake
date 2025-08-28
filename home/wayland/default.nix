@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./anyrun.nix
-    ./dunst.nix
+    #./dunst.nix
     ./gtk.nix
     ./hyprland.nix
     ./monitorLogic.nix

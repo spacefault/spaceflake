@@ -1,19 +1,13 @@
 {
+  inputs,
   pkgs,
-  config,
+  myPkgs,
   ...
 }: {
-  home.packages = with pkgs; [
-    dconf
-    qt5.qttools
-    qt6Packages.qtstyleplugin-kvantum
-    libsForQt5.qtstyleplugin-kvantum
-    libsForQt5.qt5ct
-  ];
-
   dconf = {
     enable = true;
   };
+
   home.pointerCursor = {
     name = "macOS";
     size = 24;
@@ -21,40 +15,33 @@
     gtk.enable = true;
     x11.enable = true;
   };
-  gtk = {
+
+  stylix = {
     enable = true;
-    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-    iconTheme = {
-      package = pkgs.adwaita-icon-theme;
-      name = "Adwaita";
+    autoEnable = false;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-latte.yaml";
+    targets = {
+      gtk.enable = true;
+      qt.enable = true;
+      gnome.enable = true;
     };
-    font = {
-      name = "Torus";
-    };
-    theme = {
-      name = "Catppuccin-Mocha-Compact-Pink-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = ["pink"];
-        tweaks = ["rimless"];
-        size = "compact";
-        variant = "mocha";
+    fonts = {
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
+      };
+      monospace = {
+        package = pkgs.monaspace;
+        name = "Monaspace Radon";
+      };
+      serif = {
+        package = pkgs.noto-fonts;
+        name = "Noto Serif";
+      };
+      sansSerif = {
+        package = myPkgs.helvetica-neue;
+        name = "Helvetica Neue Light";
       };
     };
-  };
-  qt = {
-    enable = false;
-    platformTheme = "qtct";
-    style = {
-      name = "Catppuccin-Mocha-Dark";
-      package = pkgs.catppuccin-kde.override {
-        flavour = ["mocha"];
-        accents = ["pink"];
-        size = "compact";
-      };
-    };
-  };
-  home.sessionVariables = {
-    GTK_THEME = "Catppuccin-Mocha-Compact-Pink-Dark";
-    QT_QPA_PLATFORMTHEME = "qt5ct";
   };
 }

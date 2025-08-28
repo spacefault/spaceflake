@@ -20,7 +20,7 @@
         };
       };
       "clock" = {
-        format = "{:%B %d, %Y - %I:%M %p}";
+        format = "{:%a %b %d %I:%M %p}";
         tooltip-format = "<tt><big>{calendar}</big></tt>";
       };
       "battery" = {
@@ -76,8 +76,8 @@
       * {
           border: none;
           border-radius: 0;
-          font-family: Font Awesome, Noto Sans;
-          font-weight: bold;
+          font-family: Helvetica Neue Light, Font Awesome;
+          font-weight: normal;
           font-size: 14px;
           min-height: 0;
       }
@@ -88,12 +88,11 @@
           transition-property: background-color;
           transition-duration: .5s;
           font-size: 11px;
-          font-weight: bold;
+          font-weight: normal;
       }
 
       #window {
-          font-weight: bold;
-          font-family: Noto Sans;
+          /* font-family: Helvetica Neue Light; */
       }
 
       workspaces {
@@ -121,7 +120,6 @@
       }
 
       #clock {
-          font-weight: bold;
       }
 
       #battery {

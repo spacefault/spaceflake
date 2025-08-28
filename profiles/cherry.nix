@@ -16,6 +16,7 @@
   imports = [
     ../modules/desktop.nix
     ../modules/gaming.nix
+    ../modules/rice.nix
     ./hardware-laptop.nix
   ];
 

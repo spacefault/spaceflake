@@ -3,10 +3,10 @@
   lib,
   config,
   inputs,
+  myPkgs,
   ...
-}: let
-  find-ld = import ../pkgs/find-ld.nix {inherit pkgs;};
-in {
+}:
+{
   imports = [
     inputs.lanzaboote.nixosModules.lanzaboote
     #inputs.hyprland.nixosModules.default
@@ -15,8 +15,19 @@ in {
   users.users.devin = {
     isNormalUser = true;
     description = "devin";
-    extraGroups = ["networkmanager" "wheel" "audio" "video" "input" "libvirtd" "docker" "scanner" "lp" "seat"];
-    packages = [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+      "video"
+      "input"
+      "libvirtd"
+      "docker"
+      "scanner"
+      "lp"
+      "seat"
+    ];
+    packages = [ ];
     shell = pkgs.zsh;
     uid = 1000;
   };
@@ -52,7 +63,7 @@ in {
     waybar
     pinentry-gnome3
     lollypop
-    find-ld
+    myPkgs.find-ld
     gnome-calendar
   ];
 
@@ -61,10 +72,13 @@ in {
     enable = true;
     xdgOpenUsePortal = true;
     config = {
-      common.default = ["gtk"];
-      hyprland.default = ["hyprland" "gtk"];
+      common.default = [ "gtk" ];
+      hyprland.default = [
+        "hyprland"
+        "gtk"
+      ];
     };
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   programs = {
@@ -129,7 +143,10 @@ in {
 
   # services
   services = {
-    displayManager.sddm.enable = true;
+    displayManager.sddm = {
+      enable = true;
+      package = pkgs.kdePackages.sddm;
+    };
     devmon.enable = true;
     libinput.enable = true;
     blueman.enable = true;
@@ -195,7 +212,8 @@ in {
 
   #fonts
   fonts = {
-    packages = with pkgs;
+    packages =
+      with pkgs;
       [
         noto-fonts
         noto-fonts-cjk-sans
@@ -204,15 +222,20 @@ in {
         #source-han-sans-japanese
         #source-han-serif-japanese
         monaspace
+        myPkgs.helvetica-neue
         #corefonts
       ]
       ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = ["Monaspace Radon"];
-        serif = ["Noto Serif" "Source Han Serif"];
-        sansSerif = ["Noto Sans" "Source Han Sans"];
+        monospace = [ "Monaspace Radon" ];
+        serif = [
+          "Noto Serif"
+        ];
+        sansSerif = [
+          "Helvetica Neue Light"
+        ];
       };
     };
   };
@@ -221,8 +244,12 @@ in {
   nix = {
     package = pkgs.lix;
     settings = {
-      experimental-features = ["nix-command" "flakes" "repl-flake"];
-      trusted-users = ["@wheel"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+        "repl-flake"
+      ];
+      trusted-users = [ "@wheel" ];
       accept-flake-config = true;
       auto-optimise-store = true;
       builders-use-substitutes = true;
@@ -288,8 +315,8 @@ in {
     };
     sane = {
       enable = true;
-      extraBackends = [pkgs.sane-airscan];
-      disabledDefaultBackends = ["escl"];
+      extraBackends = [ pkgs.sane-airscan ];
+      disabledDefaultBackends = [ "escl" ];
     };
   };
 
@@ -299,7 +326,7 @@ in {
     polkit.enable = true;
     protectKernelImage = true;
     pam = {
-      services.hyprlock = {};
+      services.hyprlock = { };
       services.gnome-keyring = {
         gnupg.enable = true;
         sshAgentAuth = true;
@@ -318,10 +345,16 @@ in {
       pkiBundle = "/var/lib/sbctl";
     };
     kernelPackages = pkgs.linuxPackages_6_12;
-    kernelModules = ["vfio-pci" "tcp_bbr"];
-    kernelParams = ["intel_iommu=on"];
+    kernelModules = [
+      "vfio-pci"
+      "tcp_bbr"
+    ];
+    kernelParams = [ "intel_iommu=on" ];
     extraModprobeConfig = ''options iwlwifi 11n_disable=8'';
-    supportedFilesystems = ["ntfs" "btrfs"];
+    supportedFilesystems = [
+      "ntfs"
+      "btrfs"
+    ];
     loader = {
       systemd-boot.enable = lib.mkForce false;
       systemd-boot.editor = false;
