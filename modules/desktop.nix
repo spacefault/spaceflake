@@ -5,8 +5,7 @@
   inputs,
   myPkgs,
   ...
-}:
-{
+}: {
   imports = [
     inputs.lanzaboote.nixosModules.lanzaboote
     #inputs.hyprland.nixosModules.default
@@ -27,7 +26,7 @@
       "lp"
       "seat"
     ];
-    packages = [ ];
+    packages = [];
     shell = pkgs.zsh;
     uid = 1000;
   };
@@ -72,13 +71,13 @@
     enable = true;
     xdgOpenUsePortal = true;
     config = {
-      common.default = [ "gtk" ];
+      common.default = ["gtk"];
       hyprland.default = [
         "hyprland"
         "gtk"
       ];
     };
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   programs = {
@@ -212,8 +211,7 @@
 
   #fonts
   fonts = {
-    packages =
-      with pkgs;
+    packages = with pkgs;
       [
         noto-fonts
         noto-fonts-cjk-sans
@@ -229,7 +227,7 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = [ "Monaspace Radon" ];
+        monospace = ["Monaspace Radon"];
         serif = [
           "Noto Serif"
         ];
@@ -249,7 +247,7 @@
         "flakes"
         "repl-flake"
       ];
-      trusted-users = [ "@wheel" ];
+      trusted-users = ["@wheel"];
       accept-flake-config = true;
       auto-optimise-store = true;
       builders-use-substitutes = true;
@@ -315,8 +313,8 @@
     };
     sane = {
       enable = true;
-      extraBackends = [ pkgs.sane-airscan ];
-      disabledDefaultBackends = [ "escl" ];
+      extraBackends = [pkgs.sane-airscan];
+      disabledDefaultBackends = ["escl"];
     };
   };
 
@@ -326,7 +324,7 @@
     polkit.enable = true;
     protectKernelImage = true;
     pam = {
-      services.hyprlock = { };
+      services.hyprlock = {};
       services.gnome-keyring = {
         gnupg.enable = true;
         sshAgentAuth = true;
@@ -349,7 +347,7 @@
       "vfio-pci"
       "tcp_bbr"
     ];
-    kernelParams = [ "intel_iommu=on" ];
+    kernelParams = ["intel_iommu=on"];
     extraModprobeConfig = ''options iwlwifi 11n_disable=8'';
     supportedFilesystems = [
       "ntfs"

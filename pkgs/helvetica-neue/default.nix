@@ -3,7 +3,6 @@
   stdenvNoCC,
   fetchzip,
 }:
-
 stdenvNoCC.mkDerivation {
   name = "helvetica-neue";
   version = "1.0.0";
@@ -27,6 +26,6 @@ stdenvNoCC.mkDerivation {
     description = "Helvetica Neue";
 
     platforms = platforms.all;
-    maintainers = with maintainers; [ ];
+    maintainers = with maintainers; [];
   };
 }

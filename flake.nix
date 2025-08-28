@@ -34,31 +34,31 @@
     inherit (self) outputs;
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    myPkgs = import ./pkgs {inherit pkgs; };
+    myPkgs = import ./pkgs {inherit pkgs;};
   in {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     nixosConfigurations = {
       "cherry" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./profiles/cherry.nix stylix.nixosModules.stylix ];
+        modules = [./profiles/cherry.nix stylix.nixosModules.stylix];
       };
       "hifn" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./profiles/hifn.nix stylix.nixosModules.stylix ];
+        modules = [./profiles/hifn.nix stylix.nixosModules.stylix];
       };
     };
     homeConfigurations = {
       "devin@cherry" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./home/cherry.nix  stylix.homeModules.stylix ];
+        modules = [./home/cherry.nix stylix.homeModules.stylix];
       };
       "devin@hifn" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./home/hifn.nix stylix.homeModules.stylix ];
+        modules = [./home/hifn.nix stylix.homeModules.stylix];
       };
       "devin@pop2" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
