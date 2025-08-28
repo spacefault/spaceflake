@@ -11,6 +11,8 @@
     allowUnfreePredicate = _: true;
   };
 
+  services.gnome-keyring.enable = true;
+
   monitors = {
     "eDP-1" = {
       width = 1920;
