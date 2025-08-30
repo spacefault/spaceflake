@@ -147,8 +147,8 @@ in {
         [
           "${mod}, RETURN, exec, alacritty"
           "${mod}, SPACE, exec, anyrun"
-          "${mod}, E, exec, firefox -p School"
-          "${mod}, W, exec, firefox -p Default"
+          "${mod}, E, exec, firefox -p school"
+          "${mod}, W, exec, firefox -p default"
           "${mod}, R, exec, thunderbird"
           ", PRINT, exec, grimblast --notify --freeze copysave area"
           "${mod}, L, exec, hyprlock"
