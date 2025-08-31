@@ -247,7 +247,6 @@
       experimental-features = [
         "nix-command"
         "flakes"
-        "repl-flake"
       ];
       trusted-users = ["@wheel"];
       accept-flake-config = true;
