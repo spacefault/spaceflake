@@ -8,10 +8,10 @@
     ./dependencies.nix
     ./swayosd.nix
     ./xdg.nix
-    ./waybar.nix
     ./polkit.nix
     ./hyprlock.nix
     ./hypridle.nix
+    ./astal
     #./keyring.nix
   ];
 }

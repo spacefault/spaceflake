@@ -41,7 +41,7 @@ in {
         "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
         "${pkgs.wlsunset}/bin/wlsunset -S 05:00 -s 19:00"
         "${pkgs.swww}/bin/swww-daemon"
-        "${pkgs.swww}/bin/swww img ${./wallpaper.jpg}"
+        "${pkgs.swww}/bin/swww img ${./wallpaper.png}"
         "${pkgs.swaynotificationcenter}/bin/swaync"
       ];
       general = {
@@ -84,12 +84,14 @@ in {
       };
       decoration = {
         rounding = 0;
-        blur = {
-          enabled = true;
-          size = 3;
-          passes = 1;
-          new_optimizations = 1;
-        };
+               blur = {
+          popups = true;
+          contrast = 1;
+          passes = 2;
+          size = 1;
+          special = true;
+          brightness = 1;
+        }; 
         shadow = {
           enabled = true;
           range = 4;
@@ -130,6 +132,9 @@ in {
       layerrule = [
         "blur, waybar"
         "ignorezero, waybar"
+        "blur, gtk4-layer-shell"
+      "ignorealpha 0.2, bar"
+      "ignorealpha 0.2, gtk4-layer-shell"
       ];
       windowrule = [
         "float,title:^(Calculator)(.*)$"

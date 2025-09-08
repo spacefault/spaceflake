@@ -8,6 +8,8 @@
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
     nixvim.url = "github:nix-community/nixvim";
     anyrun.url = "github:anyrun-org/anyrun";
+    ags.url = "github:aylur/ags";
+    astal.url = "github:aylur/astal";
     #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprlock.url = "github:hyprwm/hyprlock";
     stylix = {
