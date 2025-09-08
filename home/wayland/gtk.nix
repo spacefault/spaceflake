@@ -3,44 +3,42 @@
   myPkgs,
   ...
 }: {
+  home = {
+    sessionVariables.GTK_THEME = "MacTahoe-Dark";
+    packages = with pkgs; [dconf];
+  };
   dconf = {
     enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        gtk-theme = "MacTahoe-Dark";
+        color-scheme = "prefer-dark";
+      };
+      "org/gtk/settings/file-chooser" = {
+        sort-directories-first = true;
+      };
+    };
   };
-
   home.pointerCursor = {
-    name = "macOS";
-    size = 24;
+    name = "macOS-Monterey";
+    size = 22;
     package = pkgs.apple-cursor;
     gtk.enable = true;
-    x11.enable = true;
   };
-
-  stylix = {
+  gtk = {
     enable = true;
-    autoEnable = false;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-latte.yaml";
-    targets = {
-      gtk.enable = true;
-      qt.enable = true;
-      gnome.enable = true;
+    theme = {
+      name = "MacTahoe-Dark";
+      package = pkgs.mactahoe-theme;
     };
-    fonts = {
-      emoji = {
-        package = pkgs.noto-fonts-emoji;
-        name = "Noto Color Emoji";
-      };
-      monospace = {
-        package = pkgs.monaspace;
-        name = "Monaspace Radon";
-      };
-      serif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Serif";
-      };
-      sansSerif = {
-        package = myPkgs.sfpro;
-        name = "SF Pro Display";
-      };
+    iconTheme = {
+      name = "MacTahoe-dark";
+      package = pkgs.mactahoe-icons;
+    };
+    font = {
+      name = "SF Pro Display";
+      size = 12;
+      package = myPkgs.sf-pro;
     };
   };
-}
+} 
