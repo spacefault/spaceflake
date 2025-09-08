@@ -3,9 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nix-gaming.url = "github:fufexan/nix-gaming";
     lanzaboote.url = "github:nix-community/lanzaboote";
-    blender-bin.url = "github:edolstra/nix-warez?dir=blender";
     nixvim.url = "github:nix-community/nixvim";
     anyrun.url = "github:anyrun-org/anyrun";
     ags.url = "github:aylur/ags";
