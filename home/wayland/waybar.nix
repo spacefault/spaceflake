@@ -76,7 +76,7 @@
       * {
           border: none;
           border-radius: 0;
-          font-family: Helvetica Neue Light, Font Awesome;
+          font-family: SF Pro Display, Font Awesome;
           font-weight: normal;
           font-size: 14px;
           min-height: 0;
