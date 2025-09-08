@@ -222,7 +222,7 @@
         #source-han-sans-japanese
         #source-han-serif-japanese
         monaspace
-        myPkgs.helvetica-neue
+        myPkgs.sfpro
         #corefonts
       ]
       ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
@@ -234,7 +234,7 @@
           "Noto Serif"
         ];
         sansSerif = [
-          "Helvetica Neue Light"
+          "SF Pro Display"
         ];
       };
     };

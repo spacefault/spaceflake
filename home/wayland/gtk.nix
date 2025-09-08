@@ -38,8 +38,8 @@
         name = "Noto Serif";
       };
       sansSerif = {
-        package = myPkgs.helvetica-neue;
-        name = "Helvetica Neue Light";
+        package = myPkgs.sfpro;
+        name = "SF Pro Display";
       };
     };
   };
