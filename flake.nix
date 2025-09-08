@@ -12,10 +12,6 @@
     astal.url = "github:aylur/astal";
     #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprlock.url = "github:hyprwm/hyprlock";
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,7 +26,6 @@
     self,
     nixpkgs,
     home-manager,
-    stylix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -43,24 +38,24 @@
       "cherry" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./profiles/cherry.nix stylix.nixosModules.stylix];
+        modules = [./profiles/cherry.nix ];
       };
       "hifn" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./profiles/hifn.nix stylix.nixosModules.stylix];
+        modules = [./profiles/hifn.nix ];
       };
     };
     homeConfigurations = {
       "devin@cherry" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./home/cherry.nix stylix.homeModules.stylix];
+        modules = [./home/cherry.nix ];
       };
       "devin@hifn" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./home/hifn.nix stylix.homeModules.stylix];
+        modules = [./home/hifn.nix ];
       };
       "devin@pop2" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
