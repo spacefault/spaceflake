@@ -1,6 +1,6 @@
 {pkgs, ...}: let
   wallpaper = builtins.path {
-    path = ./wallpaper.jpg;
+    path = ./wallpaper.png;
     name = "wallpaper";
   };
 in {
@@ -36,7 +36,7 @@ in {
           outline_thickness = 1;
 
           font_color = "rgb(b6c4ff)";
-          font_family = "Helvetica Neue Light";
+          font_family = "SF Pro Regular";
           outer_color = "rgba(180, 180, 180, 0.5)";
           inner_color = "rgba(200, 200, 200, 0.1)";
           check_color = "rgba(247, 193, 19, 0.5)";
@@ -60,7 +60,7 @@ in {
           monitor = "";
           text = "cmd[update:1000] date +'%-I:%M %p'";
           font_size = 140;
-          font_family = "Helvetica Neue Light";
+          font_family = "SF Pro Regular";
           color = "rgb(b6c4ff)";
 
           position = "0%, 30%";
@@ -77,7 +77,7 @@ in {
           monitor = "";
           text = "cmd[update:3600000] date +'%A, %B %d, %Y'";
           font_size = 20;
-          font_family = "Helvetica Neue Light";
+          font_family = "SF Pro Regular";
           color = "rgb(b6c4ff)";
 
           position = "0%, 40%";
