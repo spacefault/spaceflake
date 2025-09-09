@@ -84,14 +84,14 @@ in {
       };
       decoration = {
         rounding = 0;
-               blur = {
+        blur = {
           popups = true;
           contrast = 1;
           passes = 2;
           size = 1;
           special = true;
           brightness = 1;
-        }; 
+        };
         shadow = {
           enabled = true;
           range = 4;
@@ -133,8 +133,8 @@ in {
         "blur, waybar"
         "ignorezero, waybar"
         "blur, gtk4-layer-shell"
-      "ignorealpha 0.2, bar"
-      "ignorealpha 0.2, gtk4-layer-shell"
+        "ignorealpha 0.2, bar"
+        "ignorealpha 0.2, gtk4-layer-shell"
       ];
       windowrule = [
         "float,title:^(Calculator)(.*)$"
