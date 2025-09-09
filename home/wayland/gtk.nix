@@ -4,15 +4,15 @@
   ...
 }: {
   home = {
-    sessionVariables.GTK_THEME = "MacTahoe-Light";    
+    sessionVariables.GTK_THEME = "MacTahoe-Light";
     packages = with pkgs; [dconf];
   };
   dconf = {
     enable = true;
     settings = {
       "org/gnome/desktop/interface" = {
-        gtk-theme = "MacTahoe-Light";  
-        color-scheme = "prefer-light";  
+        gtk-theme = "MacTahoe-Light";
+        color-scheme = "prefer-light";
       };
       "org/gtk/settings/file-chooser" = {
         sort-directories-first = true;
@@ -28,11 +28,11 @@
   gtk = {
     enable = true;
     theme = {
-      name = "MacTahoe-Light";  
+      name = "MacTahoe-Light";
       package = myPkgs.mactahoe-theme;
     };
     iconTheme = {
-      name = "MacTahoe-light";  
+      name = "MacTahoe-light";
       package = myPkgs.mactahoe-icons;
     };
     font = {
@@ -42,4 +42,3 @@
     };
   };
 }
-

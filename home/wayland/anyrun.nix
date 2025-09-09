@@ -1,15 +1,11 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   # imports = [inputs.anyrun.homeManagerModules.default];
   programs.anyrun = {
     enable = true;
     package = pkgs.anyrun;
     config = {
       plugins = [
-       "${pkgs.anyrun}/lib/libapplications.so"
+        "${pkgs.anyrun}/lib/libapplications.so"
       ];
       width = {absolute = 800;};
       x = {fraction = 0.5;};

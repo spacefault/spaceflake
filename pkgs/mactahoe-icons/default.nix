@@ -2,7 +2,6 @@
   lib,
   stdenvNoCC,
   fetchFromGitHub,
-  gitUpdater,
   gtk3,
   sass,
   hicolor-icon-theme,
