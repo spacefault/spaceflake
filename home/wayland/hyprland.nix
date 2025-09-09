@@ -41,7 +41,7 @@ in {
         "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
         "${pkgs.wlsunset}/bin/wlsunset -S 05:00 -s 19:00"
         "${pkgs.swww}/bin/swww-daemon"
-        "${pkgs.swww}/bin/swww img ${./wallpaper.png}"
+        "${pkgs.swww}/bin/swww img ${./wallpaper.jpg}"
         "${pkgs.swaynotificationcenter}/bin/swaync"
       ];
       general = {
@@ -132,9 +132,12 @@ in {
       layerrule = [
         "blur, waybar"
         "ignorezero, waybar"
+<<<<<<< HEAD
         "blur, gtk4-layer-shell"
         "ignorealpha 0.2, bar"
         "ignorealpha 0.2, gtk4-layer-shell"
+=======
+>>>>>>> parent of 363a5b9 (ags)
       ];
       windowrule = [
         "float,title:^(Calculator)(.*)$"
