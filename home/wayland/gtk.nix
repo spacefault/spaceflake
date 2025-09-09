@@ -29,16 +29,16 @@
     enable = true;
     theme = {
       name = "MacTahoe-Dark";
-      package = pkgs.mactahoe-theme;
+      package = myPkgs.mactahoe-theme;
     };
     iconTheme = {
       name = "MacTahoe-dark";
-      package = pkgs.mactahoe-icons;
+      package = myPkgs.mactahoe-icons;
     };
     font = {
       name = "SF Pro Display";
       size = 12;
-      package = myPkgs.sf-pro;
+      package = myPkgs.sfpro;
     };
   };
 } 
