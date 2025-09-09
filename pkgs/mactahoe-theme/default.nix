@@ -10,11 +10,11 @@
   libxml2,
   sassc,
   util-linux,
-  altVariants ? [ ], # default: normal
-  colorVariants ? [ ], # default: all
-  opacityVariants ? [ ], # default: all
-  themeVariants ? [ ], # default: default (BigSur-like theme)
-  schemeVariants ? [ ], # default: standard
+  altVariants ? [], # default: normal
+  colorVariants ? [], # default: all
+  opacityVariants ? [], # default: all
+  themeVariants ? [], # default: default (BigSur-like theme)
+  schemeVariants ? [], # default: standard
   iconVariant ? null, # default: standard (Apple logo)
   # nautilusStyle ? null, # default: stable (BigSur-like style)
   panelOpacity ? null, # default: 15%
@@ -22,21 +22,18 @@
   roundedMaxWindow ? false, # default: false
   blurVariant ? false, # default = false
   darkerColor ? false, # default = false
-}:
-
-let
+}: let
   pname = "mactahoe-gtk-theme";
   single = x: lib.optional (x != null) x;
-
 in
-lib.checkListOfEnum "${pname}: window control buttons variants" [ "normal" "alt" "all" ] altVariants
+  lib.checkListOfEnum "${pname}: window control buttons variants" ["normal" "alt" "all"] altVariants
   lib.checkListOfEnum
   "${pname}: color variants"
-  [ "light" "dark" ]
+  ["light" "dark"]
   colorVariants
   lib.checkListOfEnum
   "${pname}: opacity variants"
-  [ "normal" "solid" ]
+  ["normal" "solid"]
   opacityVariants
   lib.checkListOfEnum
   "${pname}: accent color variants"
@@ -55,7 +52,7 @@ lib.checkListOfEnum "${pname}: window control buttons variants" [ "normal" "alt"
   themeVariants
   lib.checkListOfEnum
   "${pname}: colorscheme style variants"
-  [ "standard" "nord" ]
+  ["standard" "nord"]
   schemeVariants
   lib.checkListOfEnum
   "${pname}: activities icon variants"
@@ -85,13 +82,12 @@ lib.checkListOfEnum "${pname}: window control buttons variants" [ "normal" "alt"
   # (single nautilusStyle)
   lib.checkListOfEnum
   "${pname}: panel opacity"
-  [ "default" "30" "45" "60" "75" ]
+  ["default" "30" "45" "60" "75"]
   (single panelOpacity)
   lib.checkListOfEnum
   "${pname}: panel size"
-  [ "default" "smaller" "bigger" ]
+  ["default" "smaller" "bigger"]
   (single panelSize)
-
   stdenv.mkDerivation
   rec {
     pname = "mactahoe-gtk-theme";
@@ -158,7 +154,7 @@ lib.checkListOfEnum "${pname}: window control buttons variants" [ "normal" "alt"
       runHook postInstall
     '';
 
-    passthru.updateScript = gitUpdater { };
+    passthru.updateScript = gitUpdater {};
 
     meta = {
       description = "MacTahoe like Gtk+ theme based on Elegant Design";
