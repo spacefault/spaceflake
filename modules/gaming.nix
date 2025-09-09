@@ -27,13 +27,7 @@
   };
   nixpkgs.config.packageOverrides = pkgs: {
     steam = pkgs.steam.override {
-      extraBwrapArgs = [
-        "--bind $HOME/etc/steamhome $HOME"
-        "--unsetenv XDG_CACHE_HOME"
-        "--unsetenv XDG_CONFIG_HOME"
-        "--unsetenv XDG_DATA_HOME"
-        "--unsetenv XDG_STATE_HOME"
-      ];
+
       extraPkgs = pkgs:
         with pkgs; [
           pango
