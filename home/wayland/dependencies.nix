@@ -17,8 +17,7 @@
     wlsunset
     xdg-user-dirs
     cliphist
-    xfce.thunar
-    xfce.tumbler
+    nautilus
     adwaita-icon-theme
     swaynotificationcenter
     networkmanagerapplet
