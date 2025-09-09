@@ -147,6 +147,10 @@
       enable = true;
       package = pkgs.kdePackages.sddm;
     };
+    tailscale = {
+      enable = true;
+      useRoutingFeatures = "both";
+    };
     devmon.enable = true;
     libinput.enable = true;
     blueman.enable = true;
