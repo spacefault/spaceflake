@@ -6,15 +6,10 @@
   # imports = [inputs.anyrun.homeManagerModules.default];
   programs.anyrun = {
     enable = true;
+    package = pkgs.anyrun;
     config = {
-      plugins = with inputs.anyrun.packages.${pkgs.system}; [
-        applications
-        rink
-        shell
-        translate
-        symbols
-        stdin
-        dictionary
+      plugins = [
+       "${pkgs.anyrun}/lib/libapplications.so"
       ];
       width = {absolute = 800;};
       x = {fraction = 0.5;};

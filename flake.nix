@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     lanzaboote.url = "github:nix-community/lanzaboote";
     nixvim.url = "github:nix-community/nixvim";
-    anyrun.url = "github:anyrun-org/anyrun";
+    anyrun.url = "github:anyrun-org/anyrun/b6d08eea668feb8c183ee2a1822f909949792676";
     ags.url = "github:aylur/ags";
     astal.url = "github:aylur/astal";
     #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
