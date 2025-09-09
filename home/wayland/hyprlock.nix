@@ -1,6 +1,6 @@
 {pkgs, ...}: let
   wallpaper = builtins.path {
-    path = ./wallpaper.jpg;
+    path = ./wallpaper.png;
     name = "wallpaper";
   };
 in {
