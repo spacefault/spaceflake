@@ -5,7 +5,6 @@
   libarchive,
   lib,
 }:
-
 stdenv.mkDerivation rec {
   name = "sf-pro";
   version = "1.0.0";
