@@ -5,8 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     lanzaboote.url = "github:nix-community/lanzaboote";
     nixvim.url = "github:nix-community/nixvim";
-    ags.url = "github:aylur/ags";
-    astal.url = "github:aylur/astal";
+    anyrun.url = "github:anyrun-org/anyrun";
     #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprlock.url = "github:hyprwm/hyprlock";
     spicetify-nix = {
