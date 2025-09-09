@@ -21,6 +21,7 @@
     ./hardware-hifn.nix
     ../modules/desktop.nix
     ../modules/nvidia.nix
+    ../modules/gaming.nix
   ];
 
   system.stateVersion = "23.05";
