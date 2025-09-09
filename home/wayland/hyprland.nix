@@ -132,12 +132,6 @@ in {
       layerrule = [
         "blur, waybar"
         "ignorezero, waybar"
-<<<<<<< HEAD
-        "blur, gtk4-layer-shell"
-        "ignorealpha 0.2, bar"
-        "ignorealpha 0.2, gtk4-layer-shell"
-=======
->>>>>>> parent of 363a5b9 (ags)
       ];
       windowrule = [
         "float,title:^(Calculator)(.*)$"
