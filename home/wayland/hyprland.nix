@@ -42,6 +42,7 @@ in {
         "${pkgs.wlsunset}/bin/wlsunset -S 05:00 -s 19:00"
         "${pkgs.swww}/bin/swww-daemon"
         "${pkgs.swww}/bin/swww img ${./wallpaper.png}"
+        "ags run"
         "${pkgs.swaynotificationcenter}/bin/swaync"
       ];
       general = {
