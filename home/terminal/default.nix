@@ -5,7 +5,7 @@
     ./zsh.nix
     ./htop.nix
     ./ghostty.nix
-    ./alacritty.nix
+    #./alacritty.nix
     ./git.nix
   ];
 }
