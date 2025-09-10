@@ -12,6 +12,7 @@
     ./polkit.nix
     ./hyprlock.nix
     ./hypridle.nix
+    ./swayosd.nix
     #./keyring.nix
   ];
 }
