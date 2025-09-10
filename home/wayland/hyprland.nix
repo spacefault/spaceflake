@@ -148,7 +148,7 @@ in {
       ];
       bind =
         [
-          "${mod}, RETURN, exec, alacritty"
+          "${mod}, RETURN, exec, ghostty"
           "${mod}, SPACE, exec, anyrun"
           "${mod}, E, exec, firefox -p school"
           "${mod}, W, exec, firefox -p default"
