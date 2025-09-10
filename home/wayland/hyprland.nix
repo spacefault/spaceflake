@@ -43,6 +43,7 @@ in {
         "${pkgs.swww}/bin/swww-daemon"
         "${pkgs.swww}/bin/swww img ${./wallpaper.png}"
         "${pkgs.swaynotificationcenter}/bin/swaync"
+        "${pkgs.swayosd}/bin/swayosd-server"
       ];
       general = {
         gaps_in = 3;
@@ -166,8 +167,10 @@ in {
           "${mod}, down, movefocus, d"
           "${mod}, grave, togglespecialworkspace"
           "SUPERSHIFT, grave, movetoworkspace, special"
-          ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-          ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+          ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
+          ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
+          ", xf86monbrightnessup, exec, swayosd-client --brightness raise"
+          ", xf86monbrightnessdown, exec, swayosd-client --brightness lower"
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
           ", XF86AudioPlay, exec, playerctl play-pause"
           ", XF86AudioPause, exec, playerctl play-pause"
