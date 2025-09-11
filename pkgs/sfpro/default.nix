@@ -10,7 +10,7 @@ stdenv.mkDerivation rec {
   version = "1.0.0";
   src = fetchurl {
     url = "https://devimages-cdn.apple.com/design/resources/download/SF-Pro.dmg";
-    hash = "sha256-090HwtgILtK/KGoOzcwz1iAtoiShKAVjiNhUDQtO+gQ=";
+    hash = "sha256-8Dkh9ih3NUoKQXyGkmg44OMGUXK9gBnIsfbpGL8uNPc=";
   };
 
   nativeBuildInputs = [
