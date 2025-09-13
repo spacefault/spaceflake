@@ -18,6 +18,14 @@
       gitblame.enable = true;
       colorizer.enable = true;
       treesitter.enable = true;
+      ledger = {
+        enable = true;
+        settings = {
+          is_hledger = true;
+          accounts_cmd = "hledger accounts";
+          align_at = 60;
+        };
+      };
       ############## LSP ###############
       trouble.enable = true;
       lspkind.enable = false;
