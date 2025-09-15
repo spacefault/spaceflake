@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-let
+{pkgs, ...}: let
   ghosttyTmuxScript = pkgs.writeShellScript "ghostty-tmux.sh" ''
     #!/bin/bash
     SESSION_NAME="ghostty"
@@ -27,4 +25,3 @@ in {
     };
   };
 }
-
