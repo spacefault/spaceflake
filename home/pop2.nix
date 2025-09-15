@@ -14,7 +14,6 @@
   imports = [
     ./terminal
     ./programs/nh.nix
-    ./programs/spicetify.nix
     ./programs/vscode.nix
   ];
 
