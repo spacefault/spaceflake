@@ -17,6 +17,13 @@ in {
         no_fade_in = true;
       };
 
+      auth = {
+        fingerprint = {
+          enabled = true;
+          ready_message = "place finger";
+        };
+      };
+
       background = [
         {
           monitor = "";
