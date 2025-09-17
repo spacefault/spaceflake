@@ -31,10 +31,10 @@
   in {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     nixosConfigurations = {
-      "cherry" = nixpkgs.lib.nixosSystem {
+      "school" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./profiles/cherry.nix];
+        modules = [./profiles/school.nix];
       };
       "hifn" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -43,10 +43,10 @@
       };
     };
     homeConfigurations = {
-      "devin@cherry" = home-manager.lib.homeManagerConfiguration {
+      "devin@school" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./home/cherry.nix];
+        modules = [./home/school.nix];
       };
       "devin@hifn" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;

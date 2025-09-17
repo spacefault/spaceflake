@@ -71,9 +71,6 @@ in {
         enable_stdout_logs = true;
         damage_tracking = 0;
       };
-      gestures = {
-        workspace_swipe = true;
-      };
       input = {
         #kb_layout = "us";
         #kb_variant = "qwerty";

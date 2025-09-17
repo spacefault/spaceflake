@@ -1,8 +1,8 @@
-# cherry: laptop config
+# school laptop config
 {...}: {
   # networking, firewall, and hostname
   networking = {
-    hostName = "cherry";
+    hostName = "school";
     networkmanager.enable = true;
     firewall.enable = true;
   };
@@ -16,7 +16,7 @@
   imports = [
     ../modules/desktop.nix
     ../modules/gaming.nix
-    ./hardware-laptop.nix
+    ./hardware-school.nix
   ];
 
   services = {
