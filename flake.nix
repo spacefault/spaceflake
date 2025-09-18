@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
     lanzaboote.url = "github:nix-community/lanzaboote";
     nixvim.url = "github:nix-community/nixvim";
     anyrun.url = "github:anyrun-org/anyrun";
@@ -22,6 +23,7 @@
     self,
     nixpkgs,
     home-manager,
+    determinate,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -34,12 +36,12 @@
       "school" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./profiles/school.nix];
+        modules = [./profiles/school.nix determinate.nixosModules.default];
       };
       "hifn" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./profiles/hifn.nix];
+        modules = [./profiles/hifn.nix determinate.nixosModules.default];
       };
     };
     homeConfigurations = {
