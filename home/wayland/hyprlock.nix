@@ -1,6 +1,6 @@
 {pkgs, ...}: let
   wallpaper = builtins.path {
-    path = ./wallpaper.png;
+    path = ./wallpaper.jpeg;
     name = "wallpaper";
   };
 in {
@@ -50,7 +50,7 @@ in {
           fail_color = "rgba(255, 106, 134, 0.5)";
 
           fade_on_empty = false;
-          placeholder_text = "Enter Password";
+          placeholder_text = "Enter Password or Place Finger";
 
           dots_spacing = 0.2;
           dots_center = true;
@@ -67,7 +67,7 @@ in {
           monitor = "";
           text = "cmd[update:1000] date +'%-I:%M %p'";
           font_size = 140;
-          font_family = "Helvetica Neue Light";
+          font_family = "SF Pro Regular";
           color = "rgb(b6c4ff)";
 
           position = "0%, 30%";
@@ -84,7 +84,7 @@ in {
           monitor = "";
           text = "cmd[update:3600000] date +'%A, %B %d, %Y'";
           font_size = 20;
-          font_family = "Helvetica Neue Light";
+          font_family = "SF Pro Regular";
           color = "rgb(b6c4ff)";
 
           position = "0%, 40%";
