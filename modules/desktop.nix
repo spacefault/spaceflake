@@ -246,7 +246,9 @@
 
   # nix settings
   nix = {
-    package = pkgs.lix;
+    extraOptions = ''
+      eval-cores = 0
+    '';
     settings = {
       experimental-features = [
         "nix-command"
