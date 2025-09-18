@@ -41,7 +41,7 @@ in {
         "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
         "${pkgs.wlsunset}/bin/wlsunset -S 05:00 -s 19:00"
         "${pkgs.swww}/bin/swww-daemon"
-        "${pkgs.swww}/bin/swww img ${./wallpaper.png}"
+        "${pkgs.swww}/bin/swww img ${./wallpaper.jpeg}"
         "${pkgs.swaynotificationcenter}/bin/swaync"
         "${pkgs.swayosd}/bin/swayosd-server"
       ];
