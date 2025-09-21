@@ -22,7 +22,7 @@
         set -g status-justify left
         set -g status-style 'fg=red'
         set-option -g automatic-rename on
-        set-option -g automatic-rename-format "#{b:pane_current_path}"
+        #set-option -g automatic-rename-format "#{b:pane_current_path}"
         set -g prefix M-a
         unbind C-b
         bind M-a send-prefix
