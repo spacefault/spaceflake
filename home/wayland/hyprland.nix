@@ -73,14 +73,21 @@ in {
         enable_stdout_logs = true;
         damage_tracking = 0;
       };
+      gesture = [
+        "4, horizontal, workspace"
+      ];
+
       input = {
         #kb_layout = "us";
         #kb_variant = "qwerty";
         #kb_options = "compose:rctrl";
         follow_mouse = 1;
         sensitivity = 0;
-        touchpad.natural_scroll = true;
         left_handed = false;
+        touchpad = {
+          natural_scroll = true;
+          drag_3fg = true;
+        };
       };
       decoration = {
         rounding = 0;
