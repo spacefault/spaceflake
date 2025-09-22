@@ -20,7 +20,6 @@ in {
       macos-titlebar-proxy-icon = "hidden";
       macos-option-as-alt = "true";
       theme = "Adventure";
-      font-family = "Monaspace Radon Regular";
 
       command = "${pkgs.bash}/bin/bash -c '${ghosttyTmuxScript}'";
     };
