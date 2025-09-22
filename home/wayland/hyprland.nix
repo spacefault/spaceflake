@@ -147,7 +147,7 @@ in {
         [
           "${mod}, RETURN, exec, ghostty"
           "${mod}, SPACE, exec, anyrun"
-          "${mod}, E, exec, firefox -p school"
+          "${mod}, E, exec, google-chrome-stable"
           "${mod}, W, exec, firefox -p default"
           "${mod}, R, exec, thunderbird"
           ", PRINT, exec, grimblast --notify --freeze copysave area"
