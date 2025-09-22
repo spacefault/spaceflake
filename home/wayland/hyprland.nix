@@ -22,7 +22,8 @@ in {
     QT_QPA_PLATFORM = "wayland";
     SDL_VIDEODRIVER = "wayland";
     XDG_SESSION_TYPE = "wayland";
-    HYPRCURSOR_THEME = "macOS";
+    XCURSOR_THEME = "macOS-Monterey";
+    XCURSOR_SIZE = 24;
   };
   wayland.windowManager.hyprland = {
     enable = true;
@@ -35,6 +36,7 @@ in {
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "${pkgs.networkmanagerapplet}/bin/nm-applet"
+        "hyprctl setcursor macOS 22"
         "${pkgs.blueman}/bin/blueman-applet"
         "${pkgs.udiskie}/bin/udiskie --appindicator --automount"
         "systemctl --user start polkit-gnome-authentication-agent-1.service"
