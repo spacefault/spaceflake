@@ -7,7 +7,7 @@
     celeste64
     lutris
     chatterino2
-    discord
+    #discord
     mangohud
     obs-studio
   ];
