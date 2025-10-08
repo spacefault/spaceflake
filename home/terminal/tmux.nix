@@ -36,7 +36,7 @@
         set -g @resurrect-dir '~/.tmux/resurrect'
         set -g @resurrect-capture-pane-contents 'on'
         set -g @continuum-restore 'on'
-        set -g @continuum-save-interval '1'  
+        set -g @continuum-save-interval '1'
       '';
     };
   };
