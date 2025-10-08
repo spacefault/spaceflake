@@ -5,6 +5,8 @@
       plugins = with pkgs.tmuxPlugins; [
         cpu
         power-theme
+        resurrect
+        continuum
       ];
       extraConfig = ''
         # https://old.reddit.com/r/tmux/comments/mesrci/tmux_2_doesnt_seem_to_use_256_colors/
@@ -30,6 +32,11 @@
         bind j select-pane -D
         bind k select-pane -U
         bind l select-pane -R
+
+        set -g @resurrect-dir '~/.tmux/resurrect'
+        set -g @resurrect-capture-pane-contents 'on'
+        set -g @continuum-restore 'on'
+        set -g @continuum-save-interval '1'  
       '';
     };
   };
