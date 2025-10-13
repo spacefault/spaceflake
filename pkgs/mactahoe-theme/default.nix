@@ -97,8 +97,8 @@ in
     src = fetchFromGitHub {
       owner = "vinceliuice";
       repo = "MacTahoe-gtk-theme";
-      rev = version;
-      hash = "sha256-ZgrZqY07igCj1LdspyNFBs9SJIZXH9d9gyZ/MXWJk5M=";
+      rev = "2025-08-22";
+      hash = "1z7f19dhflw5sqgym8vxv4s3c5jijfsdaqgqwb889ya6369mqf3c";
     };
 
     nativeBuildInputs = [
