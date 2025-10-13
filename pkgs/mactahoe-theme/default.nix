@@ -91,14 +91,13 @@ in
   stdenv.mkDerivation
   rec {
     pname = "mactahoe-gtk-theme";
-    # version = "2025-07-09";
-    version = "master";
+    version = "2025-07-09";
 
     src = fetchFromGitHub {
       owner = "vinceliuice";
       repo = "MacTahoe-gtk-theme";
       rev = version;
-      hash = "sha256-gyD16t8xA0yLyyNTH1zyA3ee/VjmkXFJErvZuSkPVnk=";
+      hash = "sha256-wfGS/DyyBt1xjYS4de0cwGNQ5Appvo2aSFlDVR3G6zM=";
     };
 
     nativeBuildInputs = [
