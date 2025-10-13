@@ -1,6 +1,7 @@
 {...}: {
   imports = [
-    ./anyrun.nix
+    #./anyrun.nix
+    ./bemenu.nix
     #./dunst.nix
     ./gtk.nix
     ./hyprland.nix

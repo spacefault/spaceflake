@@ -10,6 +10,7 @@
     discord
     mangohud
     obs-studio
+    osu-lazer-bin
   ];
 
   #systemd = {

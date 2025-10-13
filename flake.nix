@@ -6,7 +6,6 @@
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
     lanzaboote.url = "github:nix-community/lanzaboote";
     nixvim.url = "github:nix-community/nixvim";
-    anyrun.url = "github:anyrun-org/anyrun";
     #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprlock.url = "github:hyprwm/hyprlock";
     spicetify-nix = {
@@ -53,7 +52,7 @@
       "devin@hifn" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./home/hifn.nix];
+        modules = [./home/hifn.nix ];
       };
       "devin@pop2" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
