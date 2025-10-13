@@ -2,9 +2,7 @@ name: Build pkgs
 
 on:
   workflow_call:
-    secrets:
-      CACHIX_AUTH_TOKEN:
-        required: false
+
 
 jobs:
   build:
