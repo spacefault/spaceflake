@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-file="pkgs/mactahoe-gtk-theme/default.nix"
+# Define your package folder here:
+pkg_dir="pkgs/mactahoe-theme"
+file="$pkg_dir/default.nix"
 owner="vinceliuice"
 repo="MacTahoe-gtk-theme"
 
-# always define the headers array, even if empty
+# always define headers array even if empty
 headers=()
 if [[ -n "${GITHUB_TOKEN:-}" ]]; then
   headers+=(-H "authorization: bearer $GITHUB_TOKEN")
@@ -34,13 +36,20 @@ echo "* prefetching git source for tag $tag..."
 src_json=$(nix store prefetch-git --url "https://github.com/$owner/$repo.git" --rev "$tag" --json --quiet)
 hash=$(jq -r .sha256 <<< "$src_json")
 
-escaped_hash=$(sed 's|/|\\/|g' <<< "$hash")
-
-echo "* updating $file..."
-sed -i \
-  -e "s|rev = .*;|rev = \"$tag\";|" \
-  -e "s|hash = .*;|hash = \"$hash\";|" \
-  "$file"
+# sed -i compatibility for macOS and Linux
+if sed --version >/dev/null 2>&1; then
+  # GNU sed
+  sed -i \
+    -e "s|rev = .*;|rev = \"$tag\";|" \
+    -e "s|hash = .*;|hash = \"$hash\";|" \
+    "$file"
+else
+  # macOS/BSD sed
+  sed -i '' \
+    -e "s|rev = .*;|rev = \"$tag\";|" \
+    -e "s|hash = .*;|hash = \"$hash\";|" \
+    "$file"
+fi
 
 echo "* updated $file to tag $tag with new hash"
 exit 0
