@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Define your package folder here:
 pkg_dir="pkgs/mactahoe-theme"
 file="$pkg_dir/default.nix"
 owner="vinceliuice"
 repo="MacTahoe-gtk-theme"
 
-# always define headers array even if empty
 headers=()
 if [[ -n "${GITHUB_TOKEN:-}" ]]; then
   headers+=(-H "authorization: bearer $GITHUB_TOKEN")
@@ -32,9 +30,10 @@ if [[ "$tag" == "$current_rev" ]]; then
   exit 0
 fi
 
-echo "* prefetching git source for tag $tag..."
-src_json=$(nix store prefetch-git --url "https://github.com/$owner/$repo.git" --rev "$tag" --json --quiet)
-hash=$(jq -r .sha256 <<< "$src_json")
+tarball_url="https://github.com/$owner/$repo/archive/refs/tags/$tag.tar.gz"
+
+echo "* prefetching release tarball from $tarball_url..."
+hash=$(nix-prefetch-url "$tarball_url")
 
 # sed -i compatibility for macOS and Linux
 if sed --version >/dev/null 2>&1; then
