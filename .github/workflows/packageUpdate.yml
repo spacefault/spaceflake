@@ -1,0 +1,32 @@
+name: Update packages
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' # daily
+
+jobs:
+  update:
+    if: github.repository == 'spacefault/spaceflake'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
+
+      - uses: DeterminateSystems/nix-installer-action@main
+
+
+      - run: |
+          nix run .#npins update
+          pkgs/mactahoe-theme/update.sh
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update packages"
+          push_options: '--force'
+
+  build:
+    needs: update
+    uses: ./.github/workflows/build.yml
+    secrets: inherit
