@@ -98,7 +98,7 @@ in
       owner = "vinceliuice";
       repo = "MacTahoe-gtk-theme";
       rev = version;
-      hash = "sha256-ZgrZqY07igCj1LdspyNFBs9SJIZXH9d9gyZ/MXWJk5M=";
+      hash = "sha256-gyD16t8xA0yLyyNTH1zyA3ee/VjmkXFJErvZuSkPVnk=";
     };
 
     nativeBuildInputs = [
