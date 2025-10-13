@@ -18,7 +18,6 @@ jobs:
 
 
       - run: |
-          nix run .#npins update
           pkgs/mactahoe-theme/update.sh
 
       - uses: stefanzweifel/git-auto-commit-action@v4
