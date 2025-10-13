@@ -41,7 +41,7 @@
       "hifn" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./profiles/hifn.nix determinate.nixosModules.default];
+        modules = [./profiles/hifn.nix];
       };
     };
     homeConfigurations = {

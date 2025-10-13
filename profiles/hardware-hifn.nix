@@ -11,36 +11,42 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod"];
+  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
   boot.supportedFilesystems = ["btrfs"];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/03d2bd71-cadb-4703-82f4-0c72f1674539";
+    device = "/dev/disk/by-uuid/c4a6aac8-1605-41f1-a46f-cccf77491744";
     fsType = "btrfs";
     options = ["subvol=root" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/2204c375-e0ad-4e5b-b89e-0a486fbf5345";
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/aa64c02d-37af-40c6-bf80-996529aef7da";
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/03d2bd71-cadb-4703-82f4-0c72f1674539";
+    device = "/dev/disk/by-uuid/c4a6aac8-1605-41f1-a46f-cccf77491744";
     fsType = "btrfs";
     options = ["subvol=home" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/03d2bd71-cadb-4703-82f4-0c72f1674539";
+    device = "/dev/disk/by-uuid/c4a6aac8-1605-41f1-a46f-cccf77491744";
     fsType = "btrfs";
     options = ["subvol=nix" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
   fileSystems."/var/log" = {
-    device = "/dev/disk/by-uuid/03d2bd71-cadb-4703-82f4-0c72f1674539";
+    device = "/dev/disk/by-uuid/c4a6aac8-1605-41f1-a46f-cccf77491744";
     fsType = "btrfs";
     options = ["subvol=log" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/1397-8489";
+    fsType = "vfat";
+    options = ["fmask=0022" "dmask=0022"];
   };
 
   fileSystems."/mnt/games" = {
@@ -51,15 +57,9 @@
 
   boot.initrd.luks.devices."games".device = "/dev/disk/by-uuid/9ea9dce4-f253-4819-8400-eeaf41ec8714";
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/F994-7332";
-    fsType = "vfat";
-    options = ["fmask=0022" "dmask=0022"];
-  };
-
   swapDevices = [
     {
-      device = "/dev/disk/by-partuuid/ffaa1b0f-4c80-4fd4-9b21-a6cd19a1d49b";
+      device = "/dev/disk/by-partuuid/9980fc4f-ec45-4cbd-9046-d97b1c6da2ac";
       randomEncryption.enable = true;
     }
   ];
