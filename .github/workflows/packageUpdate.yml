@@ -7,25 +7,32 @@ on:
 
 jobs:
   update:
-    if: github.repository == 'spacefault/spaceflake'
+    name: Update Packages
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: DeterminateSystems/nix-installer-action@main
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
 
-
-      - run: |
+      - name: Run update scripts
+        run: |
           pkgs/mactahoe-theme/update.sh
+        shell: bash
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Make PR
+        uses: peter-evans/create-pull-request@v7
         with:
-          commit_message: "Update packages"
-          push_options: '--force'
-
-  build:
-    needs: update
-    uses: ./.github/workflows/build.yml
-    secrets: inherit
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: pkgupdate
+          base: ${{ github.head_ref || 'main' }}
+          delete-branch: true
+          title: 'Package Update'
+          commit-message: 'Update packages'
+          body: |
+            Self-packaged package update.
+            
