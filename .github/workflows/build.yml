@@ -8,12 +8,20 @@ on:
 
 jobs:
   build:
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         package:
           - mactahoe-theme
 
-    with:
-      command: nix build -L .#${{ matrix.package }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Build package
+        run: nix build -L .#${{ matrix.package }}
+
     secrets: inherit
+
