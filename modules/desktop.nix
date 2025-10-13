@@ -245,9 +245,9 @@
 
   # nix settings
   nix = {
-    extraOptions = ''
-      eval-cores = 0
-    '';
+    #extraOptions = ''
+    #  eval-cores = 0
+    #'';
     settings = {
       experimental-features = [
         "nix-command"

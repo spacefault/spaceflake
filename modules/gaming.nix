@@ -5,7 +5,7 @@
     ckan
     piper
     celeste64
-    lutris
+    #lutris
     chatterino2
     discord
     mangohud
