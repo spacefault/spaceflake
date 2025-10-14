@@ -52,7 +52,7 @@
       "devin@hifn" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./home/hifn.nix ];
+        modules = [./home/hifn.nix];
       };
       "devin@pop2" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;

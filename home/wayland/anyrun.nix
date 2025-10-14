@@ -2,7 +2,7 @@
   # imports = [inputs.anyrun.homeManagerModules.default];
   programs.anyrun = {
     enable = true;
-      config = {
+    config = {
       plugins = [
         "${pkgs.anyrun}/lib/libapplications.so"
         "${pkgs.anyrun}/lib/libsymbols.so"
