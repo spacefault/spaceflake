@@ -143,8 +143,9 @@
 
   # services
   services = {
-    displayManager.ly = {
+    displayManager.sddm = {
       enable = true;
+      package = pkgs.kdePackages.sddm;
     };
     tailscale = {
       enable = true;
