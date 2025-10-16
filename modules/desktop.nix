@@ -143,7 +143,7 @@
 
   # services
   services = {
-    displayManager.gdm = {
+    displayManager.sddm = {
       enable = true;
     };
     tailscale = {

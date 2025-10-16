@@ -4,8 +4,6 @@
     prismlauncher
     ckan
     piper
-    celeste64
-    #lutris
     chatterino2
     discord
     mangohud
