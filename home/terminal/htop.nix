@@ -41,6 +41,8 @@
         rightMeters [
           (text "NetworkIO")
           (text "DiskIO")
+          (bar "Memory")
+          (bar "Swap")
           (bar "CPU")
           (bar "GPU")
         ]);
