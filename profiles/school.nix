@@ -1,5 +1,5 @@
 # school laptop config
-{pkgs, ...}: {
+{...}: {
   # networking, firewall, and hostname
   networking = {
     hostName = "school";
