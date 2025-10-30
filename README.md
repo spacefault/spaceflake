@@ -10,21 +10,24 @@ This is my personal NixOS flake, it is intended for personal use so please be ca
 ├── flake.lock
 ├── flake.nix
 ├── home
-│   ├── blueberry.nix # home file for desktop
-│   ├── cherry.nix # home file for laptop
+│   ├── hifn.nix # home-manager for gaming pc
+│   ├── school.nix # home-manager for school laptop
+│   ├── pop2.nix # home-manager darwin for macbook
 │   ├── programs # programs not needed for wayland session but nice to have
-│   ├── terminal # terminal related dotfiles (neovim, tmux, etc)
-│   └── wayland # files needed for wayland session
+│   ├── terminal # terminal related dotfiles & code editors (neovim, tmux, emacs, etc)
+│   └── wayland # files needed for wayland session (linux only)
 ├── modules
-│   ├── desktop.nix # desktop module
+│   ├── desktop.nix # desktop module, always needed on nixos hosts
 │   ├── gaming.nix # gaming specific settings
 │   └── nvidia.nix # nvidia driver module
 ├── profiles
-│   ├── blueberry.nix # file for desktop
-│   └── cherry.nix # file for laptop
+│   ├── hifn.nix # file for gaming pc
+│   ├── hardware-hifn.nix # hardware conf for gaming pc
+│   ├── school.nix # file for school laptop
+│   └── hardware-school.nix # hardware-conf for laptop
 └── README.md
 ```
 
 # Issue Tracking
-Please use the issues tab to make relevant issues. Thank you!
+Please use the issues tab to make relevant issues. Thanks!
 
