@@ -221,7 +221,7 @@
       [
         noto-fonts
         noto-fonts-cjk-sans
-        noto-fonts-emoji
+        noto-fonts-color-emoji
         #source-han-sans
         #source-han-sans-japanese
         #source-han-serif-japanese
@@ -309,8 +309,8 @@
       enable = true;
       enable32Bit = true;
       extraPackages = with pkgs; [
-        vaapiVdpau
-        libvdpau-va-gl
+        libva-vdpau-driver
+	libvdpau-va-gl
         vulkan-validation-layers
         intel-media-driver
       ];

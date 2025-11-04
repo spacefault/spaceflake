@@ -21,7 +21,7 @@
       extraPackages = with pkgs; [
         libvdpau-va-gl
         vulkan-validation-layers
-        vaapiVdpau
+	libva-vdpau-driver
       ];
     };
     nvidia = {
