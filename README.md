@@ -1,7 +1,7 @@
-<h1 align="center">spaceflake - personal NixOS flake</h1>
+<h1 align="center">spaceflake - personal NixOS (& home manager)  flake</h1>
 
-# Synopsis
-This is my personal NixOS flake, it is intended for personal use so please be careful as there might be some issues.
+# What's this?
+This is my personal NixOS flake, it's intended for personal use so please be careful as there might be some issues.
 
 # File Structure
 
