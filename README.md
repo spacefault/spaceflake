@@ -10,7 +10,7 @@ This is my personal NixOS flake, it's intended for personal use so please be car
 ├── flake.lock
 ├── flake.nix
 ├── home
-│   ├── hifn.nix # home-manager for gaming pc
+│   ├── gaming.nix # home-manager for gaming pc
 │   ├── school.nix # home-manager for school laptop
 │   ├── pop2.nix # home-manager darwin for macbook
 │   ├── programs # programs not needed for wayland session but nice to have
@@ -21,8 +21,8 @@ This is my personal NixOS flake, it's intended for personal use so please be car
 │   ├── gaming.nix # gaming specific settings
 │   └── nvidia.nix # nvidia driver module
 ├── profiles
-│   ├── hifn.nix # file for gaming pc
-│   ├── hardware-hifn.nix # hardware conf for gaming pc
+│   ├── gaming.nix # file for gaming pc
+│   ├── hardware-gaming.nix # hardware conf for gaming pc
 │   ├── school.nix # file for school laptop
 │   └── hardware-school.nix # hardware-conf for laptop
 └── README.md
