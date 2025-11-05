@@ -43,7 +43,7 @@ in {
         "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
         "${pkgs.wlsunset}/bin/wlsunset -S 05:00 -s 19:00"
         "${pkgs.swww}/bin/swww-daemon"
-        "${pkgs.swww}/bin/swww img ${./wallpaper.jpeg}"
+        "${pkgs.swww}/bin/swww img ${./wallpaper.jpg}"
         "${pkgs.swaynotificationcenter}/bin/swaync"
         "${pkgs.swayosd}/bin/swayosd-server"
       ];
@@ -155,7 +155,7 @@ in {
       bind =
         [
           "${mod}, RETURN, exec, ghostty"
-          "${mod}, SPACE, exec, bemenu-run"
+          "${mod}, SPACE, exec, bemenu-run -H 24"
           "${mod}, E, exec, google-chrome-stable"
           "${mod}, W, exec, firefox -p default"
           "${mod}, R, exec, thunderbird"

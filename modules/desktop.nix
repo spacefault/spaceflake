@@ -167,21 +167,6 @@
     gnome.gnome-online-accounts.enable = true;
     gnome.evolution-data-server.enable = true;
     gnome.gcr-ssh-agent.enable = true;
-    syncthing = {
-      enable = true;
-      user = "devin";
-      configDir = "/home/devin/.config/syncthing";
-      openDefaultPorts = true;
-      overrideFolders = false;
-      settings = {
-        options.relaysEnabled = false;
-        folders = {
-          "SyncBox" = {
-            path = "/home/devin/Sync";
-          };
-        };
-      };
-    };
     printing = {
       enable = true;
       logLevel = "debug";
@@ -246,9 +231,9 @@
 
   # nix settings
   nix = {
-    #extraOptions = ''
-    #  eval-cores = 0
-    #'';
+    extraOptions = ''
+      eval-cores = 0
+    '';
     settings = {
       experimental-features = [
         "nix-command"
@@ -310,7 +295,7 @@
       enable32Bit = true;
       extraPackages = with pkgs; [
         libva-vdpau-driver
-	libvdpau-va-gl
+        libvdpau-va-gl
         vulkan-validation-layers
         intel-media-driver
       ];

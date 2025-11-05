@@ -1,8 +1,7 @@
 {...}: {
   services.syncthing = {
     enable = true;
-    tray.enable = true;
-    overrideFolders = true;
+    overrideFolders = false;
     settings = {
       options.relaysEnabled = false;
     };

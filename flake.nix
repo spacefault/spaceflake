@@ -37,10 +37,10 @@
         specialArgs = {inherit inputs outputs myPkgs;};
         modules = [./profiles/school.nix determinate.nixosModules.default];
       };
-      "hifn" = nixpkgs.lib.nixosSystem {
+      "gaming" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./profiles/hifn.nix];
+        modules = [./profiles/gaming.nix];
       };
     };
     homeConfigurations = {
@@ -49,10 +49,10 @@
         extraSpecialArgs = {inherit inputs outputs myPkgs;};
         modules = [./home/school.nix];
       };
-      "devin@hifn" = home-manager.lib.homeManagerConfiguration {
+      "devin@gaming" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs myPkgs;};
-        modules = [./home/hifn.nix];
+        modules = [./home/gaming.nix];
       };
       "devin@pop2" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;

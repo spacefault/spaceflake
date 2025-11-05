@@ -31,10 +31,10 @@
       name = "MacTahoe-Light";
       package = myPkgs.mactahoe-theme;
     };
-    iconTheme = {
-      name = "MacTahoe-light";
-      package = myPkgs.mactahoe-icons;
-    };
+    #iconTheme = {
+    #  name = "MacTahoe-light";
+    #  package = myPkgs.mactahoe-icons;
+    #};
     font = {
       name = "SF Pro Display";
       size = 12;

@@ -1,6 +1,6 @@
 {pkgs, ...}: let
   wallpaper = builtins.path {
-    path = ./wallpaper.jpeg;
+    path = ./wallpaper.jpg;
     name = "wallpaper";
   };
 in {
@@ -63,7 +63,7 @@ in {
           monitor = "";
           text = "cmd[update:1000] date +'%-I:%M %p'";
           font_size = 140;
-          font_family = "SF Pro Regular";
+          font_family = "Tahoma";
           color = "rgb(b6c4ff)";
 
           position = "0%, 30%";
@@ -80,7 +80,7 @@ in {
           monitor = "";
           text = "cmd[update:3600000] date +'%A, %B %d, %Y'";
           font_size = 20;
-          font_family = "SF Pro Regular";
+          font_family = "Tahoma";
           color = "rgb(b6c4ff)";
 
           position = "0%, 40%";

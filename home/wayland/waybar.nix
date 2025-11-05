@@ -76,7 +76,7 @@
       * {
           border: none;
           border-radius: 0;
-          font-family: SF Pro Display, Font Awesome;
+          font-family: Tahoma, Font Awesome;
           font-weight: normal;
           font-size: 14px;
           min-height: 0;

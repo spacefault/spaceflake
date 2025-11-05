@@ -1,12 +1,14 @@
-# hifn.nix
+# gaming.nix
 {...}: {
   # networking, firewall, and hostname
   networking = {
-    hostName = "hifn";
+    hostName = "gaming";
     networkmanager.enable = true;
-    firewall.enable = false;
-    firewall.allowedTCPPorts = [445 139];
-    firewall.allowedUDPPorts = [137 138];
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [22000];
+      allowedUDPPorts = [22000 21027];
+    };
   };
 
   hardware = {
@@ -18,7 +20,7 @@
   nixpkgs.config.enableUnfree = true;
 
   imports = [
-    ./hardware-hifn.nix
+    ./hardware-gaming.nix
     ../modules/desktop.nix
     ../modules/nvidia.nix
     ../modules/gaming.nix
