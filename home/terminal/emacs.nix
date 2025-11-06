@@ -5,7 +5,6 @@
     extraPackages = epkgs: [
       epkgs.magit
       epkgs.catppuccin-theme
-      epkgs.evil
       epkgs.nix-mode
       epkgs.org-roam
       epkgs.org-roam-ui
@@ -20,8 +19,6 @@
             ; (setq catppuccin-flavor 'mocha)
             ; (load-theme 'catppuccin :no-confirm)
           (require 'nix-mode)
-          (require 'evil)
-          (evil-mode 1)
       (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
       (require 'org-roam)
       (org-roam-db-autosync-mode)

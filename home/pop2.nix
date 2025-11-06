@@ -14,6 +14,7 @@
   imports = [
     ./terminal
     ./programs/nh.nix
+    ./programs/macos-apps-fix.nix
     ./programs/vscode.nix
   ];
 
