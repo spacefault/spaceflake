@@ -15,36 +15,25 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
-  boot.supportedFilesystems = ["btrfs"];
+  boot.supportedFilesystems = ["btrfs" "xfs"];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/c4a6aac8-1605-41f1-a46f-cccf77491744";
-    fsType = "btrfs";
-    options = ["subvol=root" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
+    device = "/dev/disk/by-uuid/c1c1de09-f881-4f58-b72f-3bee35dc5c2e";
+    fsType = "xfs";
   };
 
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/aa64c02d-37af-40c6-bf80-996529aef7da";
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/cf97dc6f-e2a8-4486-81ca-23ca1f787724";
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/c4a6aac8-1605-41f1-a46f-cccf77491744";
+    device = "/dev/disk/by-uuid/8dfeec9e-87b3-426f-a2ae-7231b001d9a6";
     fsType = "btrfs";
-    options = ["subvol=home" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
+    options = ["subvol=@home" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
-  fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/c4a6aac8-1605-41f1-a46f-cccf77491744";
-    fsType = "btrfs";
-    options = ["subvol=nix" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
-  };
-
-  fileSystems."/var/log" = {
-    device = "/dev/disk/by-uuid/c4a6aac8-1605-41f1-a46f-cccf77491744";
-    fsType = "btrfs";
-    options = ["subvol=log" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
-  };
+  boot.initrd.luks.devices."enchome".device = "/dev/disk/by-uuid/6b9e149b-c7e3-4a76-ae2c-8ab127ab619e";
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/1397-8489";
+    device = "/dev/disk/by-uuid/9536-D6F4";
     fsType = "vfat";
     options = ["fmask=0022" "dmask=0022"];
   };
@@ -59,7 +48,7 @@
 
   swapDevices = [
     {
-      device = "/dev/disk/by-partuuid/9980fc4f-ec45-4cbd-9046-d97b1c6da2ac";
+      device = "/dev/disk/by-partuuid/6bcaa576-450b-4463-8a93-79774c1e03b6";
       randomEncryption.enable = true;
     }
   ];

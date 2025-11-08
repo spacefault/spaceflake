@@ -8,7 +8,6 @@
     mpv
     keepassxc
     anki-bin
-    libreoffice
     thunderbird
     eza
     gnome-text-editor
