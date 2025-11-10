@@ -15,7 +15,7 @@
     ./terminal
     ./programs/nh.nix
     ./programs/macos-apps-fix.nix
-    ./programs/vscode.nix
+    #./programs/vscode.nix
   ];
 
   programs.home-manager.enable = true;
