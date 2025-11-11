@@ -233,6 +233,7 @@
   nix = {
     extraOptions = ''
       eval-cores = 0
+      lazy-trees = true
     '';
     settings = {
       experimental-features = [
