@@ -44,6 +44,12 @@
     options = ["subvol=games" "compress=zstd" "noatime" "discard=async" "space_cache=v2"];
   };
 
+  fileSystems."/mnt/media" = {
+    device = "/dev/disk/by-uuid/c60a3df6-1cf8-4095-a400-b28b6955b427";
+    fsType = "btrfs";
+    options = ["subvol=@media" "compress=zstd" "noatime" "discard=async" "space_cache=v2"];
+  };
+
   boot.initrd.luks.devices."games".device = "/dev/disk/by-uuid/9ea9dce4-f253-4819-8400-eeaf41ec8714";
 
   swapDevices = [
