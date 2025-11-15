@@ -52,7 +52,7 @@
 
   fileSystems."/export/media" = {
     device = "/mnt/media";
-    options = [ "bind" ];
+    options = ["bind"];
   };
 
   boot.initrd.luks.devices."games".device = "/dev/disk/by-uuid/9ea9dce4-f253-4819-8400-eeaf41ec8714";
