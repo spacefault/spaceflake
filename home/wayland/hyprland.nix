@@ -143,10 +143,8 @@ in {
       windowrule = [
         "float,title:^(Calculator)(.*)$"
         "float,title:^(Friends)(.*)$"
-        "size 682,697,title:^(Friends)(.*)$"
         "float,title:^(fcitx5)(.*)$"
         "float,title:^(File Operation Progress)(.*)$"
-        "size 593,95,title:^(File Operation Progress)(.*)$"
       ];
       bindm = [
         "${mod}, mouse:272, movewindow"

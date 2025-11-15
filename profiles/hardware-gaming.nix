@@ -50,6 +50,11 @@
     options = ["subvol=@media" "compress=zstd" "noatime" "discard=async" "space_cache=v2"];
   };
 
+  fileSystems."/export/media" = {
+    device = "/mnt/media";
+    options = [ "bind" ];
+  };
+
   boot.initrd.luks.devices."games".device = "/dev/disk/by-uuid/9ea9dce4-f253-4819-8400-eeaf41ec8714";
 
   swapDevices = [
@@ -63,7 +68,7 @@
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
+  networking.useDHCP = lib.mkDefault false;
   # networking.interfaces.enp2s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
