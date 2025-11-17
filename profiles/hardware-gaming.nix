@@ -47,8 +47,8 @@
     options = [ "bind" ];
   };
 
-  fileSystems."/export/documents" = {
-    device = "/mnt/documents";
+  fileSystems."/export/store" = {
+    device = "/mnt/store";
     options = [ "bind" ];
   };
 
