@@ -19,7 +19,8 @@
       fsType = "xfs";
     };
 
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/89918b3c-b6a5-4069-8f3e-f38d9e10c141";
+    boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/89918b3c-b6a5-4069-8f3e-f38d9e10c141";
+  boot.initrd.luks.devices."games".device = "/dev/disk/by-uuid/ffc87718-85c1-4780-9209-f7b17828ba7";
 
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/8dfeec9e-87b3-426f-a2ae-7231b001d9a6";
@@ -30,18 +31,31 @@
   boot.initrd.luks.devices."home".device = "/dev/disk/by-uuid/6b9e149b-c7e3-4a76-ae2c-8ab127ab619e";
 
   fileSystems."/mnt/games" =
-    { device = "/dev/disk/by-uuid/cf65590f-463d-44ee-b199-bddce49a7af1";
+    { device = "/dev/disk/by-uuid/bad99577-2f00-4040-a6c6-167c072aa801";
       fsType = "btrfs";
       options = [ "subvol=@games"  "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2" ];
     };
-
-  boot.initrd.luks.devices."games".device = "/dev/disk/by-uuid/87c0c789-c0e1-48c1-ba54-e2b02eb634dc";
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/B2B4-D07E";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
+
+  fileSystems."/export/media" = {
+    device = "/mnt/media";
+    options = [ "bind" ];
+  };
+
+  fileSystems."/export/documents" = {
+    device = "/mnt/documents";
+    options = [ "bind" ];
+  };
+
+  fileSystems."/export/projects" = {
+    device = "/mnt/projects";
+    options = [ "bind" ];
+  };
 
   swapDevices =
     [ { device = "/dev/disk/by-partuuid/b193effd-c695-4c73-9358-b1f517bcea39";

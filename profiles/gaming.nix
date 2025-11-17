@@ -23,6 +23,10 @@
       exports = ''
         /export         10.0.0.26(rw,fsid=0,no_subtree_check,sync,root_squash)
         /export/media   10.0.0.26(rw,nohide,insecure,no_subtree_check,sync,all_squash,anonuid=1000,anongid=1000)
+        /export/documents   10.0.0.26(rw,nohide,insecure,no_subtree_check,sync,all_squash,anonuid=1000,anongid=1000)
+        /export/projects   10.0.0.26(rw,nohide,insecure,no_subtree_check,sync,all_squash,anonuid=1000,anongid=1000)
+
+
       '';
     };
     settings = {
