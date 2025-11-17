@@ -12,7 +12,7 @@
     };
   };
 
-  boot.zfs.extraPools = [ "tank" ];
+  boot.zfs.extraPools = ["tank"];
 
   boot.zfs.requestEncryptionCredentials = true;
   boot.zfs.forceImportRoot = false;
