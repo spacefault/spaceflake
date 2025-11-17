@@ -3,6 +3,7 @@
   # networking, firewall, and hostname
   networking = {
     hostName = "gaming";
+    hostId = "e92c1331";
     networkmanager.enable = true;
     firewall = {
       enable = true;
@@ -10,6 +11,11 @@
       allowedUDPPorts = [22000 21027 111 2049 4000 4001 4002 20048];
     };
   };
+
+  boot.zfs.extraPools = [ "tank" ];
+
+  boot.zfs.requestEncryptionCredentials = true;
+  boot.zfs.forceImportRoot = false;
 
   services.nfs = {
     server = {
