@@ -1,5 +1,20 @@
 # gaming.nix
-{...}: {
+{pkgs, ...}: let
+
+  pruneScript = pkgs.writeShellScript "sanoid-prune-if-low" ''
+    #!/usr/bin/env bash
+    set -euo pipefail
+
+    # Read ZFS pool capacity (remove trailing %)
+    USED=$(${pkgs.zfs}/bin/zpool list -Ho capacity tank | tr -d '%')
+
+    if [ "$USED" -ge 85 ]; then
+      echo "Pool tank is $USED full — running Sanoid prune…"
+      ${pkgs.sanoid}/bin/sanoid --prune-snapshots --verbose
+    fi
+  '';
+in
+  {
   # networking, firewall, and hostname
   networking = {
     hostName = "gaming";
@@ -34,6 +49,39 @@
       nfsd.vers4 = true;
     };
   };
+
+  services.sanoid = {
+    enable = true;
+    templates.timemachine = {
+      hourly  = 24;
+      daily   = 30;
+      weekly  = 8;
+      monthly = 0;
+      autosnap  = true;
+      autoprune = true;
+    };
+    datasets = {
+      "tank" = {
+        autosnap = false;
+        autoprune = false;
+        recursive = true;
+        useTemplate = [ "timemachine" ];
+      };
+    };
+  };
+  # auto prune
+  systemd.services."sanoid-auto-prune-when-low" = {
+    description = "Auto-prune Sanoid snapshots when ZFS pool space is low";
+
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = pruneScript;
+    };
+
+    wantedBy = [ "multi-user.target" ];
+    startAt = "hourly";
+  };
+
 
   hardware = {
     #enableAllFirmware = true;
