@@ -1,6 +1,5 @@
 # gaming.nix
 {pkgs, ...}: let
-
   pruneScript = pkgs.writeShellScript "sanoid-prune-if-low" ''
     #!/usr/bin/env bash
     set -euo pipefail
@@ -13,8 +12,7 @@
       ${pkgs.sanoid}/bin/sanoid --prune-snapshots --verbose
     fi
   '';
-in
-  {
+in {
   # networking, firewall, and hostname
   networking = {
     hostName = "gaming";
@@ -53,11 +51,11 @@ in
   services.sanoid = {
     enable = true;
     templates.timemachine = {
-      hourly  = 24;
-      daily   = 30;
-      weekly  = 8;
+      hourly = 24;
+      daily = 30;
+      weekly = 8;
       monthly = 0;
-      autosnap  = true;
+      autosnap = true;
       autoprune = true;
     };
     datasets = {
@@ -65,7 +63,7 @@ in
         autosnap = false;
         autoprune = false;
         recursive = true;
-        useTemplate = [ "timemachine" ];
+        useTemplate = ["timemachine"];
       };
     };
   };
@@ -78,10 +76,9 @@ in
       ExecStart = pruneScript;
     };
 
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = ["multi-user.target"];
     startAt = "hourly";
   };
-
 
   hardware = {
     #enableAllFirmware = true;
