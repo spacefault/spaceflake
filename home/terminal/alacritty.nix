@@ -1,13 +1,29 @@
-{pkgs, ...}: {
+{pkgs, ...}: 
+let
+  alacrittyTmuxScript = pkgs.writeShellScript "alacritty-tmux.sh" ''
+    SESSION_NAME="alacritty"
+
+    if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
+      WINDOW_ID=$(tmux new-window -t "$SESSION_NAME" -P -F "#{window_id}")
+      tmux attach-session -t "$SESSION_NAME" \; select-window -t "$WINDOW_ID"
+    else
+      tmux new-session -s "$SESSION_NAME"
+    fi
+
+  '';
+in 
+
+{
   programs.alacritty = {
     enable = true;
+    package = null;
     settings = {
       window = {
         opacity = 0.8;
         dynamic_title = true;
       };
       terminal.shell = {
-        program = "${pkgs.tmux}/bin/tmux";
+        program = "${alacrittyTmuxScript}";
       };
       colors = {
         primary = {
