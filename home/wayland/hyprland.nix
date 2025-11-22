@@ -152,7 +152,7 @@ in {
       ];
       bind =
         [
-          "${mod}, RETURN, exec, alacritty"
+          "${mod}, RETURN, exec, ghostty"
           "${mod}, SPACE, exec, bemenu-run -H 24"
           "${mod}, E, exec, google-chrome-stable"
           "${mod}, W, exec, firefox -p default"
