@@ -1,14 +1,13 @@
 # gaming.nix
-{pkgs, ...}:
-  {
+{...}: {
   # networking, firewall, and hostname
   networking = {
     hostName = "gaming";
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [22000 ];
-      allowedUDPPorts = [22000 21027 ];
+      allowedTCPPorts = [22000];
+      allowedUDPPorts = [22000 21027];
     };
   };
 
