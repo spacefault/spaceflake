@@ -9,6 +9,7 @@
     mangohud
     obs-studio
     osu-lazer-bin
+    rpcs3
   ];
 
   #systemd = {
