@@ -46,6 +46,8 @@ in {
         "${pkgs.swww}/bin/swww img ${./wallpaper.jpg}"
         "${pkgs.swaynotificationcenter}/bin/swaync"
         "${pkgs.swayosd}/bin/swayosd-server"
+        "fcitx5 -d -r"
+        "fcitx5-remote -r"
       ];
       general = {
         gaps_in = 3;
@@ -144,6 +146,7 @@ in {
         "float,title:^(Calculator)(.*)$"
         "float,title:^(Friends)(.*)$"
         "float,title:^(fcitx5)(.*)$"
+        "pseudo,title:^(fcitx5)(.*)$"
         "float,title:^(File Operation Progress)(.*)$"
       ];
       bindm = [

@@ -33,7 +33,20 @@
 
   # i18n
   time.timeZone = "America/Edmonton";
-  i18n.defaultLocale = "en_CA.UTF-8";
+  i18n = {
+    defaultLocale = "en_CA.UTF-8";
+    inputMethod = {
+      type = "fcitx5";
+      enable = true;
+      fcitx5 = {
+        waylandFrontend = true;
+        addons = with pkgs; [
+        fcitx5-mozc
+        fcitx5-gtk
+      ];
+    };
+  };
+};
 
   # system packages
   nixpkgs.config.allowUnfree = true;
