@@ -5,7 +5,7 @@
     settings.mainBar = {
       layer = "top";
       position = "top";
-      height = 24;
+      height = 26;
       modules-left = ["hyprland/workspaces" "hyprland/window" "mpris"];
       modules-center = [];
       modules-right = ["tray" "idle_inhibitor" "custom/notification" "wireplumber" "battery" "clock"];

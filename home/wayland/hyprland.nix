@@ -153,7 +153,7 @@ in {
       bind =
         [
           "${mod}, RETURN, exec, ghostty"
-          "${mod}, SPACE, exec, bemenu-run -H 24"
+          "${mod}, SPACE, exec, bemenu-run -H 26"
           "${mod}, E, exec, google-chrome-stable"
           "${mod}, W, exec, firefox -p default"
           "${mod}, R, exec, thunderbird"
