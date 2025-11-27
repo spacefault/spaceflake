@@ -1,23 +1,9 @@
 {
   pkgs,
-  myPkgs,
   ...
-}: {
+}:   { 
   home = {
-    sessionVariables.GTK_THEME = "MacTahoe-Light";
-    packages = with pkgs; [dconf];
-  };
-  dconf = {
-    enable = true;
-    settings = {
-      "org/gnome/desktop/interface" = {
-        gtk-theme = "MacTahoe-Light";
-        color-scheme = "prefer-light";
-      };
-      "org/gtk/settings/file-chooser" = {
-        sort-directories-first = true;
-      };
-    };
+    packages = with pkgs; [dconf libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct];
   };
   home.pointerCursor = {
     name = "macOS-Monterey";
@@ -25,20 +11,28 @@
     package = pkgs.apple-cursor;
     gtk.enable = true;
   };
-  gtk = {
+  home.file.".config/kdeglobals" = {
+    text = ''
+      [UiSettings]
+      ColorScheme=catppuccin-mocha-pink
+    '';
+  };
+    qt = {
     enable = true;
+    platformTheme.name = "qtct";
+    style.name = "kvantum";
+  };
+
+    gtk = {
+    enable = true;
+    colorScheme = "dark";
     theme = {
-      name = "MacTahoe-Light";
-      package = myPkgs.mactahoe-theme;
-    };
-    #iconTheme = {
-    #  name = "MacTahoe-light";
-    #  package = myPkgs.mactahoe-icons;
-    #};
-    font = {
-      name = "SF Pro Display";
-      size = 12;
-      package = myPkgs.sfpro;
+      name = "catppuccin-mocha-pink-standard";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "pink" ];
+        variant = "mocha";
+        size = "standard";
+      };
     };
   };
 }
