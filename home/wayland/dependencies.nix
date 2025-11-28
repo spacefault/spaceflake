@@ -17,7 +17,7 @@
     wlsunset
     xdg-user-dirs
     cliphist
-    kdePackages.dolphin 
+    kdePackages.dolphin
     adwaita-icon-theme
     swaynotificationcenter
     networkmanagerapplet

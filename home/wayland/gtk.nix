@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:   { 
+{pkgs, ...}: {
   home = {
     packages = with pkgs; [dconf libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct];
   };
@@ -17,19 +14,19 @@
       ColorScheme=catppuccin-mocha-pink
     '';
   };
-    qt = {
+  qt = {
     enable = true;
     platformTheme.name = "qtct";
     style.name = "kvantum";
   };
 
-    gtk = {
+  gtk = {
     enable = true;
     colorScheme = "dark";
     theme = {
       name = "catppuccin-mocha-pink-standard";
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "pink" ];
+        accents = ["pink"];
         variant = "mocha";
         size = "standard";
       };
