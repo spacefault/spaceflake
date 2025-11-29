@@ -82,7 +82,7 @@ in {
       input = {
         #kb_layout = "us";
         #kb_variant = "qwerty";
-        #kb_options = "compose:rctrl";
+        kb_options = "ctrl:nocaps";
         follow_mouse = 1;
         sensitivity = 0;
         left_handed = false;
@@ -157,9 +157,10 @@ in {
         [
           "${mod}, RETURN, exec, ghostty"
           "${mod}, SPACE, exec, bemenu-run -H 26"
-          "${mod}, E, exec, google-chrome-stable"
+          "${mod}, E, exec, dolphin"
           "${mod}, W, exec, firefox -p default"
-          "${mod}, R, exec, thunderbird"
+          "${mod}, R, exec, google-chrome-stable"
+          "${mod}, C, exec, thunderbird"
           ", PRINT, exec, grimblast --notify --freeze copysave area"
           "${mod}, L, exec, hyprlock"
           "${mod}, Y, exec, wlogout"

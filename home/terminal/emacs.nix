@@ -7,6 +7,7 @@
       epkgs.catppuccin-theme
       epkgs.nix-mode
       epkgs.org-roam
+      epkgs.evil
       epkgs.org-roam-ui
     ];
     extraConfig = ''
@@ -15,9 +16,11 @@
             (setq org-startup-indented t)
             (column-number-mode)
             (display-time-mode)
+            (require 'evil)
+            (evil-mode 1)
             (display-battery-mode)
-            ; (setq catppuccin-flavor 'mocha)
-            ; (load-theme 'catppuccin :no-confirm)
+            (setq catppuccin-flavor 'mocha)
+            (load-theme 'catppuccin :no-confirm)
           (require 'nix-mode)
       (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
       (require 'org-roam)
