@@ -18,7 +18,10 @@
       fsType = "xfs";
     };
 
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/0a455100-9758-4379-b420-219f83906501";
+    boot.initrd.luks.devices."enc" = {
+      device = "/dev/disk/by-uuid/0a455100-9758-4379-b420-219f83906501";
+      allowDiscards = true;
+    };
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/7A7E-C0E4";
@@ -31,7 +34,10 @@
       fsType = "xfs";
     };
 
-  boot.initrd.luks.devices."games".device = "/dev/disk/by-uuid/f5f9a285-e078-4a50-8335-48645c35ec80";
+    boot.initrd.luks.devices."games" = {
+      device = "/dev/disk/by-uuid/f5f9a285-e078-4a50-8335-48645c35ec80";
+      allowDiscards = true;
+    };
 
   swapDevices =
     [ { device = "/dev/disk/by-partuuid/cfeb80ca-a404-47d1-bb33-f074f90d0869"; randomEncryption.enable = true; }

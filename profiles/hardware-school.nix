@@ -23,7 +23,10 @@
     options = ["subvol=root" "compress=zstd" "noatime" "discard=async" "ssd" "space_cache=v2"];
   };
 
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/fbd8a347-5f82-4374-bd25-424d5ed69c60";
+  boot.initrd.luks.devices."enc" = {
+    device = "/dev/disk/by-uuid/fbd8a347-5f82-4374-bd25-424d5ed69c60";
+    allowDiscards = true;
+  };
 
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/f0c0b4ca-aeb6-435a-b1d8-40b45e92a048";
