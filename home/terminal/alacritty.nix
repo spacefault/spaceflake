@@ -10,7 +10,7 @@
       #terminal.shell = {
       #  program = "${pkgs.tmux}/bin/tmux";
       #};
-      font.size = 14;
+      #font.size = 14;
       colors = {
         primary = {
           background = "0x000000";
