@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./neovim.nix
+    #./neovim.nix
     ./emacs.nix
     ./tmux.nix
     ./zsh.nix
