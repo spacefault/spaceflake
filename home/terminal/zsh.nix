@@ -15,7 +15,6 @@
         zstyle ':vcs_info:git:*' formats '%b '
         setopt PROMPT_SUBST
         PROMPT='%B%F{243}%n %bon %B%m%f%b %B%F{197}%2~%f%b %B%F{39}$vcs_info_msg_0_%f%b> '
-        eval "$(~/.local/bin/mise activate)"
       '';
       history = {
         append = true;
