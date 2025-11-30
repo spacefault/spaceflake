@@ -1,14 +1,16 @@
 {pkgs, ...}: {
   programs.alacritty = {
     enable = true;
+    package = null;
     settings = {
       window = {
-        opacity = 0.8;
+        #opacity = 0.8;
         dynamic_title = true;
       };
-      terminal.shell = {
-        program = "${pkgs.tmux}/bin/tmux";
-      };
+      #terminal.shell = {
+      #  program = "${pkgs.tmux}/bin/tmux";
+      #};
+      font.size = 14;
       colors = {
         primary = {
           background = "0x000000";

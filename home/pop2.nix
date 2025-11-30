@@ -17,7 +17,7 @@
     ./terminal/neovim.nix
     ./terminal/tmux.nix
     ./terminal/zsh.nix
-    ./terminal/ghostty.nix
+    ./terminal/alacritty.nix
     ./programs/nh.nix
     #./programs/vscode.nix
   ];
