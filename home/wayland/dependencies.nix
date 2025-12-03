@@ -21,6 +21,6 @@
     adwaita-icon-theme
     swaynotificationcenter
     networkmanagerapplet
-    alacritty
+    ghostty
   ];
 }
