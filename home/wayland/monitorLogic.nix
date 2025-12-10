@@ -1,7 +1,7 @@
 {lib, ...}: let
   inherit (lib) mkOption types;
 in {
-  # stolen from https://github.com/parliamentbomber/parlbomb/blob/master/home/programs/hyprland/monitors.nix
+
   options.monitors = mkOption {
     type = types.attrsOf (types.submodule {
       options = {
@@ -32,6 +32,10 @@ in {
         scale = mkOption {
           type = types.str;
           default = 1;
+        };
+        transformValue = mkOption {
+          type = types.int;
+          default = 0;
         };
         enabled = mkOption {
           type = types.bool;

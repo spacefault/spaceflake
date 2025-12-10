@@ -22,14 +22,6 @@
       y = 0;
       scale = "1";
     };
-    "DP-1" = {
-      width = 1920;
-      height = 1080;
-      refreshRate = 100;
-      x = 1920;
-      y = 0;
-      scale = "1";
-    };
   };
 
   imports = [

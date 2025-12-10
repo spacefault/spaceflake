@@ -49,6 +49,19 @@ in {
         "fcitx5 -d -r"
         "fcitx5-remote -r"
       ];
+        workspace = [
+    "1, monitor:HDMI-A-1"
+    "2, monitor:HDMI-A-1"
+    "3, monitor:HDMI-A-1"
+    "4, monitor:HDMI-A-1"
+    "5, monitor:HDMI-A-1"
+    "6, monitor:HDMI-A-1"
+    "7, monitor:HDMI-A-1"
+    "8, monitor:HDMI-A-1"
+
+    "9, monitor:DP-1"
+    "10, monitor:DP-1"
+        ];
       general = {
         gaps_in = 3;
         gaps_out = 5;
@@ -64,9 +77,10 @@ in {
           }";
           position = "${toString m.x}x${toString m.y}";
           scale = "${toString m.scale}";
+          transformValue = "${toString m.transformValue}";
         in "${name},${
           if m.enabled
-          then "${resolution},${position},${scale}"
+          then "${resolution},${position},${scale},transform,${transformValue}"
           else "disable"
         }")
         config.monitors;
