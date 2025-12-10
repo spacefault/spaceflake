@@ -8,39 +8,36 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.supportedFilesystems = [ "xfs" ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/dce9c459-4e18-4454-acd3-8441a6f02fb0";
+    { device = "/dev/disk/by-uuid/233003a6-a049-4262-86d5-5c07e895a787";
       fsType = "xfs";
     };
 
-    boot.initrd.luks.devices."enc" = {
-      device = "/dev/disk/by-uuid/0a455100-9758-4379-b420-219f83906501";
-      allowDiscards = true;
-    };
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/6f122743-24ad-4fff-867c-27237c0505a0";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/7A7E-C0E4";
+    { device = "/dev/disk/by-uuid/2196-66C3";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   fileSystems."/mnt/games" =
-    { device = "/dev/disk/by-uuid/166ebfa1-0f29-464c-8318-987401a22087";
+    { device = "/dev/disk/by-uuid/31ac0cc5-e7eb-419f-ae2c-f209d364af32";
       fsType = "xfs";
     };
 
-    boot.initrd.luks.devices."games" = {
-      device = "/dev/disk/by-uuid/f5f9a285-e078-4a50-8335-48645c35ec80";
-      allowDiscards = true;
-    };
+  boot.initrd.luks.devices."games".device = "/dev/disk/by-uuid/3eb02ae3-d346-49ba-bdd8-b0aeaff1db45";
 
   swapDevices =
-    [ { device = "/dev/disk/by-partuuid/cfeb80ca-a404-47d1-bb33-f074f90d0869"; randomEncryption.enable = true; }
+    [ { device = "/dev/disk/by-partuuid/ddd76945-40da-47bb-8e64-eb1e66649b00"; 
+        randomEncryption.enable = true;
+	}
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -48,7 +45,7 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp2s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp3s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

@@ -155,7 +155,7 @@ in {
       ];
       bind =
         [
-          "${mod}, RETURN, exec, alacritty"
+          "${mod}, RETURN, exec, ghostty"
           "${mod}, SPACE, exec, bemenu-run -H 26"
           "${mod}, E, exec, dolphin"
           "${mod}, W, exec, firefox -p default"
