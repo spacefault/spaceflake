@@ -12,17 +12,16 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  boot.supportedFilesystems = [ "xfs" ];
-
+  boot.supportedFilesystems = ["xfs" "zfs"];
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/233003a6-a049-4262-86d5-5c07e895a787";
+    { device = "/dev/disk/by-uuid/621f5be0-a4de-4250-8f59-87037df0cd8f";
       fsType = "xfs";
     };
 
-  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/6f122743-24ad-4fff-867c-27237c0505a0";
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/8aaa96a7-4f24-4d0e-bce9-82cd7552a7c3";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/2196-66C3";
+    { device = "/dev/disk/by-uuid/D079-4F79";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
@@ -32,11 +31,26 @@
       fsType = "xfs";
     };
 
+  fileSystems."/export/media" = {
+    device = "/mnt/media";
+    options = [ "bind" ];
+  };
+
+  fileSystems."/export/store" = {
+    device = "/mnt/store";
+    options = [ "bind" ];
+  };
+
+  fileSystems."/export/projects" = {
+    device = "/mnt/projects";
+    options = [ "bind" ];
+  };
+  
   boot.initrd.luks.devices."games".device = "/dev/disk/by-uuid/3eb02ae3-d346-49ba-bdd8-b0aeaff1db45";
 
   swapDevices =
-    [ { device = "/dev/disk/by-partuuid/ddd76945-40da-47bb-8e64-eb1e66649b00"; 
-        randomEncryption.enable = true;
+    [ { device = "/dev/disk/by-partuuid/ddd76945-40da-47bb-8e64-eb1e66649b00";
+        randomEncryption.enable = true; 
 	}
     ];
 
