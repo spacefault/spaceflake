@@ -11,7 +11,7 @@
   home.file.".config/kdeglobals" = {
     text = ''
       [UiSettings]
-      ColorScheme=catppuccin-mocha-pink
+      ColorScheme=catppuccin-latte-pink
     '';
   };
   qt = {
@@ -27,7 +27,7 @@
       name = "catppuccin-mocha-pink-standard";
       package = pkgs.catppuccin-gtk.override {
         accents = ["pink"];
-        variant = "mocha";
+        variant = "latte";
         size = "standard";
       };
     };
