@@ -245,11 +245,6 @@
         background-color: #eb4d4b;
       }
 
-      #idle_inhibitor.activated {
-        background-color: #ecf0f1;
-        color: #2d3436;
-      }
-
       #tray > .passive {
         -gtk-icon-effect: dim;
       }
