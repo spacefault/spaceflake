@@ -49,19 +49,6 @@ in {
         "fcitx5 -d -r"
         "fcitx5-remote -r"
       ];
-        workspace = [
-    "1, monitor:HDMI-A-1"
-    "2, monitor:HDMI-A-1"
-    "3, monitor:HDMI-A-1"
-    "4, monitor:HDMI-A-1"
-    "5, monitor:HDMI-A-1"
-    "6, monitor:HDMI-A-1"
-    "7, monitor:HDMI-A-1"
-    "8, monitor:HDMI-A-1"
-
-    "9, monitor:DP-1"
-    "10, monitor:DP-1"
-        ];
       general = {
         gaps_in = 3;
         gaps_out = 5;

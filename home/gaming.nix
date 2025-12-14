@@ -21,15 +21,6 @@
       scale = "1";
       transformValue = 0;
     };
-    "DP-1" = {
-      width = 1920;
-      height = 1080;
-      refreshRate = 75;
-      x = -1080;
-      y = 0;
-      scale = "1";
-      transformValue = 1;
-    };
   };
 
   imports = [
