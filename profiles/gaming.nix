@@ -16,7 +16,8 @@
 
   boot.zfs.requestEncryptionCredentials = true;
   boot.zfs.forceImportRoot = false;
-
+  services.zfs.autoScrub.enable = true;
+  
   services.nfs = {
     server = {
       enable = true;
