@@ -20,7 +20,7 @@
             (require 'evil)
             ;(evil-mode 1)
             (display-battery-mode)
-            (setq catppuccin-flavor 'mocha)
+            (setq catppuccin-flavor 'latte)
             (load-theme 'catppuccin :no-confirm)
           (require 'nix-mode)
       (add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
