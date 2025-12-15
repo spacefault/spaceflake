@@ -12,12 +12,7 @@
   };
 
   imports = [
-    ./terminal/git.nix
-    ./terminal/htop.nix
-    ./terminal/neovim.nix
-    ./terminal/tmux.nix
-    ./terminal/zsh.nix
-    ./terminal/ghostty.nix
+    ./terminal
     ./programs/nh.nix
     #./programs/vscode.nix
   ];
